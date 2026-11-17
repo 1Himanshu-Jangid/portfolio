@@ -2,7 +2,7 @@
    Himanshu Jangid — Potfolie
    4-Page Atmospheric Journey:
    Dark Blue (Top) -> Pitch Black Space -> Dark Blue -> Sky Blue -> Pure White
-   All Miniature Vehicles Moving Left to Right in a Smooth Continuous Loop
+   New Satellites, New Airplanes with Billowing Smoke & 3D Cloud Depth
    ========================================================================== */
 
 :root {
@@ -32,8 +32,6 @@ body {
 
 /* ==========================================================================
    CONTINUOUS 4-PAGE VERTICAL ATMOSPHERIC GRADIENT
-   Dark Blue (Top) -> Black Space -> Dark Blue -> Sky Blue -> Pure White
-   Notice: Fades smoothly into Pure White for the 4th section
    ========================================================================== */
 #atmosphere-gradient-track {
   background: linear-gradient(
@@ -46,7 +44,7 @@ body {
     #0f2e6b 40%,        /* Stratosphere dark blue (SKIT section) */
     #1d4ed8 46%,        /* Royal blue */
     #0284c7 54%,        /* Upper sky transition */
-    #38bdf8 62%,        /* Rich Sky Blue (Small aeroplanes cruising) */
+    #38bdf8 62%,        /* Rich Sky Blue (3D clouds & airplanes cruising) */
     #7dd3fc 70%,        /* Daytime Sky Blue */
     #bae6fd 77%,        /* Soft Sky Blue with Blimp */
     #e0f2fe 84%,        /* Atmospheric sky mist fading into white */
@@ -61,12 +59,9 @@ body {
 }
 
 /* ==========================================================================
-   MINIATURE VEHICLES (MOVING THROUGH EMPTY SPACE ONLY - NEVER BLOCKING TEXT)
-   Positioned in designated Upper Empty Lanes (17-22%) and Lower Empty Lanes (78-82%)
-   Zero interference with text lines!
+   1. SATELLITES ANIMATION (LIVELY, VISIBLE IMMEDIATELY VIA NEGATIVE DELAY)
+   In Clear Empty Lanes Above and Below Text
    ========================================================================== */
-
-/* 1. SATELLITES (Confined to Black Space, in Upper & Lower Empty Space) */
 .sat-item {
   pointer-events: none;
   position: absolute;
@@ -74,42 +69,43 @@ body {
   will-change: transform;
 }
 
-/* Satellite 1: Upper Empty Lane (above "Himanshu Jangid", below navbar) */
-.sat-loop-1 {
+/* Satellite 1: Upper Empty Lane (above "Himanshu Jangid") */
+.sat-anim-1 {
   top: 18%;
-  animation: moveSatL2R_1 56s linear infinite;
+  animation: moveSatL2R_1 34s linear infinite;
+  animation-delay: -8s; /* Starts mid-screen immediately on page load! */
 }
 
 @keyframes moveSatL2R_1 {
   0% {
-    transform: translate3d(-120px, 0, 0) rotate(4deg);
+    transform: translate3d(-100px, 0, 0) rotate(3deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 140px), 8px, 0) rotate(-4deg);
+    transform: translate3d(calc(100vw + 120px), 10px, 0) rotate(-3deg);
   }
 }
 
 /* Satellite 2: Lower Empty Lane (below the paragraph and metrics) */
-.sat-loop-2 {
+.sat-anim-2 {
   top: 80%;
-  animation: moveSatL2R_2 68s linear infinite;
-  animation-delay: 14s;
+  animation: moveSatL2R_2 42s linear infinite;
+  animation-delay: -20s; /* Starts across lower sky immediately! */
 }
 
 @keyframes moveSatL2R_2 {
   0% {
-    transform: translate3d(-100px, 0, 0) rotate(-3deg);
+    transform: translate3d(-100px, 0, 0) rotate(-2deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 120px), -10px, 0) rotate(5deg);
+    transform: translate3d(calc(100vw + 120px), -8px, 0) rotate(3deg);
   }
 }
 
-/* Satellite 3: Upper Empty Lane 2 (subtle offset) */
-.sat-loop-3 {
+/* Satellite 3: Upper Lane 2 */
+.sat-anim-3 {
   top: 22%;
-  animation: moveSatL2R_3 82s linear infinite;
-  animation-delay: 24s;
+  animation: moveSatL2R_3 48s linear infinite;
+  animation-delay: -32s;
 }
 
 @keyframes moveSatL2R_3 {
@@ -117,101 +113,179 @@ body {
     transform: translate3d(-80px, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translate3d(50vw, 10px, 0) rotate(180deg);
+    transform: translate3d(50vw, 8px, 0) rotate(180deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 100px), 5px, 0) rotate(360deg);
+    transform: translate3d(calc(100vw + 100px), 0, 0) rotate(360deg);
   }
 }
 
-/* Blinking LED Beacon */
+/* Satellite Beacon & Ion Thruster Glow */
 .sat-beacon {
-  animation: beaconPulse 1.8s ease-in-out infinite alternate;
+  animation: beaconPulse 1.6s ease-in-out infinite alternate;
 }
 
 @keyframes beaconPulse {
   0%, 35% { opacity: 0.2; }
-  65%, 100% { opacity: 1; filter: drop-shadow(0 0 3px currentColor); }
+  65%, 100% { opacity: 1; filter: drop-shadow(0 0 4px currentColor); }
 }
 
-/* 2. AEROPLANES (Confined to Sky Blue, in Upper & Lower Empty Space) */
-.plane-item {
+.ion-glow {
+  animation: ionThrust 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes ionThrust {
+  0% { opacity: 0.3; r: 2; }
+  100% { opacity: 0.9; r: 3.5; filter: drop-shadow(0 0 5px #38bdf8); }
+}
+
+/* ==========================================================================
+   2. 3D CLOUD SYSTEM & AIRPLANE FLIGHT SYSTEM
+   ========================================================================== */
+
+/* Background Cloud Gentle Drift */
+.cloud-drift-slow {
+  animation: driftClouds 70s ease-in-out infinite alternate;
+}
+
+@keyframes driftClouds {
+  0% { transform: translateX(0px); }
+  100% { transform: translateX(35px); }
+}
+
+/* Foreground 3D Clouds (Hovering in front of the flight path) */
+.fore-cloud-puff {
+  pointer-events: none;
+  animation: floatForeCloud 8s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes floatForeCloud {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(-6px) scale(1.02); }
+}
+
+/* AIRPLANES: Moving in designated Upper (18%) and Lower (78%) Empty Lanes */
+.plane-flight {
   pointer-events: none;
   position: absolute;
   left: 0;
   will-change: transform;
 }
 
-/* Aeroplane 1: Upper Empty Lane (above "Software & AI Development") */
-.plane-loop-1 {
+/* Airplane 1: Upper Flight Lane (Cruises and dives behind fore-clouds 1 & 2!) */
+.plane-fly-1 {
   top: 18%;
-  animation: flyPlaneL2R_1 24s linear infinite;
+  animation: flyPlaneL2R_1 22s linear infinite;
+  animation-delay: -6s; /* Already visible mid-flight on page load! */
 }
 
 @keyframes flyPlaneL2R_1 {
   0% {
-    transform: translate3d(-140px, 0, 0) rotate(1deg);
+    transform: translate3d(-140px, 0, 0) rotate(0.8deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 160px), -8px, 0) rotate(1deg);
+    transform: translate3d(calc(100vw + 160px), -6px, 0) rotate(0.8deg);
   }
 }
 
-/* Aeroplane 2: Lower Empty Lane (below the badges and paragraph) */
-.plane-loop-2 {
-  top: 79%;
-  animation: flyPlaneL2R_2 30s linear infinite;
-  animation-delay: 9s;
+/* Airplane 2: Lower Flight Lane (Cruises and dives behind lower fore-cloud 3!) */
+.plane-fly-2 {
+  top: 78%;
+  animation: flyPlaneL2R_2 28s linear infinite;
+  animation-delay: -16s; /* Already flying on screen! */
 }
 
 @keyframes flyPlaneL2R_2 {
   0% {
-    transform: translate3d(-120px, 0, 0) rotate(-1deg);
+    transform: translate3d(-120px, 0, 0) rotate(-0.5deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 140px), 8px, 0) rotate(-1deg);
+    transform: translate3d(calc(100vw + 140px), 8px, 0) rotate(-0.5deg);
   }
 }
 
-/* Aeroplane 3: Upper Empty Lane 2 (distant high altitude) */
-.plane-loop-3 {
-  top: 22%;
-  animation: flyPlaneL2R_3 38s linear infinite;
-  animation-delay: 16s;
-}
-
-@keyframes flyPlaneL2R_3 {
-  0% {
-    transform: translate3d(-90px, 0, 0) rotate(0.5deg);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 110px), -5px, 0) rotate(0.5deg);
-  }
-}
-
-/* Jet Condensation Contrail (trailing behind to the left) */
-.jet-contrail {
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75));
-  border-radius: 999px;
-  filter: blur(0.6px);
+/* ==========================================================================
+   NEW BILLOWING SMOKE / JET CONTRAIL ANIMATION
+   ========================================================================== */
+.smoke-engine-group {
   margin-right: -2px;
+  display: flex;
+  align-items: center;
 }
 
-.contrail-light {
-  width: 45px;
+/* Long trailing contrail core line */
+.smoke-stream-line {
+  width: 75px;
+  height: 2.2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85));
+  border-radius: 999px;
+  filter: blur(0.5px);
+}
+
+.line-thin {
+  width: 55px;
   height: 1.8px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55));
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75));
 }
 
-.contrail-faint {
-  width: 32px;
-  height: 1.4px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45));
+/* Expanding billowing smoke puffs */
+.smoke-puff {
+  display: inline-block;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 60%, transparent 100%);
+  border-radius: 50%;
+  animation: smokeBillow 1.2s ease-out infinite;
+  filter: blur(0.8px);
 }
 
-/* 3. BLIMP (In Upper Empty Space above "Building the Future of AI") */
+.puff-wide {
+  width: 9px;
+  height: 9px;
+  margin-right: -4px;
+}
+
+.puff-mid {
+  width: 7px;
+  height: 7px;
+  margin-right: -3px;
+  animation-delay: 0.3s;
+}
+
+.puff-core {
+  width: 5px;
+  height: 5px;
+  margin-right: -2px;
+  animation-delay: 0.6s;
+}
+
+@keyframes smokeBillow {
+  0% {
+    transform: scale(0.7) translateY(0px);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.3) translateY(-0.8px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.8) translateY(-1.5px);
+    opacity: 0.3;
+  }
+}
+
+/* Wingtip Strobe Flash */
+.wing-strobe {
+  animation: strobeFlash 1s steps(2, start) infinite;
+}
+
+@keyframes strobeFlash {
+  0%, 70% { opacity: 1; filter: drop-shadow(0 0 3px currentColor); }
+  71%, 100% { opacity: 0.2; filter: none; }
+}
+
+/* ==========================================================================
+   3. BLIMP ANIMATION (Upper Empty Lane at top 17%)
+   ========================================================================== */
 .blimp-item {
   pointer-events: none;
   position: absolute;
@@ -219,18 +293,18 @@ body {
   will-change: transform;
 }
 
-.blimp-loop-1 {
+.blimp-anim-1 {
   top: 17%;
-  animation: flyBlimpL2R 46s linear infinite, bobBlimp 6s ease-in-out infinite alternate;
-  animation-delay: 2s;
+  animation: flyBlimpL2R 44s linear infinite, bobBlimp 6s ease-in-out infinite alternate;
+  animation-delay: -10s; /* Visible and cruising on page load! */
 }
 
 @keyframes flyBlimpL2R {
   0% {
-    transform: translate3d(-160px, 0, 0);
+    transform: translate3d(-140px, 0, 0);
   }
   100% {
-    transform: translate3d(calc(100vw + 180px), 0, 0);
+    transform: translate3d(calc(100vw + 160px), 0, 0);
   }
 }
 
@@ -246,8 +320,6 @@ body {
 /* ==========================================================================
    DYNAMIC 4-TIER NAVBAR THEME MODES
    ========================================================================== */
-
-/* 1. Space Theme (White Text & Translucent Space Glass) */
 .theme-space #nav-brand-text {
   color: #ffffff;
 }
@@ -274,7 +346,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* 2. SKIT Theme (Ice Blue / White & Deep Navy Glass) */
 .theme-skit #nav-brand-text {
   color: #ffffff;
 }
@@ -301,7 +372,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-/* 3. Sky Theme (Dark Navy Text & Contrast Pill) */
 .theme-sky #nav-brand-text {
   color: #0f172a;
 }
@@ -328,7 +398,6 @@ body {
   border: 1px solid rgba(15, 23, 42, 0.18);
 }
 
-/* 4. Earth Theme (Pure Black Text & Minimalist Clean White Pill) */
 .theme-earth #nav-brand-text {
   color: #000000;
 }
@@ -358,7 +427,7 @@ body {
 
 /* Accessibility: Reduced motion check */
 @media (prefers-reduced-motion: reduce) {
-  .sat-item, .plane-item, .blimp-item {
+  .sat-item, .plane-flight, .blimp-item, .cloud-drift-slow, .fore-cloud-puff {
     animation: none !important;
   }
 }

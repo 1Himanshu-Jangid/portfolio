@@ -18,7 +18,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=2.2" />
+  <link rel="stylesheet" href="styles.css?v=3.0" />
 </head>
 <body class="selection:bg-blue-500 selection:text-white">
 
@@ -73,272 +73,173 @@
 
     <!-- =======================================================================
          PAGE 1: SATELLITES LAYER (BLACK SPACE: 0 - 135vh)
-         Non-stop continuous orbital flight with smooth slightly up/down waves
+         Slow, distinct orbital satellites in separated lanes (Zero Collision)
          ======================================================================= -->
     <div class="satellites-container absolute inset-x-0 top-0 pointer-events-none z-10 overflow-hidden" style="height: 135vh;">
       
-      <!-- Satellite 1: Science Orbital Station (Upper Orbit Lane - 15%) -->
+      <!-- SATELLITE 1: International Solar Station (Upper Lane - 14% altitude) -->
       <div class="sat-item sat-stream-1 absolute">
-        <svg width="64" height="32" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Ion Thruster Plume -->
-          <circle cx="3" cy="16" r="3.5" fill="#38bdf8" class="ion-glow"/>
-          <path d="M1 16 L12 16" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="2 2"/>
-          
-          <!-- Large Photovoltaic Wings Left -->
-          <rect x="12" y="3" width="16" height="26" rx="2" fill="#0f2b5c" stroke="#38bdf8" stroke-width="0.8"/>
-          <line x1="12" y1="11" x2="28" y2="11" stroke="#60a5fa" stroke-width="0.6"/>
-          <line x1="12" y1="21" x2="28" y2="21" stroke="#60a5fa" stroke-width="0.6"/>
-          <line x1="20" y1="3" x2="20" y2="29" stroke="#60a5fa" stroke-width="0.6"/>
-          
-          <rect x="28" y="14" width="6" height="4" fill="#94a3b8"/>
-          
-          <!-- Central Hexagonal Bus -->
-          <polygon points="34,9 44,7 48,23 34,25" fill="#f8fafc" stroke="#64748b" stroke-width="0.8"/>
-          <circle cx="41" cy="16" r="2.5" fill="#0284c7"/>
-          
-          <!-- High Gain Parabolic Dish -->
-          <path d="M45 10 L52 6 M48 5 Q53 3 56 8 Z" stroke="#e2e8f0" stroke-width="0.9" fill="none"/>
-          <circle cx="53" cy="4" r="1.3" fill="#ef4444" class="sat-beacon"/>
-          
-          <rect x="48" y="14" width="5" height="4" fill="#94a3b8"/>
-          
-          <!-- Photovoltaic Wings Right -->
-          <rect x="53" y="3" width="9" height="26" rx="2" fill="#0f2b5c" stroke="#38bdf8" stroke-width="0.8"/>
-          <line x1="53" y1="11" x2="62" y2="11" stroke="#60a5fa" stroke-width="0.6"/>
-          <line x1="53" y1="21" x2="62" y2="21" stroke="#60a5fa" stroke-width="0.6"/>
-        </svg>
-      </div>
+        <svg width="68" height="32" viewBox="0 0 68 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Solar Array Left -->
+          <rect x="2" y="4" width="20" height="24" rx="1.5" fill="#0284c7" stroke="#38bdf8" stroke-width="0.8"/>
+          <line x1="2" y1="12" x2="22" y2="12" stroke="#bae6fd" stroke-width="0.6"/>
+          <line x1="2" y1="20" x2="22" y2="20" stroke="#bae6fd" stroke-width="0.6"/>
+          <line x1="12" y1="4" x2="12" y2="28" stroke="#bae6fd" stroke-width="0.6"/>
+          <!-- Central Mounting Truss -->
+          <line x1="22" y1="16" x2="28" y2="16" stroke="#e2e8f0" stroke-width="1.8"/>
 
-      <!-- Satellite 2: Deep Space Telescope (Lower Orbit Lane - 79%) -->
-      <div class="sat-item sat-stream-2 absolute">
-        <svg width="54" height="28" viewBox="0 0 54 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Multi-Layer Sunshield -->
-          <polygon points="2,14 16,5 30,14 16,23" fill="#fbbf24" stroke="#d97706" stroke-width="0.8"/>
-          <!-- Core Optics Barrel -->
-          <rect x="16" y="10" width="20" height="8" rx="2" fill="#e2e8f0" stroke="#64748b" stroke-width="0.8"/>
-          <ellipse cx="36" cy="14" rx="2.5" ry="4" fill="#0284c7" stroke="#38bdf8" stroke-width="0.6"/>
+          <!-- Core Habitation Module & Research Hub -->
+          <rect x="28" y="12" width="12" height="8" rx="2" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8"/>
+          <circle cx="34" cy="16" r="2" fill="#0284c7"/>
           <!-- Telemetry Antenna -->
-          <line x1="22" y1="10" x2="22" y2="3" stroke="#e2e8f0" stroke-width="0.8"/>
-          <circle cx="22" cy="2" r="1.3" fill="#34d399" class="sat-beacon"/>
-          <!-- Solar Sub-array -->
-          <rect x="24" y="20" width="16" height="6" rx="1" fill="#0369a1" stroke="#38bdf8" stroke-width="0.6"/>
-          <line x1="32" y1="20" x2="32" y2="26" stroke="#7dd3fc" stroke-width="0.6"/>
+          <path d="M34 12 L34 7 M31 6 Q34 4 37 6 Z" stroke="#ffffff" stroke-width="0.9" fill="none"/>
+          <circle cx="34" cy="4" r="1.2" fill="#22c55e" class="sat-beacon"/>
+
+          <!-- Central Mounting Truss Right -->
+          <line x1="40" y1="16" x2="46" y2="16" stroke="#e2e8f0" stroke-width="1.8"/>
+          <!-- Solar Array Right -->
+          <rect x="46" y="4" width="20" height="24" rx="1.5" fill="#0284c7" stroke="#38bdf8" stroke-width="0.8"/>
+          <line x1="46" y1="12" x2="66" y2="12" stroke="#bae6fd" stroke-width="0.6"/>
+          <line x1="46" y1="20" x2="66" y2="20" stroke="#bae6fd" stroke-width="0.6"/>
+          <line x1="56" y1="4" x2="56" y2="28" stroke="#bae6fd" stroke-width="0.6"/>
         </svg>
       </div>
 
-      <!-- Satellite 3: Wandering Celestial Probe (Upper-Mid Orbit Lane - 20%) -->
-      <div class="sat-item sat-stream-3 absolute">
-        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="9" y="9" width="16" height="16" rx="2" fill="#1e293b" stroke="#94a3b8" stroke-width="0.8"/>
-          <rect x="12" y="12" width="10" height="10" fill="#1d4ed8"/>
-          <line x1="9" y1="9" x2="2" y2="2" stroke="#e2e8f0" stroke-width="0.8"/>
-          <line x1="25" y1="25" x2="32" y2="32" stroke="#e2e8f0" stroke-width="0.8"/>
-          <circle cx="2" cy="2" r="1.3" fill="#f43f5e" class="sat-beacon"/>
-          <circle cx="32" cy="32" r="1.3" fill="#38bdf8" class="sat-beacon"/>
-        </svg>
-      </div>
-
-      <!-- Satellite 4: Communications Relay Satellite (Lower-Mid Orbit Lane - 83%) -->
-      <div class="sat-item sat-stream-4 absolute">
-        <svg width="46" height="24" viewBox="0 0 46 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="17" y="7" width="12" height="10" rx="1.5" fill="#f1f5f9" stroke="#64748b" stroke-width="0.75"/>
-          <circle cx="23" cy="12" r="2.2" fill="#0284c7"/>
-          <line x1="17" y1="12" x2="4" y2="12" stroke="#38bdf8" stroke-width="1.2"/>
-          <rect x="4" y="6" width="9" height="12" rx="1" fill="#0f2b5c" stroke="#38bdf8" stroke-width="0.75"/>
-          <line x1="29" y1="12" x2="42" y2="12" stroke="#38bdf8" stroke-width="1.2"/>
-          <rect x="33" y="6" width="9" height="12" rx="1" fill="#0f2b5c" stroke="#38bdf8" stroke-width="0.75"/>
-          <line x1="23" y1="7" x2="23" y2="2" stroke="#cbd5e1" stroke-width="0.8"/>
-          <circle cx="23" cy="2" r="1.2" fill="#22c55e" class="sat-beacon"/>
+      <!-- SATELLITE 2: Parabolic Deep Space Orbiter (Lower Lane - 80% altitude) -->
+      <div class="sat-item sat-stream-2 absolute">
+        <svg width="56" height="30" viewBox="0 0 56 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Gold Multi-Layer Sunshield -->
+          <polygon points="2,15 16,5 30,15 16,25" fill="#f59e0b" stroke="#fbbf24" stroke-width="0.8"/>
+          <!-- Core Optics Barrel -->
+          <rect x="18" y="11" width="22" height="8" rx="2" fill="#ffffff" stroke="#94a3b8" stroke-width="0.8"/>
+          <ellipse cx="40" cy="15" rx="2.5" ry="4" fill="#0284c7" stroke="#38bdf8" stroke-width="0.6"/>
+          <!-- Communications Antenna Mast -->
+          <line x1="24" y1="11" x2="24" y2="3" stroke="#e2e8f0" stroke-width="1"/>
+          <circle cx="24" cy="3" r="1.3" fill="#ef4444" class="sat-beacon"/>
+          <!-- Solar Panel Wing -->
+          <rect x="24" y="21" width="16" height="6" rx="1" fill="#0284c7" stroke="#38bdf8" stroke-width="0.6"/>
+          <line x1="32" y1="21" x2="32" y2="27" stroke="#bae6fd" stroke-width="0.6"/>
         </svg>
       </div>
 
     </div>
 
     <!-- =======================================================================
-         PAGE 3: 3D CLOUD & DYNAMIC AIRPLANE SYSTEM (SKY BLUE: 270vh - 405vh)
-         Layer 1: Back Clouds (z-5)
-         Layer 2: Airplanes with New UI & Ascending / Descending Paths (z-10)
-         Layer 3: Fore Clouds (z-15) - Airplanes dive behind clouds dynamically!
+         PAGE 3: 3D MOVING CLOUD & CLEAN MINIMALIST AIRPLANE SYSTEM (SKY BLUE: 270vh - 405vh)
+         Layer 1: Back Clouds drifting slowly across the sky (z-5)
+         Layer 2: Clean, Simple White Airplanes cruising slowly (z-10)
+         Layer 3: 3D Fore Clouds drifting in front of airplanes (z-15)
          ======================================================================= -->
     <div class="sky-flight-system absolute inset-x-0 pointer-events-none overflow-hidden" style="top: 270vh; height: 135vh;">
       
-      <!-- LAYER 1: BACK CLOUDS (z-5) -->
+      <!-- LAYER 1: BACK CLOUDS (Slow horizontal drift across sky) (z-5) -->
       <div class="clouds-back-layer absolute inset-0 z-[5]">
-        <div class="cloud-drift-slow absolute" style="top: 10%; left: 6%;">
-          <svg width="260" height="100" viewBox="0 0 260 100" fill="none" opacity="0.45">
-            <path d="M35 75 C18 75 6 60 14 44 C21 28 40 28 52 32 C64 14 98 9 122 21 C140 7 175 9 192 25 C210 21 234 29 240 46 C255 55 252 75 228 75 Z" fill="white"/>
-          </svg>
-        </div>
-
-        <div class="cloud-drift-slow absolute" style="top: 68%; left: 58%;">
-          <svg width="280" height="110" viewBox="0 0 280 110" fill="none" opacity="0.4">
+        <div class="cloud-drift-1 absolute" style="top: 10%;">
+          <svg width="280" height="110" viewBox="0 0 280 110" fill="none" opacity="0.5">
             <path d="M40 85 C20 85 8 68 16 50 C24 32 46 32 60 36 C74 16 112 10 140 24 C160 8 200 10 220 28 C240 24 268 34 272 52 C288 62 284 85 258 85 Z" fill="white"/>
           </svg>
         </div>
+
+        <div class="cloud-drift-2 absolute" style="top: 70%;">
+          <svg width="320" height="120" viewBox="0 0 320 120" fill="none" opacity="0.45">
+            <path d="M45 95 C22 95 9 76 18 56 C27 36 52 36 68 40 C84 18 126 12 158 27 C180 9 225 11 248 31 C270 27 302 38 306 58 C324 70 320 95 290 95 Z" fill="white"/>
+          </svg>
+        </div>
       </div>
 
-      <!-- LAYER 2: CLEAN AIRPLANE DESIGNS (NO CONTRAIL LINES) & CONTINUOUS CRUISE (z-10) -->
+      <!-- LAYER 2: CLEAN, SIMPLE MINIMALIST AIRPLANES (SLOW MAJESTIC CRUISE, ZERO CLUTTER) (z-10) -->
       <div class="planes-flight-layer absolute inset-0 z-[10]">
         
-        <!-- AIRPLANE 1: Flagship Commercial Jet Airliner (Upper Lane - 16% altitude) -->
+        <!-- AIRPLANE 1: Clean Minimalist Airliner (Upper Sky Lane - 16% altitude) -->
         <div class="plane-flight plane-stream-1 absolute">
-          <!-- Sleek Modern Passenger Jet (Clean Side Elevation Profile) -->
-          <svg width="82" height="30" viewBox="0 0 82 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-shadow">
-            <!-- Swept Vertical Stabilizer (Tail Fin) with Sky Blue Livery -->
-            <path d="M6 14 L12 2 L22 2 L19 14 Z" fill="#0284c7"/>
-            <path d="M12 2 L14 2 L21 14 L18 14 Z" fill="#38bdf8" opacity="0.6"/>
-            <!-- Strobe on Tail Fin Tip -->
-            <circle cx="12" cy="2" r="1" fill="#ffffff" class="nav-strobe"/>
-
-            <!-- Horizontal Stabilizer (Rear Wing) -->
-            <path d="M8 15 L2 18 L6 19 L16 16 Z" fill="#94a3b8"/>
-
-            <!-- Main Aerodynamic Fuselage -->
-            <path d="M8 15 C8 12 16 11 38 11 C58 11 72 12.5 78 14.5 C80.5 15.2 80.5 16.8 78 17.5 C72 19.5 58 20 38 20 C16 20 8 18 8 15 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.75"/>
+          <svg width="74" height="24" viewBox="0 0 74 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-clean">
+            <!-- Swept Sky Blue Vertical Tail Fin -->
+            <path d="M7 11 L13 2 L20 2 L17 11 Z" fill="#0284c7"/>
+            <!-- Rear Horizontal Stabilizer -->
+            <path d="M8 12 L2 14 L4 15 L13 13 Z" fill="#e2e8f0"/>
             
-            <!-- Subtle Belly Shadow (Creates Realistic 3D Form) -->
-            <path d="M10 16.5 C16 19 38 20 58 19.5 C70 19 76 17.8 78 17.5 C76 18.5 70 20 58 20 C38 20.5 16 20 10 16.5 Z" fill="#cbd5e1" opacity="0.65"/>
+            <!-- Crisp Pure White Fuselage -->
+            <path d="M7 12 C7 9.5 16 9 38 9 C56 9 66 10.2 70 11.5 C72 12.2 72 13.5 70 14.2 C66 15.5 56 16.5 38 16.5 C16 16.5 7 14.5 7 12 Z" fill="#ffffff"/>
             
-            <!-- Clean Airline Blue Cheatline -->
-            <path d="M18 16 C34 16 62 16 75 16.2" stroke="#0284c7" stroke-width="1.1" stroke-linecap="round"/>
+            <!-- Minimalist Cockpit Aviator Visor -->
+            <path d="M64 11 L68 11.6 C69 12 69 12.6 68 13 L64 12.6 Z" fill="#0f172a"/>
+            
+            <!-- Clean Swept Wing with Sky Blue Winglet -->
+            <path d="M32 12 L42 12 L30 22 L24 22 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.5"/>
+            <path d="M24 22 L23 19.5 L25 22 Z" fill="#0284c7"/>
 
-            <!-- Cockpit Windshield (Tinted Aviator Visor) -->
-            <path d="M72 13.5 L76 14.2 C77 14.8 77 15.2 75 15.5 L72 15 Z" fill="#0f172a"/>
-
-            <!-- Passenger Cabin Windows (Clean minimalist dotted array) -->
-            <line x1="26" y1="13.5" x2="68" y2="13.5" stroke="#0f172a" stroke-width="1" stroke-dasharray="1.5 2"/>
-
-            <!-- Main Swept Wing -->
-            <path d="M35 15 L46 15 L32 28 L24 28 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="0.75"/>
-            <path d="M42 15 L46 15 L33 28 L30 28 Z" fill="#cbd5e1"/>
-            <!-- Blended Winglet Tip with Strobe -->
-            <path d="M24 28 L22 25 L25 28 Z" fill="#0284c7"/>
-            <circle cx="22" cy="25" r="1" fill="#22c55e" class="nav-strobe"/>
-
-            <!-- Underwing High-Bypass Turbofan Jet Engine -->
-            <rect x="42" y="17.5" width="11" height="5" rx="2" fill="#334155" stroke="#475569" stroke-width="0.6"/>
-            <ellipse cx="53" cy="20" rx="1.4" ry="2.2" fill="#0284c7"/>
-            <circle cx="53" cy="20" r="0.7" fill="#38bdf8"/>
-            <rect x="44" y="15.5" width="4" height="2.5" fill="#94a3b8"/>
+            <!-- Clean Jet Engine Cowling -->
+            <rect x="36" y="13.5" width="10" height="4" rx="2" fill="#f1f5f9"/>
+            <ellipse cx="46" cy="15.5" rx="1.2" ry="2" fill="#0284c7"/>
           </svg>
         </div>
 
-        <!-- AIRPLANE 2: Sleek Executive Private Jet (Lower Lane - 77% altitude) -->
+        <!-- AIRPLANE 2: Clean Minimalist Airliner (Lower Sky Lane - 78% altitude) -->
+        <!-- Separated by ~700px vertically and exactly half a lap (24s): GUARANTEED NO COLLISION -->
         <div class="plane-flight plane-stream-2 absolute">
-          <!-- Sleek Executive Private Jet UI (Clean Side Angle) -->
-          <svg width="74" height="26" viewBox="0 0 76 26" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-shadow">
-            <!-- T-Tail Vertical Stabilizer -->
-            <path d="M6 13 L12 3 L18 3 L14 13 Z" fill="#0369a1"/>
-            <path d="M9 3 L22 3 L20 4.5 L11 4.5 Z" fill="#ffffff" stroke="#94a3b8" stroke-width="0.5"/>
-            <circle cx="12" cy="3" r="0.9" fill="#ffffff" class="nav-strobe"/>
-
-            <!-- Fuselage -->
-            <path d="M8 14 C8 12 20 11.5 44 11.5 C58 11.5 68 12.8 73 14 C74.5 14.5 74.5 15.5 73 16 C68 17.2 58 18 44 18 C20 18 8 16 8 14 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.75"/>
-            <path d="M12 16 C25 18 50 18 70 16 C66 17.5 50 18.2 44 18.2 C20 18.2 12 16 12 16 Z" fill="#94a3b8" opacity="0.45"/>
-
-            <!-- Cockpit Visor -->
-            <path d="M67 13 L71 13.8 C72 14.3 72 14.7 70 15 L67 14.5 Z" fill="#0f172a"/>
-
-            <!-- Executive Jet Oval Windows -->
-            <circle cx="34" cy="13.5" r="0.9" fill="#0f172a"/>
-            <circle cx="39" cy="13.5" r="0.9" fill="#0f172a"/>
-            <circle cx="44" cy="13.5" r="0.9" fill="#0f172a"/>
-            <circle cx="49" cy="13.5" r="0.9" fill="#0f172a"/>
-            <circle cx="54" cy="13.5" r="0.9" fill="#0f172a"/>
-            <circle cx="59" cy="13.5" r="0.9" fill="#0f172a"/>
-
-            <!-- Rear-mounted Fuselage Turbofan Engine -->
-            <rect x="18" y="9" width="10" height="4.5" rx="1.8" fill="#334155" stroke="#64748b" stroke-width="0.5"/>
-            <ellipse cx="28" cy="11.2" rx="1.2" ry="2" fill="#38bdf8"/>
-
-            <!-- Swept Low Wing -->
-            <path d="M38 15 L46 15 L36 24 L30 24 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.7"/>
-            <path d="M30 24 L29 21.5 L31 24 Z" fill="#0284c7"/>
-            <circle cx="29" cy="21.5" r="0.9" fill="#ef4444" class="nav-strobe"/>
-          </svg>
-        </div>
-
-        <!-- AIRPLANE 3: Modern Regional Twin-Jet (Upper-Mid Lane - 22% altitude) -->
-        <div class="plane-flight plane-stream-3 absolute">
-          <!-- Sleek Modern Twin-Aero Jet -->
-          <svg width="76" height="28" viewBox="0 0 78 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-shadow">
-            <!-- Swept Tail Fin with Gradient Accent -->
-            <path d="M7 13 L14 3 L22 3 L19 13 Z" fill="#0284c7"/>
-            <polygon points="14,3 17,3 21,13 18,13" fill="#38bdf8"/>
-            <path d="M8 14 L3 17 L6 18 L15 15 Z" fill="#94a3b8"/>
-
-            <!-- Fuselage -->
-            <path d="M7 14 C7 11.5 16 11 38 11 C56 11 68 12.3 74 14 C76 14.8 76 16.2 74 17 C68 18.7 56 19 38 19 C16 19 7 16.5 7 14 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.75"/>
-            <path d="M9 15.5 C15 18 38 19 56 18.5 C68 18 73 17 74 17 C72 18 68 19 56 19.2 C38 19.5 15 19 9 15.5 Z" fill="#cbd5e1" opacity="0.6"/>
-
-            <path d="M16 15 C32 15 58 15 71 15.2" stroke="#38bdf8" stroke-width="1" stroke-linecap="round"/>
-            <!-- Cockpit -->
-            <path d="M68 13.2 L72 13.8 C73 14.3 73 14.8 71 15.1 L68 14.6 Z" fill="#0f172a"/>
-            <!-- Cabin Windows -->
-            <line x1="24" y1="13.5" x2="64" y2="13.5" stroke="#0f172a" stroke-width="0.9" stroke-dasharray="1.5 2"/>
-
-            <!-- Swept Wing -->
-            <path d="M34 14 L44 14 L32 26 L25 26 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="0.7"/>
-            <path d="M25 26 L23 23 L26 26 Z" fill="#0284c7"/>
-            <circle cx="23" cy="23" r="0.9" fill="#22c55e" class="nav-strobe"/>
-
-            <!-- Engine -->
-            <rect x="40" y="16.5" width="10" height="4.5" rx="1.8" fill="#334155" stroke="#475569" stroke-width="0.5"/>
-            <ellipse cx="50" cy="18.8" rx="1.3" ry="1.9" fill="#0284c7"/>
+          <svg width="74" height="24" viewBox="0 0 74 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-clean">
+            <path d="M7 11 L13 2 L20 2 L17 11 Z" fill="#0284c7"/>
+            <path d="M8 12 L2 14 L4 15 L13 13 Z" fill="#e2e8f0"/>
+            <path d="M7 12 C7 9.5 16 9 38 9 C56 9 66 10.2 70 11.5 C72 12.2 72 13.5 70 14.2 C66 15.5 56 16.5 38 16.5 C16 16.5 7 14.5 7 12 Z" fill="#ffffff"/>
+            <path d="M64 11 L68 11.6 C69 12 69 12.6 68 13 L64 12.6 Z" fill="#0f172a"/>
+            <path d="M32 12 L42 12 L30 22 L24 22 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.5"/>
+            <path d="M24 22 L23 19.5 L25 22 Z" fill="#0284c7"/>
+            <rect x="36" y="13.5" width="10" height="4" rx="2" fill="#f1f5f9"/>
+            <ellipse cx="46" cy="15.5" rx="1.2" ry="2" fill="#0284c7"/>
           </svg>
         </div>
 
       </div>
 
-      <!-- LAYER 3: 3D FOREGROUND CLOUDS (z-15) - Airplanes dive BEHIND these clouds! -->
+      <!-- LAYER 3: 3D FOREGROUND DRIFTING CLOUDS (z-15) - Airplanes dive BEHIND these clouds! -->
       <div class="clouds-fore-layer absolute inset-0 z-[15]">
         
-        <!-- 3D Foreground Cloud 1 (Upper Climb Path at 35% screen width) -->
-        <div class="fore-cloud-puff absolute" style="top: 14%; left: 35%;">
-          <svg width="200" height="100" viewBox="0 0 200 100" fill="none" class="filter drop-shadow-md">
+        <!-- 3D Foreground Cloud 1 (Drifting across upper flight path) -->
+        <div class="fore-cloud-drift-1 absolute" style="top: 13%;">
+          <svg width="220" height="105" viewBox="0 0 220 105" fill="none" class="filter drop-shadow-md">
             <defs>
-              <linearGradient id="cloud-3d-g1" x1="100" y1="10" x2="100" y2="95" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97"/>
-                <stop offset="65%" stop-color="#f0f9ff" stop-opacity="0.93"/>
-                <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.84"/>
+              <linearGradient id="cloud-3d-g1" x1="110" y1="10" x2="110" y2="100" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+                <stop offset="65%" stop-color="#f0f9ff" stop-opacity="0.94"/>
+                <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.85"/>
               </linearGradient>
             </defs>
-            <path d="M32 76 C14 76 5 63 11 48 C17 34 34 34 42 38 C48 21 74 15 95 23 C110 11 139 13 152 28 C166 23 185 32 189 46 C202 55 198 76 177 76 Z" fill="url(#cloud-3d-g1)"/>
-            <ellipse cx="95" cy="34" rx="36" ry="17" fill="white" fill-opacity="0.6"/>
-            <ellipse cx="53" cy="49" rx="25" ry="16" fill="white" fill-opacity="0.45"/>
-            <ellipse cx="147" cy="46" rx="27" ry="16" fill="white" fill-opacity="0.5"/>
+            <path d="M35 80 C15 80 5 66 12 50 C19 36 37 36 46 40 C52 22 81 16 104 24 C120 12 152 14 167 30 C182 25 203 35 208 50 C222 60 218 80 195 80 Z" fill="url(#cloud-3d-g1)"/>
+            <ellipse cx="104" cy="36" rx="39" ry="18" fill="white" fill-opacity="0.6"/>
+            <ellipse cx="58" cy="52" rx="27" ry="17" fill="white" fill-opacity="0.45"/>
+            <ellipse cx="161" cy="49" rx="29" ry="17" fill="white" fill-opacity="0.5"/>
           </svg>
         </div>
 
-        <!-- 3D Foreground Cloud 2 (Upper Climb Path at 72% screen width) -->
-        <div class="fore-cloud-puff absolute" style="top: 16%; left: 71%;">
-          <svg width="180" height="90" viewBox="0 0 180 90" fill="none" class="filter drop-shadow-md">
+        <!-- 3D Foreground Cloud 2 (Drifting across upper-mid flight path) -->
+        <div class="fore-cloud-drift-2 absolute" style="top: 17%;">
+          <svg width="200" height="95" viewBox="0 0 200 95" fill="none" class="filter drop-shadow-md">
             <defs>
-              <linearGradient id="cloud-3d-g2" x1="90" y1="10" x2="90" y2="85" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97"/>
-                <stop offset="65%" stop-color="#f0f9ff" stop-opacity="0.93"/>
-                <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.84"/>
+              <linearGradient id="cloud-3d-g2" x1="100" y1="10" x2="100" y2="90" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+                <stop offset="65%" stop-color="#f0f9ff" stop-opacity="0.94"/>
+                <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.85"/>
               </linearGradient>
             </defs>
-            <path d="M27 68 C11 68 3 56 9 43 C15 30 30 30 37 34 C43 19 66 14 85 21 C98 10 124 12 135 25 C148 20 165 28 170 41 C180 49 177 68 158 68 Z" fill="url(#cloud-3d-g2)"/>
-            <ellipse cx="85" cy="30" rx="32" ry="15" fill="white" fill-opacity="0.6"/>
-            <ellipse cx="133" cy="40" rx="23" ry="14" fill="white" fill-opacity="0.45"/>
+            <path d="M30 72 C12 72 3 59 10 45 C17 32 33 32 41 36 C47 20 73 15 94 22 C108 11 137 13 149 27 C164 22 183 31 188 45 C199 54 196 72 175 72 Z" fill="url(#cloud-3d-g2)"/>
+            <ellipse cx="94" cy="32" rx="35" ry="16" fill="white" fill-opacity="0.6"/>
+            <ellipse cx="147" cy="43" rx="25" ry="15" fill="white" fill-opacity="0.45"/>
           </svg>
         </div>
 
-        <!-- 3D Foreground Cloud 3 (Lower Descent Path at 48% screen width) -->
-        <div class="fore-cloud-puff absolute" style="top: 73%; left: 47%;">
-          <svg width="210" height="95" viewBox="0 0 210 95" fill="none" class="filter drop-shadow-md">
+        <!-- 3D Foreground Cloud 3 (Drifting across lower flight path) -->
+        <div class="fore-cloud-drift-3 absolute" style="top: 74%;">
+          <svg width="230" height="100" viewBox="0 0 230 100" fill="none" class="filter drop-shadow-md">
             <defs>
-              <linearGradient id="cloud-3d-g3" x1="105" y1="10" x2="105" y2="90" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.97"/>
-                <stop offset="65%" stop-color="#f0f9ff" stop-opacity="0.93"/>
-                <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.84"/>
+              <linearGradient id="cloud-3d-g3" x1="115" y1="10" x2="115" y2="95" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+                <stop offset="65%" stop-color="#f0f9ff" stop-opacity="0.94"/>
+                <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.85"/>
               </linearGradient>
             </defs>
-            <path d="M32 72 C15 72 5 59 13 46 C19 32 36 32 44 36 C51 20 78 14 100 22 C116 10 147 12 160 26 C176 22 195 30 200 44 C212 52 208 72 187 72 Z" fill="url(#cloud-3d-g3)"/>
-            <ellipse cx="100" cy="32" rx="37" ry="16" fill="white" fill-opacity="0.6"/>
-            <ellipse cx="158" cy="42" rx="26" ry="15" fill="white" fill-opacity="0.5"/>
+            <path d="M35 75 C16 75 5 62 14 48 C21 34 39 34 48 38 C56 21 85 15 109 23 C127 10 161 12 175 27 C193 23 214 31 219 46 C232 55 228 75 205 75 Z" fill="url(#cloud-3d-g3)"/>
+            <ellipse cx="109" cy="34" rx="40" ry="17" fill="white" fill-opacity="0.6"/>
+            <ellipse cx="173" cy="44" rx="28" ry="16" fill="white" fill-opacity="0.5"/>
           </svg>
         </div>
 
@@ -622,7 +523,7 @@
 
   </div>
 
-  <script src="script.js?v=2.2"></script>
+  <script src="script.js?v=3.0"></script>
   <script>
     lucide.createIcons();
   </script>

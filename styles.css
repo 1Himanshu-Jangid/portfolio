@@ -212,7 +212,7 @@ body {
   100% { transform: translateY(-7px) scale(1.02); }
 }
 
-/* AIRPLANES: CONTINUOUS NON-STOP FLIGHT WITH SLIGHTLY UP/DOWN UNDULATION */
+/* AIRPLANES: CONTINUOUS NON-STOP FLIGHT WITH CLEAN AERODYNAMIC CRUISE */
 .plane-flight {
   pointer-events: none;
   position: absolute;
@@ -220,169 +220,101 @@ body {
   will-change: transform;
 }
 
-/* Airplane 1: Flagship Supersonic Twin-Jet (Upper Lane - 16% altitude)
-   Cruises steadily left-to-right, undulating slightly up & down, diving behind Fore-Clouds 1 & 2 */
+/* Airplane 1: Flagship Commercial Jet Airliner (Upper Lane - 16% altitude)
+   Cruises steadily left-to-right, gliding smoothly through 3D Fore-Clouds 1 & 2 */
 .plane-stream-1 {
   top: 16%;
-  animation: flyPlaneContinuous_1 18s linear infinite;
+  animation: flyPlaneContinuous_1 20s linear infinite;
   animation-delay: 0s;
 }
 
 @keyframes flyPlaneContinuous_1 {
   0% {
-    transform: translate3d(-170px, 0px, 0) rotate(0deg);
+    transform: translate3d(-140px, 0px, 0) rotate(0deg);
   }
-  20% {
-    /* Climbing slightly up (-14px) */
-    transform: translate3d(calc(20vw - 40px), -14px, 0) rotate(-2deg);
+  25% {
+    /* Climbing slightly up (-10px) */
+    transform: translate3d(calc(25vw - 35px), -10px, 0) rotate(-1.5deg);
   }
-  40% {
-    /* Gliding slightly down (+10px) behind Fore-Cloud 1 */
-    transform: translate3d(calc(40vw), 10px, 0) rotate(1.5deg);
+  50% {
+    /* Gliding slightly down (+8px) behind Fore-Cloud 1 */
+    transform: translate3d(calc(50vw), 8px, 0) rotate(1deg);
   }
-  60% {
-    /* Climbing slightly up (-12px) behind Fore-Cloud 2 */
-    transform: translate3d(calc(60vw + 40px), -12px, 0) rotate(-1.8deg);
-  }
-  80% {
-    /* Cruising gently down (+8px) */
-    transform: translate3d(calc(80vw + 80px), 8px, 0) rotate(1.2deg);
+  75% {
+    /* Climbing gently up (-8px) behind Fore-Cloud 2 */
+    transform: translate3d(calc(75vw + 35px), -8px, 0) rotate(-1deg);
   }
   100% {
     /* Seamless loop without stopping or snapping */
-    transform: translate3d(calc(100vw + 170px), 0px, 0) rotate(0deg);
+    transform: translate3d(calc(100vw + 140px), 0px, 0) rotate(0deg);
   }
 }
 
-/* Airplane 2: Sleek Executive Jet (Lower Lane - 77% altitude)
-   Cruises steadily, undulating slightly down & up, weaving behind Fore-Cloud 3 */
+/* Airplane 2: Sleek Executive Private Jet (Lower Lane - 77% altitude)
+   Cruises steadily, undulating gently down & up, weaving behind Fore-Cloud 3 */
 .plane-stream-2 {
   top: 77%;
-  animation: flyPlaneContinuous_2 22s linear infinite;
-  animation-delay: -7s;
+  animation: flyPlaneContinuous_2 24s linear infinite;
+  animation-delay: -8s;
 }
 
 @keyframes flyPlaneContinuous_2 {
   0% {
-    transform: translate3d(-160px, 0px, 0) rotate(0deg);
+    transform: translate3d(-130px, 0px, 0) rotate(0deg);
   }
   25% {
-    /* Dipping slightly down (+12px) */
-    transform: translate3d(calc(25vw - 40px), 12px, 0) rotate(1.8deg);
+    /* Dipping slightly down (+10px) */
+    transform: translate3d(calc(25vw - 30px), 10px, 0) rotate(1.2deg);
   }
   50% {
-    /* Gliding slightly up (-15px) behind Fore-Cloud 3 */
-    transform: translate3d(calc(50vw), -15px, 0) rotate(-2deg);
+    /* Gliding slightly up (-12px) behind Fore-Cloud 3 */
+    transform: translate3d(calc(50vw), -12px, 0) rotate(-1.5deg);
   }
   75% {
-    /* Dipping slightly down (+10px) */
-    transform: translate3d(calc(75vw + 40px), 10px, 0) rotate(1.4deg);
+    /* Dipping slightly down (+8px) */
+    transform: translate3d(calc(75vw + 30px), 8px, 0) rotate(1deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 160px), 0px, 0) rotate(0deg);
+    transform: translate3d(calc(100vw + 130px), 0px, 0) rotate(0deg);
   }
 }
 
-/* Airplane 3: Modern Twin-Engine Jet (Upper-Mid Lane - 22% altitude)
+/* Airplane 3: Modern Regional Twin-Jet (Upper-Mid Lane - 22% altitude)
    Staggered continuous flight providing constant active motion across the sky */
 .plane-stream-3 {
   top: 22%;
-  animation: flyPlaneContinuous_3 20s linear infinite;
+  animation: flyPlaneContinuous_3 21s linear infinite;
   animation-delay: -14s;
 }
 
 @keyframes flyPlaneContinuous_3 {
   0% {
-    transform: translate3d(-170px, 0px, 0) rotate(0deg);
+    transform: translate3d(-140px, 0px, 0) rotate(0deg);
   }
-  25% {
-    transform: translate3d(calc(25vw - 40px), -10px, 0) rotate(-1.6deg);
+  30% {
+    transform: translate3d(calc(30vw - 30px), -8px, 0) rotate(-1.2deg);
   }
-  50% {
-    transform: translate3d(calc(50vw), 12px, 0) rotate(1.5deg);
-  }
-  75% {
-    transform: translate3d(calc(75vw + 40px), -8px, 0) rotate(-1.2deg);
+  60% {
+    transform: translate3d(calc(60vw + 20px), 10px, 0) rotate(1.2deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 170px), 0px, 0) rotate(0deg);
+    transform: translate3d(calc(100vw + 140px), 0px, 0) rotate(0deg);
   }
 }
 
-/* ==========================================================================
-   REALISTIC BILLOWING SMOKE / JET CONTRAIL
-   ========================================================================== */
-.smoke-engine-group {
-  margin-right: -2px;
-  display: flex;
-  align-items: center;
+/* Airplane Atmospheric Soft Shadow */
+.plane-shadow {
+  filter: drop-shadow(0 5px 12px rgba(15, 23, 42, 0.18));
 }
 
-.smoke-stream-line {
-  width: 85px;
-  height: 2.4px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9));
-  border-radius: 999px;
-  filter: blur(0.5px);
+/* Wingtip & Tail Navigation Strobes */
+.nav-strobe {
+  animation: navStrobePulse 1.2s steps(2, start) infinite;
 }
 
-.line-thin {
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.78));
-}
-
-.smoke-puff {
-  display: inline-block;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.4) 60%, transparent 100%);
-  border-radius: 50%;
-  animation: smokeBillow 1.1s ease-out infinite;
-  filter: blur(0.7px);
-}
-
-.puff-wide {
-  width: 10px;
-  height: 10px;
-  margin-right: -5px;
-}
-
-.puff-mid {
-  width: 8px;
-  height: 8px;
-  margin-right: -4px;
-  animation-delay: 0.28s;
-}
-
-.puff-core {
-  width: 6px;
-  height: 6px;
-  margin-right: -3px;
-  animation-delay: 0.55s;
-}
-
-@keyframes smokeBillow {
-  0% {
-    transform: scale(0.6) translateY(0px);
-    opacity: 0.95;
-  }
-  50% {
-    transform: scale(1.4) translateY(-1px);
-    opacity: 0.75;
-  }
-  100% {
-    transform: scale(2) translateY(-2px);
-    opacity: 0.25;
-  }
-}
-
-/* Wingtip Strobe Flash */
-.wing-strobe {
-  animation: strobeFlash 1s steps(2, start) infinite;
-}
-
-@keyframes strobeFlash {
-  0%, 70% { opacity: 1; filter: drop-shadow(0 0 3px currentColor); }
-  71%, 100% { opacity: 0.2; filter: none; }
+@keyframes navStrobePulse {
+  0%, 75% { opacity: 1; filter: drop-shadow(0 0 3px currentColor); }
+  76%, 100% { opacity: 0.2; filter: none; }
 }
 
 /* ==========================================================================

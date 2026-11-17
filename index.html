@@ -177,105 +177,115 @@
         </div>
       </div>
 
-      <!-- LAYER 2: NEW AIRPLANE UI & CONTINUOUS FLIGHT PATHS WITH SMOKE (z-10) -->
+      <!-- LAYER 2: CLEAN AIRPLANE DESIGNS (NO CONTRAIL LINES) & CONTINUOUS CRUISE (z-10) -->
       <div class="planes-flight-layer absolute inset-0 z-[10]">
         
-        <!-- AIRPLANE 1: Flagship Supersonic Jet Airliner (Upper Lane - 16% altitude) -->
+        <!-- AIRPLANE 1: Flagship Commercial Jet Airliner (Upper Lane - 16% altitude) -->
         <div class="plane-flight plane-stream-1 absolute">
-          <div class="flex items-center">
+          <!-- Sleek Modern Passenger Jet (Clean Side Elevation Profile) -->
+          <svg width="82" height="30" viewBox="0 0 82 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-shadow">
+            <!-- Swept Vertical Stabilizer (Tail Fin) with Sky Blue Livery -->
+            <path d="M6 14 L12 2 L22 2 L19 14 Z" fill="#0284c7"/>
+            <path d="M12 2 L14 2 L21 14 L18 14 Z" fill="#38bdf8" opacity="0.6"/>
+            <!-- Strobe on Tail Fin Tip -->
+            <circle cx="12" cy="2" r="1" fill="#ffffff" class="nav-strobe"/>
+
+            <!-- Horizontal Stabilizer (Rear Wing) -->
+            <path d="M8 15 L2 18 L6 19 L16 16 Z" fill="#94a3b8"/>
+
+            <!-- Main Aerodynamic Fuselage -->
+            <path d="M8 15 C8 12 16 11 38 11 C58 11 72 12.5 78 14.5 C80.5 15.2 80.5 16.8 78 17.5 C72 19.5 58 20 38 20 C16 20 8 18 8 15 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.75"/>
             
-            <!-- Dual Exhaust Contrail Engine Group -->
-            <div class="smoke-engine-group flex items-center">
-              <span class="smoke-puff puff-wide"></span>
-              <span class="smoke-puff puff-mid"></span>
-              <span class="smoke-puff puff-core"></span>
-              <div class="smoke-stream-line"></div>
-            </div>
+            <!-- Subtle Belly Shadow (Creates Realistic 3D Form) -->
+            <path d="M10 16.5 C16 19 38 20 58 19.5 C70 19 76 17.8 78 17.5 C76 18.5 70 20 58 20 C38 20.5 16 20 10 16.5 Z" fill="#cbd5e1" opacity="0.65"/>
+            
+            <!-- Clean Airline Blue Cheatline -->
+            <path d="M18 16 C34 16 62 16 75 16.2" stroke="#0284c7" stroke-width="1.1" stroke-linecap="round"/>
 
-            <!-- STREAMLINED JET AIRLINER UI (Facing Right) -->
-            <svg width="68" height="28" viewBox="0 0 68 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-shadow">
-              <!-- Needle Aerodynamic Fuselage -->
-              <path d="M4 14 C4 14, 10 12, 20 11.5 C36 10.8, 58 10.8, 64 12.5 C67 13.2, 67 14.8, 64 15.5 C58 17.2, 36 17.2, 20 16.5 C10 16, 4 14, 4 14 Z" fill="#ffffff" stroke="#94a3b8" stroke-width="0.75"/>
-              
-              <!-- Navy Speedline Cheatline -->
-              <path d="M18 14 C30 13.6, 54 13.6, 61 14.3" stroke="#0284c7" stroke-width="1.2" stroke-linecap="round"/>
-              
-              <!-- Swept Wings with Upward Blended Winglets -->
-              <path d="M34 14 L22 2.5 L30 2.5 L46 14 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="0.75"/>
-              <!-- Upper Winglet Tip -->
-              <path d="M22 2.5 L20 0.5 L24 2.5 Z" fill="#0284c7"/>
-              
-              <!-- Lower Wing with Winglet -->
-              <path d="M34 14 L22 25.5 L30 25.5 L46 14 Z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="0.75"/>
-              <path d="M22 25.5 L20 27.5 L24 25.5 Z" fill="#0284c7"/>
-              
-              <!-- Underwing Turbofan Engine Pods with Intake Rim -->
-              <rect x="28" y="5.5" width="8" height="3" rx="1.2" fill="#334155" stroke="#475569" stroke-width="0.6"/>
-              <circle cx="36" cy="7" r="1.1" fill="#38bdf8"/>
-              <rect x="28" y="19.5" width="8" height="3" rx="1.2" fill="#334155" stroke="#475569" stroke-width="0.6"/>
-              <circle cx="36" cy="21" r="1.1" fill="#38bdf8"/>
-              
-              <!-- Aerodynamic Tail Fin with Livery Accent -->
-              <path d="M10 14 L3 4 L12 4 L18 14 Z" fill="#0284c7" stroke="#0369a1" stroke-width="0.75"/>
-              <polygon points="4,5 11,5 14,10 7,10" fill="#38bdf8"/>
-              
-              <!-- Tinted Windshield Glass -->
-              <path d="M59 13.2 L63 13.6 L63 14.4 L59 14.8 Z" fill="#0f172a"/>
-              
-              <!-- Wingtip Navigation Strobes -->
-              <circle cx="21" cy="2" r="1" fill="#22c55e" class="wing-strobe"/>
-              <circle cx="21" cy="26" r="1" fill="#ef4444" class="wing-strobe"/>
-            </svg>
+            <!-- Cockpit Windshield (Tinted Aviator Visor) -->
+            <path d="M72 13.5 L76 14.2 C77 14.8 77 15.2 75 15.5 L72 15 Z" fill="#0f172a"/>
 
-          </div>
+            <!-- Passenger Cabin Windows (Clean minimalist dotted array) -->
+            <line x1="26" y1="13.5" x2="68" y2="13.5" stroke="#0f172a" stroke-width="1" stroke-dasharray="1.5 2"/>
+
+            <!-- Main Swept Wing -->
+            <path d="M35 15 L46 15 L32 28 L24 28 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="0.75"/>
+            <path d="M42 15 L46 15 L33 28 L30 28 Z" fill="#cbd5e1"/>
+            <!-- Blended Winglet Tip with Strobe -->
+            <path d="M24 28 L22 25 L25 28 Z" fill="#0284c7"/>
+            <circle cx="22" cy="25" r="1" fill="#22c55e" class="nav-strobe"/>
+
+            <!-- Underwing High-Bypass Turbofan Jet Engine -->
+            <rect x="42" y="17.5" width="11" height="5" rx="2" fill="#334155" stroke="#475569" stroke-width="0.6"/>
+            <ellipse cx="53" cy="20" rx="1.4" ry="2.2" fill="#0284c7"/>
+            <circle cx="53" cy="20" r="0.7" fill="#38bdf8"/>
+            <rect x="44" y="15.5" width="4" height="2.5" fill="#94a3b8"/>
+          </svg>
         </div>
 
-        <!-- AIRPLANE 2: Sleek Executive Jet (Lower Lane - 77% altitude) -->
+        <!-- AIRPLANE 2: Sleek Executive Private Jet (Lower Lane - 77% altitude) -->
         <div class="plane-flight plane-stream-2 absolute">
-          <div class="flex items-center">
-            
-            <div class="smoke-engine-group flex items-center">
-              <span class="smoke-puff puff-mid"></span>
-              <span class="smoke-puff puff-core"></span>
-              <div class="smoke-stream-line line-thin"></div>
-            </div>
+          <!-- Sleek Executive Private Jet UI (Clean Side Angle) -->
+          <svg width="74" height="26" viewBox="0 0 76 26" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-shadow">
+            <!-- T-Tail Vertical Stabilizer -->
+            <path d="M6 13 L12 3 L18 3 L14 13 Z" fill="#0369a1"/>
+            <path d="M9 3 L22 3 L20 4.5 L11 4.5 Z" fill="#ffffff" stroke="#94a3b8" stroke-width="0.5"/>
+            <circle cx="12" cy="3" r="0.9" fill="#ffffff" class="nav-strobe"/>
 
-            <!-- Sleek Executive Jet UI -->
-            <svg width="54" height="24" viewBox="0 0 54 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-shadow">
-              <path d="M4 12 C7 11, 28 11, 48 11 C52 11.5, 52 12.5, 48 13 C28 13, 7 13, 4 12 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.7"/>
-              <path d="M24 12 L16 3 L23 3 L35 12 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.7"/>
-              <path d="M24 12 L16 21 L23 21 L35 12 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="0.7"/>
-              <rect x="20" y="6" width="6" height="2.2" rx="1" fill="#64748b"/>
-              <rect x="20" y="15.8" width="6" height="2.2" rx="1" fill="#64748b"/>
-              <path d="M9 12 L4 4 L11 4 L15 12 Z" fill="#38bdf8"/>
-            </svg>
+            <!-- Fuselage -->
+            <path d="M8 14 C8 12 20 11.5 44 11.5 C58 11.5 68 12.8 73 14 C74.5 14.5 74.5 15.5 73 16 C68 17.2 58 18 44 18 C20 18 8 16 8 14 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.75"/>
+            <path d="M12 16 C25 18 50 18 70 16 C66 17.5 50 18.2 44 18.2 C20 18.2 12 16 12 16 Z" fill="#94a3b8" opacity="0.45"/>
 
-          </div>
+            <!-- Cockpit Visor -->
+            <path d="M67 13 L71 13.8 C72 14.3 72 14.7 70 15 L67 14.5 Z" fill="#0f172a"/>
+
+            <!-- Executive Jet Oval Windows -->
+            <circle cx="34" cy="13.5" r="0.9" fill="#0f172a"/>
+            <circle cx="39" cy="13.5" r="0.9" fill="#0f172a"/>
+            <circle cx="44" cy="13.5" r="0.9" fill="#0f172a"/>
+            <circle cx="49" cy="13.5" r="0.9" fill="#0f172a"/>
+            <circle cx="54" cy="13.5" r="0.9" fill="#0f172a"/>
+            <circle cx="59" cy="13.5" r="0.9" fill="#0f172a"/>
+
+            <!-- Rear-mounted Fuselage Turbofan Engine -->
+            <rect x="18" y="9" width="10" height="4.5" rx="1.8" fill="#334155" stroke="#64748b" stroke-width="0.5"/>
+            <ellipse cx="28" cy="11.2" rx="1.2" ry="2" fill="#38bdf8"/>
+
+            <!-- Swept Low Wing -->
+            <path d="M38 15 L46 15 L36 24 L30 24 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.7"/>
+            <path d="M30 24 L29 21.5 L31 24 Z" fill="#0284c7"/>
+            <circle cx="29" cy="21.5" r="0.9" fill="#ef4444" class="nav-strobe"/>
+          </svg>
         </div>
 
-        <!-- AIRPLANE 3: Modern Twin-Engine Jet (Upper-Mid Lane - 22% altitude) -->
+        <!-- AIRPLANE 3: Modern Regional Twin-Jet (Upper-Mid Lane - 22% altitude) -->
         <div class="plane-flight plane-stream-3 absolute">
-          <div class="flex items-center">
-            
-            <div class="smoke-engine-group flex items-center">
-              <span class="smoke-puff puff-wide"></span>
-              <span class="smoke-puff puff-core"></span>
-              <div class="smoke-stream-line line-thin"></div>
-            </div>
+          <!-- Sleek Modern Twin-Aero Jet -->
+          <svg width="76" height="28" viewBox="0 0 78 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-shadow">
+            <!-- Swept Tail Fin with Gradient Accent -->
+            <path d="M7 13 L14 3 L22 3 L19 13 Z" fill="#0284c7"/>
+            <polygon points="14,3 17,3 21,13 18,13" fill="#38bdf8"/>
+            <path d="M8 14 L3 17 L6 18 L15 15 Z" fill="#94a3b8"/>
 
-            <!-- Modern Regional Aero Jet -->
-            <svg width="58" height="24" viewBox="0 0 58 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-shadow">
-              <path d="M5 12 C9 11.2, 28 11, 52 11.4 C56 11.8, 56 12.2, 52 12.6 C28 13, 9 12.8, 5 12 Z" fill="#ffffff" stroke="#94a3b8" stroke-width="0.7"/>
-              <path d="M26 12 L18 2 L25 2 L38 12 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="0.7"/>
-              <path d="M26 12 L18 22 L25 22 L38 12 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.7"/>
-              <circle cx="18" cy="2" r="0.9" fill="#0284c7"/>
-              <circle cx="18" cy="22" r="0.9" fill="#0284c7"/>
-              <path d="M10 12 L4 3 L12 3 L16 12 Z" fill="#0284c7"/>
-              <rect x="23" y="5" width="7" height="2.5" rx="1.2" fill="#334155"/>
-              <rect x="23" y="16.5" width="7" height="2.5" rx="1.2" fill="#334155"/>
-            </svg>
+            <!-- Fuselage -->
+            <path d="M7 14 C7 11.5 16 11 38 11 C56 11 68 12.3 74 14 C76 14.8 76 16.2 74 17 C68 18.7 56 19 38 19 C16 19 7 16.5 7 14 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.75"/>
+            <path d="M9 15.5 C15 18 38 19 56 18.5 C68 18 73 17 74 17 C72 18 68 19 56 19.2 C38 19.5 15 19 9 15.5 Z" fill="#cbd5e1" opacity="0.6"/>
 
-          </div>
+            <path d="M16 15 C32 15 58 15 71 15.2" stroke="#38bdf8" stroke-width="1" stroke-linecap="round"/>
+            <!-- Cockpit -->
+            <path d="M68 13.2 L72 13.8 C73 14.3 73 14.8 71 15.1 L68 14.6 Z" fill="#0f172a"/>
+            <!-- Cabin Windows -->
+            <line x1="24" y1="13.5" x2="64" y2="13.5" stroke="#0f172a" stroke-width="0.9" stroke-dasharray="1.5 2"/>
+
+            <!-- Swept Wing -->
+            <path d="M34 14 L44 14 L32 26 L25 26 Z" fill="#f8fafc" stroke="#94a3b8" stroke-width="0.7"/>
+            <path d="M25 26 L23 23 L26 26 Z" fill="#0284c7"/>
+            <circle cx="23" cy="23" r="0.9" fill="#22c55e" class="nav-strobe"/>
+
+            <!-- Engine -->
+            <rect x="40" y="16.5" width="10" height="4.5" rx="1.8" fill="#334155" stroke="#475569" stroke-width="0.5"/>
+            <ellipse cx="50" cy="18.8" rx="1.3" ry="1.9" fill="#0284c7"/>
+          </svg>
         </div>
 
       </div>

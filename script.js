@@ -181,25 +181,42 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 4. DYNAMIC RANDOM AIRPLANE SYSTEM
-  // Randomizes airplane model, flight altitude corridor, and cruise pacing
-  // on every pass so the sky features varied, unpredictable airplanes!
+  // 4. DYNAMIC RANDOM AIRPLANE SYSTEM (PURE WHITE AIRPLANES & WHITE JETS)
+  // Clean, minimalist pure white commercial airliners and executive jets.
+  // Alternates models smoothly on every continuous flight iteration.
   // =========================================================================
   const AIRPLANE_MODELS = [
-    // Model 1: Flagship Commercial Airliner (Two-Tone Royal Blue & White - Image 3)
+    // Model 0: Pure White Commercial Passenger Airplane
     `<svg width="116" height="46" viewBox="0 0 120 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-clean filter drop-shadow-md">
-      <rect x="46" y="29" width="14" height="6" rx="3" fill="#1e40af"/>
-      <ellipse cx="60" cy="32" rx="1.4" ry="3" fill="#f8fafc"/>
-      <path d="M 6 24 L 22 24 L 18 26.5 L 4 26.5 Z" fill="#2563eb"/>
-      <path d="M 14 24 L 34 6 L 22 6 L 9 24 Z" fill="#2563eb"/>
-      <path d="M 18 10.5 L 30 10.5" stroke="#ffffff" stroke-width="0.9" opacity="0.9"/>
-      <path d="M 12 24 C 16 17, 28 15, 48 15 L 85 15 C 100 15, 110 19, 114 24 L 12 24 Z" fill="#ffffff"/>
-      <path d="M 12 24 L 114 24 C 110 28.5, 100 31, 85 31 L 38 31 C 24 31, 16 27.5, 12 24 Z" fill="#2563eb"/>
+      <!-- Far Turbofan Engine (Pure White) -->
+      <rect x="46" y="29" width="14" height="6" rx="3" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="0.5"/>
+      <ellipse cx="60" cy="32" rx="1.4" ry="3" fill="#ffffff"/>
+      
+      <!-- Horizontal Stabilizer (Pure White) -->
+      <path d="M 6 24 L 22 24 L 18 26.5 L 4 26.5 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.5"/>
+      
+      <!-- Swept Vertical Stabilizer Tail Fin (Pure White) -->
+      <path d="M 14 24 L 34 6 L 22 6 L 9 24 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.5"/>
+      <path d="M 17 11 L 28 11" stroke="#e2e8f0" stroke-width="0.8"/>
+
+      <!-- Fuselage Body (Crisp Pure White) -->
+      <path d="M 12 24 C 16 16, 28 14.5, 48 14.5 L 85 14.5 C 100 14.5, 110 18.5, 114 24 C 110 29.5, 100 32.5, 85 32.5 L 38 32.5 C 24 32.5, 16 28.5, 12 24 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+
+      <!-- Subtle Aerodynamic Contour -->
+      <path d="M 16 24.5 L 110 24.5" stroke="#f1f5f9" stroke-width="1"/>
+
+      <!-- Nose Radome Seam -->
       <path d="M 108 20.5 C 111 22.5, 111 25.5, 108 27.5" stroke="#cbd5e1" stroke-width="0.6" fill="none"/>
+
+      <!-- Cockpit Windshield (Dark Aviator Visor with Glare) -->
       <path d="M 98 17.5 L 106 20.5 L 105 24 L 97 22 Z" fill="#0f172a"/>
       <path d="M 99 18.5 L 104 20.5" stroke="#38bdf8" stroke-width="0.75"/>
-      <rect x="89" y="17" width="5.5" height="11.5" rx="1.5" stroke="#1d4ed8" stroke-width="0.75" fill="none"/>
-      <rect x="27" y="17" width="5.5" height="11.5" rx="1.5" stroke="#1d4ed8" stroke-width="0.75" fill="none"/>
+
+      <!-- Forward & Aft Passenger Doors -->
+      <rect x="89" y="17" width="5.5" height="11.5" rx="1.5" stroke="#94a3b8" stroke-width="0.75" fill="none"/>
+      <rect x="27" y="17" width="5.5" height="11.5" rx="1.5" stroke="#94a3b8" stroke-width="0.75" fill="none"/>
+
+      <!-- Passenger Cabin Windows -->
       <rect x="38" y="19.5" width="3.2" height="5" rx="1.6" fill="#0f172a"/>
       <rect x="44.5" y="19.5" width="3.2" height="5" rx="1.6" fill="#0f172a"/>
       <rect x="51" y="19.5" width="3.2" height="5" rx="1.6" fill="#0f172a"/>
@@ -208,26 +225,38 @@ document.addEventListener('DOMContentLoaded', () => {
       <rect x="70.5" y="19.5" width="3.2" height="5" rx="1.6" fill="#0f172a"/>
       <rect x="77" y="19.5" width="3.2" height="5" rx="1.6" fill="#0f172a"/>
       <rect x="83.5" y="19.5" width="3.2" height="5" rx="1.6" fill="#0f172a"/>
-      <path d="M 48 25 L 70 25 L 46 38 L 35 38 Z" fill="#1d4ed8"/>
-      <path d="M 50 25 L 70 25 L 56 32 L 42 32 Z" fill="#3b82f6"/>
-      <rect x="56" y="29.5" width="2.5" height="3.5" fill="#64748b"/>
-      <rect x="50" y="31.5" width="18" height="8.5" rx="4.25" fill="#2563eb"/>
-      <ellipse cx="68" cy="35.75" rx="1.8" ry="4.25" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5"/>
+
+      <!-- Swept Low Wing (Pure White) -->
+      <path d="M 48 25 L 70 25 L 46 38 L 35 38 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+      <path d="M 50 25 L 70 25 L 56 32 L 42 32 Z" fill="#f8fafc"/>
+
+      <!-- Near Jet Turbofan Engine (Pure White) -->
+      <rect x="56" y="29.5" width="2.5" height="3.5" fill="#94a3b8"/>
+      <rect x="50" y="31.5" width="18" height="8.5" rx="4.25" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+      <ellipse cx="68" cy="35.75" rx="1.8" ry="4.25" fill="#ffffff" stroke="#94a3b8" stroke-width="0.6"/>
       <ellipse cx="68" cy="35.75" rx="1" ry="2.5" fill="#0f172a"/>
       <circle cx="68" cy="35.75" r="0.45" fill="#cbd5e1"/>
     </svg>`,
 
-    // Model 2: Executive Corporate Business Jet (Image 1)
+    // Model 1: Pure White Executive Jet
     `<svg width="112" height="42" viewBox="0 0 114 44" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-clean filter drop-shadow-md">
-      <rect x="24" y="15" width="16" height="7" rx="3.5" fill="#0369a1"/>
-      <ellipse cx="40" cy="18.5" rx="1.4" ry="3.5" fill="#f8fafc"/>
+      <!-- Rear Mounted Twin Turbofans (Pure White) -->
+      <rect x="24" y="15" width="16" height="7" rx="3.5" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+      <ellipse cx="40" cy="18.5" rx="1.4" ry="3.5" fill="#f8fafc" stroke="#94a3b8" stroke-width="0.5"/>
       <ellipse cx="40" cy="18.5" rx="0.8" ry="2" fill="#0f172a"/>
-      <path d="M 12 24 L 32 8 L 22 8 L 8 24 Z" fill="#0284c7"/>
-      <path d="M 6 24 L 18 24 L 15 26 L 4 26 Z" fill="#0369a1"/>
-      <path d="M 10 24 C 14 18, 25 16, 48 16 L 82 16 C 96 16, 106 20, 110 24 L 10 24 Z" fill="#ffffff"/>
-      <path d="M 10 24 L 110 24 C 106 28, 96 30, 82 30 L 36 30 C 22 30, 14 27, 10 24 Z" fill="#0284c7"/>
-      <path d="M 94 18 C 98 18, 104 21, 104 23.5 L 92 23.5 L 92 20 Z" fill="#0f172a"/>
-      <path d="M 94 19 C 97 19, 101 21, 102 22.5" stroke="#38bdf8" stroke-width="0.75"/>
+      
+      <!-- Swept Vertical Tail Fin (Pure White) -->
+      <path d="M 12 24 L 32 8 L 22 8 L 8 24 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+      <path d="M 6 24 L 18 24 L 15 26 L 4 26 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.5"/>
+
+      <!-- Fuselage Body (Pure White) -->
+      <path d="M 10 24 C 14 17.5, 25 15.5, 48 15.5 L 82 15.5 C 96 15.5, 106 19.5, 110 24 C 106 28.5, 96 31.5, 82 31.5 L 36 31.5 C 22 31.5, 14 28, 10 24 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+
+      <!-- Sleek Curved Cockpit Visor -->
+      <path d="M 94 17.5 C 98 17.5, 104 20.5, 104 23 L 92 23 L 92 19.5 Z" fill="#0f172a"/>
+      <path d="M 94 18.5 C 97 18.5, 101 20.5, 102 22" stroke="#38bdf8" stroke-width="0.75"/>
+
+      <!-- Executive Dark Porthole Windows -->
       <circle cx="44" cy="21.5" r="2.2" fill="#0f172a"/>
       <circle cx="51" cy="21.5" r="2.2" fill="#0f172a"/>
       <circle cx="58" cy="21.5" r="2.2" fill="#0f172a"/>
@@ -235,37 +264,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <circle cx="72" cy="21.5" r="2.2" fill="#0f172a"/>
       <circle cx="79" cy="21.5" r="2.2" fill="#0f172a"/>
       <circle cx="86" cy="21.5" r="2.2" fill="#0f172a"/>
-      <path d="M 52 24 L 68 24 L 46 37 L 38 37 Z" fill="#0284c7"/>
-      <path d="M 38 37 L 36 33 L 40 37 Z" fill="#38bdf8"/>
-    </svg>`,
 
-    // Model 3: Modern Regional Twin-Jet Cruiser (Image 2)
-    `<svg width="114" height="44" viewBox="0 0 118 46" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-clean filter drop-shadow-md">
-      <rect x="45" y="28" width="13" height="5.5" rx="2.75" fill="#1e3a8a"/>
-      <ellipse cx="58" cy="30.75" rx="1.3" ry="2.75" fill="#f8fafc"/>
-      <path d="M 6 23 L 20 23 L 17 25.5 L 4 25.5 Z" fill="#0284c7"/>
-      <path d="M 12 23 L 30 7 L 20 7 L 8 23 Z" fill="#0ea5e9"/>
-      <path d="M 16 11 L 26 11" stroke="#ffffff" stroke-width="0.8" opacity="0.9"/>
-      <path d="M 10 23 C 14 17, 26 15, 46 15 L 82 15 C 96 15, 106 19, 110 23 L 10 23 Z" fill="#ffffff"/>
-      <path d="M 10 23 L 110 23 C 107 27, 98 29.5, 84 29.5 L 36 29.5 C 22 29.5, 14 26.5, 10 23 Z" fill="#0284c7"/>
-      <rect x="18" y="22" width="88" height="2" fill="#38bdf8"/>
-      <path d="M 94 17 L 102 19.5 L 101 23 L 93 21 Z" fill="#0f172a"/>
-      <path d="M 95 18 L 100 19.5" stroke="#bae6fd" stroke-width="0.7"/>
-      <rect x="36" y="18.5" width="3" height="4.5" rx="1.5" fill="#0f172a"/>
-      <rect x="42" y="18.5" width="3" height="4.5" rx="1.5" fill="#0f172a"/>
-      <rect x="48" y="18.5" width="3" height="4.5" rx="1.5" fill="#0f172a"/>
-      <rect x="54" y="18.5" width="3" height="4.5" rx="1.5" fill="#0f172a"/>
-      <rect x="60" y="18.5" width="3" height="4.5" rx="1.5" fill="#0f172a"/>
-      <rect x="66" y="18.5" width="3" height="4.5" rx="1.5" fill="#0f172a"/>
-      <rect x="72" y="18.5" width="3" height="4.5" rx="1.5" fill="#0f172a"/>
-      <rect x="78" y="18.5" width="3" height="4.5" rx="1.5" fill="#0f172a"/>
-      <rect x="84" y="18.5" width="3" height="4.5" rx="1.5" fill="#0f172a"/>
-      <path d="M 46 24 L 66 24 L 44 36 L 34 36 Z" fill="#0284c7"/>
-      <path d="M 34 36 L 32 32 L 35 36 Z" fill="#38bdf8"/>
-      <rect x="54" y="28.5" width="2" height="3" fill="#64748b"/>
-      <rect x="48" y="30.5" width="16" height="7.5" rx="3.75" fill="#0284c7"/>
-      <ellipse cx="64" cy="34.25" rx="1.6" ry="3.75" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5"/>
-      <ellipse cx="64" cy="34.25" rx="0.9" ry="2.2" fill="#0f172a"/>
+      <!-- Swept Delta Wing (Pure White) -->
+      <path d="M 52 24 L 68 24 L 46 37 L 38 37 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.6"/>
+      <path d="M 38 37 L 36 33 L 40 37 Z" fill="#e2e8f0"/>
     </svg>`
   ];
 
@@ -278,30 +280,32 @@ document.addEventListener('DOMContentLoaded', () => {
   function randomizePlane(planeEl, laneType) {
     if (!planeEl) return;
 
-    // Pick a new random model different from the previous one
+    // Smoothly alternate between pure white passenger airliner and pure white jet
     let newIndex;
     const lastIndex = laneType === 'upper' ? lastModel1 : lastModel2;
-    do {
-      newIndex = Math.floor(Math.random() * AIRPLANE_MODELS.length);
-    } while (AIRPLANE_MODELS.length > 1 && newIndex === lastIndex);
+    if (lastIndex === -1) {
+      newIndex = laneType === 'upper' ? 0 : 1;
+    } else {
+      newIndex = (lastIndex + 1) % AIRPLANE_MODELS.length;
+    }
 
     if (laneType === 'upper') {
       lastModel1 = newIndex;
-      // Randomize altitude within safe upper empty corridor (11% to 17%)
-      const randomTop = (11 + Math.random() * 5.5).toFixed(1);
+      // Randomize altitude within safe upper empty corridor (12% to 15%)
+      const randomTop = (12 + Math.random() * 3).toFixed(1);
       planeEl.style.top = `${randomTop}%`;
     } else {
       lastModel2 = newIndex;
-      // Randomize altitude within safe lower empty corridor (81% to 86%)
-      const randomTop = (81 + Math.random() * 4.5).toFixed(1);
+      // Randomize altitude within safe lower empty corridor (82% to 85%)
+      const randomTop = (82 + Math.random() * 3).toFixed(1);
       planeEl.style.top = `${randomTop}%`;
     }
 
     // Apply the newly chosen model
     planeEl.innerHTML = AIRPLANE_MODELS[newIndex];
 
-    // Slightly randomize duration (44s to 52s) for organic flight rhythm
-    const randomDuration = (44 + Math.random() * 8).toFixed(1);
+    // Calm, steady flight cruise pacing (46s to 52s)
+    const randomDuration = (46 + Math.random() * 6).toFixed(1);
     planeEl.style.animationDuration = `${randomDuration}s`;
   }
 

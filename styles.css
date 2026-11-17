@@ -45,7 +45,7 @@ body {
     #0284c7 57%,         /* Upper sky transition */
     #38bdf8 65%,         /* Rich Sky Blue (3D moving clouds & clean airplanes) */
     #7dd3fc 73%,         /* Daytime Sky Blue */
-    #bae6fd 81%,         /* Soft Sky Blue with Blimp */
+    #bae6fd 81%,         /* Soft Sky Blue */
     #e0f2fe 89%,         /* Atmospheric sky mist fading into white */
     #ffffff 95%,         /* Pure crisp clean white starts */
     #ffffff 100%         /* 100% Pure White for Earth Section */
@@ -69,9 +69,9 @@ body {
   will-change: transform;
 }
 
-/* Satellite 1: Solar Station ISS (Upper Empty Corridor - 14% altitude) */
+/* Satellite 1: Solar Station ISS (Upper Empty Corridor - 13% altitude) */
 .sat-stream-1 {
-  top: 14%;
+  top: 13%;
   animation: moveSatSlow_1 54s linear infinite;
   animation-delay: 0s;
 }
@@ -94,12 +94,12 @@ body {
   }
 }
 
-/* Satellite 2: Deep Space Telescope (Upper-Mid Empty Corridor - 26% altitude)
-   Always 180° on the opposite side of the orbit; separated by ~160px vertically; zero text obstruction */
+/* Satellite 2: Deep Space Telescope (Mid-Upper Empty Corridor - 23% altitude)
+   Equidistant 120° orbit phase (-18s); dedicated altitude lane; zero text collision */
 .sat-stream-2 {
-  top: 26%;
+  top: 23%;
   animation: moveSatSlow_2 54s linear infinite;
-  animation-delay: -27s;
+  animation-delay: -18s;
 }
 
 @keyframes moveSatSlow_2 {
@@ -117,6 +117,32 @@ body {
   }
   100% {
     transform: translate3d(calc(100vw + 130px), 0px, 0) rotate(0deg);
+  }
+}
+
+/* Satellite 3: Autonomous AI Communications Satellite (Lower-Upper Empty Corridor - 33% altitude)
+   Equidistant 240° orbit phase (-36s); dedicated altitude lane; zero text collision */
+.sat-stream-3 {
+  top: 33%;
+  animation: moveSatSlow_3 54s linear infinite;
+  animation-delay: -36s;
+}
+
+@keyframes moveSatSlow_3 {
+  0% {
+    transform: translate3d(-135px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(calc(25vw - 20px), -6px, 0) rotate(-0.8deg);
+  }
+  50% {
+    transform: translate3d(calc(50vw), 6px, 0) rotate(0.8deg);
+  }
+  75% {
+    transform: translate3d(calc(75vw + 20px), -5px, 0) rotate(-0.5deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 135px), 0px, 0) rotate(0deg);
   }
 }
 
@@ -263,65 +289,6 @@ body {
 /* Clean Airplane Minimalist Shadow */
 .plane-clean {
   filter: drop-shadow(0 4px 10px rgba(15, 23, 42, 0.12));
-}
-
-/* ==========================================================================
-   3. BLIMP ANIMATION (Upper & Lower Mist Lanes)
-   Continuous non-stop cruise with gentle vertical buoyant bobbing
-   ========================================================================== */
-.blimp-item {
-  pointer-events: none;
-  position: absolute;
-  left: 0;
-  will-change: transform;
-}
-
-.blimp-stream-1 {
-  top: 15%;
-  animation: flyBlimpContinuous_1 34s linear infinite, bobBlimp 6s ease-in-out infinite alternate;
-  animation-delay: 0s;
-}
-
-.blimp-stream-2 {
-  top: 78%;
-  animation: flyBlimpContinuous_2 40s linear infinite, bobBlimp 7s ease-in-out infinite alternate;
-  animation-delay: -20s;
-}
-
-@keyframes flyBlimpContinuous_1 {
-  0% {
-    transform: translate3d(-160px, 0, 0);
-  }
-  30% {
-    transform: translate3d(calc(30vw - 30px), -8px, 0);
-  }
-  70% {
-    transform: translate3d(calc(70vw + 30px), 8px, 0);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 160px), 0, 0);
-  }
-}
-
-@keyframes flyBlimpContinuous_2 {
-  0% {
-    transform: translate3d(-140px, 0, 0);
-  }
-  50% {
-    transform: translate3d(calc(50vw), -10px, 0);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 140px), 0, 0);
-  }
-}
-
-@keyframes bobBlimp {
-  0% {
-    margin-top: 0px;
-  }
-  100% {
-    margin-top: -8px;
-  }
 }
 
 /* ==========================================================================

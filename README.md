@@ -1,27 +1,33 @@
 # Himanshu Jangid — Potfolie
 
-A minimalist, 3-page atmospheric portfolio journey engineered for **Himanshu Jangid** — B.Tech Computer Science & Artificial Intelligence (CS AI) undergraduate at **Swami Keshvanand Institute of Technology (SKIT), Jaipur**, aspiring Software Engineer building AI.
+A minimalist, 4-page continuous atmospheric portfolio journey for **Himanshu Jangid** — B.Tech Computer Science & Artificial Intelligence (CS AI) undergraduate at **SKIT College, Jaipur**, aspiring Software Engineer building AI.
 
 ---
 
-## 🌌 The Atmospheric Journey Concept
+## 🌌 The 4-Page Atmospheric Descent
 
-1. **Page 01: Deep Space Orbit**
-   - **Background**: Pure dark black space with twinkling starfield canvas.
-   - **Animations**: 4 detailed satellites drifting very slowly across orbit with blinking beacon LEDs.
-   - **Text**: Pure crisp white typography.
-   - **Content**: Himanshu Jangid — Aspiring AI Software Engineer.
+1. **Page 01: Orbit (Dark Blue to Black Space)**
+   - **Background**: Top dark blue fading into pure pitch black space with twinkling stars.
+   - **Live Animation**: 4 Satellites moving from **Right to Left slowly** with pulsing beacon LEDs.
+   - **Typography**: Pure white text.
+   - **Content**: Himanshu Jangid — Aspiring Software Engineer building AI.
 
-2. **Page 02: Stratosphere & Sky Blue**
-   - **Background**: Smooth gradient fade from deep space navy into vibrant, sunlit sky blue.
-   - **Animations**: 3 airplanes cruising with vapor contrails, with a classic streamlined airship (blimp) floating gently below them.
-   - **Text**: High-contrast dark navy text engineered for perfect readability on sky blue.
-   - **Content**: B.Tech in CS AI @ SKIT College, Jaipur.
+2. **Page 02: Stratosphere (Deep Blue Transition)**
+   - **Background**: Deep space navy fading into rich royal blue.
+   - **Typography**: Crisp white / ice blue text.
+   - **Content**: SKIT College, Jaipur • B.Tech in CS AI.
 
-3. **Page 03: Earth Surface (Pure White)**
-   - **Background**: Smooth fade into clean, minimalist white.
-   - **Text**: Deep black typography.
-   - **Content**: Vision to build next-generation Artificial Intelligence systems + direct minimalist contact channels.
+3. **Page 03: Flight Altitude (Vibrant Sky Blue)**
+   - **Background**: Sunlit daytime sky blue.
+   - **Live Animation**: 3 Aeroplanes cruising from **Right to Left slowly** with vapor contrails.
+   - **Typography**: High-contrast dark navy text.
+   - **Content**: Software & AI Development Focus (Machine Learning, Neural Architectures).
+
+4. **Page 04: Surface (Sky Blue Fading to Pure White)**
+   - **Background**: Atmospheric sky mist fading into pure clean white.
+   - **Live Animation**: Classic streamlined airship (Blimp) cruising from **Right to Left slowly**.
+   - **Typography**: Pure deep black text.
+   - **Content**: Career Objective & Minimalist Connect Channels (Email, GitHub, Location).
 
 ---
 
@@ -29,8 +35,8 @@ A minimalist, 3-page atmospheric portfolio journey engineered for **Himanshu Jan
 
 ```
 potfolie/
-├── index.html       # Clean semantic 3-page structure with SVG satellites, planes & blimp
-├── styles.css       # Continuous vertical atmospheric gradient & vehicle flight keyframes
-├── script.js        # Twinkling starfield engine & dynamic altitude theme scroll spy
-└── README.md        # Overview documentation
+├── index.html       # 4-page atmospheric structure with custom SVG satellites, planes & blimp
+├── styles.css       # Gradient sequence & smooth right-to-left flight animations
+├── script.js        # Starfield canvas & 4-tier dynamic altitude theme scroll spy
+└── README.md        # Documentation
 ```

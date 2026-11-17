@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Himanshu Jangid | B.Tech CS AI — SKIT College</title>
-  <meta name="description" content="Minimalist 3-page atmospheric portfolio of Himanshu Jangid — B.Tech in CS AI at SKIT College, aspiring Software Engineer building AI." />
+  <meta name="description" content="4-page atmospheric portfolio of Himanshu Jangid — B.Tech CS AI at SKIT College, aspiring Software Engineer building AI." />
 
   <!-- Google Fonts: Inter & Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,8 +23,8 @@
 <body class="selection:bg-blue-500 selection:text-white">
 
   <!-- =========================================================================
-       DYNAMIC ALTITUDE NAVBAR & PROGRESS TRACKER
-       Adapts color dynamically as you travel from Space -> Sky -> Earth
+       DYNAMIC 4-PAGE ALTITUDE NAVBAR
+       Adapts color dynamically: Space (White) -> Sky (Dark) -> Earth (Black)
        ========================================================================= -->
   <header id="main-nav" class="fixed top-0 inset-x-0 z-50 transition-colors duration-500 px-6 py-4 flex items-center justify-between pointer-events-none">
     
@@ -38,16 +38,19 @@
       </span>
     </a>
 
-    <!-- 3-Page Altitude Indicator Pills -->
-    <nav class="pointer-events-auto flex items-center gap-1.5 p-1 rounded-full backdrop-blur-md transition-colors duration-500" id="nav-pill-box">
+    <!-- 4-Page Altitude Indicator Pills -->
+    <nav class="pointer-events-auto flex items-center gap-1 p-1 rounded-full backdrop-blur-md transition-colors duration-500" id="nav-pill-box">
       <a href="#space" class="alt-link px-3 py-1 rounded-full text-xs font-medium transition-all" data-target="space">
         01 Space
       </a>
+      <a href="#skit" class="alt-link px-3 py-1 rounded-full text-xs font-medium transition-all" data-target="skit">
+        02 SKIT
+      </a>
       <a href="#sky" class="alt-link px-3 py-1 rounded-full text-xs font-medium transition-all" data-target="sky">
-        02 Sky
+        03 Sky
       </a>
       <a href="#earth" class="alt-link px-3 py-1 rounded-full text-xs font-medium transition-all" data-target="earth">
-        03 Earth
+        04 Earth
       </a>
     </nav>
 
@@ -60,201 +63,187 @@
   </header>
 
   <!-- =========================================================================
-       ATMOSPHERIC CONTINUOUS CANVAS & VEHICLES CONTAINER
-       Fixed backdrop providing the continuous descent and moving animations
+       THE 4-PAGE ATMOSPHERIC CONTINUOUS GRADIENT BACKGROUND WRAPPER
+       Color Sequence:
+       Dark Blue (Top) -> Pitch Black Space -> Dark Blue -> Sky Blue -> Fade to White
        ========================================================================= -->
-  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    <!-- Starfield Canvas (Active in Space Tier) -->
-    <canvas id="stars-canvas" class="absolute inset-0 w-full h-full"></canvas>
+  <div id="atmosphere-gradient-track" class="relative z-10 w-full overflow-hidden">
 
-    <!-- SPACE VEHICLES (3-4 Space Satellites Moving Very Slowly) -->
-    <div id="satellites-layer" class="absolute inset-0 w-full h-full">
+    <!-- Starfield Canvas (Top Dark Blue to Black Space) -->
+    <canvas id="stars-canvas" class="absolute top-0 left-0 w-full pointer-events-none z-0" style="height: 120vh;"></canvas>
+
+    <!-- =======================================================================
+         LIVE VEHICLES LAYERS (ALL MOVING RIGHT TO LEFT SLOWLY)
+         ======================================================================= -->
+
+    <!-- SATELLITES LAYER: Positioned in the BLACK space region (Moving Right to Left) -->
+    <div class="satellites-container absolute inset-x-0 top-0 pointer-events-none z-10" style="height: 100vh;">
       
-      <!-- Satellite 1: ISS Solar Array Satellite (Drifts very slowly from top-right to mid-left) -->
-      <div class="satellite sat-1 absolute">
-        <svg width="140" height="70" viewBox="0 0 140 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Solar Panels Left -->
-          <rect x="5" y="10" width="36" height="50" rx="3" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1.2"/>
-          <line x1="5" y1="26" x2="41" y2="26" stroke="#93c5fd" stroke-width="0.8"/>
-          <line x1="5" y1="42" x2="41" y2="42" stroke="#93c5fd" stroke-width="0.8"/>
-          <line x1="17" y1="10" x2="17" y2="60" stroke="#93c5fd" stroke-width="0.8"/>
-          <line x1="29" y1="10" x2="29" y2="60" stroke="#93c5fd" stroke-width="0.8"/>
+      <!-- Satellite 1: ISS Style Solar Station (Moving Right to Left) -->
+      <div class="sat-item sat-r2l-1 absolute">
+        <svg width="130" height="65" viewBox="0 0 130 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Solar Panels Right & Left -->
+          <rect x="5" y="8" width="34" height="48" rx="2" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1.2"/>
+          <line x1="5" y1="24" x2="39" y2="24" stroke="#93c5fd" stroke-width="0.8"/>
+          <line x1="5" y1="40" x2="39" y2="40" stroke="#93c5fd" stroke-width="0.8"/>
+          <line x1="16" y1="8" x2="16" y2="56" stroke="#93c5fd" stroke-width="0.8"/>
+          <line x1="28" y1="8" x2="28" y2="56" stroke="#93c5fd" stroke-width="0.8"/>
           
-          <!-- Cross Connector -->
-          <rect x="41" y="32" width="16" height="6" fill="#cbd5e1"/>
+          <rect x="39" y="29" width="14" height="6" fill="#cbd5e1"/>
           
-          <!-- Central Body / Habitat Core -->
-          <rect x="57" y="24" width="26" height="22" rx="4" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.2"/>
-          <circle cx="70" cy="35" r="4" fill="#0284c7"/>
+          <!-- Central Body -->
+          <rect x="53" y="22" width="24" height="20" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1"/>
+          <circle cx="65" cy="32" r="3.5" fill="#0284c7"/>
           
-          <!-- Dish Antenna -->
-          <path d="M70 24 L70 14 M63 14 Q70 8 77 14 Z" stroke="#cbd5e1" stroke-width="1.2" fill="none"/>
+          <!-- Antenna Dish -->
+          <path d="M65 22 L65 12 M58 12 Q65 6 72 12 Z" stroke="#e2e8f0" stroke-width="1.2" fill="none"/>
+          <circle cx="65" cy="9" r="2" fill="#ef4444" class="sat-beacon"/>
           
-          <!-- Blinking Beacon LED -->
-          <circle cx="70" cy="11" r="2" fill="#ef4444" class="sat-beacon"/>
+          <rect x="77" y="29" width="14" height="6" fill="#cbd5e1"/>
           
-          <!-- Cross Connector Right -->
-          <rect x="83" y="32" width="16" height="6" fill="#cbd5e1"/>
-          
-          <!-- Solar Panels Right -->
-          <rect x="99" y="10" width="36" height="50" rx="3" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1.2"/>
-          <line x1="99" y1="26" x2="135" y2="26" stroke="#93c5fd" stroke-width="0.8"/>
-          <line x1="99" y1="42" x2="135" y2="42" stroke="#93c5fd" stroke-width="0.8"/>
-          <line x1="111" y1="10" x2="111" y2="60" stroke="#93c5fd" stroke-width="0.8"/>
-          <line x1="123" y1="10" x2="123" y2="60" stroke="#93c5fd" stroke-width="0.8"/>
+          <rect x="91" y="8" width="34" height="48" rx="2" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1.2"/>
+          <line x1="91" y1="24" x2="125" y2="24" stroke="#93c5fd" stroke-width="0.8"/>
+          <line x1="91" y1="40" x2="125" y2="40" stroke="#93c5fd" stroke-width="0.8"/>
+          <line x1="102" y1="8" x2="102" y2="56" stroke="#93c5fd" stroke-width="0.8"/>
+          <line x1="114" y1="8" x2="114" y2="56" stroke="#93c5fd" stroke-width="0.8"/>
         </svg>
       </div>
 
-      <!-- Satellite 2: Gold Foil Telecommunication Satellite with Parabolic Dish -->
-      <div class="satellite sat-2 absolute">
-        <svg width="100" height="55" viewBox="0 0 100 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Solar Wings -->
-          <rect x="4" y="18" width="26" height="18" rx="2" fill="#0369a1" stroke="#38bdf8" stroke-width="1"/>
-          <line x1="17" y1="18" x2="17" y2="36" stroke="#7dd3fc" stroke-width="0.8"/>
-          <rect x="30" y="25" width="8" height="4" fill="#94a3b8"/>
+      <!-- Satellite 2: Telecommunications Satellite (Moving Right to Left) -->
+      <div class="sat-item sat-r2l-2 absolute">
+        <svg width="95" height="50" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="16" width="24" height="16" rx="2" fill="#0369a1" stroke="#38bdf8" stroke-width="1"/>
+          <line x1="16" y1="16" x2="16" y2="32" stroke="#7dd3fc" stroke-width="0.8"/>
+          <rect x="28" y="22" width="8" height="4" fill="#94a3b8"/>
           
-          <!-- Satellite Golden Body -->
-          <rect x="38" y="16" width="22" height="22" rx="3" fill="#fbbf24" stroke="#d97706" stroke-width="1"/>
+          <rect x="36" y="14" width="20" height="20" rx="3" fill="#fbbf24" stroke="#d97706" stroke-width="1"/>
+          <path d="M46 14 L46 5 M38 5 Q46 0 54 5 Z" stroke="#e2e8f0" stroke-width="1.2" fill="none"/>
+          <circle cx="46" cy="3" r="1.5" fill="#34d399" class="sat-beacon"/>
           
-          <!-- Dish -->
-          <path d="M49 16 L49 6 M40 6 Q49 0 58 6 Z" stroke="#e2e8f0" stroke-width="1.2" fill="none"/>
-          <circle cx="49" cy="4" r="1.5" fill="#34d399" class="sat-beacon"/>
-          
-          <!-- Solar Wings Right -->
-          <rect x="60" y="25" width="8" height="4" fill="#94a3b8"/>
-          <rect x="68" y="18" width="26" height="18" rx="2" fill="#0369a1" stroke="#38bdf8" stroke-width="1"/>
-          <line x1="81" y1="18" x2="81" y2="36" stroke="#7dd3fc" stroke-width="0.8"/>
+          <rect x="56" y="22" width="8" height="4" fill="#94a3b8"/>
+          <rect x="64" y="16" width="24" height="16" rx="2" fill="#0369a1" stroke="#38bdf8" stroke-width="1"/>
+          <line x1="76" y1="16" x2="76" y2="32" stroke="#7dd3fc" stroke-width="0.8"/>
         </svg>
       </div>
 
-      <!-- Satellite 3: Modern CubeSat with Dual Whip Antennas -->
-      <div class="satellite sat-3 absolute">
-        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Cube Body -->
-          <rect x="18" y="18" width="24" height="24" rx="3" fill="#334155" stroke="#94a3b8" stroke-width="1.2"/>
-          <!-- Solar Face -->
-          <rect x="22" y="22" width="16" height="16" fill="#1d4ed8"/>
-          <line x1="30" y1="22" x2="30" y2="38" stroke="#60a5fa" stroke-width="0.8"/>
-          <line x1="22" y1="30" x2="38" y2="30" stroke="#60a5fa" stroke-width="0.8"/>
-          <!-- Antennas -->
-          <line x1="18" y1="18" x2="6" y2="6" stroke="#e2e8f0" stroke-width="1.2"/>
-          <line x1="42" y1="42" x2="54" y2="54" stroke="#e2e8f0" stroke-width="1.2"/>
-          <circle cx="6" cy="6" r="1.5" fill="#f43f5e" class="sat-beacon"/>
+      <!-- Satellite 3: CubeSat (Moving Right to Left) -->
+      <div class="sat-item sat-r2l-3 absolute">
+        <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="16" y="16" width="22" height="22" rx="3" fill="#1e293b" stroke="#94a3b8" stroke-width="1.2"/>
+          <rect x="20" y="20" width="14" height="14" fill="#1d4ed8"/>
+          <line x1="16" y1="16" x2="5" y2="5" stroke="#e2e8f0" stroke-width="1"/>
+          <line x1="38" y1="38" x2="49" y2="49" stroke="#e2e8f0" stroke-width="1"/>
+          <circle cx="5" cy="5" r="1.5" fill="#f43f5e" class="sat-beacon"/>
         </svg>
       </div>
 
-      <!-- Satellite 4: Deep Orbit Space Observatory Probe -->
-      <div class="satellite sat-4 absolute">
-        <svg width="80" height="45" viewBox="0 0 80 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Solar Panel Wing -->
-          <rect x="6" y="14" width="22" height="16" rx="2" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
-          <rect x="28" y="20" width="6" height="4" fill="#94a3b8"/>
-          <!-- Body -->
-          <polygon points="34,16 52,12 56,30 38,32" fill="#e2e8f0" stroke="#64748b" stroke-width="1"/>
-          <!-- Aperture Lens -->
-          <circle cx="48" cy="22" r="4" fill="#0284c7" stroke="#38bdf8" stroke-width="0.8"/>
-          <!-- Solar Panel Wing Right -->
-          <rect x="56" y="20" width="6" height="4" fill="#94a3b8"/>
-          <rect x="62" y="14" width="14" height="16" rx="2" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+      <!-- Satellite 4: Deep Orbit Space Probe (Moving Right to Left) -->
+      <div class="sat-item sat-r2l-4 absolute">
+        <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="12" width="20" height="14" rx="2" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+          <polygon points="30,14 48,10 52,26 34,28" fill="#e2e8f0" stroke="#64748b" stroke-width="1"/>
+          <circle cx="44" cy="19" r="3.5" fill="#0284c7"/>
+          <rect x="52" y="18" width="6" height="4" fill="#94a3b8"/>
+          <rect x="58" y="12" width="14" height="14" rx="2" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
         </svg>
       </div>
 
     </div>
 
-    <!-- SKY VEHICLES (2-3 Airplanes and 1 Majestic Blimp Below Them) -->
-    <div id="sky-vehicles-layer" class="absolute inset-0 w-full h-full">
+    <!-- AEROPLANES LAYER: Positioned in the SKY BLUE region (Moving Right to Left) -->
+    <!-- Airplanes face LEFT, with vapor trail on the RIGHT -->
+    <div class="planes-container absolute inset-x-0 pointer-events-none z-10" style="top: 200vh; height: 100vh;">
       
-      <!-- Airplane 1: Commercial Twin-Jet Airliner with Vapor Jet Trail -->
-      <div class="sky-plane plane-1 absolute">
-        <div class="flex items-center">
-          <!-- Jet Contrail (Smoke Trail) -->
+      <!-- Aeroplane 1: Modern Passenger Jet (Facing Left, Moving Right to Left) -->
+      <div class="plane-item plane-r2l-1 absolute">
+        <div class="flex items-center flex-row-reverse">
+          <!-- Jet Contrail to the right -->
           <div class="jet-contrail"></div>
-          <!-- Jet SVG -->
-          <svg width="95" height="40" viewBox="0 0 95 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Fuselage -->
-            <path d="M12 20 C18 17, 70 17, 85 19 C92 20, 95 21, 95 21 C95 21, 92 22, 85 23 C70 25, 18 25, 12 22 Z" fill="#ffffff" stroke="#94a3b8" stroke-width="0.8"/>
+          <!-- Jet Body Facing Left -->
+          <svg width="100" height="42" viewBox="0 0 100 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Fuselage Pointing Left -->
+            <path d="M10 21 C10 21, 14 19, 22 18 C35 17, 85 17, 92 19 C95 20, 95 22, 92 23 C85 25, 35 25, 22 24 C14 23, 10 21, 10 21 Z" fill="#ffffff" stroke="#94a3b8" stroke-width="0.8"/>
             <!-- Main Wings -->
-            <path d="M42 21 L30 5 L44 5 L60 21 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="0.8"/>
-            <path d="M42 21 L30 37 L44 37 L60 21 Z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="0.8"/>
-            <!-- Tail Wing -->
-            <path d="M14 21 L6 8 L18 8 L24 21 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+            <path d="M52 21 L68 5 L54 5 L36 21 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="0.8"/>
+            <path d="M52 21 L68 37 L54 37 L36 21 Z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="0.8"/>
+            <!-- Tail Fin -->
+            <path d="M82 21 L90 8 L78 8 L72 21 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
             <!-- Cockpit Windows -->
-            <path d="M88 19.5 L91 20.2 L88 20.8 Z" fill="#0284c7"/>
-            <!-- Windows dots -->
-            <circle cx="45" cy="20.5" r="0.9" fill="#0284c7"/>
-            <circle cx="50" cy="20.5" r="0.9" fill="#0284c7"/>
-            <circle cx="55" cy="20.5" r="0.9" fill="#0284c7"/>
+            <path d="M14 20 L18 19.2 L18 20.8 Z" fill="#0284c7"/>
+            <!-- Cabin Windows -->
+            <circle cx="30" cy="20.5" r="0.9" fill="#0284c7"/>
+            <circle cx="36" cy="20.5" r="0.9" fill="#0284c7"/>
+            <circle cx="42" cy="20.5" r="0.9" fill="#0284c7"/>
+            <circle cx="48" cy="20.5" r="0.9" fill="#0284c7"/>
+            <circle cx="54" cy="20.5" r="0.9" fill="#0284c7"/>
             <circle cx="60" cy="20.5" r="0.9" fill="#0284c7"/>
-            <circle cx="65" cy="20.5" r="0.9" fill="#0284c7"/>
-            <circle cx="70" cy="20.5" r="0.9" fill="#0284c7"/>
           </svg>
         </div>
       </div>
 
-      <!-- Airplane 2: Executive High-Altitude Jet -->
-      <div class="sky-plane plane-2 absolute">
-        <div class="flex items-center">
+      <!-- Aeroplane 2: Sleek Twin-Jet (Facing Left, Moving Right to Left) -->
+      <div class="plane-item plane-r2l-2 absolute">
+        <div class="flex items-center flex-row-reverse">
           <div class="jet-contrail contrail-light"></div>
-          <svg width="70" height="30" viewBox="0 0 70 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 15 C15 13, 50 13, 62 14.5 C68 15, 70 15.5, 70 15.5 C70 15.5, 68 16, 62 16.5 C50 18, 15 18, 8 16 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8"/>
-            <!-- Swept Wings -->
-            <path d="M30 15 L20 4 L30 4 L45 15 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
-            <path d="M30 15 L20 26 L30 26 L45 15 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="0.8"/>
-            <!-- Tail -->
-            <path d="M10 15 L3 6 L12 6 L18 15 Z" fill="#38bdf8"/>
+          <svg width="75" height="32" viewBox="0 0 75 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 16 C8 16, 12 14.5, 18 14 C28 13, 62 13, 68 14.5 C72 15, 72 17, 68 17.5 C62 19, 28 19, 18 18 C12 17.5, 8 16, 8 16 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8"/>
+            <path d="M42 16 L52 4 L42 4 L28 16 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
+            <path d="M42 16 L52 28 L42 28 L28 16 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="0.8"/>
+            <path d="M62 16 L69 6 L60 6 L54 16 Z" fill="#38bdf8"/>
           </svg>
         </div>
       </div>
 
-      <!-- Airplane 3: Distant Atmospheric Jet -->
-      <div class="sky-plane plane-3 absolute">
-        <div class="flex items-center">
+      <!-- Aeroplane 3: High-Altitude Cruise Jet (Facing Left, Moving Right to Left) -->
+      <div class="plane-item plane-r2l-3 absolute">
+        <div class="flex items-center flex-row-reverse">
           <div class="jet-contrail contrail-faint"></div>
-          <svg width="45" height="20" viewBox="0 0 45 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 10 C10 8.5, 32 8.5, 40 9.5 C44 10, 45 10, 45 10 C45 10, 44 10.5, 40 11 C32 12, 10 12, 5 10.5 Z" fill="#ffffff"/>
-            <path d="M18 10 L12 2 L18 2 L28 10 Z" fill="#ffffff"/>
-            <path d="M18 10 L12 18 L18 18 L28 10 Z" fill="#ffffff"/>
+          <svg width="50" height="22" viewBox="0 0 50 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 11 C10 10, 40 10, 46 11 C48 11.5, 48 12.5, 46 13 C40 14, 10 14, 6 13 Z" fill="#ffffff"/>
+            <path d="M28 11 L36 3 L30 3 L20 11 Z" fill="#ffffff"/>
+            <path d="M28 11 L36 19 L30 19 L20 11 Z" fill="#ffffff"/>
           </svg>
         </div>
       </div>
 
-      <!-- BLIMP: Streamlined Classic Airship Located Below the Airplanes -->
-      <div class="sky-blimp absolute">
-        <svg width="150" height="75" viewBox="0 0 150 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Main Aerostat Airship Envelope -->
-          <ellipse cx="75" cy="34" rx="65" ry="24" fill="url(#blimp-grad)" stroke="#94a3b8" stroke-width="1"/>
+    </div>
+
+    <!-- BLIMP LAYER: Positioned AT LAST in the lower sky fade to white (Moving Right to Left) -->
+    <!-- Blimp faces LEFT with cabin underneath and tail fins at the right -->
+    <div class="blimp-container absolute inset-x-0 pointer-events-none z-10" style="top: 290vh; height: 110vh;">
+      
+      <div class="blimp-item blimp-r2l absolute">
+        <svg width="160" height="80" viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Main Envelope (Airship Body Facing Left) -->
+          <ellipse cx="82" cy="36" rx="70" ry="26" fill="url(#blimp-white-grad)" stroke="#94a3b8" stroke-width="1"/>
           
-          <!-- Stripe on Blimp Envelope -->
-          <path d="M25 34 Q75 42 125 34" stroke="#0284c7" stroke-width="3.5" fill="none" opacity="0.85"/>
-          <path d="M28 37 Q75 45 122 37" stroke="#38bdf8" stroke-width="1.5" fill="none" opacity="0.6"/>
+          <!-- Colored Aerostat Stripe -->
+          <path d="M28 36 Q82 44 136 36" stroke="#0284c7" stroke-width="4" fill="none" opacity="0.85"/>
+          <path d="M32 39 Q82 47 132 39" stroke="#38bdf8" stroke-width="1.8" fill="none" opacity="0.65"/>
 
-          <!-- Tail Fins -->
-          <!-- Top Fin -->
-          <path d="M14 26 L4 14 L20 20 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
-          <!-- Bottom Fin -->
-          <path d="M14 42 L4 54 L20 48 Z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="0.8"/>
-          <!-- Horizontal Fin -->
-          <path d="M18 34 L6 34 L18 30 Z" fill="#94a3b8"/>
+          <!-- Tail Fins at the Right -->
+          <path d="M140 28 L152 14 L134 22 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+          <path d="M140 44 L152 58 L134 50 Z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="0.8"/>
+          <path d="M136 36 L150 36 L136 32 Z" fill="#94a3b8"/>
           
-          <!-- Suspended Passenger & Flight Gondola -->
-          <rect x="58" y="58" width="34" height="9" rx="3.5" fill="#1e293b" stroke="#64748b" stroke-width="0.8"/>
-          <!-- Gondola Windows -->
-          <circle cx="64" cy="62.5" r="1.3" fill="#38bdf8"/>
-          <circle cx="70" cy="62.5" r="1.3" fill="#38bdf8"/>
-          <circle cx="76" cy="62.5" r="1.3" fill="#38bdf8"/>
-          <circle cx="82" cy="62.5" r="1.3" fill="#38bdf8"/>
-          <circle cx="88" cy="62.5" r="1.3" fill="#38bdf8"/>
+          <!-- Gondola Cabin -->
+          <rect x="65" y="62" width="38" height="10" rx="4" fill="#0f172a" stroke="#64748b" stroke-width="0.8"/>
+          <!-- Cabin Windows -->
+          <circle cx="72" cy="67" r="1.4" fill="#38bdf8"/>
+          <circle cx="78" cy="67" r="1.4" fill="#38bdf8"/>
+          <circle cx="84" cy="67" r="1.4" fill="#38bdf8"/>
+          <circle cx="90" cy="67" r="1.4" fill="#38bdf8"/>
+          <circle cx="96" cy="67" r="1.4" fill="#38bdf8"/>
 
-          <!-- Support Cables -->
-          <line x1="62" y1="58" x2="65" y2="52" stroke="#64748b" stroke-width="0.7"/>
-          <line x1="88" y1="58" x2="85" y2="52" stroke="#64748b" stroke-width="0.7"/>
-          <line x1="75" y1="58" x2="75" y2="52" stroke="#64748b" stroke-width="0.7"/>
+          <!-- Cables -->
+          <line x1="68" y1="62" x2="72" y2="56" stroke="#64748b" stroke-width="0.7"/>
+          <line x1="98" y1="62" x2="94" y2="56" stroke="#64748b" stroke-width="0.7"/>
+          <line x1="83" y1="62" x2="83" y2="56" stroke="#64748b" stroke-width="0.7"/>
 
-          <!-- Gradients -->
           <defs>
-            <linearGradient id="blimp-grad" x1="10" y1="10" x2="140" y2="58" gradientUnits="userSpaceOnUse">
+            <linearGradient id="blimp-white-grad" x1="12" y1="10" x2="152" y2="62" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="45%" stop-color="#f8fafc"/>
+              <stop offset="50%" stop-color="#f8fafc"/>
               <stop offset="100%" stop-color="#cbd5e1"/>
             </linearGradient>
           </defs>
@@ -262,21 +251,13 @@
       </div>
 
     </div>
-  </div>
-
-  <!-- =========================================================================
-       THE 3-PAGE ATMOSPHERIC CONTINUOUS GRADIENT BACKGROUND WRAPPER
-       Continuous descent: Pitch Black Space -> Dark Blue -> Sky Blue -> White
-       ========================================================================= -->
-  <div id="atmosphere-gradient-track" class="relative z-10 w-full">
 
     <!-- =======================================================================
-         PAGE 1: DEEP SPACE (Dark Black Space with Twinkling Stars & Satellites)
+         PAGE 1: DEEP SPACE (Dark Blue to Black with Stars & Moving Satellites)
          Text Color: PURE WHITE
          ======================================================================= -->
-    <section id="space" class="min-h-screen w-full flex flex-col justify-between px-6 sm:px-12 py-24 text-white relative">
+    <section id="space" class="min-h-screen w-full flex flex-col justify-between px-6 sm:px-12 py-24 text-white relative z-20">
       
-      <!-- Top Subtle Tag -->
       <div class="max-w-4xl mx-auto w-full pt-8">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-mono text-slate-300">
           <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span>
@@ -284,29 +265,25 @@
         </div>
       </div>
 
-      <!-- Main Space Headline (Minimalist, Bold, White) -->
       <div class="max-w-4xl mx-auto w-full my-auto space-y-4">
-        <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-tight">
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-tight font-display">
           Himanshu Jangid
         </h1>
         
         <p class="text-xl sm:text-2xl md:text-3xl font-light text-slate-300 tracking-wide max-w-2xl">
-          Aspiring <span class="font-semibold text-white">Software Engineer</span> building the next generation of <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-indigo-300 font-bold">Artificial Intelligence</span>.
+          Aspiring <span class="font-semibold text-white">Software Engineer</span> looking forward to building <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-indigo-300 font-bold">Artificial Intelligence</span>.
         </p>
 
         <div class="pt-4 flex items-center gap-3 text-xs font-mono text-slate-400">
           <span>ALTITUDE: 400 KM</span>
           <span>•</span>
-          <span>THERMOSPHERE</span>
-          <span>•</span>
-          <span>3-4 SATELLITES IN ORBIT</span>
+          <span>SATELLITES ORBITING RIGHT TO LEFT</span>
         </div>
       </div>
 
-      <!-- Bottom Downward Indicator -->
       <div class="max-w-4xl mx-auto w-full pb-4">
-        <a href="#sky" class="inline-flex items-center gap-2 text-xs font-mono text-slate-300 hover:text-white transition-all group">
-          <span>Descend into Atmosphere</span>
+        <a href="#skit" class="inline-flex items-center gap-2 text-xs font-mono text-slate-300 hover:text-white transition-all group">
+          <span>Descend to SKIT College</span>
           <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
         </a>
       </div>
@@ -314,62 +291,114 @@
     </section>
 
     <!-- =======================================================================
-         PAGE 2: STRATOSPHERE TO SKY BLUE (Dark Blue fading to Sky Blue)
-         Features: 2-3 Airplanes and 1 Blimp Below
-         Text Color: DARK CONTRASTING TEXT (Slate 900 / Navy)
+         PAGE 2: STRATOSPHERE (Dark Blue to Sky Blue Transition)
+         Highlighting SKIT College & CS AI Degree
+         Text Color: CRISP WHITE / ICE BLUE
          ======================================================================= -->
-    <section id="sky" class="min-h-screen w-full flex flex-col justify-between px-6 sm:px-12 py-24 relative">
+    <section id="skit" class="min-h-screen w-full flex flex-col justify-between px-6 sm:px-12 py-24 text-white relative z-20">
       
-      <!-- Top Subtle Tag -->
       <div class="max-w-4xl mx-auto w-full pt-8">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/10 border border-slate-900/20 backdrop-blur-md text-xs font-mono text-slate-900 font-semibold">
-          <span class="w-2 h-2 rounded-full bg-sky-700 animate-pulse"></span>
-          <span>STRATOSPHERE // 02</span>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-xs font-mono text-blue-200 font-semibold">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span>ACADEMICS // 02</span>
         </div>
       </div>
 
-      <!-- Main Sky Content: SKIT College CS AI (Minimalist, Dark Text) -->
       <div class="max-w-4xl mx-auto w-full my-auto space-y-5">
-        
         <div class="space-y-1">
-          <div class="text-xs font-mono uppercase tracking-widest text-sky-900 font-bold">
-            Academic Pursuit
+          <div class="text-xs font-mono uppercase tracking-widest text-sky-300 font-bold">
+            Degree Pursuit
           </div>
-          <h2 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-slate-950 tracking-tight">
+          <h2 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
             SKIT College, Jaipur
           </h2>
+          <div class="text-lg sm:text-2xl font-bold text-sky-200 pt-1">
+            B.Tech — Computer Science & Artificial Intelligence (CS AI)
+          </div>
+        </div>
+
+        <p class="text-base sm:text-lg text-slate-200 max-w-2xl leading-relaxed font-light">
+          Pursuing my undergraduate engineering at Swami Keshvanand Institute of Technology (SKIT). Immersing in machine learning fundamentals, intelligent algorithms, and software engineering.
+        </p>
+
+        <div class="flex flex-wrap gap-2.5 pt-2">
+          <span class="px-3.5 py-1.5 rounded-xl bg-white/15 border border-white/25 text-white text-xs font-semibold backdrop-blur-sm shadow-sm">
+            🏛️ SKIT Jaipur
+          </span>
+          <span class="px-3.5 py-1.5 rounded-xl bg-white/15 border border-white/25 text-white text-xs font-semibold backdrop-blur-sm shadow-sm">
+            🤖 CS AI Branch
+          </span>
+          <span class="px-3.5 py-1.5 rounded-xl bg-white/15 border border-white/25 text-white text-xs font-semibold backdrop-blur-sm shadow-sm">
+            🎓 B.Tech Candidate
+          </span>
+        </div>
+
+        <div class="pt-2 flex items-center gap-3 text-xs font-mono text-sky-200">
+          <span>ALTITUDE: 50,000 M</span>
+          <span>•</span>
+          <span>UPPER STRATOSPHERE</span>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto w-full pb-4">
+        <a href="#sky" class="inline-flex items-center gap-2 text-xs font-mono text-sky-200 hover:text-white transition-all group">
+          <span>Descend into Flight Altitude</span>
+          <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- =======================================================================
+         PAGE 3: SKY BLUE ATMOSPHERE (Cruising Altitude with Aeroplanes)
+         Aeroplanes moving Right to Left
+         Text Color: HIGH-CONTRAST DARK TEXT (Slate 900 / Navy)
+         ======================================================================= -->
+    <section id="sky" class="min-h-screen w-full flex flex-col justify-between px-6 sm:px-12 py-24 relative z-20">
+      
+      <div class="max-w-4xl mx-auto w-full pt-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/10 border border-slate-900/20 backdrop-blur-md text-xs font-mono text-slate-900 font-semibold">
+          <span class="w-2 h-2 rounded-full bg-sky-700 animate-pulse"></span>
+          <span>FLIGHT ALTITUDE // 03</span>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto w-full my-auto space-y-5">
+        <div class="space-y-1">
+          <div class="text-xs font-mono uppercase tracking-widest text-sky-950 font-bold">
+            Engineering & Technology Focus
+          </div>
+          <h2 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-slate-950 tracking-tight">
+            Software & AI Development
+          </h2>
           <div class="text-lg sm:text-2xl font-bold text-sky-950 pt-1">
-            B.Tech in Computer Science & Artificial Intelligence (CS AI)
+            Building Intelligent, Scalable Systems
           </div>
         </div>
 
         <p class="text-base sm:text-lg text-slate-800 max-w-2xl leading-relaxed font-normal">
-          Currently pursuing my degree at Swami Keshvanand Institute of Technology (SKIT). Focusing on machine intelligence, deep learning foundations, algorithmic computing, and modern software engineering.
+          Focused on the convergence of software craftsmanship and machine intelligence. Developing code architectures, exploring neural models, and solving computational challenges.
         </p>
 
-        <!-- Compact Metric Badges -->
         <div class="flex flex-wrap gap-2.5 pt-2">
           <span class="px-3.5 py-1.5 rounded-xl bg-white/70 border border-slate-900/15 text-slate-900 text-xs font-semibold backdrop-blur-sm shadow-sm">
-            🎓 B.Tech Degree Candidate
+            ⚡ Artificial Intelligence
           </span>
           <span class="px-3.5 py-1.5 rounded-xl bg-white/70 border border-slate-900/15 text-slate-900 text-xs font-semibold backdrop-blur-sm shadow-sm">
-            🤖 CS AI Branch
+            🧠 Machine Learning
           </span>
           <span class="px-3.5 py-1.5 rounded-xl bg-white/70 border border-slate-900/15 text-slate-900 text-xs font-semibold backdrop-blur-sm shadow-sm">
-            🏛️ SKIT Jaipur
+            💻 Software Engineering
           </span>
         </div>
 
         <div class="pt-2 flex items-center gap-3 text-xs font-mono text-slate-700">
           <span>ALTITUDE: 10,000 M</span>
           <span>•</span>
-          <span>CRUISING ALTITUDE</span>
-          <span>•</span>
-          <span>AIRPLANES & BLIMP IN FLIGHT</span>
+          <span>AEROPLANES CRUISING RIGHT TO LEFT</span>
         </div>
       </div>
 
-      <!-- Bottom Downward Indicator -->
       <div class="max-w-4xl mx-auto w-full pb-4">
         <a href="#earth" class="inline-flex items-center gap-2 text-xs font-mono text-slate-900 font-semibold hover:text-black transition-all group">
           <span>Descend to Earth Surface</span>
@@ -380,23 +409,20 @@
     </section>
 
     <!-- =======================================================================
-         PAGE 3: EARTH / PURE WHITE FINISH
+         PAGE 4: EARTH SURFACE (Sky Fading to Pure White with Blimp)
+         Blimp moving Right to Left
          Text Color: PURE BLACK TEXT
-         Content: Software Engineer looking forward to building AI + Minimal Connect
          ======================================================================= -->
-    <section id="earth" class="min-h-screen w-full flex flex-col justify-between px-6 sm:px-12 py-24 text-black relative bg-white">
+    <section id="earth" class="min-h-screen w-full flex flex-col justify-between px-6 sm:px-12 py-24 text-black relative z-20">
       
-      <!-- Top Subtle Tag -->
       <div class="max-w-4xl mx-auto w-full pt-8">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono text-slate-900 font-semibold">
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span>SURFACE // 03</span>
+          <span>SURFACE & CONNECT // 04</span>
         </div>
       </div>
 
-      <!-- Main Earth Content: Future AI Vision & Minimalist Connect -->
       <div class="max-w-4xl mx-auto w-full my-auto space-y-6">
-        
         <div class="space-y-2">
           <div class="text-xs font-mono uppercase tracking-widest text-slate-500 font-bold">
             Career Objective
@@ -406,8 +432,8 @@
           </h2>
         </div>
 
-        <p class="text-base sm:text-xl text-slate-700 max-w-2xl leading-relaxed">
-          Looking forward to stepping into the industry as a <strong class="text-black font-bold">Software Engineer</strong> dedicated to designing, training, and deploying intelligent artificial intelligence systems.
+        <p class="text-base sm:text-xl text-slate-700 max-w-2xl leading-relaxed font-normal">
+          Looking forward to engineering real-world AI applications as a <strong class="text-black font-bold">Software Engineer</strong>. Clean design, disciplined engineering, and continuous innovation.
         </p>
 
         <!-- Minimalist Connect Buttons -->
@@ -424,10 +450,15 @@
 
           <span class="px-4 py-2.5 rounded-full bg-slate-50 text-slate-600 border border-slate-200 text-xs font-mono flex items-center gap-1.5">
             <i data-lucide="map-pin" class="w-3.5 h-3.5 text-black"></i>
-            <span>Jaipur, India</span>
+            <span>SKIT College, Jaipur</span>
           </span>
         </div>
 
+        <div class="pt-2 flex items-center gap-3 text-xs font-mono text-slate-500">
+          <span>ALTITUDE: 0 M (GROUND)</span>
+          <span>•</span>
+          <span>BLIMP CRUISING ABOVE RIGHT TO LEFT</span>
+        </div>
       </div>
 
       <!-- Minimalist Clean Footer -->

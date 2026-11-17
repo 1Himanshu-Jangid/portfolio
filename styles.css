@@ -1,8 +1,7 @@
 /* ==========================================================================
    Himanshu Jangid — Potfolie
-   4-Page Atmospheric Journey:
-   Dark Blue (Top) -> Pitch Black Space -> Dark Blue -> Sky Blue -> Pure White
-   New Satellites, New Airplanes with Billowing Smoke & 3D Cloud Depth
+   Expansive 4-Page Atmospheric Journey (~540vh Total Length)
+   Random Orbital Satellites, Ascending/Descending Airplanes, 3D Clouds
    ========================================================================== */
 
 :root {
@@ -31,24 +30,24 @@ body {
 }
 
 /* ==========================================================================
-   CONTINUOUS 4-PAGE VERTICAL ATMOSPHERIC GRADIENT
+   EXPANSIVE 4-PAGE CONTINUOUS ATMOSPHERIC GRADIENT (~540vh total height)
    ========================================================================== */
 #atmosphere-gradient-track {
   background: linear-gradient(
     180deg,
-    #08122d 0%,         /* 1. Very top dark blue */
+    #08122d 0%,         /* 1. Very top dark blue cosmos */
     #040a1b 4%,         /* Dark blue transition into space */
     #010206 10%,        /* Pitch black space starts */
-    #010206 23%,        /* Pitch black space with stars & satellites */
+    #010206 24%,        /* Black space with stars & dynamic orbital satellites */
     #081636 32%,        /* Transition out of space */
     #0f2e6b 40%,        /* Stratosphere dark blue (SKIT section) */
-    #1d4ed8 46%,        /* Royal blue */
-    #0284c7 54%,        /* Upper sky transition */
-    #38bdf8 62%,        /* Rich Sky Blue (3D clouds & airplanes cruising) */
-    #7dd3fc 70%,        /* Daytime Sky Blue */
-    #bae6fd 77%,        /* Soft Sky Blue with Blimp */
-    #e0f2fe 84%,        /* Atmospheric sky mist fading into white */
-    #ffffff 90%,        /* Pure crisp clean white starts */
+    #1d4ed8 47%,        /* Royal blue */
+    #0284c7 55%,        /* Upper sky transition */
+    #38bdf8 64%,        /* Rich Sky Blue (3D clouds & climbing airplanes) */
+    #7dd3fc 72%,        /* Daytime Sky Blue */
+    #bae6fd 80%,        /* Soft Sky Blue with Blimp */
+    #e0f2fe 88%,        /* Atmospheric sky mist fading into white */
+    #ffffff 94%,        /* Pure crisp clean white starts */
     #ffffff 100%        /* 100% Pure White for Section 4 */
   );
 }
@@ -59,8 +58,8 @@ body {
 }
 
 /* ==========================================================================
-   1. SATELLITES ANIMATION (LIVELY, VISIBLE IMMEDIATELY VIA NEGATIVE DELAY)
-   In Clear Empty Lanes Above and Below Text
+   1. SATELLITES ON DYNAMIC RANDOM ORBITAL PATHS
+   Multi-waypoint spline curves with undulating altitude & rotational pitch
    ========================================================================== */
 .sat-item {
   pointer-events: none;
@@ -69,54 +68,78 @@ body {
   will-change: transform;
 }
 
-/* Satellite 1: Upper Empty Lane (above "Himanshu Jangid") */
-.sat-anim-1 {
+/* Satellite 1: Random Orbital Arc (Upper Lane) */
+.sat-random-1 {
   top: 18%;
-  animation: moveSatL2R_1 34s linear infinite;
-  animation-delay: -8s; /* Starts mid-screen immediately on page load! */
+  animation: moveSatOrbital_1 38s ease-in-out infinite;
+  animation-delay: -9s; /* Active and visible immediately! */
 }
 
-@keyframes moveSatL2R_1 {
+@keyframes moveSatOrbital_1 {
   0% {
-    transform: translate3d(-100px, 0, 0) rotate(3deg);
+    transform: translate3d(-100px, 0px, 0) rotate(5deg);
+  }
+  22% {
+    transform: translate3d(24vw, 35px, 0) rotate(2deg);
+  }
+  48% {
+    transform: translate3d(52vw, -28px, 0) rotate(-4deg);
+  }
+  72% {
+    transform: translate3d(76vw, 24px, 0) rotate(2deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 120px), 10px, 0) rotate(-3deg);
+    transform: translate3d(calc(100vw + 120px), -10px, 0) rotate(-5deg);
   }
 }
 
-/* Satellite 2: Lower Empty Lane (below the paragraph and metrics) */
-.sat-anim-2 {
+/* Satellite 2: Undulating Wave Trajectory (Lower Lane) */
+.sat-random-2 {
   top: 80%;
-  animation: moveSatL2R_2 42s linear infinite;
-  animation-delay: -20s; /* Starts across lower sky immediately! */
+  animation: moveSatOrbital_2 45s ease-in-out infinite;
+  animation-delay: -22s; /* Gliding in lower space immediately! */
 }
 
-@keyframes moveSatL2R_2 {
+@keyframes moveSatOrbital_2 {
   0% {
-    transform: translate3d(-100px, 0, 0) rotate(-2deg);
+    transform: translate3d(-100px, 15px, 0) rotate(-4deg);
+  }
+  30% {
+    transform: translate3d(32vw, -30px, 0) rotate(3deg);
+  }
+  60% {
+    transform: translate3d(64vw, 25px, 0) rotate(-3deg);
+  }
+  85% {
+    transform: translate3d(88vw, -15px, 0) rotate(2deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 120px), -8px, 0) rotate(3deg);
+    transform: translate3d(calc(100vw + 120px), 10px, 0) rotate(-2deg);
   }
 }
 
-/* Satellite 3: Upper Lane 2 */
-.sat-anim-3 {
+/* Satellite 3: Wandering Celestial Probe (Upper Lane 2) */
+.sat-random-3 {
   top: 22%;
-  animation: moveSatL2R_3 48s linear infinite;
-  animation-delay: -32s;
+  animation: moveSatOrbital_3 52s linear infinite;
+  animation-delay: -35s;
 }
 
-@keyframes moveSatL2R_3 {
+@keyframes moveSatOrbital_3 {
   0% {
-    transform: translate3d(-80px, 0, 0) rotate(0deg);
+    transform: translate3d(-80px, -20px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(28vw, 25px, 0) rotate(90deg);
   }
   50% {
-    transform: translate3d(50vw, 8px, 0) rotate(180deg);
+    transform: translate3d(55vw, -18px, 0) rotate(180deg);
+  }
+  75% {
+    transform: translate3d(82vw, 20px, 0) rotate(270deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 100px), 0, 0) rotate(360deg);
+    transform: translate3d(calc(100vw + 100px), -10px, 0) rotate(360deg);
   }
 }
 
@@ -140,20 +163,20 @@ body {
 }
 
 /* ==========================================================================
-   2. 3D CLOUD SYSTEM & AIRPLANE FLIGHT SYSTEM
+   2. 3D CLOUD SYSTEM & NEW AIRPLANE FLIGHT PATHS
    ========================================================================== */
 
-/* Background Cloud Gentle Drift */
+/* Background Cloud Gentle Parallax */
 .cloud-drift-slow {
   animation: driftClouds 70s ease-in-out infinite alternate;
 }
 
 @keyframes driftClouds {
   0% { transform: translateX(0px); }
-  100% { transform: translateX(35px); }
+  100% { transform: translateX(40px); }
 }
 
-/* Foreground 3D Clouds (Hovering in front of the flight path) */
+/* 3D Foreground Clouds (Floating in front of airplane flight path) */
 .fore-cloud-puff {
   pointer-events: none;
   animation: floatForeCloud 8s ease-in-out infinite alternate;
@@ -162,10 +185,10 @@ body {
 
 @keyframes floatForeCloud {
   0% { transform: translateY(0px) scale(1); }
-  100% { transform: translateY(-6px) scale(1.02); }
+  100% { transform: translateY(-7px) scale(1.02); }
 }
 
-/* AIRPLANES: Moving in designated Upper (18%) and Lower (78%) Empty Lanes */
+/* AIRPLANES: NEW ASCENDING & DESCENDING FLIGHT PATHS */
 .plane-flight {
   pointer-events: none;
   position: absolute;
@@ -173,40 +196,65 @@ body {
   will-change: transform;
 }
 
-/* Airplane 1: Upper Flight Lane (Cruises and dives behind fore-clouds 1 & 2!) */
-.plane-fly-1 {
-  top: 18%;
-  animation: flyPlaneL2R_1 22s linear infinite;
-  animation-delay: -6s; /* Already visible mid-flight on page load! */
+/* Airplane 1: Ascending Climb Flight Path
+   Starts lower-left at 24%, climbs with nose up, banks, weaves behind Fore-Cloud 1,
+   emerges into clear sky, weaves behind Fore-Cloud 2, and climbs to 13%! */
+.plane-climb-path {
+  top: 24%;
+  animation: flyPlaneClimb 22s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+  animation-delay: -6s; /* Already visible climbing mid-flight! */
 }
 
-@keyframes flyPlaneL2R_1 {
+@keyframes flyPlaneClimb {
   0% {
-    transform: translate3d(-140px, 0, 0) rotate(0.8deg);
+    transform: translate3d(-150px, 0px, 0) rotate(-2.5deg);
+  }
+  28% {
+    /* Entering Fore-Cloud 1 area with climbing pitch */
+    transform: translate3d(30vw, -45px, 0) rotate(-3deg);
+  }
+  45% {
+    /* Emerging from Fore-Cloud 1 and banking */
+    transform: translate3d(48vw, -70px, 0) rotate(1deg);
+  }
+  68% {
+    /* Entering Fore-Cloud 2 area */
+    transform: translate3d(70vw, -95px, 0) rotate(-2deg);
+  }
+  85% {
+    /* Emerging and cruising high */
+    transform: translate3d(88vw, -115px, 0) rotate(-1deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 160px), -6px, 0) rotate(0.8deg);
+    transform: translate3d(calc(100vw + 170px), -130px, 0) rotate(0deg);
   }
 }
 
-/* Airplane 2: Lower Flight Lane (Cruises and dives behind lower fore-cloud 3!) */
-.plane-fly-2 {
-  top: 78%;
-  animation: flyPlaneL2R_2 28s linear infinite;
-  animation-delay: -16s; /* Already flying on screen! */
+/* Airplane 2: Lower Sky Gliding Flight Path */
+.plane-descend-path {
+  top: 76%;
+  animation: flyPlaneDescend 28s ease-in-out infinite;
+  animation-delay: -15s; /* Already cruising lower sky! */
 }
 
-@keyframes flyPlaneL2R_2 {
+@keyframes flyPlaneDescend {
   0% {
-    transform: translate3d(-120px, 0, 0) rotate(-0.5deg);
+    transform: translate3d(-140px, -15px, 0) rotate(1.2deg);
+  }
+  35% {
+    transform: translate3d(36vw, 25px, 0) rotate(0.5deg);
+  }
+  65% {
+    /* Passing behind Fore-Cloud 3 */
+    transform: translate3d(66vw, -10px, 0) rotate(-1deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 140px), 8px, 0) rotate(-0.5deg);
+    transform: translate3d(calc(100vw + 150px), 15px, 0) rotate(0.8deg);
   }
 }
 
 /* ==========================================================================
-   NEW BILLOWING SMOKE / JET CONTRAIL ANIMATION
+   REALISTIC BILLOWING SMOKE / JET CONTRAIL
    ========================================================================== */
 .smoke-engine-group {
   margin-right: -2px;
@@ -214,62 +262,60 @@ body {
   align-items: center;
 }
 
-/* Long trailing contrail core line */
 .smoke-stream-line {
-  width: 75px;
-  height: 2.2px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85));
+  width: 85px;
+  height: 2.4px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9));
   border-radius: 999px;
   filter: blur(0.5px);
 }
 
 .line-thin {
-  width: 55px;
-  height: 1.8px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75));
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.78));
 }
 
-/* Expanding billowing smoke puffs */
 .smoke-puff {
   display: inline-block;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 60%, transparent 100%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.4) 60%, transparent 100%);
   border-radius: 50%;
-  animation: smokeBillow 1.2s ease-out infinite;
-  filter: blur(0.8px);
+  animation: smokeBillow 1.1s ease-out infinite;
+  filter: blur(0.7px);
 }
 
 .puff-wide {
-  width: 9px;
-  height: 9px;
-  margin-right: -4px;
+  width: 10px;
+  height: 10px;
+  margin-right: -5px;
 }
 
 .puff-mid {
-  width: 7px;
-  height: 7px;
-  margin-right: -3px;
-  animation-delay: 0.3s;
+  width: 8px;
+  height: 8px;
+  margin-right: -4px;
+  animation-delay: 0.28s;
 }
 
 .puff-core {
-  width: 5px;
-  height: 5px;
-  margin-right: -2px;
-  animation-delay: 0.6s;
+  width: 6px;
+  height: 6px;
+  margin-right: -3px;
+  animation-delay: 0.55s;
 }
 
 @keyframes smokeBillow {
   0% {
-    transform: scale(0.7) translateY(0px);
-    opacity: 0.9;
+    transform: scale(0.6) translateY(0px);
+    opacity: 0.95;
   }
   50% {
-    transform: scale(1.3) translateY(-0.8px);
-    opacity: 0.7;
+    transform: scale(1.4) translateY(-1px);
+    opacity: 0.75;
   }
   100% {
-    transform: scale(1.8) translateY(-1.5px);
-    opacity: 0.3;
+    transform: scale(2) translateY(-2px);
+    opacity: 0.25;
   }
 }
 
@@ -296,15 +342,15 @@ body {
 .blimp-anim-1 {
   top: 17%;
   animation: flyBlimpL2R 44s linear infinite, bobBlimp 6s ease-in-out infinite alternate;
-  animation-delay: -10s; /* Visible and cruising on page load! */
+  animation-delay: -10s;
 }
 
 @keyframes flyBlimpL2R {
   0% {
-    transform: translate3d(-140px, 0, 0);
+    transform: translate3d(-150px, 0, 0);
   }
   100% {
-    transform: translate3d(calc(100vw + 160px), 0, 0);
+    transform: translate3d(calc(100vw + 170px), 0, 0);
   }
 }
 

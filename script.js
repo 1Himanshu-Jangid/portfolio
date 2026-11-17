@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (canvas) {
     const ctx = canvas.getContext('2d');
     let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight * 1.2);
+    let height = (canvas.height = window.innerHeight * 1.55);
 
     window.addEventListener('resize', () => {
       width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight * 1.2;
+      height = canvas.height = window.innerHeight * 1.55;
     });
 
     const starCount = Math.floor((width * height) / 3400);
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.clearRect(0, 0, width, height);
 
       // Only draw stars if near the space tier
-      if (window.scrollY < window.innerHeight * 1.4) {
+      if (window.scrollY < window.innerHeight * 1.8) {
         time++;
         stars.forEach(star => {
           star.update(time);

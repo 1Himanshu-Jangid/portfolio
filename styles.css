@@ -218,19 +218,19 @@ body {
 
 @keyframes flyPlaneSlow_1 {
   0% {
-    transform: translate3d(-140px, 0px, 0) rotate(0deg);
+    transform: translate3d(-160px, 0px, 0) rotate(0deg);
   }
   25% {
-    transform: translate3d(calc(25vw - 35px), -8px, 0) rotate(-1deg);
+    transform: translate3d(calc(25vw - 35px), -6px, 0) rotate(-0.6deg);
   }
   50% {
-    transform: translate3d(calc(50vw), 6px, 0) rotate(0.8deg);
+    transform: translate3d(calc(50vw), 4px, 0) rotate(0.5deg);
   }
   75% {
-    transform: translate3d(calc(75vw + 35px), -6px, 0) rotate(-0.8deg);
+    transform: translate3d(calc(75vw + 35px), -4px, 0) rotate(-0.5deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 140px), 0px, 0) rotate(0deg);
+    transform: translate3d(calc(100vw + 160px), 0px, 0) rotate(0deg);
   }
 }
 
@@ -244,19 +244,19 @@ body {
 
 @keyframes flyPlaneSlow_2 {
   0% {
-    transform: translate3d(-140px, 0px, 0) rotate(0deg);
+    transform: translate3d(-160px, 0px, 0) rotate(0deg);
   }
   25% {
-    transform: translate3d(calc(25vw - 35px), 8px, 0) rotate(1deg);
+    transform: translate3d(calc(25vw - 35px), 6px, 0) rotate(0.6deg);
   }
   50% {
-    transform: translate3d(calc(50vw), -8px, 0) rotate(-1deg);
+    transform: translate3d(calc(50vw), -4px, 0) rotate(-0.5deg);
   }
   75% {
-    transform: translate3d(calc(75vw + 35px), 6px, 0) rotate(0.8deg);
+    transform: translate3d(calc(75vw + 35px), 4px, 0) rotate(0.5deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 140px), 0px, 0) rotate(0deg);
+    transform: translate3d(calc(100vw + 160px), 0px, 0) rotate(0deg);
   }
 }
 

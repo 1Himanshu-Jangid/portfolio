@@ -6,20 +6,21 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // =========================================================================
-  // 1. STARFIELD CANVAS GENERATOR (For Dark Blue to Black Space Tier)
+  // 1. STARFIELD CANVAS GENERATOR (Space & Stratosphere with Smooth Altitude Fade)
+  // Stars drift on their place and fade smoothly down to Flight Altitude (270vh)
   // =========================================================================
   const canvas = document.getElementById('stars-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
     let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight * 1.55);
+    let height = (canvas.height = window.innerHeight * 2.7); // Covers Space & SKIT down to Flight Altitude
 
     window.addEventListener('resize', () => {
       width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight * 1.55;
+      height = canvas.height = window.innerHeight * 2.7;
     });
 
-    const starCount = Math.floor((width * height) / 3400);
+    const starCount = Math.floor((width * height) / 3600);
     const stars = [];
 
     class Star {
@@ -27,6 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
         this.reset();
         this.originY = Math.random() * height;
         this.y = this.originY;
+        this.calcAltitudeFade();
+      }
+
+      calcAltitudeFade() {
+        // Space (0 to 120vh): 100% full brightness
+        // Descending through SKIT to Flight Altitude (120vh to 260vh): smooth atmospheric fade out
+        const fadeStart = height * 0.44; // ~120vh
+        const fadeEnd = height * 0.96;   // ~260vh right above Flight Altitude
+        if (this.originY <= fadeStart) {
+          this.altitudeFade = 1.0;
+        } else if (this.originY >= fadeEnd) {
+          this.altitudeFade = 0;
+        } else {
+          const ratio = (this.originY - fadeStart) / (fadeEnd - fadeStart);
+          this.altitudeFade = Math.pow(1.0 - ratio, 1.6); // Smooth non-linear atmospheric diffusion
+        }
       }
 
       reset() {
@@ -46,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
         this.driftSpeedY = Math.random() * 0.015 + 0.006;
         this.driftPhaseX = Math.random() * Math.PI * 2;
         this.driftPhaseY = Math.random() * Math.PI * 2;
+
+        this.calcAltitudeFade();
       }
 
       update(time) {
@@ -60,10 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
-        ctx.fill();
+        const finalAlpha = this.alpha * this.altitudeFade;
+        if (finalAlpha > 0.015) {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 255, 255, ${finalAlpha})`;
+          ctx.fill();
+        }
       }
     }
 
@@ -75,8 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderStars() {
       ctx.clearRect(0, 0, width, height);
 
-      // Only draw stars if near the space tier
-      if (window.scrollY < window.innerHeight * 1.8) {
+      // Render stars through Space and SKIT while descending toward Flight Altitude
+      if (window.scrollY < window.innerHeight * 2.9) {
         time++;
         stars.forEach(star => {
           star.update(time);

@@ -18,7 +18,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=3.1" />
+  <link rel="stylesheet" href="styles.css?v=3.2" />
 </head>
 <body class="selection:bg-blue-500 selection:text-white">
 
@@ -68,8 +68,8 @@
        ========================================================================= -->
   <div id="atmosphere-gradient-track" class="relative z-10 w-full overflow-hidden">
 
-    <!-- Starfield Canvas (Top Cosmic Region) -->
-    <canvas id="stars-canvas" class="absolute top-0 left-0 w-full pointer-events-none z-0" style="height: 150vh;"></canvas>
+    <!-- Starfield Canvas (Space & Stratosphere Region, smoothly fading till Flight Altitude) -->
+    <canvas id="stars-canvas" class="absolute top-0 left-0 w-full pointer-events-none z-0" style="height: 270vh;"></canvas>
 
     <!-- =======================================================================
          PAGE 1: SATELLITES LAYER (BLACK SPACE: 0 - 135vh)
@@ -518,7 +518,7 @@
 
   </div>
 
-  <script src="script.js?v=3.1"></script>
+  <script src="script.js?v=3.2"></script>
   <script>
     lucide.createIcons();
   </script>

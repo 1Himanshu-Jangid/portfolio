@@ -58,8 +58,8 @@ body {
 }
 
 /* ==========================================================================
-   1. SATELLITES ON DYNAMIC RANDOM ORBITAL PATHS
-   Multi-waypoint spline curves with undulating altitude & rotational pitch
+   1. SATELLITES: NON-STOP CONTINUOUS ORBITAL FLIGHT
+   Steady linear horizontal cruise with smooth slightly up/down wave undulation
    ========================================================================== */
 .sat-item {
   pointer-events: none;
@@ -68,78 +68,97 @@ body {
   will-change: transform;
 }
 
-/* Satellite 1: Random Orbital Arc (Upper Lane) */
-.sat-random-1 {
-  top: 18%;
-  animation: moveSatOrbital_1 38s ease-in-out infinite;
-  animation-delay: -9s; /* Active and visible immediately! */
+/* Satellite 1: Solar Station (Upper Lane - 15% altitude) */
+.sat-stream-1 {
+  top: 15%;
+  animation: moveSatContinuous_1 26s linear infinite;
+  animation-delay: 0s;
 }
 
-@keyframes moveSatOrbital_1 {
+@keyframes moveSatContinuous_1 {
   0% {
-    transform: translate3d(-100px, 0px, 0) rotate(5deg);
-  }
-  22% {
-    transform: translate3d(24vw, 35px, 0) rotate(2deg);
-  }
-  48% {
-    transform: translate3d(52vw, -28px, 0) rotate(-4deg);
-  }
-  72% {
-    transform: translate3d(76vw, 24px, 0) rotate(2deg);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 120px), -10px, 0) rotate(-5deg);
-  }
-}
-
-/* Satellite 2: Undulating Wave Trajectory (Lower Lane) */
-.sat-random-2 {
-  top: 80%;
-  animation: moveSatOrbital_2 45s ease-in-out infinite;
-  animation-delay: -22s; /* Gliding in lower space immediately! */
-}
-
-@keyframes moveSatOrbital_2 {
-  0% {
-    transform: translate3d(-100px, 15px, 0) rotate(-4deg);
-  }
-  30% {
-    transform: translate3d(32vw, -30px, 0) rotate(3deg);
-  }
-  60% {
-    transform: translate3d(64vw, 25px, 0) rotate(-3deg);
-  }
-  85% {
-    transform: translate3d(88vw, -15px, 0) rotate(2deg);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 120px), 10px, 0) rotate(-2deg);
-  }
-}
-
-/* Satellite 3: Wandering Celestial Probe (Upper Lane 2) */
-.sat-random-3 {
-  top: 22%;
-  animation: moveSatOrbital_3 52s linear infinite;
-  animation-delay: -35s;
-}
-
-@keyframes moveSatOrbital_3 {
-  0% {
-    transform: translate3d(-80px, -20px, 0) rotate(0deg);
+    transform: translate3d(-120px, 0px, 0) rotate(0deg);
   }
   25% {
-    transform: translate3d(28vw, 25px, 0) rotate(90deg);
+    transform: translate3d(calc(25vw - 30px), -12px, 0) rotate(-2deg);
   }
   50% {
-    transform: translate3d(55vw, -18px, 0) rotate(180deg);
+    transform: translate3d(calc(50vw), 14px, 0) rotate(2deg);
   }
   75% {
-    transform: translate3d(82vw, 20px, 0) rotate(270deg);
+    transform: translate3d(calc(75vw + 30px), -10px, 0) rotate(-1.5deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 100px), -10px, 0) rotate(360deg);
+    transform: translate3d(calc(100vw + 120px), 0px, 0) rotate(0deg);
+  }
+}
+
+/* Satellite 2: Deep Space Telescope (Lower Lane - 79% altitude) */
+.sat-stream-2 {
+  top: 79%;
+  animation: moveSatContinuous_2 30s linear infinite;
+  animation-delay: -10s;
+}
+
+@keyframes moveSatContinuous_2 {
+  0% {
+    transform: translate3d(-110px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(calc(25vw - 25px), 14px, 0) rotate(2deg);
+  }
+  50% {
+    transform: translate3d(calc(50vw), -15px, 0) rotate(-2deg);
+  }
+  75% {
+    transform: translate3d(calc(75vw + 25px), 10px, 0) rotate(1.4deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 110px), 0px, 0) rotate(0deg);
+  }
+}
+
+/* Satellite 3: Wandering Celestial Probe (Upper-Mid Lane - 20% altitude) */
+.sat-stream-3 {
+  top: 20%;
+  animation: moveSatContinuous_3 24s linear infinite;
+  animation-delay: -16s;
+}
+
+@keyframes moveSatContinuous_3 {
+  0% {
+    transform: translate3d(-90px, 0px, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate3d(calc(33vw - 20px), -12px, 0) rotate(60deg);
+  }
+  66% {
+    transform: translate3d(calc(66vw + 20px), 12px, 0) rotate(120deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 90px), 0px, 0) rotate(180deg);
+  }
+}
+
+/* Satellite 4: Communications Relay & CubeSat (Lower-Mid Lane - 83% altitude) */
+.sat-stream-4 {
+  top: 83%;
+  animation: moveSatContinuous_4 28s linear infinite;
+  animation-delay: -7s;
+}
+
+@keyframes moveSatContinuous_4 {
+  0% {
+    transform: translate3d(-90px, 0px, 0) rotate(0deg);
+  }
+  30% {
+    transform: translate3d(calc(30vw - 25px), 10px, 0) rotate(1.5deg);
+  }
+  70% {
+    transform: translate3d(calc(70vw + 25px), -10px, 0) rotate(-1.5deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 90px), 0px, 0) rotate(0deg);
   }
 }
 
@@ -166,6 +185,11 @@ body {
    2. 3D CLOUD SYSTEM & NEW AIRPLANE FLIGHT PATHS
    ========================================================================== */
 
+/* ==========================================================================
+   2. 3D CLOUD SYSTEM & CONTINUOUS NON-STOP AIRPLANE FLIGHT
+   Steady linear horizontal cruise with smooth slightly up/down altitude waves
+   ========================================================================== */
+
 /* Background Cloud Gentle Parallax */
 .cloud-drift-slow {
   animation: driftClouds 70s ease-in-out infinite alternate;
@@ -188,7 +212,7 @@ body {
   100% { transform: translateY(-7px) scale(1.02); }
 }
 
-/* AIRPLANES: NEW ASCENDING & DESCENDING FLIGHT PATHS */
+/* AIRPLANES: CONTINUOUS NON-STOP FLIGHT WITH SLIGHTLY UP/DOWN UNDULATION */
 .plane-flight {
   pointer-events: none;
   position: absolute;
@@ -196,60 +220,92 @@ body {
   will-change: transform;
 }
 
-/* Airplane 1: Ascending Climb Flight Path
-   Starts lower-left at 24%, climbs with nose up, banks, weaves behind Fore-Cloud 1,
-   emerges into clear sky, weaves behind Fore-Cloud 2, and climbs to 13%! */
-.plane-climb-path {
-  top: 24%;
-  animation: flyPlaneClimb 22s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
-  animation-delay: -6s; /* Already visible climbing mid-flight! */
+/* Airplane 1: Flagship Supersonic Twin-Jet (Upper Lane - 16% altitude)
+   Cruises steadily left-to-right, undulating slightly up & down, diving behind Fore-Clouds 1 & 2 */
+.plane-stream-1 {
+  top: 16%;
+  animation: flyPlaneContinuous_1 18s linear infinite;
+  animation-delay: 0s;
 }
 
-@keyframes flyPlaneClimb {
+@keyframes flyPlaneContinuous_1 {
   0% {
-    transform: translate3d(-150px, 0px, 0) rotate(-2.5deg);
+    transform: translate3d(-170px, 0px, 0) rotate(0deg);
   }
-  28% {
-    /* Entering Fore-Cloud 1 area with climbing pitch */
-    transform: translate3d(30vw, -45px, 0) rotate(-3deg);
+  20% {
+    /* Climbing slightly up (-14px) */
+    transform: translate3d(calc(20vw - 40px), -14px, 0) rotate(-2deg);
   }
-  45% {
-    /* Emerging from Fore-Cloud 1 and banking */
-    transform: translate3d(48vw, -70px, 0) rotate(1deg);
+  40% {
+    /* Gliding slightly down (+10px) behind Fore-Cloud 1 */
+    transform: translate3d(calc(40vw), 10px, 0) rotate(1.5deg);
   }
-  68% {
-    /* Entering Fore-Cloud 2 area */
-    transform: translate3d(70vw, -95px, 0) rotate(-2deg);
+  60% {
+    /* Climbing slightly up (-12px) behind Fore-Cloud 2 */
+    transform: translate3d(calc(60vw + 40px), -12px, 0) rotate(-1.8deg);
   }
-  85% {
-    /* Emerging and cruising high */
-    transform: translate3d(88vw, -115px, 0) rotate(-1deg);
+  80% {
+    /* Cruising gently down (+8px) */
+    transform: translate3d(calc(80vw + 80px), 8px, 0) rotate(1.2deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 170px), -130px, 0) rotate(0deg);
+    /* Seamless loop without stopping or snapping */
+    transform: translate3d(calc(100vw + 170px), 0px, 0) rotate(0deg);
   }
 }
 
-/* Airplane 2: Lower Sky Gliding Flight Path */
-.plane-descend-path {
-  top: 76%;
-  animation: flyPlaneDescend 28s ease-in-out infinite;
-  animation-delay: -15s; /* Already cruising lower sky! */
+/* Airplane 2: Sleek Executive Jet (Lower Lane - 77% altitude)
+   Cruises steadily, undulating slightly down & up, weaving behind Fore-Cloud 3 */
+.plane-stream-2 {
+  top: 77%;
+  animation: flyPlaneContinuous_2 22s linear infinite;
+  animation-delay: -7s;
 }
 
-@keyframes flyPlaneDescend {
+@keyframes flyPlaneContinuous_2 {
   0% {
-    transform: translate3d(-140px, -15px, 0) rotate(1.2deg);
+    transform: translate3d(-160px, 0px, 0) rotate(0deg);
   }
-  35% {
-    transform: translate3d(36vw, 25px, 0) rotate(0.5deg);
+  25% {
+    /* Dipping slightly down (+12px) */
+    transform: translate3d(calc(25vw - 40px), 12px, 0) rotate(1.8deg);
   }
-  65% {
-    /* Passing behind Fore-Cloud 3 */
-    transform: translate3d(66vw, -10px, 0) rotate(-1deg);
+  50% {
+    /* Gliding slightly up (-15px) behind Fore-Cloud 3 */
+    transform: translate3d(calc(50vw), -15px, 0) rotate(-2deg);
+  }
+  75% {
+    /* Dipping slightly down (+10px) */
+    transform: translate3d(calc(75vw + 40px), 10px, 0) rotate(1.4deg);
   }
   100% {
-    transform: translate3d(calc(100vw + 150px), 15px, 0) rotate(0.8deg);
+    transform: translate3d(calc(100vw + 160px), 0px, 0) rotate(0deg);
+  }
+}
+
+/* Airplane 3: Modern Twin-Engine Jet (Upper-Mid Lane - 22% altitude)
+   Staggered continuous flight providing constant active motion across the sky */
+.plane-stream-3 {
+  top: 22%;
+  animation: flyPlaneContinuous_3 20s linear infinite;
+  animation-delay: -14s;
+}
+
+@keyframes flyPlaneContinuous_3 {
+  0% {
+    transform: translate3d(-170px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(calc(25vw - 40px), -10px, 0) rotate(-1.6deg);
+  }
+  50% {
+    transform: translate3d(calc(50vw), 12px, 0) rotate(1.5deg);
+  }
+  75% {
+    transform: translate3d(calc(75vw + 40px), -8px, 0) rotate(-1.2deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 170px), 0px, 0) rotate(0deg);
   }
 }
 
@@ -330,7 +386,8 @@ body {
 }
 
 /* ==========================================================================
-   3. BLIMP ANIMATION (Upper Empty Lane at top 17%)
+   3. BLIMP ANIMATION (Upper & Lower Mist Lanes)
+   Continuous non-stop cruise with gentle vertical buoyant bobbing
    ========================================================================== */
 .blimp-item {
   pointer-events: none;
@@ -339,18 +396,42 @@ body {
   will-change: transform;
 }
 
-.blimp-anim-1 {
-  top: 17%;
-  animation: flyBlimpL2R 44s linear infinite, bobBlimp 6s ease-in-out infinite alternate;
-  animation-delay: -10s;
+.blimp-stream-1 {
+  top: 15%;
+  animation: flyBlimpContinuous_1 34s linear infinite, bobBlimp 6s ease-in-out infinite alternate;
+  animation-delay: 0s;
 }
 
-@keyframes flyBlimpL2R {
+.blimp-stream-2 {
+  top: 78%;
+  animation: flyBlimpContinuous_2 40s linear infinite, bobBlimp 7s ease-in-out infinite alternate;
+  animation-delay: -20s;
+}
+
+@keyframes flyBlimpContinuous_1 {
   0% {
-    transform: translate3d(-150px, 0, 0);
+    transform: translate3d(-160px, 0, 0);
+  }
+  30% {
+    transform: translate3d(calc(30vw - 30px), -8px, 0);
+  }
+  70% {
+    transform: translate3d(calc(70vw + 30px), 8px, 0);
   }
   100% {
-    transform: translate3d(calc(100vw + 170px), 0, 0);
+    transform: translate3d(calc(100vw + 160px), 0, 0);
+  }
+}
+
+@keyframes flyBlimpContinuous_2 {
+  0% {
+    transform: translate3d(-140px, 0, 0);
+  }
+  50% {
+    transform: translate3d(calc(50vw), -10px, 0);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 140px), 0, 0);
   }
 }
 
@@ -471,9 +552,9 @@ body {
   border: 1px solid #cbd5e1;
 }
 
-/* Accessibility: Reduced motion check */
+/* Accessibility: Gentle drift for reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .sat-item, .plane-flight, .blimp-item, .cloud-drift-slow, .fore-cloud-puff {
+  .cloud-drift-slow, .fore-cloud-puff {
     animation: none !important;
   }
 }

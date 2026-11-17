@@ -1,14 +1,14 @@
 /* ==========================================================================
    Himanshu Jangid — Potfolie
    4-Page Atmospheric Journey:
-   Dark Blue (Top) -> Pitch Black Space -> Dark Blue -> Sky Blue -> White
-   All Vehicles Moving RIGHT TO LEFT SLOWLY
+   Dark Blue (Top) -> Pitch Black Space -> Dark Blue -> Sky Blue -> Pure White
+   All Miniature Vehicles Moving Left to Right in a Smooth Continuous Loop
    ========================================================================== */
 
 :root {
-  --top-dark-blue: #09132e;
+  --top-dark-blue: #08122d;
   --space-black: #010206;
-  --mid-navy-blue: #0f2b5c;
+  --mid-navy-blue: #0f2e6b;
   --deep-blue: #1d4ed8;
   --sky-blue: #38bdf8;
   --day-blue: #7dd3fc;
@@ -33,226 +33,218 @@ body {
 /* ==========================================================================
    CONTINUOUS 4-PAGE VERTICAL ATMOSPHERIC GRADIENT
    Dark Blue (Top) -> Black Space -> Dark Blue -> Sky Blue -> Pure White
+   Notice: Fades smoothly into Pure White for the 4th section
    ========================================================================== */
 #atmosphere-gradient-track {
   background: linear-gradient(
     180deg,
     #08122d 0%,         /* 1. Very top dark blue */
     #040a1b 4%,         /* Dark blue transition into space */
-    #010206 10%,        /* Pure pitch black space begins */
-    #010206 24%,        /* Black space with twinkling stars & satellites */
-    #091738 33%,        /* Transition out of space into deep blue */
-    #0f2e6b 42%,        /* Stratosphere dark blue (SKIT section) */
-    #1d4ed8 48%,        /* Royal blue transition */
-    #0284c7 56%,        /* Upper atmosphere transition */
-    #38bdf8 65%,        /* Rich Sky Blue (Aeroplanes cruising right to left) */
-    #7dd3fc 74%,        /* Bright daytime Sky Blue */
-    #bae6fd 83%,        /* Fading sky blue with blimp cruising */
-    #e0f2fe 91%,        /* Soft atmospheric sky mist fade */
-    #ffffff 97%,        /* Pure crisp clean white */
-    #ffffff 100%
+    #010206 10%,        /* Pitch black space starts */
+    #010206 23%,        /* Pitch black space with stars & satellites */
+    #081636 32%,        /* Transition out of space */
+    #0f2e6b 40%,        /* Stratosphere dark blue (SKIT section) */
+    #1d4ed8 46%,        /* Royal blue */
+    #0284c7 54%,        /* Upper sky transition */
+    #38bdf8 62%,        /* Rich Sky Blue (Small aeroplanes cruising) */
+    #7dd3fc 70%,        /* Daytime Sky Blue */
+    #bae6fd 77%,        /* Soft Sky Blue with Blimp */
+    #e0f2fe 84%,        /* Atmospheric sky mist fading into white */
+    #ffffff 90%,        /* Pure crisp clean white starts */
+    #ffffff 100%        /* 100% Pure White for Section 4 */
   );
 }
 
-/* Starfield Canvas (Top) */
+/* Starfield Canvas */
 #stars-canvas {
   pointer-events: none;
 }
 
 /* ==========================================================================
-   VEHICLES MOVING RIGHT TO LEFT SLOWLY
+   MINIATURE VEHICLES (MOVING LEFT TO RIGHT IN A CONTINUOUS LOOP)
+   Starts off-screen on the left (-160px), travels across, exits right (100vw + 160px),
+   and seamlessly loops back without freezing or overlapping text!
    ========================================================================== */
 
-/* 1. SATELLITES (Located in Black Space, moving Right to Left) */
+/* 1. SATELLITES (Confined to Black Space, between 25% and 75% height) */
 .sat-item {
   pointer-events: none;
+  position: absolute;
+  left: 0;
   will-change: transform;
 }
 
-/* Satellite 1: ISS Solar Array (Right to Left) */
-.sat-r2l-1 {
-  top: 18%;
-  animation: moveSatR2L_1 78s linear infinite;
+/* Satellite 1: ISS Style Solar Station */
+.sat-loop-1 {
+  top: 32%;
+  animation: moveSatL2R_1 56s linear infinite;
 }
 
-@keyframes moveSatR2L_1 {
+@keyframes moveSatL2R_1 {
   0% {
-    transform: translate3d(calc(100vw + 160px), 0, 0) rotate(-6deg);
+    transform: translate3d(-120px, 0, 0) rotate(4deg);
   }
   100% {
-    transform: translate3d(-180px, 80px, 0) rotate(4deg);
+    transform: translate3d(calc(100vw + 140px), 60px, 0) rotate(-4deg);
   }
 }
 
-/* Satellite 2: Telecommunications Dish Satellite (Right to Left) */
-.sat-r2l-2 {
-  top: 42%;
-  animation: moveSatR2L_2 96s linear infinite;
-  animation-delay: 12s;
+/* Satellite 2: Gold Dish Satellite */
+.sat-loop-2 {
+  top: 52%;
+  animation: moveSatL2R_2 68s linear infinite;
+  animation-delay: 14s;
 }
 
-@keyframes moveSatR2L_2 {
+@keyframes moveSatL2R_2 {
   0% {
-    transform: translate3d(calc(100vw + 120px), 0, 0) rotate(5deg);
+    transform: translate3d(-100px, 0, 0) rotate(-3deg);
   }
   100% {
-    transform: translate3d(-160px, -40px, 0) rotate(-3deg);
+    transform: translate3d(calc(100vw + 120px), -40px, 0) rotate(5deg);
   }
 }
 
-/* Satellite 3: Rotating CubeSat (Right to Left) */
-.sat-r2l-3 {
-  top: 10%;
-  animation: moveSatR2L_3 112s linear infinite;
-  animation-delay: 24s;
+/* Satellite 3: Miniature CubeSat */
+.sat-loop-3 {
+  top: 72%;
+  animation: moveSatL2R_3 82s linear infinite;
+  animation-delay: 28s;
 }
 
-@keyframes moveSatR2L_3 {
+@keyframes moveSatL2R_3 {
   0% {
-    transform: translate3d(calc(100vw + 90px), 0, 0) rotate(0deg);
+    transform: translate3d(-80px, 0, 0) rotate(0deg);
   }
   50% {
-    transform: translate3d(48vw, 35px, 0) rotate(-180deg);
+    transform: translate3d(50vw, 30px, 0) rotate(180deg);
   }
   100% {
-    transform: translate3d(-120px, 20px, 0) rotate(-360deg);
+    transform: translate3d(calc(100vw + 100px), 10px, 0) rotate(360deg);
   }
 }
 
-/* Satellite 4: Deep Space Observatory Probe (Right to Left) */
-.sat-r2l-4 {
-  top: 68%;
-  animation: moveSatR2L_4 125s linear infinite;
-  animation-delay: 5s;
-}
-
-@keyframes moveSatR2L_4 {
-  0% {
-    transform: translate3d(calc(100vw + 110px), 0, 0) rotate(-4deg);
-  }
-  100% {
-    transform: translate3d(-140px, 40px, 0) rotate(-2deg);
-  }
-}
-
-/* Blinking LED Beacons on Satellites */
+/* Blinking LED Beacon */
 .sat-beacon {
   animation: beaconPulse 1.8s ease-in-out infinite alternate;
 }
 
 @keyframes beaconPulse {
-  0%, 35% { opacity: 0.15; }
+  0%, 35% { opacity: 0.2; }
   65%, 100% { opacity: 1; filter: drop-shadow(0 0 3px currentColor); }
 }
 
-/* 2. AEROPLANES (Located in Sky Blue, moving Right to Left) */
+/* 2. AEROPLANES (Confined to Sky Blue, moving Left to Right in loop) */
 .plane-item {
   pointer-events: none;
+  position: absolute;
+  left: 0;
   will-change: transform;
 }
 
-/* Aeroplane 1: Passenger Jet (Right to Left with Contrail) */
-.plane-r2l-1 {
+/* Aeroplane 1: Passenger Jet */
+.plane-loop-1 {
   top: 25%;
-  animation: flyPlaneR2L_1 28s linear infinite;
+  animation: flyPlaneL2R_1 24s linear infinite;
 }
 
-@keyframes flyPlaneR2L_1 {
+@keyframes flyPlaneL2R_1 {
   0% {
-    transform: translate3d(calc(100vw + 180px), 0, 0) rotate(1.5deg);
+    transform: translate3d(-140px, 0, 0) rotate(1deg);
   }
   100% {
-    transform: translate3d(-240px, -25px, 0) rotate(1.5deg);
+    transform: translate3d(calc(100vw + 160px), -30px, 0) rotate(1deg);
   }
 }
 
-/* Aeroplane 2: Twin-Engine Executive Jet (Right to Left) */
-.plane-r2l-2 {
-  top: 55%;
-  animation: flyPlaneR2L_2 35s linear infinite;
-  animation-delay: 11s;
+/* Aeroplane 2: Twin-Engine Executive Jet */
+.plane-loop-2 {
+  top: 50%;
+  animation: flyPlaneL2R_2 30s linear infinite;
+  animation-delay: 9s;
 }
 
-@keyframes flyPlaneR2L_2 {
+@keyframes flyPlaneL2R_2 {
   0% {
-    transform: translate3d(calc(100vw + 140px), 0, 0) rotate(-1deg);
+    transform: translate3d(-120px, 0, 0) rotate(-1deg);
   }
   100% {
-    transform: translate3d(-200px, 35px, 0) rotate(-1deg);
+    transform: translate3d(calc(100vw + 140px), 25px, 0) rotate(-1deg);
   }
 }
 
-/* Aeroplane 3: High Distance Jet (Right to Left) */
-.plane-r2l-3 {
-  top: 75%;
-  animation: flyPlaneR2L_3 42s linear infinite;
+/* Aeroplane 3: Small Distance Jet */
+.plane-loop-3 {
+  top: 74%;
+  animation: flyPlaneL2R_3 38s linear infinite;
   animation-delay: 18s;
 }
 
-@keyframes flyPlaneR2L_3 {
+@keyframes flyPlaneL2R_3 {
   0% {
-    transform: translate3d(calc(100vw + 100px), 0, 0) rotate(0.8deg);
+    transform: translate3d(-90px, 0, 0) rotate(0.5deg);
   }
   100% {
-    transform: translate3d(-160px, -15px, 0) rotate(0.8deg);
+    transform: translate3d(calc(100vw + 110px), -15px, 0) rotate(0.5deg);
   }
 }
 
-/* Airplane Jet Condensation Vapor Contrail */
+/* Jet Condensation Contrail (trailing behind to the left) */
 .jet-contrail {
-  width: 95px;
-  height: 2.5px;
-  background: linear-gradient(270deg, transparent, rgba(255, 255, 255, 0.75));
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75));
   border-radius: 999px;
-  filter: blur(0.7px);
-  margin-left: -2px;
+  filter: blur(0.6px);
+  margin-right: -2px;
 }
 
 .contrail-light {
-  width: 70px;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, rgba(255, 255, 255, 0.55));
+  width: 45px;
+  height: 1.8px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55));
 }
 
 .contrail-faint {
-  width: 45px;
-  height: 1.5px;
-  background: linear-gradient(270deg, transparent, rgba(255, 255, 255, 0.45));
+  width: 32px;
+  height: 1.4px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45));
 }
 
-/* 3. BLIMP (Located AT LAST in the lower sky fade to white, moving Right to Left) */
+/* 3. BLIMP (Confined to lower sky fade to white, moving Left to Right in loop) */
 .blimp-item {
   pointer-events: none;
+  position: absolute;
+  left: 0;
   will-change: transform;
 }
 
-.blimp-r2l {
-  top: 35%;
-  animation: flyBlimpR2L 54s linear infinite, bobBlimp 6s ease-in-out infinite alternate;
+.blimp-loop-1 {
+  top: 25%;
+  animation: flyBlimpL2R 46s linear infinite, bobBlimp 6s ease-in-out infinite alternate;
   animation-delay: 2s;
 }
 
-@keyframes flyBlimpR2L {
+@keyframes flyBlimpL2R {
   0% {
-    transform: translate3d(calc(100vw + 220px), 0, 0);
+    transform: translate3d(-160px, 0, 0);
   }
   100% {
-    transform: translate3d(-280px, 0, 0);
+    transform: translate3d(calc(100vw + 180px), 0, 0);
   }
 }
 
 @keyframes bobBlimp {
   0% {
-    transform: translateY(0px) rotate(-0.5deg);
+    margin-top: 0px;
   }
   100% {
-    transform: translateY(-14px) rotate(0.8deg);
+    margin-top: -10px;
   }
 }
 
 /* ==========================================================================
    DYNAMIC 4-TIER NAVBAR THEME MODES
-   Changes smoothly based on active section
    ========================================================================== */
 
 /* 1. Space Theme (White Text & Translucent Space Glass) */
@@ -336,7 +328,7 @@ body {
   border: 1px solid rgba(15, 23, 42, 0.18);
 }
 
-/* 4. Earth Theme (Pure Black Text & Minimalist Clean Pill) */
+/* 4. Earth Theme (Pure Black Text & Minimalist Clean White Pill) */
 .theme-earth #nav-brand-text {
   color: #000000;
 }
@@ -346,9 +338,9 @@ body {
   background: #f1f5f9;
 }
 .theme-earth #nav-pill-box {
-  background: #f8fafc;
+  background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.18);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 .theme-earth .alt-link {
   color: #64748b;

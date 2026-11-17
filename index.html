@@ -18,7 +18,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=3.2" />
+  <link rel="stylesheet" href="styles.css?v=3.3" />
 </head>
 <body class="selection:bg-blue-500 selection:text-white">
 
@@ -132,19 +132,19 @@
          ======================================================================= -->
     <div class="sky-flight-system absolute inset-x-0 pointer-events-none overflow-hidden" style="top: 270vh; height: 135vh;">
       
-      <!-- LAYER 1: BACK CLOUDS (Slow horizontal drift across sky) (z-5) -->
+      <!-- LAYER 1: BACK CLOUDS (Slow horizontal drift across sky in a straight line) (z-5) -->
       <div class="clouds-back-layer absolute inset-0 z-[5]">
-        <!-- Fluffy Cumulus Cloud Bank 1 -->
-        <div class="cloud-drift-1 absolute" style="top: 9%;">
-          <svg width="300" height="110" viewBox="0 0 300 110" fill="none" opacity="0.45">
-            <path d="M 45 90 C 24 90, 12 74, 22 56 C 28 44, 40 40, 52 42 C 60 25, 85 16, 110 25 C 125 12, 160 10, 185 24 C 200 19, 225 24, 235 40 C 255 42, 275 56, 270 74 C 272 86, 258 90, 245 90 Z" fill="white"/>
+        <!-- Elegant Horizontal Cumulus Bank 1 (Soft background depth) -->
+        <div class="cloud-drift-1 absolute" style="top: 8%;">
+          <svg width="320" height="96" viewBox="0 0 320 96" fill="none" opacity="0.42">
+            <path d="M 45 80 L 275 80 C 294 80 308 68 304 52 C 300 38 285 30 270 34 C 262 18 240 10 220 18 C 206 8 180 6 160 16 C 146 6 118 6 102 18 C 88 12 66 16 58 28 C 42 28 28 40 26 56 C 24 70 34 80 45 80 Z" fill="#ffffff"/>
           </svg>
         </div>
 
-        <!-- Fluffy Cumulus Cloud Bank 2 -->
-        <div class="cloud-drift-2 absolute" style="top: 68%;">
-          <svg width="340" height="120" viewBox="0 0 340 120" fill="none" opacity="0.4">
-            <path d="M 50 100 C 26 100, 12 80, 24 60 C 32 46, 48 42, 62 45 C 72 26, 102 18, 130 28 C 148 14, 188 12, 218 27 C 235 22, 265 28, 276 46 C 298 48, 320 64, 314 84 C 316 96, 300 100, 285 100 Z" fill="white"/>
+        <!-- Long Atmospheric Horizon Cloud Bank 2 (Soft background depth) -->
+        <div class="cloud-drift-2 absolute" style="top: 72%;">
+          <svg width="360" height="105" viewBox="0 0 360 105" fill="none" opacity="0.38">
+            <path d="M 50 90 L 310 90 C 332 90 348 76 342 58 C 338 44 322 36 306 40 C 296 22 272 14 248 24 C 234 10 198 8 178 22 C 162 12 130 12 114 26 C 98 18 74 24 66 42 C 46 44 32 60 36 78 C 38 88 44 90 50 90 Z" fill="#ffffff"/>
           </svg>
         </div>
       </div>
@@ -193,48 +193,48 @@
 
       </div>
 
-      <!-- LAYER 3: 3D FOREGROUND DRIFTING CLOUDS (z-15) - Airplanes dive BEHIND these clouds! -->
+      <!-- LAYER 3: 3D FOREGROUND DRIFTING CLOUDS (z-15) - Airplanes dive BEHIND these clouds in straight-line flight! -->
       <div class="clouds-fore-layer absolute inset-0 z-[15]">
         
-        <!-- 3D Foreground Cumulus Cloud 1 (Drifting across upper flight path) -->
-        <div class="fore-cloud-drift-1 absolute" style="top: 12%;">
-          <svg width="240" height="100" viewBox="0 0 240 100" fill="none" class="filter drop-shadow-md">
+        <!-- 3D Foreground Cumulus Cloud 1 (Drifting across upper flight path at 11%) -->
+        <div class="fore-cloud-drift-1 absolute" style="top: 11%;">
+          <svg width="250" height="92" viewBox="0 0 250 92" fill="none" class="filter drop-shadow-md">
             <defs>
-              <linearGradient id="cloud-pure-g1" x1="120" y1="15" x2="120" y2="85" gradientUnits="userSpaceOnUse">
+              <linearGradient id="cloud-pure-g1" x1="125" y1="10" x2="125" y2="82" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="70%" stop-color="#ffffff" stop-opacity="0.97"/>
+                <stop offset="72%" stop-color="#ffffff" stop-opacity="0.98"/>
                 <stop offset="100%" stop-color="#e0f2fe" stop-opacity="0.92"/>
               </linearGradient>
             </defs>
-            <path d="M 40 82 C 22 82, 12 68, 20 52 C 24 42, 34 38, 44 40 C 50 24, 72 16, 92 24 C 104 12, 136 10, 154 22 C 166 18, 186 22, 194 36 C 210 38, 224 50, 220 66 C 222 78, 210 82, 198 82 Z" fill="url(#cloud-pure-g1)"/>
+            <path d="M 38 78 L 212 78 C 230 78 244 66 238 48 C 232 34 216 28 202 32 C 194 16 172 10 152 18 C 138 6 108 6 94 20 C 80 14 58 20 52 36 C 36 40 24 56 30 70 C 32 76 35 78 38 78 Z" fill="url(#cloud-pure-g1)"/>
           </svg>
         </div>
 
-        <!-- 3D Foreground Cumulus Cloud 2 (Drifting across upper-mid flight path) -->
-        <div class="fore-cloud-drift-2 absolute" style="top: 18%;">
-          <svg width="220" height="90" viewBox="0 0 220 90" fill="none" class="filter drop-shadow-md">
+        <!-- 3D Foreground Cumulus Cloud 2 (Drifting across upper-mid flight path at 16%) -->
+        <div class="fore-cloud-drift-2 absolute" style="top: 16%;">
+          <svg width="220" height="84" viewBox="0 0 220 84" fill="none" class="filter drop-shadow-md">
             <defs>
-              <linearGradient id="cloud-pure-g2" x1="110" y1="12" x2="110" y2="76" gradientUnits="userSpaceOnUse">
+              <linearGradient id="cloud-pure-g2" x1="110" y1="8" x2="110" y2="74" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="72%" stop-color="#ffffff" stop-opacity="0.97"/>
+                <stop offset="75%" stop-color="#ffffff" stop-opacity="0.98"/>
                 <stop offset="100%" stop-color="#e0f2fe" stop-opacity="0.9"/>
               </linearGradient>
             </defs>
-            <path d="M 35 74 C 18 74, 10 60, 18 46 C 24 34, 40 32, 52 38 C 62 20, 90 14, 112 24 C 128 14, 156 16, 168 30 C 184 28, 202 38, 202 54 C 208 68, 196 74, 180 74 Z" fill="url(#cloud-pure-g2)"/>
+            <path d="M 34 72 L 186 72 C 204 72 216 60 210 44 C 204 32 190 26 176 30 C 166 14 144 8 126 16 C 114 6 90 8 80 20 C 68 14 48 20 44 34 C 30 40 24 54 28 64 C 30 70 32 72 34 72 Z" fill="url(#cloud-pure-g2)"/>
           </svg>
         </div>
 
-        <!-- 3D Foreground Cumulus Cloud 3 (Drifting across lower flight path) -->
-        <div class="fore-cloud-drift-3 absolute" style="top: 73%;">
-          <svg width="250" height="105" viewBox="0 0 250 105" fill="none" class="filter drop-shadow-md">
+        <!-- 3D Foreground Cumulus Cloud 3 (Drifting across lower flight path at 81%) -->
+        <div class="fore-cloud-drift-3 absolute" style="top: 81%;">
+          <svg width="270" height="96" viewBox="0 0 270 96" fill="none" class="filter drop-shadow-md">
             <defs>
-              <linearGradient id="cloud-pure-g3" x1="125" y1="15" x2="125" y2="90" gradientUnits="userSpaceOnUse">
+              <linearGradient id="cloud-pure-g3" x1="135" y1="10" x2="135" y2="86" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="70%" stop-color="#ffffff" stop-opacity="0.97"/>
+                <stop offset="72%" stop-color="#ffffff" stop-opacity="0.98"/>
                 <stop offset="100%" stop-color="#e0f2fe" stop-opacity="0.92"/>
               </linearGradient>
             </defs>
-            <path d="M 42 85 C 22 85, 10 70, 20 52 C 26 40, 42 36, 54 40 C 64 22, 92 15, 116 25 C 132 12, 168 10, 190 26 C 208 20, 230 26, 238 44 C 254 48, 260 68, 246 85 Z" fill="url(#cloud-pure-g3)"/>
+            <path d="M 42 84 L 228 84 C 250 84 264 68 258 50 C 252 34 234 28 218 32 C 208 16 184 10 162 18 C 148 6 116 6 100 20 C 86 14 64 20 56 36 C 40 40 28 56 34 72 C 36 80 39 84 42 84 Z" fill="url(#cloud-pure-g3)"/>
           </svg>
         </div>
 
@@ -518,7 +518,7 @@
 
   </div>
 
-  <script src="script.js?v=3.2"></script>
+  <script src="script.js?v=3.3"></script>
   <script>
     lucide.createIcons();
   </script>

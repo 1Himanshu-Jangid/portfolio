@@ -145,62 +145,59 @@ body {
    Planes cruise SLOWLY (48s) in separated lanes (Zero collision, pure clean design)
    ========================================================================== */
 
-/* Background Clouds: Slow continuous horizontal drift */
+/* Background Clouds: Slow continuous straight-line horizontal drift */
 .cloud-drift-1 {
-  animation: cloudDriftSlow_1 110s linear infinite;
+  animation: cloudDriftSlow_1 105s linear infinite;
+  will-change: transform;
 }
 
 @keyframes cloudDriftSlow_1 {
-  0% { transform: translate3d(-320px, 0, 0); }
-  100% { transform: translate3d(calc(100vw + 320px), 0, 0); }
-}
-
-.cloud-drift-2 {
-  animation: cloudDriftSlow_2 130s linear infinite;
-  animation-delay: -55s;
-}
-
-@keyframes cloudDriftSlow_2 {
   0% { transform: translate3d(-340px, 0, 0); }
   100% { transform: translate3d(calc(100vw + 340px), 0, 0); }
 }
 
-/* 3D Foreground Clouds: Moving across the sky and floating in front of flight paths */
+.cloud-drift-2 {
+  animation: cloudDriftSlow_2 125s linear infinite;
+  animation-delay: -55s;
+  will-change: transform;
+}
+
+@keyframes cloudDriftSlow_2 {
+  0% { transform: translate3d(-380px, 0, 0); }
+  100% { transform: translate3d(calc(100vw + 380px), 0, 0); }
+}
+
+/* 3D Foreground Clouds: Pure straight-line horizontal drift (Zero up/down motion, zero jitter) */
 .fore-cloud-drift-1 {
-  animation: foreCloudDrift_1 80s linear infinite, cloudFloatBob 8s ease-in-out infinite alternate;
+  animation: foreCloudDrift_1 76s linear infinite;
   will-change: transform;
 }
 
 @keyframes foreCloudDrift_1 {
-  0% { transform: translate3d(-260px, 0, 0); }
-  100% { transform: translate3d(calc(100vw + 260px), 0, 0); }
-}
-
-.fore-cloud-drift-2 {
-  animation: foreCloudDrift_2 95s linear infinite, cloudFloatBob 9s ease-in-out infinite alternate;
-  animation-delay: -45s;
-  will-change: transform;
-}
-
-@keyframes foreCloudDrift_2 {
-  0% { transform: translate3d(-260px, 0, 0); }
-  100% { transform: translate3d(calc(100vw + 260px), 0, 0); }
-}
-
-.fore-cloud-drift-3 {
-  animation: foreCloudDrift_3 88s linear infinite, cloudFloatBob 7.5s ease-in-out infinite alternate;
-  animation-delay: -22s;
-  will-change: transform;
-}
-
-@keyframes foreCloudDrift_3 {
   0% { transform: translate3d(-280px, 0, 0); }
   100% { transform: translate3d(calc(100vw + 280px), 0, 0); }
 }
 
-@keyframes cloudFloatBob {
-  0% { margin-top: 0px; }
-  100% { margin-top: -10px; }
+.fore-cloud-drift-2 {
+  animation: foreCloudDrift_2 92s linear infinite;
+  animation-delay: -42s;
+  will-change: transform;
+}
+
+@keyframes foreCloudDrift_2 {
+  0% { transform: translate3d(-250px, 0, 0); }
+  100% { transform: translate3d(calc(100vw + 250px), 0, 0); }
+}
+
+.fore-cloud-drift-3 {
+  animation: foreCloudDrift_3 84s linear infinite;
+  animation-delay: -20s;
+  will-change: transform;
+}
+
+@keyframes foreCloudDrift_3 {
+  0% { transform: translate3d(-300px, 0, 0); }
+  100% { transform: translate3d(calc(100vw + 300px), 0, 0); }
 }
 
 /* AIRPLANES: SLOW, MAJESTIC, CALM CRUISE (GUARANTEED NO COLLISION) */

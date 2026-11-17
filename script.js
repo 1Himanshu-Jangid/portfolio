@@ -25,23 +25,38 @@ document.addEventListener('DOMContentLoaded', () => {
     class Star {
       constructor() {
         this.reset();
-        this.y = Math.random() * height;
+        this.originY = Math.random() * height;
+        this.y = this.originY;
       }
 
       reset() {
-        this.x = Math.random() * width;
-        this.y = Math.random() * height;
-        this.radius = Math.random() * 1.4 + 0.3;
+        this.originX = Math.random() * width;
+        this.originY = Math.random() * height;
+        this.x = this.originX;
+        this.y = this.originY;
+        this.radius = Math.random() * 1.5 + 0.35;
         this.baseAlpha = Math.random() * 0.75 + 0.25;
         this.alpha = this.baseAlpha;
-        this.twinkleSpeed = Math.random() * 0.03 + 0.008;
+        this.twinkleSpeed = Math.random() * 0.025 + 0.008;
         this.twinkleOffset = Math.random() * Math.PI * 2;
+
+        // Micro-motion: stars gently drift and breathe in their place a little bit
+        this.driftRadius = Math.random() * 3.5 + 1.2; // 1.2px to 4.7px drift
+        this.driftSpeedX = Math.random() * 0.015 + 0.006;
+        this.driftSpeedY = Math.random() * 0.015 + 0.006;
+        this.driftPhaseX = Math.random() * Math.PI * 2;
+        this.driftPhaseY = Math.random() * Math.PI * 2;
       }
 
       update(time) {
-        this.alpha = this.baseAlpha + Math.sin(time * this.twinkleSpeed + this.twinkleOffset) * 0.28;
+        // Twinkling brightness
+        this.alpha = this.baseAlpha + Math.sin(time * this.twinkleSpeed + this.twinkleOffset) * 0.3;
         if (this.alpha < 0.1) this.alpha = 0.1;
         if (this.alpha > 1) this.alpha = 1;
+
+        // Gentle floating micro-motion on their place
+        this.x = this.originX + Math.sin(time * this.driftSpeedX + this.driftPhaseX) * this.driftRadius;
+        this.y = this.originY + Math.cos(time * this.driftSpeedY + this.driftPhaseY) * this.driftRadius;
       }
 
       draw() {

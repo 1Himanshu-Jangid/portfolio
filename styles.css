@@ -25,30 +25,30 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--top-dark-blue);
+  background-color: #000000;
   overflow-x: hidden;
 }
 
 /* ==========================================================================
    EXPANSIVE 4-PAGE CONTINUOUS ATMOSPHERIC GRADIENT (~540vh total height)
+   Sequence: Pure Pitch Black Space -> Deep Navy -> Sky Blue -> White
    ========================================================================== */
 #atmosphere-gradient-track {
   background: linear-gradient(
     180deg,
-    #08122d 0%,         /* 1. Very top dark blue cosmos */
-    #040a1b 4%,         /* Dark blue transition into space */
-    #010206 10%,        /* Pitch black space starts */
-    #010206 24%,        /* Black space with stars & dynamic orbital satellites */
-    #081636 32%,        /* Transition out of space */
-    #0f2e6b 40%,        /* Stratosphere dark blue (SKIT section) */
-    #1d4ed8 47%,        /* Royal blue */
-    #0284c7 55%,        /* Upper sky transition */
-    #38bdf8 64%,        /* Rich Sky Blue (3D clouds & climbing airplanes) */
-    #7dd3fc 72%,        /* Daytime Sky Blue */
-    #bae6fd 80%,        /* Soft Sky Blue with Blimp */
-    #e0f2fe 88%,        /* Atmospheric sky mist fading into white */
-    #ffffff 94%,        /* Pure crisp clean white starts */
-    #ffffff 100%        /* 100% Pure White for Section 4 */
+    #000000 0%,          /* 1. Very top starts with 100% PURE PITCH BLACK */
+    #000000 24%,         /* Pure pitch black space with shimmering stars & ISS */
+    #020617 30%,         /* Deep cosmos transition out of space */
+    #081636 36%,         /* Transition into stratosphere navy */
+    #0f2e6b 43%,         /* Deep Navy Blue (SKIT section) */
+    #1d4ed8 50%,         /* Royal blue */
+    #0284c7 57%,         /* Upper sky transition */
+    #38bdf8 65%,         /* Rich Sky Blue (3D moving clouds & clean airplanes) */
+    #7dd3fc 73%,         /* Daytime Sky Blue */
+    #bae6fd 81%,         /* Soft Sky Blue with Blimp */
+    #e0f2fe 89%,         /* Atmospheric sky mist fading into white */
+    #ffffff 95%,         /* Pure crisp clean white starts */
+    #ffffff 100%         /* 100% Pure White for Earth Section */
   );
 }
 

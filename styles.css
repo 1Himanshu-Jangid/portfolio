@@ -1,0 +1,344 @@
+/* ==========================================================================
+   Himanshu Jangid — Potfolie
+   3-Page Atmospheric Descent: Space -> Atmosphere -> Earth
+   ========================================================================== */
+
+:root {
+  --space-black: #030508;
+  --space-navy: #081026;
+  --deep-blue: #0f2b5c;
+  --mid-blue: #1d4ed8;
+  --sky-blue: #38bdf8;
+  --day-blue: #7dd3fc;
+  --pale-blue: #bae6fd;
+  --mist-white: #e0f2fe;
+  --pure-white: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--space-black);
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   CONTINUOUS VERTICAL ATMOSPHERIC COLOR GRADIENT
+   Smooth transition from Deep Black Space -> Sky Blue -> Pure White
+   ========================================================================== */
+#atmosphere-gradient-track {
+  background: linear-gradient(
+    180deg,
+    #020408 0%,        /* Pure dark black space */
+    #050b1a 15%,       /* Deep space upper atmosphere */
+    #0a183d 28%,       /* Thermosphere navy */
+    #133774 42%,       /* Mesosphere transition */
+    #1d5ba8 52%,       /* Stratosphere dark blue */
+    #38bdf8 65%,       /* Rich sky blue with airplanes */
+    #7dd3fc 75%,       /* Bright sky blue with blimp */
+    #bae6fd 84%,       /* Lower troposphere */
+    #e0f2fe 92%,       /* Atmospheric haze */
+    #ffffff 98%,       /* Crisp clean white */
+    #ffffff 100%
+  );
+}
+
+/* ==========================================================================
+   STARFIELD CANVAS
+   ========================================================================== */
+#stars-canvas {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   SATELLITE ORBITS (Moving Very Slowly)
+   ========================================================================== */
+.satellite {
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Satellite 1: ISS Solar Station (Drifting diagonally from upper right to middle left) */
+.sat-1 {
+  top: 14%;
+  left: -150px;
+  animation: orbitSat1 75s linear infinite;
+}
+
+@keyframes orbitSat1 {
+  0% {
+    transform: translate3d(105vw, -40px, 0) rotate(8deg);
+  }
+  100% {
+    transform: translate3d(-180px, 120px, 0) rotate(14deg);
+  }
+}
+
+/* Satellite 2: Gold Foil Dish Satellite (Slow horizontal orbit) */
+.sat-2 {
+  top: 26%;
+  right: -120px;
+  animation: orbitSat2 95s linear infinite;
+  animation-delay: 8s;
+}
+
+@keyframes orbitSat2 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-6deg);
+  }
+  100% {
+    transform: translate3d(calc(-100vw - 200px), 60px, 0) rotate(-4deg);
+  }
+}
+
+/* Satellite 3: Rotating CubeSat */
+.sat-3 {
+  top: 8%;
+  left: -80px;
+  animation: orbitSat3 110s linear infinite;
+  animation-delay: 20s;
+}
+
+@keyframes orbitSat3 {
+  0% {
+    transform: translate3d(-80px, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(55vw, 40px, 0) rotate(180deg);
+  }
+  100% {
+    transform: translate3d(105vw, 20px, 0) rotate(360deg);
+  }
+}
+
+/* Satellite 4: Deep Orbit Observatory */
+.sat-4 {
+  top: 22%;
+  left: -100px;
+  animation: orbitSat4 130s linear infinite;
+  animation-delay: 4s;
+}
+
+@keyframes orbitSat4 {
+  0% {
+    transform: translate3d(-100px, 80px, 0) rotate(-12deg);
+  }
+  100% {
+    transform: translate3d(105vw, -30px, 0) rotate(-10deg);
+  }
+}
+
+/* Blinking Beacon Light on Satellites */
+.sat-beacon {
+  animation: beaconPulse 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes beaconPulse {
+  0%, 40% { opacity: 0.1; }
+  60%, 100% { opacity: 1; filter: drop-shadow(0 0 3px currentColor); }
+}
+
+/* ==========================================================================
+   SKY VEHICLES: 2-3 AIRPLANES & BLIMP
+   Located in the Sky Blue Atmospheric Zone
+   ========================================================================== */
+
+/* Airplane 1: Commercial Jet with Contrail (Cruising Altitude) */
+.plane-1 {
+  top: 54%;
+  left: -180px;
+  animation: flyPlane1 28s linear infinite;
+}
+
+@keyframes flyPlane1 {
+  0% {
+    transform: translate3d(-180px, 0, 0) rotate(-1.5deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 200px), -30px, 0) rotate(-1.5deg);
+  }
+}
+
+/* Airplane 2: Executive Jet (Cruising in opposite / upper angle) */
+.plane-2 {
+  top: 48%;
+  right: -150px;
+  animation: flyPlane2 34s linear infinite;
+  animation-delay: 9s;
+}
+
+@keyframes flyPlane2 {
+  0% {
+    transform: translate3d(0, 0, 0) scaleX(-1) rotate(-2deg);
+  }
+  100% {
+    transform: translate3d(calc(-100vw - 220px), 40px, 0) scaleX(-1) rotate(-2deg);
+  }
+}
+
+/* Airplane 3: High Distance Jet */
+.plane-3 {
+  top: 44%;
+  left: -100px;
+  animation: flyPlane3 44s linear infinite;
+  animation-delay: 16s;
+}
+
+@keyframes flyPlane3 {
+  0% {
+    transform: translate3d(-100px, 20px, 0) rotate(1deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 150px), -10px, 0) rotate(1deg);
+  }
+}
+
+/* Jet Condensation Contrail */
+.jet-contrail {
+  width: 90px;
+  height: 2.5px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7));
+  border-radius: 999px;
+  filter: blur(0.7px);
+  margin-right: -2px;
+}
+
+.contrail-light {
+  width: 65px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5));
+}
+
+.contrail-faint {
+  width: 45px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4));
+}
+
+/* BLIMP: Located Below Airplanes, Cruising Smoothly */
+.sky-blimp {
+  top: 66%;
+  left: -200px;
+  animation: flyBlimp 52s linear infinite, bobBlimp 6s ease-in-out infinite alternate;
+  animation-delay: 2s;
+}
+
+@keyframes flyBlimp {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: calc(100vw + 200px);
+  }
+}
+
+@keyframes bobBlimp {
+  0% {
+    transform: translateY(0px) rotate(-0.5deg);
+  }
+  100% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+/* ==========================================================================
+   DYNAMIC ADAPTIVE NAVBAR THEME MODES
+   Changes color smoothly based on which page / altitude you are on
+   ========================================================================== */
+
+/* 1. Space Mode (White Text & Glass) */
+.theme-space #nav-brand-text {
+  color: #ffffff;
+}
+.theme-space #nav-logo {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+.theme-space #nav-pill-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.theme-space .alt-link {
+  color: #cbd5e1;
+}
+.theme-space .alt-link.active-pill {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-weight: 600;
+}
+.theme-space #nav-branch-badge {
+  background: rgba(255, 255, 255, 0.1);
+  color: #93c5fd;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* 2. Sky Mode (Dark Contrasting Text & Pill) */
+.theme-sky #nav-brand-text {
+  color: #0f172a;
+}
+.theme-sky #nav-logo {
+  border-color: rgba(15, 23, 42, 0.3);
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.4);
+}
+.theme-sky #nav-pill-box {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(15, 23, 42, 0.15);
+}
+.theme-sky .alt-link {
+  color: #334155;
+}
+.theme-sky .alt-link.active-pill {
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 600;
+}
+.theme-sky #nav-branch-badge {
+  background: rgba(15, 23, 42, 0.08);
+  color: #0c4a6e;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+}
+
+/* 3. Earth Mode (Pure Black Text & Pill) */
+.theme-earth #nav-brand-text {
+  color: #000000;
+}
+.theme-earth #nav-logo {
+  border-color: rgba(0, 0, 0, 0.3);
+  color: #000000;
+  background: #f1f5f9;
+}
+.theme-earth #nav-pill-box {
+  background: #f8fafc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.theme-earth .alt-link {
+  color: #64748b;
+}
+.theme-earth .alt-link.active-pill {
+  background: #000000;
+  color: #ffffff;
+  font-weight: 600;
+}
+.theme-earth #nav-branch-badge {
+  background: #f1f5f9;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+/* Accessibility: Reduced motion check */
+@media (prefers-reduced-motion: reduce) {
+  .satellite, .sky-plane, .sky-blimp {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

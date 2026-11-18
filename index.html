@@ -18,7 +18,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=9.0" />
+  <link rel="stylesheet" href="styles.css?v=10.0" />
 </head>
 <body class="selection:bg-blue-500 selection:text-white">
 
@@ -469,40 +469,14 @@
     </section>
 
     <!-- =======================================================================
-         PAGE 4: EARTH SURFACE (Sky Fading into Pure White with Cityscape)
+         PAGE 4: EARTH SURFACE (Sky Fading into Pure White with Minimalist 2D Cityscape)
          Text Color: PURE BLACK TEXT ON CRISP WHITE | min-h-[135vh]
          ======================================================================= -->
-    <section id="earth" class="min-h-[135vh] w-full flex flex-col justify-between px-4 sm:px-12 pt-24 sm:pt-32 pb-44 sm:pb-72 text-black relative z-20 overflow-hidden">
+    <section id="earth" class="min-h-[135vh] w-full flex flex-col justify-between px-4 sm:px-12 pt-24 sm:pt-32 pb-28 sm:pb-40 text-black relative z-20 overflow-hidden">
       
-      <!-- Architectural City Skyline Layer (Empire State Building & New York Midtown Horizon Cutout) -->
+      <!-- Minimalist 2D Architectural City Skyline Layer (Clean Vector Landmarks, Zero Cars) -->
       <div class="city-skyline-layer">
-        <img src="city-skyline-cutout.png?v=8.0" alt="Empire State Building and Manhattan Skyline Cutout" class="city-skyline-img" />
-      </div>
-
-      <!-- Street & Moving Cars Layer -->
-      <div class="city-street-layer">
-        <div class="street-curb"></div>
-        <div class="street-lane-divider"></div>
-
-        <!-- Lane 1 (Eastbound: Faces Right, Drives FORWARD to the Right): NYC Modern Taxi -->
-        <div class="car-item car-lane-east car-east-taxi" title="NYC Modern Taxi">
-          <img src="car_taxi_east.png?v=8.0" class="car-img" alt="NYC Modern Taxi" />
-        </div>
-
-        <!-- Lane 1 (Eastbound: Faces Right, Drives FORWARD to the Right): Sapphire Blue Sedan -->
-        <div class="car-item car-lane-east car-east-blue" title="Sapphire Blue Sedan">
-          <img src="car_blue_east.png?v=8.0" class="car-img" alt="Sapphire Blue Sedan" />
-        </div>
-
-        <!-- Lane 2 (Westbound: Faces Left, Drives FORWARD to the Left): Crimson Red Sports Coupe -->
-        <div class="car-item car-lane-west car-west-red" title="Crimson Red Sports Coupe">
-          <img src="car_red_west.png?v=8.0" class="car-img" alt="Crimson Red Sports Coupe" />
-        </div>
-
-        <!-- Lane 2 (Westbound: Faces Left, Drives FORWARD to the Left): Classic NYC Yellow Taxi -->
-        <div class="car-item car-lane-west car-west-taxi" title="Classic NYC Yellow Taxi">
-          <img src="car_taxi_west.png?v=8.0" class="car-img" alt="Classic NYC Yellow Taxi" />
-        </div>
+        <img src="city-skyline-2d.svg?v=10.0" alt="Minimalist 2D Architectural City Skyline" class="city-skyline-img" />
       </div>
 
       <!-- Earth Container -->
@@ -558,7 +532,7 @@
 
   </div>
 
-  <script src="script.js?v=9.0"></script>
+  <script src="script.js?v=10.0"></script>
   <script>
     lucide.createIcons();
   </script>

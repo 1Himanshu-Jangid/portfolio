@@ -1,0 +1,202 @@
+<svg viewBox="0 0 2400 360" preserveAspectRatio="xMidYMax slice" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+  <defs>
+    <linearGradient id="bgSkylineGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="midSkylineGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#64748b" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#94a3b8" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="foreSkylineGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="empireStateGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <!-- LAYER 1: Distant Skyline Silhouette -->
+  <g fill="url(#bgSkylineGrad)">
+    <rect x="30" y="180" width="75" height="180"/>
+    <polygon points="65.5,180 67.5,145 69.5,180"/>
+    <rect x="125" y="140" width="90" height="220"/>
+    <rect x="235" y="210" width="60" height="150"/>
+    <polygon points="263,210 265,175 267,210"/>
+    <rect x="315" y="110" width="110" height="250"/>
+    <rect x="445" y="170" width="80" height="190"/>
+    <polygon points="483,170 485,135 487,170"/>
+    <rect x="545" y="130" width="95" height="230"/>
+    <rect x="660" y="190" width="70" height="170"/>
+    <rect x="750" y="90" width="120" height="270"/>
+    <polygon points="808,90 810,55 812,90"/>
+    <rect x="890" y="150" width="85" height="210"/>
+    <rect x="995" y="120" width="100" height="240"/>
+    <polygon points="1043,120 1045,85 1047,120"/>
+    <rect x="1115" y="180" width="75" height="180"/>
+    <rect x="1210" y="100" width="110" height="260"/>
+    <polygon points="1263,100 1265,65 1267,100"/>
+    <rect x="1340" y="160" width="90" height="200"/>
+    <rect x="1450" y="140" width="80" height="220"/>
+    <polygon points="1488,140 1490,105 1492,140"/>
+    <rect x="1550" y="110" width="115" height="250"/>
+    <rect x="1685" y="190" width="70" height="170"/>
+    <polygon points="1718,190 1720,155 1722,190"/>
+    <rect x="1775" y="120" width="105" height="240"/>
+    <rect x="1900" y="170" width="85" height="190"/>
+    <polygon points="1940.5,170 1942.5,135 1944.5,170"/>
+    <rect x="2005" y="100" width="110" height="260"/>
+    <rect x="2135" y="150" width="80" height="210"/>
+    <polygon points="2173,150 2175,115 2177,150"/>
+    <rect x="2235" y="130" width="120" height="230"/>
+  </g>
+
+  <!-- LAYER 2: Midground Towers -->
+  <g fill="url(#midSkylineGrad)">
+    <rect x="0" y="220" width="90" height="140"/>
+    <rect x="100" y="236.5" width="70" height="123.5"/>
+    <rect x="110.5" y="170" width="49" height="66.5"/>
+    <rect x="185" y="130" width="115" height="230"/>
+    <rect x="315" y="190" width="65" height="170"/>
+    <rect x="395" y="223.5" width="100" height="136.5"/>
+    <rect x="410" y="150" width="70" height="73.5"/>
+    <rect x="510" y="110" width="85" height="250"/>
+    <polygon points="550.5,110 552.5,70 554.5,110"/>
+    <rect x="610" y="180" width="95" height="180"/>
+    <rect x="720" y="217" width="110" height="143"/>
+    <rect x="736.5" y="140" width="77" height="77"/>
+    <rect x="845" y="100" width="75" height="260"/>
+    <polygon points="880.5,100 882.5,55 884.5,100"/>
+    <rect x="935" y="170" width="105" height="190"/>
+    <rect x="1055" y="204" width="85" height="156"/>
+    <rect x="1067.75" y="120" width="59.49999999999999" height="84"/>
+    <rect x="1155" y="90" width="120" height="270"/>
+    <polygon points="1213,90 1215,40 1217,90"/>
+    <rect x="1290" y="190" width="75" height="170"/>
+    <rect x="1380" y="210.5" width="105" height="149.5"/>
+    <rect x="1395.75" y="130" width="73.5" height="80.5"/>
+    <rect x="1500" y="110" width="90" height="250"/>
+    <rect x="1605" y="236.5" width="110" height="123.5"/>
+    <rect x="1621.5" y="170" width="77" height="66.5"/>
+    <rect x="1730" y="140" width="80" height="220"/>
+    <polygon points="1768,140 1770,105 1772,140"/>
+    <rect x="1825" y="120" width="115" height="240"/>
+    <rect x="1955" y="243" width="75" height="117"/>
+    <rect x="1966.25" y="180" width="52.5" height="62.99999999999999"/>
+    <rect x="2045" y="130" width="100" height="230"/>
+    <polygon points="2093,130 2095,90 2097,130"/>
+    <rect x="2160" y="170" width="90" height="190"/>
+    <rect x="2265" y="150" width="135" height="210"/>
+  </g>
+
+  <!-- LAYER 3: Foreground Landmark Buildings & Architectural Facades -->
+  <g fill="url(#foreSkylineGrad)">
+    <!-- Tower West 1 -->
+    <rect x="50" y="200" width="70" height="160"/>
+    <rect x="62" y="160" width="46" height="40"/>
+    <polygon points="83,160 85,125 87,160"/>
+    <!-- Modern Tower West 2 -->
+    <rect x="150" y="170" width="80" height="190"/>
+    <polygon points="150,170 190,130 230,170"/>
+    <!-- Art Deco Tower West 3 -->
+    <rect x="250" y="190" width="90" height="170"/>
+    <rect x="268" y="145" width="54" height="45"/>
+    <rect x="282" y="115" width="26" height="30"/>
+    <line x1="295" y1="115" x2="295" y2="80" stroke="#0f172a" stroke-width="2"/>
+    <!-- Mid-rise Brownstones Block 1 -->
+    <rect x="360" y="240" width="110" height="120"/>
+    <!-- CHRYSLER-INSPIRED TOWER (Left-Center at x=500) -->
+    <!-- Chrysler Base -->
+    <rect x="520" y="180" width="90" height="180"/>
+    <!-- Chrysler Tier 2 -->
+    <rect x="532" y="135" width="66" height="45"/>
+    <!-- Chrysler Tier 3 (Sunburst Arches) -->
+    <path d="M 538 135 Q 565 95 592 135 Z"/>
+    <path d="M 545 110 Q 565 75 585 110 Z"/>
+    <!-- Chrysler Needle Spire -->
+    <polygon points="563,75 565,20 567,75"/>
+    <!-- Contemporary Glass Tower (x=640) -->
+    <rect x="640" y="150" width="85" height="210"/>
+    <polygon points="640,150 725,110 725,150"/>
+    <!-- Modern Center-Left High-rise (x=750) -->
+    <rect x="750" y="195" width="95" height="165"/>
+    <rect x="770" y="165" width="55" height="30"/>
+    <!-- EMPIRE STATE BUILDING (Hero Landmark) -->
+    <rect x="900" y="180" width="120" height="180"/>
+    <rect x="914" y="130" width="92" height="50"/>
+    <rect x="926" y="85" width="68" height="45"/>
+    <rect x="938" y="55" width="44" height="30"/>
+    <path d="M 944 55 Q 960 38 976 55 Z"/>
+    <polygon points="958.5,40 960,5 961.5,40"/>
+    <!-- High-rise Center-Right 1 (x=1050) -->
+    <rect x="1050" y="160" width="85" height="200"/>
+    <rect x="1065" y="125" width="55" height="35"/>
+    <line x1="1092.5" y1="125" x2="1092.5" y2="95" stroke="#0f172a" stroke-width="2"/>
+    <!-- Modern Angular Tower (x=1160) -->
+    <rect x="1160" y="185" width="95" height="175"/>
+    <polygon points="1160,185 1205,135 1255,185"/>
+    <!-- Tapered Supertall Tower (x=1280) -->
+    <polygon points="1280,360 1300,90 1360,90 1380,360"/>
+    <polygon points="1328,90 1330,35 1332,90"/>
+    <!-- Classic Art-Deco Setback (x=1400) -->
+    <rect x="1400" y="200" width="85" height="160"/>
+    <rect x="1415" y="155" width="55" height="45"/>
+    <rect x="1428" y="125" width="29" height="30"/>
+    <!-- Downtown Commercial Block (x=1510) -->
+    <rect x="1510" y="215" width="105" height="145"/>
+    <!-- Flatiron Inspired Wedge Tower (x=1640) -->
+    <polygon points="1640,360 1655,140 1715,140 1730,360"/>
+    <rect x="1668" y="115" width="34" height="25"/>
+    <!-- Modern Spire Tower (x=1750) -->
+    <rect x="1750" y="170" width="80" height="190"/>
+    <rect x="1765" y="135" width="50" height="35"/>
+    <polygon points="1788.5,135 1790,85 1791.5,135"/>
+    <!-- East River Skyscraper (x=1850) -->
+    <rect x="1850" y="190" width="90" height="170"/>
+    <rect x="1868" y="150" width="54" height="40"/>
+    <!-- East Modern Tower (x=1960) -->
+    <rect x="1960" y="145" width="85" height="215"/>
+    <polygon points="1960,145 2045,105 2045,145"/>
+    <!-- Far East Skyline Finishers -->
+    <rect x="2065" y="210" width="100" height="150"/>
+    <rect x="2185" y="180" width="95" height="180"/>
+    <polygon points="2231,180 2232.5,140 2234,180"/>
+    <rect x="2300" y="230" width="100" height="130"/>
+  </g>
+
+  <!-- Minimalist Architectural Grid Accents -->
+  <g fill="#38bdf8" opacity="0.35">
+    <rect x="938" y="200" width="4" height="7" rx="1"/>
+    <rect x="958" y="200" width="4" height="7" rx="1"/>
+    <rect x="978" y="200" width="4" height="7" rx="1"/>
+    <rect x="938" y="218" width="4" height="7" rx="1"/>
+    <rect x="958" y="218" width="4" height="7" rx="1"/>
+    <rect x="978" y="218" width="4" height="7" rx="1"/>
+    <rect x="938" y="236" width="4" height="7" rx="1"/>
+    <rect x="958" y="236" width="4" height="7" rx="1"/>
+    <rect x="978" y="236" width="4" height="7" rx="1"/>
+    <rect x="938" y="254" width="4" height="7" rx="1"/>
+    <rect x="958" y="254" width="4" height="7" rx="1"/>
+    <rect x="978" y="254" width="4" height="7" rx="1"/>
+    <rect x="938" y="272" width="4" height="7" rx="1"/>
+    <rect x="958" y="272" width="4" height="7" rx="1"/>
+    <rect x="978" y="272" width="4" height="7" rx="1"/>
+    <rect x="938" y="290" width="4" height="7" rx="1"/>
+    <rect x="958" y="290" width="4" height="7" rx="1"/>
+    <rect x="978" y="290" width="4" height="7" rx="1"/>
+    <rect x="938" y="308" width="4" height="7" rx="1"/>
+    <rect x="958" y="308" width="4" height="7" rx="1"/>
+    <rect x="978" y="308" width="4" height="7" rx="1"/>
+    <rect x="938" y="326" width="4" height="7" rx="1"/>
+    <rect x="958" y="326" width="4" height="7" rx="1"/>
+    <rect x="978" y="326" width="4" height="7" rx="1"/>
+    <rect x="948" y="100" width="4" height="6" rx="1"/>
+    <rect x="968" y="100" width="4" height="6" rx="1"/>
+    <rect x="948" y="114" width="4" height="6" rx="1"/>
+    <rect x="968" y="114" width="4" height="6" rx="1"/>
+  </g>
+
+  <!-- Clean Ground Horizon Baseline -->
+  <line x1="0" y1="360" x2="2400" y2="360" stroke="#0f172a" stroke-width="3"/>
+</svg>

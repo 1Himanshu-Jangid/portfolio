@@ -437,17 +437,17 @@ body {
 }
 
 /* ==========================================================================
-   PAGE 4: EARTH SURFACE SKYLINE (EMPIRE STATE BUILDING & CITY SKYLINE)
-   Iconic architectural cityscape anchored cleanly at ground level (0 M)
-   Real photographic Manhattan skyline with pure transparent sky (Zero clouds/sky box)
+   PAGE 4: EARTH SURFACE SKYLINE (MINIMALIST 2D ARCHITECTURAL SKYLINE)
+   Iconic 2D vector architectural cityscape anchored cleanly at ground level (0 M)
+   Clean, simple, elegant silhouette (Zero cars, zero photo clutter)
    ========================================================================== */
 .city-skyline-layer {
   position: absolute;
-  bottom: 50px;
+  bottom: 0;
   left: 0;
   right: 0;
-  height: 270px;
-  max-height: 32vh;
+  height: 200px;
+  max-height: 26vh;
   pointer-events: none;
   z-index: 10;
   overflow: hidden;
@@ -458,9 +458,9 @@ body {
 
 @media (max-width: 640px) {
   .city-skyline-layer {
-    bottom: 40px;
-    height: 170px;
-    max-height: 25vh;
+    bottom: 0;
+    height: 120px;
+    max-height: 18vh;
   }
 }
 
@@ -470,127 +470,7 @@ body {
   object-fit: cover;
   object-position: center bottom;
   pointer-events: none;
-  filter: drop-shadow(0 -3px 8px rgba(0, 0, 0, 0.06));
-}
-
-/* ==========================================================================
-   PAGE 4: STREET & MOVING CARS LAYER
-   High-definition asphalt roadway with multi-lane realistic vehicles driving forward
-   ========================================================================== */
-.city-street-layer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 52px;
-  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
-  border-top: 2px solid #475569;
-  z-index: 15;
-  overflow: hidden;
-  pointer-events: none;
-  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.3);
-}
-
-.street-curb {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #94a3b8 0%, #e2e8f0 50%, #94a3b8 100%);
-  pointer-events: none;
-}
-
-.street-lane-divider {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 2px;
-  border-top: 2px dashed rgba(250, 204, 21, 0.65);
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-.car-item {
-  position: absolute;
-  left: 0;
-  pointer-events: none;
-  will-change: transform;
-}
-
-.car-img {
-  height: 23px;
-  width: auto;
-  object-fit: contain;
-  pointer-events: none;
-  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.55));
-}
-
-/* Lane 1: Upper Lane (Eastbound: Left to Right, Front facing Right) */
-.car-lane-east {
-  top: 3px;
-}
-
-/* Lane 2: Lower Lane (Westbound: Right to Left, Front facing Left) */
-.car-lane-west {
-  bottom: 3px;
-}
-
-/* Animated forward movements with staggered natural timing */
-.car-east-taxi {
-  animation: driveEast 24s linear infinite;
-  animation-delay: 0s;
-}
-
-.car-east-blue {
-  animation: driveEast 29s linear infinite;
-  animation-delay: -14s;
-}
-
-.car-west-red {
-  animation: driveWest 22s linear infinite;
-  animation-delay: -3s;
-}
-
-.car-west-taxi {
-  animation: driveWest 27s linear infinite;
-  animation-delay: -15s;
-}
-
-/* Guaranteed forward drive with 3D GPU acceleration: Eastbound starts left (-200px) and moves right */
-@keyframes driveEast {
-  0% {
-    transform: translate3d(-200px, 0, 0);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 200px), 0, 0);
-  }
-}
-
-/* Guaranteed forward drive with 3D GPU acceleration: Westbound starts right (100vw + 200px) and moves left */
-@keyframes driveWest {
-  0% {
-    transform: translate3d(calc(100vw + 200px), 0, 0);
-  }
-  100% {
-    transform: translate3d(-200px, 0, 0);
-  }
-}
-
-@media (max-width: 640px) {
-  .city-street-layer {
-    height: 42px;
-  }
-  .car-img {
-    height: 18px;
-  }
-  .car-lane-east {
-    top: 2px;
-  }
-  .car-lane-west {
-    bottom: 2px;
-  }
+  opacity: 0.9;
 }
 
 /* Liquid Glass Interactive Pills */
@@ -864,8 +744,7 @@ section {
 
 .satellites-container,
 .sky-flight-system,
-.city-skyline-layer,
-.city-street-layer {
+.city-skyline-layer {
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;

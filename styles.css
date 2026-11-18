@@ -167,6 +167,87 @@ body {
 }
 
 /* ==========================================================================
+   PAGE 2 (ACADEMICS // 02) SATELLITE SYSTEM (135vh - 270vh)
+   Academic AI Research CubeSat & Deep Space Orbiters above SKIT College
+   ========================================================================== */
+/* Satellite Skit 1: AI Research CubeSat (Upper Lane - 11% altitude) */
+.sat-stream-skit-1 {
+  top: 11%;
+  animation: moveSatSkit_1 56s linear infinite;
+  animation-delay: 0s;
+}
+
+@keyframes moveSatSkit_1 {
+  0% {
+    transform: translate3d(-140px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(calc(25vw - 25px), 6px, 0) rotate(0.8deg);
+  }
+  50% {
+    transform: translate3d(calc(50vw), -6px, 0) rotate(-0.8deg);
+  }
+  75% {
+    transform: translate3d(calc(75vw + 25px), 5px, 0) rotate(0.6deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 140px), 0px, 0) rotate(0deg);
+  }
+}
+
+/* Satellite Skit 2: Earth Observation Radar Satellite (Mid-Upper Corridor - 24% altitude)
+   Equidistant 120° offset (-18.6s) */
+.sat-stream-skit-2 {
+  top: 24%;
+  animation: moveSatSkit_2 56s linear infinite;
+  animation-delay: -18.6s;
+}
+
+@keyframes moveSatSkit_2 {
+  0% {
+    transform: translate3d(-150px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(calc(25vw - 30px), -8px, 0) rotate(-1deg);
+  }
+  50% {
+    transform: translate3d(calc(50vw), 7px, 0) rotate(0.9deg);
+  }
+  75% {
+    transform: translate3d(calc(75vw + 30px), -6px, 0) rotate(-0.7deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 150px), 0px, 0) rotate(0deg);
+  }
+}
+
+/* Satellite Skit 3: Quantum Neural Data Relay (Lower Stratosphere Corridor - 82% altitude)
+   Equidistant 240° offset (-37.3s) */
+.sat-stream-skit-3 {
+  top: 82%;
+  animation: moveSatSkit_3 56s linear infinite;
+  animation-delay: -37.3s;
+}
+
+@keyframes moveSatSkit_3 {
+  0% {
+    transform: translate3d(-145px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(calc(25vw - 20px), 6px, 0) rotate(0.7deg);
+  }
+  50% {
+    transform: translate3d(calc(50vw), -6px, 0) rotate(-0.7deg);
+  }
+  75% {
+    transform: translate3d(calc(75vw + 20px), 5px, 0) rotate(0.5deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 145px), 0px, 0) rotate(0deg);
+  }
+}
+
+/* ==========================================================================
    2. 3D MOVING CLOUD SYSTEM & CLEAN SLOW AIRPLANE FLIGHT
    Clouds drift continuously across the sky at multiple depths
    Planes cruise SLOWLY (48s) in separated lanes (Zero collision, pure clean design)

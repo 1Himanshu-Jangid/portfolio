@@ -18,7 +18,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=5.0" />
+  <link rel="stylesheet" href="styles.css?v=6.0" />
 </head>
 <body class="selection:bg-blue-500 selection:text-white">
 
@@ -476,7 +476,7 @@
       
       <!-- Architectural City Skyline Layer (Empire State Building & New York Midtown Horizon) -->
       <div class="city-skyline-layer">
-        <img src="city-skyline.svg?v=3.0" alt="Empire State Building and Cityscape Skyline" class="city-skyline-img" />
+        <img src="city-skyline-real.png?v=1.0" alt="Empire State Building and Cityscape Skyline" class="city-skyline-img" />
       </div>
 
       <!-- Street & Moving Cars Layer -->
@@ -484,294 +484,24 @@
         <div class="street-curb"></div>
         <div class="street-lane-divider"></div>
 
-        <!-- Lane 1 (Eastbound: Drives FORWARD to the Right): NYC Yellow Taxi -->
+        <!-- Lane 1 (Eastbound: Faces Right, Drives FORWARD to the Right): NYC Yellow Taxi -->
         <div class="car-item car-lane-east car-east-taxi" title="NYC Yellow Taxi">
-<svg viewBox="0 0 120 38" width="84" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- Metallic Taxi Yellow Gradient -->
-    <linearGradient id="taxiBody" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#fef08a"/>
-      <stop offset="25%" stop-color="#facc15"/>
-      <stop offset="70%" stop-color="#eab308"/>
-      <stop offset="100%" stop-color="#a16207"/>
-    </linearGradient>
-    <linearGradient id="glassTint" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8"/>
-      <stop offset="40%" stop-color="#0f172a" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#020617"/>
-    </linearGradient>
-    <linearGradient id="beamYellow" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.65"/>
-      <stop offset="30%" stop-color="#facc15" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#fef08a" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="rimAlloy" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="40%" stop-color="#cbd5e1"/>
-      <stop offset="70%" stop-color="#64748b"/>
-      <stop offset="100%" stop-color="#0f172a"/>
-    </radialGradient>
-  </defs>
-
-  <!-- Ground Contact Shadow -->
-  <ellipse cx="58" cy="35" rx="52" ry="2.5" fill="rgba(0,0,0,0.55)"/>
-
-  <!-- Forward Headlight Beam on Asphalt (Shining to the RIGHT!) -->
-  <polygon points="106,23 160,16 160,34 106,27" fill="url(#beamYellow)"/>
-
-  <!-- Main Chassis / Body Profile (Front is on the RIGHT!) -->
-  <!-- Rear bumper at X=6, trunk at X=16, rear glass slope to roof at X=38, roof to X=72, windshield slope to hood at X=94, front nose at X=108 -->
-  <path d="M 8 28 
-           L 6 25 Q 5 21 8 20 L 18 19 L 36 10 Q 40 9 44 9 L 70 9 Q 74 9 78 11 L 96 19 L 106 20 Q 109 21 109 24 L 108 27 Q 107 29 104 29 L 98 29
-           A 9 9 0 0 0 80 29 L 38 29
-           A 9 9 0 0 0 20 29 L 10 29 Z" 
-        fill="url(#taxiBody)" stroke="#a16207" stroke-width="0.8"/>
-
-  <!-- Aerodynamic Cabin Windows -->
-  <path d="M 38 18 L 22 18 L 37 11.5 Q 39 11 42 11 L 54 11 L 54 18 Z" fill="url(#glassTint)"/>
-  <path d="M 57 11 L 70 11 Q 72 11 75 12.5 L 91 18 L 57 18 Z" fill="url(#glassTint)"/>
-  <rect x="54" y="10" width="3" height="8" fill="#1e293b"/> <!-- B-Pillar -->
-
-  <!-- Taxi Rooftop Medallion Display Sign -->
-  <rect x="48" y="4" width="22" height="5" rx="1.5" fill="#ffffff" stroke="#0f172a" stroke-width="0.8"/>
-  <rect x="52" y="5.5" width="14" height="2" fill="#f59e0b"/>
-
-  <!-- Sleek NYC Checkerboard Stripe -->
-  <rect x="22" y="20" width="4" height="1.8" fill="#0f172a"/>
-  <rect x="30" y="20" width="4" height="1.8" fill="#0f172a"/>
-  <rect x="38" y="20" width="4" height="1.8" fill="#0f172a"/>
-  <rect x="46" y="20" width="4" height="1.8" fill="#0f172a"/>
-  <rect x="54" y="20" width="4" height="1.8" fill="#0f172a"/>
-  <rect x="62" y="20" width="4" height="1.8" fill="#0f172a"/>
-  <rect x="70" y="20" width="4" height="1.8" fill="#0f172a"/>
-  <rect x="78" y="20" width="4" height="1.8" fill="#0f172a"/>
-
-  <!-- Door Lines & Handles -->
-  <line x1="55" y1="18" x2="55" y2="28" stroke="#ca8a04" stroke-width="0.8"/>
-  <line x1="77" y1="18" x2="77" y2="28" stroke="#ca8a04" stroke-width="0.8"/>
-  <rect x="42" y="20" width="4" height="1" rx="0.5" fill="#451a03"/>
-  <rect x="64" y="20" width="4" height="1" rx="0.5" fill="#451a03"/>
-
-  <!-- Side Mirror -->
-  <path d="M 76 17 Q 80 16 80 18 Q 78 19 75 19 Z" fill="#ca8a04"/>
-
-  <!-- Headlight & Taillight -->
-  <path d="M 104 21 Q 108 21 108 24 L 102 24 Z" fill="#fef08a"/>
-  <rect x="6" y="21" width="2" height="4" rx="0.8" fill="#ef4444"/>
-
-  <!-- Realistic Alloy Wheels (Rear at X=29, Front at X=89) -->
-  <!-- Rear Wheel -->
-  <circle cx="29" cy="29" r="7.5" fill="#0f172a"/>
-  <circle cx="29" cy="29" r="5" fill="url(#rimAlloy)"/>
-  <circle cx="29" cy="29" r="2" fill="#0f172a"/>
-
-  <!-- Front Wheel -->
-  <circle cx="89" cy="29" r="7.5" fill="#0f172a"/>
-  <circle cx="89" cy="29" r="5" fill="url(#rimAlloy)"/>
-  <circle cx="89" cy="29" r="2" fill="#0f172a"/>
-</svg>
+          <img src="car_taxi_east.png?v=1.0" class="car-img" alt="NYC Yellow Taxi" />
         </div>
 
-        <!-- Lane 1 (Eastbound: Drives FORWARD to the Right): Sapphire Blue Performance Sedan -->
+        <!-- Lane 1 (Eastbound: Faces Right, Drives FORWARD to the Right): Sapphire Blue Sedan -->
         <div class="car-item car-lane-east car-east-blue" title="Sapphire Blue Sedan">
-<svg viewBox="0 0 120 38" width="84" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="blueBody" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#60a5fa"/>
-      <stop offset="25%" stop-color="#2563eb"/>
-      <stop offset="70%" stop-color="#1d4ed8"/>
-      <stop offset="100%" stop-color="#0f172a"/>
-    </linearGradient>
-    <linearGradient id="beamBlue" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.7"/>
-      <stop offset="35%" stop-color="#38bdf8" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="rimSport" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#f8fafc"/>
-      <stop offset="40%" stop-color="#94a3b8"/>
-      <stop offset="80%" stop-color="#334155"/>
-      <stop offset="100%" stop-color="#0f172a"/>
-    </radialGradient>
-  </defs>
-
-  <ellipse cx="58" cy="35" rx="52" ry="2.5" fill="rgba(0,0,0,0.55)"/>
-  <polygon points="107,23 162,15 162,35 107,27" fill="url(#beamBlue)"/>
-
-  <!-- Sleek Aerodynamic Sport Sedan Profile (Front on the RIGHT) -->
-  <path d="M 8 28 
-           L 6 25 Q 5 21 9 19.5 L 20 18.5 L 39 10 Q 44 9 48 9 L 72 9 Q 76 9 80 11.5 L 98 19 L 107 20.5 Q 110 22 109 25 L 108 27 Q 106 29 103 29 L 98 29
-           A 9 9 0 0 0 80 29 L 38 29
-           A 9 9 0 0 0 20 29 L 10 29 Z" 
-        fill="url(#blueBody)" stroke="#1e3a8a" stroke-width="0.8"/>
-
-  <!-- Windows with Sleek Sky Reflection -->
-  <path d="M 40 17.5 L 24 17.5 L 39 11.5 Q 42 10.5 46 10.5 L 56 10.5 L 56 17.5 Z" fill="#0f172a" opacity="0.9"/>
-  <path d="M 59 10.5 L 72 10.5 Q 75 10.5 78 12 L 94 17.5 L 59 17.5 Z" fill="#0f172a" opacity="0.9"/>
-  <line x1="39" y1="12" x2="91" y2="17" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
-  <rect x="56" y="10" width="3" height="8" fill="#0f172a"/>
-
-  <!-- Chrome Window Trim -->
-  <path d="M 23 18 L 39 11 Q 43 10 48 10 L 73 10 Q 77 10 80 12 L 96 18" stroke="#cbd5e1" stroke-width="0.8" fill="none"/>
-
-  <!-- Door Lines & Flush Handles -->
-  <line x1="57" y1="18" x2="57" y2="28" stroke="#1e40af" stroke-width="0.8"/>
-  <line x1="79" y1="18" x2="79" y2="28" stroke="#1e40af" stroke-width="0.8"/>
-  <line x1="43" y1="20" x2="47" y2="20" stroke="#cbd5e1" stroke-width="1.2"/>
-  <line x1="66" y1="20" x2="70" y2="20" stroke="#cbd5e1" stroke-width="1.2"/>
-
-  <!-- Mirror -->
-  <path d="M 78 17 Q 82 16 82 18 Q 80 19 77 19 Z" fill="#1d4ed8"/>
-
-  <!-- Modern Dual-Projector Headlight -->
-  <path d="M 104 21 Q 109 21.5 108 24 L 102 24 Z" fill="#e0f2fe"/>
-  <rect x="6" y="21" width="2" height="3.5" rx="0.6" fill="#ef4444"/>
-
-  <!-- Multi-Spoke Alloy Wheels with Red Calipers -->
-  <circle cx="29" cy="29" r="7.5" fill="#0f172a"/>
-  <rect x="25" y="24" width="3" height="4" fill="#ef4444"/> <!-- Red Sport Caliper -->
-  <circle cx="29" cy="29" r="5" fill="url(#rimSport)"/>
-  <circle cx="29" cy="29" r="1.8" fill="#0f172a"/>
-
-  <circle cx="89" cy="29" r="7.5" fill="#0f172a"/>
-  <rect x="85" y="24" width="3" height="4" fill="#ef4444"/>
-  <circle cx="89" cy="29" r="5" fill="url(#rimSport)"/>
-  <circle cx="89" cy="29" r="1.8" fill="#0f172a"/>
-</svg>
+          <img src="car_blue_east.png?v=1.0" class="car-img" alt="Sapphire Blue Sedan" />
         </div>
 
-        <!-- Lane 2 (Westbound: Drives FORWARD to the Left): Pearl White Executive Sedan -->
-        <div class="car-item car-lane-west car-west-white" title="Pearl White Executive Sedan">
-<svg viewBox="0 0 120 38" width="84" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- Metallic Pearl White Gradient -->
-    <linearGradient id="pearlWhite" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="35%" stop-color="#f1f5f9"/>
-      <stop offset="70%" stop-color="#cbd5e1"/>
-      <stop offset="100%" stop-color="#475569"/>
-    </linearGradient>
-    <linearGradient id="beamWhiteWest" x1="1" y1="0" x2="0" y2="0">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
-      <stop offset="35%" stop-color="#e0f2fe" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="rimExec" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="50%" stop-color="#94a3b8"/>
-      <stop offset="85%" stop-color="#334155"/>
-      <stop offset="100%" stop-color="#0f172a"/>
-    </radialGradient>
-  </defs>
-
-  <!-- Ground Shadow -->
-  <ellipse cx="62" cy="35" rx="52" ry="2.5" fill="rgba(0,0,0,0.55)"/>
-
-  <!-- Headlight Beam (Shining forward to the LEFT!) -->
-  <polygon points="14,23 -40,15 -40,35 14,27" fill="url(#beamWhiteWest)"/>
-
-  <!-- Main Chassis Profile (Front nose at X=12 on LEFT, Rear at X=112 on RIGHT) -->
-  <path d="M 112 28 
-           L 114 25 Q 115 21 111 19.5 L 100 18.5 L 81 10 Q 76 9 72 9 L 48 9 Q 44 9 40 11.5 L 22 19 L 13 20.5 Q 10 22 11 25 L 12 27 Q 14 29 17 29 L 22 29
-           A 9 9 0 0 1 40 29 L 82 29
-           A 9 9 0 0 1 100 29 L 110 29 Z" 
-        fill="url(#pearlWhite)" stroke="#94a3b8" stroke-width="0.8"/>
-
-  <!-- Tinted Panoramic Windows (Left-Facing) -->
-  <path d="M 80 17.5 L 96 17.5 L 81 11.5 Q 78 10.5 74 10.5 L 64 10.5 L 64 17.5 Z" fill="#0f172a" opacity="0.9"/>
-  <path d="M 61 10.5 L 48 10.5 Q 45 10.5 42 12 L 26 17.5 L 61 17.5 Z" fill="#0f172a" opacity="0.9"/>
-  <line x1="81" y1="12" x2="29" y2="17" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
-  <rect x="61" y="10" width="3" height="8" fill="#0f172a"/>
-
-  <!-- Chrome Trim -->
-  <path d="M 97 18 L 81 11 Q 77 10 72 10 L 47 10 Q 43 10 40 12 L 24 18" stroke="#334155" stroke-width="0.8" fill="none"/>
-
-  <!-- Door Lines & Handles -->
-  <line x1="63" y1="18" x2="63" y2="28" stroke="#cbd5e1" stroke-width="0.8"/>
-  <line x1="41" y1="18" x2="41" y2="28" stroke="#cbd5e1" stroke-width="0.8"/>
-  <line x1="77" y1="20" x2="73" y2="20" stroke="#64748b" stroke-width="1.2"/>
-  <line x1="54" y1="20" x2="50" y2="20" stroke="#64748b" stroke-width="1.2"/>
-
-  <!-- Side Mirror (Facing Left) -->
-  <path d="M 42 17 Q 38 16 38 18 Q 40 19 43 19 Z" fill="#e2e8f0"/>
-
-  <!-- Headlight on Left, Taillight on Right -->
-  <path d="M 16 21 Q 11 21.5 12 24 L 18 24 Z" fill="#ffffff"/>
-  <rect x="112" y="21" width="2" height="3.5" rx="0.6" fill="#ef4444"/>
-
-  <!-- Front Wheel at X=31, Rear Wheel at X=91 -->
-  <circle cx="31" cy="29" r="7.5" fill="#0f172a"/>
-  <circle cx="31" cy="29" r="5" fill="url(#rimExec)"/>
-  <circle cx="31" cy="29" r="1.8" fill="#0f172a"/>
-
-  <circle cx="91" cy="29" r="7.5" fill="#0f172a"/>
-  <circle cx="91" cy="29" r="5" fill="url(#rimExec)"/>
-  <circle cx="91" cy="29" r="1.8" fill="#0f172a"/>
-</svg>
-        </div>
-
-        <!-- Lane 2 (Westbound: Drives FORWARD to the Left): Crimson Red Sports Coupe -->
+        <!-- Lane 2 (Westbound: Faces Left, Drives FORWARD to the Left): Crimson Red Sports Coupe -->
         <div class="car-item car-lane-west car-west-red" title="Crimson Red Sports Coupe">
-<svg viewBox="0 0 120 38" width="84" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- Metallic Crimson Sports Gradient -->
-    <linearGradient id="redSports" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f87171"/>
-      <stop offset="25%" stop-color="#dc2626"/>
-      <stop offset="70%" stop-color="#b91c1c"/>
-      <stop offset="100%" stop-color="#450a0a"/>
-    </linearGradient>
-    <linearGradient id="beamRedWest" x1="1" y1="0" x2="0" y2="0">
-      <stop offset="0%" stop-color="#fee2e2" stop-opacity="0.8"/>
-      <stop offset="35%" stop-color="#fca5a5" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
-    </linearGradient>
-    <radialGradient id="rimRedSports" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#e2e8f0"/>
-      <stop offset="45%" stop-color="#64748b"/>
-      <stop offset="85%" stop-color="#1e293b"/>
-      <stop offset="100%" stop-color="#020617"/>
-    </radialGradient>
-  </defs>
+          <img src="car_red_west.png?v=1.0" class="car-img" alt="Crimson Red Sports Coupe" />
+        </div>
 
-  <ellipse cx="62" cy="35" rx="52" ry="2.5" fill="rgba(0,0,0,0.55)"/>
-  <polygon points="14,23 -40,15 -40,35 14,27" fill="url(#beamRedWest)"/>
-
-  <!-- Low Slung Sports Coupe (Front on Left, Rear Spoiler on Right) -->
-  <path d="M 112 25 L 115 22 L 108 22 L 98 18 L 78 10 Q 74 9 70 9 L 48 9 Q 44 9 40 12 L 24 19 L 13 21 Q 10 22 11 25 L 12 27 Q 14 29 17 29 L 22 29
-           A 9 9 0 0 1 40 29 L 82 29
-           A 9 9 0 0 1 100 29 L 110 29 Z" 
-        fill="url(#redSports)" stroke="#991b1b" stroke-width="0.8"/>
-
-  <!-- Sports Cockpit Windows -->
-  <path d="M 76 17 L 92 17 L 78 11.5 Q 74 10.5 70 10.5 L 58 10.5 L 58 17 Z" fill="#0f172a" opacity="0.95"/>
-  <path d="M 55 10.5 L 48 10.5 Q 45 10.5 42 12 L 28 17 L 55 17 Z" fill="#0f172a" opacity="0.95"/>
-  <rect x="55" y="10" width="3" height="7.5" fill="#0f172a"/>
-
-  <!-- Door & Aggressive Side Air Scoop -->
-  <line x1="58" y1="17" x2="58" y2="28" stroke="#7f1d1d" stroke-width="0.8"/>
-  <path d="M 76 22 L 84 22 L 80 25 Z" fill="#450a0a"/> <!-- Side vent -->
-  <line x1="68" y1="19" x2="64" y2="19" stroke="#cbd5e1" stroke-width="1.2"/>
-
-  <!-- Mirror -->
-  <path d="M 42 16.5 Q 38 15.5 38 17.5 Q 40 18.5 43 18.5 Z" fill="#b91c1c"/>
-
-  <!-- Sleek Aggressive Headlight on Left -->
-  <path d="M 16 21 Q 11 21.5 12 24 L 18 24 Z" fill="#fee2e2"/>
-  <!-- Rear LED Light Bar -->
-  <rect x="110" y="21" width="3" height="3" rx="0.5" fill="#ef4444"/>
-
-  <!-- Wheels (Front at X=31, Rear at X=91) -->
-  <circle cx="31" cy="29" r="7.5" fill="#0f172a"/>
-  <rect x="33" y="24" width="3" height="4" fill="#ef4444"/> <!-- Red Caliper -->
-  <circle cx="31" cy="29" r="5" fill="url(#rimRedSports)"/>
-  <circle cx="31" cy="29" r="1.8" fill="#0f172a"/>
-
-  <circle cx="91" cy="29" r="7.5" fill="#0f172a"/>
-  <rect x="93" y="24" width="3" height="4" fill="#ef4444"/>
-  <circle cx="91" cy="29" r="5" fill="url(#rimRedSports)"/>
-  <circle cx="91" cy="29" r="1.8" fill="#0f172a"/>
-</svg>
+        <!-- Lane 2 (Westbound: Faces Left, Drives FORWARD to the Left): Classic NYC Yellow Taxi -->
+        <div class="car-item car-lane-west car-west-taxi" title="NYC Yellow Taxi">
+          <img src="car_taxi_west.png?v=1.0" class="car-img" alt="NYC Yellow Taxi" />
         </div>
       </div>
 
@@ -828,7 +558,7 @@
 
   </div>
 
-  <script src="script.js?v=5.0"></script>
+  <script src="script.js?v=6.0"></script>
   <script>
     lucide.createIcons();
   </script>

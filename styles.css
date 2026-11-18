@@ -432,15 +432,15 @@ body {
 /* ==========================================================================
    PAGE 4: EARTH SURFACE SKYLINE (EMPIRE STATE BUILDING & CITY SKYLINE)
    Iconic architectural cityscape anchored at ground level (0 M)
-   Layered 3D aerial perspective with realistic materials & atmospheric fade
+   Real photographic Manhattan skyline with 3D atmospheric aerial perspective
    ========================================================================== */
 .city-skyline-layer {
   position: absolute;
-  bottom: 40px;
+  bottom: 42px;
   left: 0;
   right: 0;
-  height: 230px;
-  max-height: 26vh;
+  height: 260px;
+  max-height: 30vh;
   pointer-events: none;
   z-index: 10;
   overflow: hidden;
@@ -452,8 +452,8 @@ body {
 @media (max-width: 640px) {
   .city-skyline-layer {
     bottom: 34px;
-    height: 160px;
-    max-height: 20vh;
+    height: 180px;
+    max-height: 22vh;
   }
 }
 
@@ -463,7 +463,6 @@ body {
   object-fit: cover;
   object-position: bottom center;
   pointer-events: none;
-  filter: drop-shadow(0 -4px 18px rgba(15, 23, 42, 0.08));
 }
 
 /* ==========================================================================
@@ -475,7 +474,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 44px;
+  height: 46px;
   background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
   border-top: 2px solid #334155;
   z-index: 15;
@@ -512,9 +511,17 @@ body {
   will-change: transform;
 }
 
+.car-img {
+  height: 21px;
+  width: auto;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.5));
+}
+
 /* Lane 1: Upper Lane (Eastbound: Left to Right, Front facing Right) */
 .car-lane-east {
-  top: 1px;
+  top: 2px;
 }
 
 /* Lane 2: Lower Lane (Westbound: Right to Left, Front facing Left) */
@@ -533,14 +540,14 @@ body {
   animation-delay: -14s;
 }
 
-.car-west-white {
-  animation: driveWest 23s linear infinite;
-  animation-delay: -5s;
+.car-west-red {
+  animation: driveWest 22s linear infinite;
+  animation-delay: -3s;
 }
 
-.car-west-red {
+.car-west-taxi {
   animation: driveWest 27s linear infinite;
-  animation-delay: -17s;
+  animation-delay: -15s;
 }
 
 /* Guaranteed forward drive: Eastbound starts left (-160px) and moves right */
@@ -565,11 +572,10 @@ body {
 
 @media (max-width: 640px) {
   .city-street-layer {
-    height: 36px;
+    height: 38px;
   }
-  .car-item svg {
-    transform: scale(0.8);
-    transform-origin: left center;
+  .car-img {
+    height: 16px;
   }
 }
 

@@ -1,0 +1,918 @@
+<svg viewBox="0 0 1600 620" preserveAspectRatio="xMidYMax slice" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+  <defs>
+    <!-- Sky blend / Ground fade -->
+    <linearGradient id="groundFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="85%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
+    </linearGradient>
+
+    <!-- Glass Tower Gradient -->
+    <linearGradient id="glassTower" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="35%" stop-color="#38bdf8"/>
+      <stop offset="70%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+
+    <!-- Empire State Facade Light / Shadow -->
+    <linearGradient id="esbFacade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="48%" stop-color="#f1f5f9"/>
+      <stop offset="52%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+
+    <linearGradient id="esbSpire" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="50%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+
+    <!-- Warm Ochre / Brick Gradients -->
+    <linearGradient id="warmOchre" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="60%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#92400e"/>
+    </linearGradient>
+
+    <linearGradient id="brickWarm" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="70%" stop-color="#9a3412"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </linearGradient>
+
+    <linearGradient id="copperRoof" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- =======================================================================
+       LAYER 1: DISTANT BACKGROUND SILHOUETTE (Soft atmospheric blue-gray)
+       ======================================================================= -->
+  <g opacity="0.45">
+    <!-- Far Left Background Towers -->
+    <rect x="60" y="380" width="75" height="240" fill="#94a3b8"/>
+    <rect x="155" y="340" width="65" height="280" fill="#cbd5e1"/>
+    <rect x="235" y="310" width="85" height="310" fill="#94a3b8"/>
+    <rect x="335" y="270" width="70" height="350" fill="#cbd5e1"/>
+    <polygon points="335,270 370,230 405,270" fill="#94a3b8"/>
+    
+    <!-- Far Right Background Towers -->
+    <rect x="1170" y="290" width="80" height="330" fill="#94a3b8"/>
+    <rect x="1270" y="320" width="60" height="300" fill="#cbd5e1"/>
+    <rect x="1350" y="360" width="90" height="260" fill="#94a3b8"/>
+    <rect x="1460" y="330" width="70" height="290" fill="#cbd5e1"/>
+  </g>
+
+  <!-- =======================================================================
+       LAYER 2: MIDGROUND CITY SKYLINE WITH FLANKING SKYSCRAPERS
+       ======================================================================= -->
+  <!-- Left Building 4: Far Left Midtown Block (X: 40 - 180) -->
+  <g>
+    <rect x="40" y="420" width="130" height="200" fill="#64748b"/>
+    <rect x="50" y="410" width="40" height="10" fill="#475569"/>
+    <!-- Windows Grid -->
+    <rect x="55" y="435" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="69" y="435" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="83" y="435" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="97" y="435" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="111" y="435" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="125" y="435" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="55" y="453" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="69" y="453" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="83" y="453" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="97" y="453" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="111" y="453" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="125" y="453" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="55" y="471" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="69" y="471" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="83" y="471" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="97" y="471" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="111" y="471" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="125" y="471" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="55" y="489" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="69" y="489" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="83" y="489" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="97" y="489" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="111" y="489" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="125" y="489" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="55" y="507" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="69" y="507" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="83" y="507" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="97" y="507" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="111" y="507" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="125" y="507" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="55" y="525" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="69" y="525" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="83" y="525" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="97" y="525" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="111" y="525" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="125" y="525" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="55" y="543" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="69" y="543" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="83" y="543" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="97" y="543" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="111" y="543" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="125" y="543" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="55" y="561" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="69" y="561" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="83" y="561" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="97" y="561" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="111" y="561" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+<rect x="125" y="561" width="6" height="8" rx="0.8" fill="#94a3b8"/>
+
+  </g>
+
+  <!-- Left Building 3: Brick High-rise with Water Tank (X: 190 - 330) -->
+  <g>
+    <rect x="190" y="370" width="135" height="250" fill="url(#brickWarm)"/>
+    <!-- Setback Tier -->
+    <rect x="215" y="340" width="85" height="30" fill="#9a3412"/>
+    <!-- Water Tank on roof -->
+    <rect x="235" y="315" width="22" height="25" rx="3" fill="#78350f" stroke="#451a03" stroke-width="1"/>
+    <line x1="238" y1="340" x2="238" y2="330" stroke="#334155" stroke-width="1.5"/>
+    <line x1="254" y1="340" x2="254" y2="330" stroke="#334155" stroke-width="1.5"/>
+    <polygon points="233,315 246,305 259,315" fill="#451a03"/>
+    <!-- Windows -->
+    <rect x="205" y="385" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="225" y="385" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="245" y="385" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="265" y="385" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="285" y="385" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="205" y="403" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="225" y="403" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="245" y="403" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="265" y="403" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="285" y="403" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="205" y="421" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="225" y="421" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="245" y="421" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="265" y="421" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="285" y="421" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="205" y="439" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="225" y="439" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="245" y="439" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="265" y="439" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="285" y="439" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="205" y="457" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="225" y="457" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="245" y="457" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="265" y="457" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="285" y="457" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="205" y="475" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="225" y="475" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="245" y="475" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="265" y="475" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="285" y="475" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="205" y="493" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="225" y="493" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="245" y="493" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="265" y="493" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="285" y="493" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="205" y="511" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="225" y="511" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="245" y="511" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="265" y="511" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="285" y="511" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="205" y="529" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="225" y="529" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="245" y="529" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="265" y="529" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="285" y="529" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="205" y="547" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="225" y="547" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="245" y="547" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="265" y="547" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+<rect x="285" y="547" width="6" height="8" rx="0.8" fill="#fed7aa"/>
+
+  </g>
+
+  <!-- Left Building 2: Classic Limestone Tower (X: 345 - 480) -->
+  <g>
+    <rect x="345" y="320" width="130" height="300" fill="#e2e8f0"/>
+    <rect x="365" y="280" width="90" height="40" fill="#cbd5e1"/>
+    <rect x="385" y="250" width="50" height="30" fill="#94a3b8"/>
+    <line x1="410" y1="250" x2="410" y2="225" stroke="#64748b" stroke-width="2"/>
+    <!-- Vertical Pilasters -->
+    <line x1="375" y1="320" x2="375" y2="620" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="405" y1="320" x2="405" y2="620" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="435" y1="320" x2="435" y2="620" stroke="#cbd5e1" stroke-width="2"/>
+    <!-- Windows -->
+    <rect x="360" y="335" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="384" y="335" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="408" y="335" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="432" y="335" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="360" y="355" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="384" y="355" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="408" y="355" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="432" y="355" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="360" y="375" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="384" y="375" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="408" y="375" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="432" y="375" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="360" y="395" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="384" y="395" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="408" y="395" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="432" y="395" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="360" y="415" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="384" y="415" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="408" y="415" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="432" y="415" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="360" y="435" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="384" y="435" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="408" y="435" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="432" y="435" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="360" y="455" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="384" y="455" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="408" y="455" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="432" y="455" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="360" y="475" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="384" y="475" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="408" y="475" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="432" y="475" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="360" y="495" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="384" y="495" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="408" y="495" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="432" y="495" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="360" y="515" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="384" y="515" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="408" y="515" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="432" y="515" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="360" y="535" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="384" y="535" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="408" y="535" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="432" y="535" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="360" y="555" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="384" y="555" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="408" y="555" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="432" y="555" width="6" height="8" rx="0.8" fill="#334155"/>
+
+  </g>
+
+  <!-- Left Building 1 (Directly Left of ESB): Art Deco Tower with Copper Mansard Roof (X: 495 - 690) -->
+  <g>
+    <!-- Base & Shaft -->
+    <rect x="495" y="300" width="195" height="320" fill="url(#warmOchre)"/>
+    <!-- Setback 1 -->
+    <rect x="520" y="250" width="150" height="50" fill="#d97706"/>
+    <!-- Setback 2 -->
+    <rect x="545" y="200" width="100" height="50" fill="#b45309"/>
+    <!-- Classic Verdigris Copper Pyramid Mansard Roof -->
+    <polygon points="540,200 595,140 650,200" fill="url(#copperRoof)"/>
+    <line x1="595" y1="140" x2="595" y2="115" stroke="#047857" stroke-width="2.5"/>
+    <circle cx="595" cy="115" r="3" fill="#fbbf24"/>
+    <!-- Windows and Pilasters -->
+    <rect x="515" y="315" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="541" y="315" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="567" y="315" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="593" y="315" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="619" y="315" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="645" y="315" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="515" y="337" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="541" y="337" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="567" y="337" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="593" y="337" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="619" y="337" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="645" y="337" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="515" y="359" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="541" y="359" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="567" y="359" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="593" y="359" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="619" y="359" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="645" y="359" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="515" y="381" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="541" y="381" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="567" y="381" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="593" y="381" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="619" y="381" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="645" y="381" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="515" y="403" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="541" y="403" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="567" y="403" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="593" y="403" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="619" y="403" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="645" y="403" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="515" y="425" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="541" y="425" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="567" y="425" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="593" y="425" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="619" y="425" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="645" y="425" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="515" y="447" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="541" y="447" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="567" y="447" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="593" y="447" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="619" y="447" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="645" y="447" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="515" y="469" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="541" y="469" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="567" y="469" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="593" y="469" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="619" y="469" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="645" y="469" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="515" y="491" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="541" y="491" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="567" y="491" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="593" y="491" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="619" y="491" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="645" y="491" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="515" y="513" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="541" y="513" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="567" y="513" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="593" y="513" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="619" y="513" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="645" y="513" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="515" y="535" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="541" y="535" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="567" y="535" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="593" y="535" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="619" y="535" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="645" y="535" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="515" y="557" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="541" y="557" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="567" y="557" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="593" y="557" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="619" y="557" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="645" y="557" width="6" height="8" rx="0.8" fill="#451a03"/>
+
+    <rect x="535" y="258" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+<rect x="561" y="258" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+<rect x="587" y="258" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+<rect x="613" y="258" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+<rect x="535" y="276" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+<rect x="561" y="276" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+<rect x="587" y="276" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+<rect x="613" y="276" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+
+  </g>
+
+  <!-- Right Building 1 (Directly Right of ESB): Warm Art Deco Stepped Skyscraper (X: 895 - 1005) -->
+  <g>
+    <!-- Lower Shaft -->
+    <rect x="895" y="280" width="115" height="340" fill="url(#warmOchre)"/>
+    <!-- Stepped Setback 1 -->
+    <rect x="910" y="235" width="85" height="45" fill="#d97706"/>
+    <!-- Stepped Setback 2 -->
+    <rect x="925" y="195" width="55" height="40" fill="#b45309"/>
+    <!-- Red Architectural Crown / Signage Structure (Matching Reference Photo) -->
+    <rect x="928" y="180" width="48" height="15" rx="1.5" fill="#dc2626"/>
+    <line x1="932" y1="187" x2="972" y2="187" stroke="#ffffff" stroke-width="2" stroke-dasharray="3,3"/>
+    <!-- Windows -->
+    <rect x="910" y="295" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="932" y="295" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="954" y="295" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="976" y="295" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="910" y="317" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="932" y="317" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="954" y="317" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="976" y="317" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="910" y="339" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="932" y="339" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="954" y="339" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="976" y="339" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="910" y="361" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="932" y="361" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="954" y="361" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="976" y="361" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="910" y="383" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="932" y="383" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="954" y="383" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="976" y="383" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="910" y="405" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="932" y="405" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="954" y="405" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="976" y="405" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="910" y="427" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="932" y="427" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="954" y="427" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="976" y="427" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="910" y="449" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="932" y="449" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="954" y="449" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="976" y="449" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="910" y="471" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="932" y="471" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="954" y="471" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="976" y="471" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="910" y="493" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="932" y="493" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="954" y="493" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="976" y="493" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="910" y="515" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="932" y="515" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="954" y="515" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="976" y="515" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="910" y="537" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="932" y="537" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="954" y="537" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="976" y="537" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="910" y="559" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="932" y="559" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="954" y="559" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="976" y="559" width="6" height="8" rx="0.8" fill="#451a03"/>
+
+    <rect x="920" y="242" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+<rect x="942" y="242" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+<rect x="964" y="242" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+<rect x="920" y="260" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+<rect x="942" y="260" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+<rect x="964" y="260" width="6" height="8" rx="0.8" fill="#fef3c7"/>
+
+  </g>
+
+  <!-- Right Building 2: Modern Blue Reflective Glass Skyscraper (X: 1025 - 1175) (Matching tall right tower in photo) -->
+  <g>
+    <!-- Tower Main Mass -->
+    <rect x="1025" y="180" width="145" height="440" fill="url(#glassTower)"/>
+    <!-- Dark Modern Mechanical Penthouse -->
+    <rect x="1035" y="150" width="125" height="30" fill="#0f172a"/>
+    <rect x="1055" y="135" width="85" height="15" fill="#1e293b"/>
+    <line x1="1097" y1="135" x2="1097" y2="105" stroke="#94a3b8" stroke-width="2"/>
+    <!-- Vertical Glass Mullion Lines -->
+    <line x1="1045" y1="180" x2="1045" y2="620" stroke="#bae6fd" stroke-width="1.2" opacity="0.6"/>
+    <line x1="1065" y1="180" x2="1065" y2="620" stroke="#bae6fd" stroke-width="1.2" opacity="0.6"/>
+    <line x1="1085" y1="180" x2="1085" y2="620" stroke="#bae6fd" stroke-width="1.2" opacity="0.6"/>
+    <line x1="1105" y1="180" x2="1105" y2="620" stroke="#bae6fd" stroke-width="1.2" opacity="0.6"/>
+    <line x1="1125" y1="180" x2="1125" y2="620" stroke="#bae6fd" stroke-width="1.2" opacity="0.6"/>
+    <line x1="1145" y1="180" x2="1145" y2="620" stroke="#bae6fd" stroke-width="1.2" opacity="0.6"/>
+    <!-- Horizontal Floor Banding -->
+    <line x1="1025" y1="195" x2="1170" y2="195" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="219" x2="1170" y2="219" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="243" x2="1170" y2="243" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="267" x2="1170" y2="267" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="291" x2="1170" y2="291" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="315" x2="1170" y2="315" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="339" x2="1170" y2="339" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="363" x2="1170" y2="363" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="387" x2="1170" y2="387" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="411" x2="1170" y2="411" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="435" x2="1170" y2="435" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="459" x2="1170" y2="459" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="483" x2="1170" y2="483" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="507" x2="1170" y2="507" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="531" x2="1170" y2="531" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><line x1="1025" y1="555" x2="1170" y2="555" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+  </g>
+
+  <!-- Right Building 3: Mid-rise Terracotta & Sandstone Blocks (X: 1190 - 1340) -->
+  <g>
+    <rect x="1190" y="330" width="140" height="290" fill="#d97706"/>
+    <rect x="1210" y="295" width="95" height="35" fill="#b45309"/>
+    <!-- Water Tank -->
+    <rect x="1235" y="270" width="22" height="25" rx="3" fill="#78350f"/>
+    <polygon points="1233,270 1246,260 1259,270" fill="#451a03"/>
+    <!-- Windows -->
+    <rect x="1205" y="345" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1227" y="345" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1249" y="345" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1271" y="345" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1293" y="345" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1205" y="367" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1227" y="367" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1249" y="367" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1271" y="367" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1293" y="367" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1205" y="389" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1227" y="389" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1249" y="389" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1271" y="389" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1293" y="389" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1205" y="411" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1227" y="411" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1249" y="411" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1271" y="411" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1293" y="411" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1205" y="433" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1227" y="433" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1249" y="433" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1271" y="433" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1293" y="433" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1205" y="455" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1227" y="455" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1249" y="455" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1271" y="455" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1293" y="455" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1205" y="477" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1227" y="477" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1249" y="477" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1271" y="477" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1293" y="477" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1205" y="499" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1227" y="499" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1249" y="499" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1271" y="499" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1293" y="499" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1205" y="521" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1227" y="521" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1249" y="521" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1271" y="521" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1293" y="521" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1205" y="543" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1227" y="543" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1249" y="543" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1271" y="543" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1293" y="543" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1205" y="565" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1227" y="565" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1249" y="565" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1271" y="565" width="6" height="8" rx="0.8" fill="#451a03"/>
+<rect x="1293" y="565" width="6" height="8" rx="0.8" fill="#451a03"/>
+
+  </g>
+
+  <!-- Right Building 4: Outer East River Towers (X: 1350 - 1560) -->
+  <g>
+    <rect x="1350" y="380" width="105" height="240" fill="#64748b"/>
+    <rect x="1465" y="340" width="95" height="280" fill="#cbd5e1"/>
+    <rect x="1365" y="400" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1390" y="400" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1415" y="400" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1365" y="422" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1390" y="422" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1415" y="422" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1365" y="444" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1390" y="444" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1415" y="444" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1365" y="466" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1390" y="466" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1415" y="466" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1365" y="488" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1390" y="488" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1415" y="488" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1365" y="510" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1390" y="510" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1415" y="510" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1365" y="532" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1390" y="532" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1415" y="532" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1365" y="554" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1390" y="554" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+<rect x="1415" y="554" width="6" height="8" rx="0.8" fill="#cbd5e1"/>
+
+    <rect x="1480" y="360" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1505" y="360" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1530" y="360" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1480" y="382" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1505" y="382" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1530" y="382" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1480" y="404" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1505" y="404" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1530" y="404" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1480" y="426" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1505" y="426" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1530" y="426" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1480" y="448" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1505" y="448" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1530" y="448" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1480" y="470" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1505" y="470" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1530" y="470" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1480" y="492" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1505" y="492" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1530" y="492" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1480" y="514" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1505" y="514" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1530" y="514" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1480" y="536" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1505" y="536" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1530" y="536" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1480" y="558" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1505" y="558" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1530" y="558" width="6" height="8" rx="0.8" fill="#334155"/>
+
+  </g>
+
+  <!-- =======================================================================
+       CENTERPIECE: THE EMPIRE STATE BUILDING (X: 710 to 885)
+       Stepped Art Deco Masterpiece with Spire, Observation Decks & Setbacks
+       ======================================================================= -->
+  <g id="empire-state-building">
+    <!-- 1. SPIRE ANTENNA MAST (Reaching all the way to Y=18!) -->
+    <line x1="795" y1="18" x2="795" y2="88" stroke="#cbd5e1" stroke-width="2.8"/>
+    <!-- Antenna Warning Beacon (Pulsing Red Light from reference photo) -->
+    <circle cx="795" cy="18" r="3" fill="#ef4444"/>
+    <circle cx="795" cy="18" r="6" fill="#ef4444" opacity="0.4" class="sat-beacon"/>
+    <!-- Spire Rings / Broadcast Collars -->
+    <rect x="792" y="38" width="6" height="3" rx="1" fill="#94a3b8"/>
+    <rect x="790" y="54" width="10" height="4" rx="1" fill="#94a3b8"/>
+    <rect x="789" y="70" width="12" height="5" rx="1" fill="#64748b"/>
+    
+    <!-- 2. MOORING MAST & UPPER DOME TOWER (Y: 88 to 155) -->
+    <rect x="786" y="88" width="18" height="28" rx="2" fill="url(#esbSpire)"/>
+    <line x1="791" y1="88" x2="791" y2="116" stroke="#ffffff" stroke-width="1"/>
+    <line x1="799" y1="88" x2="799" y2="116" stroke="#94a3b8" stroke-width="1"/>
+    
+    <!-- Upper Circular Collar -->
+    <rect x="781" y="116" width="28" height="12" rx="2" fill="#cbd5e1" stroke="#94a3b8" stroke-width="0.8"/>
+    <!-- Fluted Lantern Section -->
+    <rect x="778" y="128" width="34" height="27" rx="1.5" fill="url(#esbSpire)"/>
+    <line x1="783" y1="128" x2="783" y2="155" stroke="#ffffff" stroke-width="1.2"/>
+    <line x1="790" y1="128" x2="790" y2="155" stroke="#f1f5f9" stroke-width="1.2"/>
+    <line x1="800" y1="128" x2="800" y2="155" stroke="#94a3b8" stroke-width="1.2"/>
+    <line x1="807" y1="128" x2="807" y2="155" stroke="#64748b" stroke-width="1.2"/>
+
+    <!-- 3. 102ND FLOOR OBSERVATORY & SETBACK CROWN (Y: 155 to 195) -->
+    <rect x="771" y="155" width="48" height="18" rx="2" fill="#cbd5e1"/>
+    <!-- 102nd Floor Glass Enclosure Windows -->
+    <rect x="774" y="160" width="2" height="6" rx="0.5" fill="#0f172a"/><rect x="779" y="160" width="2" height="6" rx="0.5" fill="#0f172a"/><rect x="784" y="160" width="2" height="6" rx="0.5" fill="#0f172a"/><rect x="789" y="160" width="2" height="6" rx="0.5" fill="#0f172a"/><rect x="794" y="160" width="2" height="6" rx="0.5" fill="#0f172a"/><rect x="799" y="160" width="2" height="6" rx="0.5" fill="#0f172a"/><rect x="804" y="160" width="2" height="6" rx="0.5" fill="#0f172a"/>
+    <!-- Setback Step -->
+    <rect x="765" y="173" width="60" height="22" rx="2" fill="url(#esbFacade)"/>
+    <rect x="769" y="179" width="2" height="6" rx="0.5" fill="#334155"/><rect x="774" y="179" width="2" height="6" rx="0.5" fill="#334155"/><rect x="779" y="179" width="2" height="6" rx="0.5" fill="#334155"/><rect x="784" y="179" width="2" height="6" rx="0.5" fill="#334155"/><rect x="789" y="179" width="2" height="6" rx="0.5" fill="#334155"/><rect x="794" y="179" width="2" height="6" rx="0.5" fill="#334155"/><rect x="799" y="179" width="2" height="6" rx="0.5" fill="#334155"/><rect x="804" y="179" width="2" height="6" rx="0.5" fill="#334155"/>
+
+    <!-- 4. 86TH FLOOR MAIN OBSERVATION DECK & BALCONY (Y: 195 to 220) -->
+    <!-- Observation Terrace Promenade -->
+    <rect x="755" y="195" width="80" height="12" rx="2" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
+    <!-- Balcony Railing / Parapet Details -->
+    <line x1="755" y1="197" x2="835" y2="197" stroke="#64748b" stroke-width="1"/>
+    <rect x="760" y="207" width="70" height="15" fill="#f8fafc"/>
+
+    <!-- 5. UPPER TOWER SHAFT (Floors 85 to 72, Y: 222 to 310) -->
+    <rect x="758" y="222" width="74" height="88" fill="url(#esbFacade)"/>
+    <!-- Vertical Limestone Architectural Piers -->
+    <line x1="766" y1="222" x2="766" y2="310" stroke="#ffffff" stroke-width="2"/>
+    <line x1="778" y1="222" x2="778" y2="310" stroke="#ffffff" stroke-width="2"/>
+    <line x1="795" y1="222" x2="795" y2="310" stroke="#ffffff" stroke-width="2.5"/>
+    <line x1="812" y1="222" x2="812" y2="310" stroke="#94a3b8" stroke-width="2"/>
+    <line x1="824" y1="222" x2="824" y2="310" stroke="#64748b" stroke-width="2"/>
+    <!-- Window Bays (Floors 85-72) -->
+    <rect x="761" y="226" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="778" y="226" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="795" y="226" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="812" y="226" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="761" y="239" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="778" y="239" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="795" y="239" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="812" y="239" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="761" y="252" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="778" y="252" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="795" y="252" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="812" y="252" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="761" y="265" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="778" y="265" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="795" y="265" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="812" y="265" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="761" y="278" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="778" y="278" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="795" y="278" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="812" y="278" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="761" y="291" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="778" y="291" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="795" y="291" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="812" y="291" width="6" height="8" rx="0.8" fill="#1e293b"/>
+
+
+    <!-- 6. MID-TIER SETBACK (Floors 72 to 45, Y: 310 to 425) -->
+    <!-- Setback Wings Left & Right -->
+    <polygon points="742,310 758,310 758,325 742,325" fill="#e2e8f0"/>
+    <polygon points="832,310 848,310 848,325 832,325" fill="#94a3b8"/>
+    <!-- Main Mid-Tower Body -->
+    <rect x="740" y="325" width="110" height="100" fill="url(#esbFacade)"/>
+    <!-- Vertical Fluted Limestone Piers -->
+    <line x1="752" y1="325" x2="752" y2="425" stroke="#ffffff" stroke-width="2.2"/>
+    <line x1="768" y1="325" x2="768" y2="425" stroke="#ffffff" stroke-width="2.2"/>
+    <line x1="784" y1="325" x2="784" y2="425" stroke="#ffffff" stroke-width="2.2"/>
+    <line x1="800" y1="325" x2="800" y2="425" stroke="#cbd5e1" stroke-width="2.2"/>
+    <line x1="816" y1="325" x2="816" y2="425" stroke="#94a3b8" stroke-width="2.2"/>
+    <line x1="832" y1="325" x2="832" y2="425" stroke="#64748b" stroke-width="2.2"/>
+    <!-- Window Bays (Floors 72-45) -->
+    <rect x="746" y="332" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="764" y="332" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="782" y="332" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="800" y="332" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="818" y="332" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="746" y="346" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="764" y="346" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="782" y="346" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="800" y="346" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="818" y="346" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="746" y="360" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="764" y="360" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="782" y="360" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="800" y="360" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="818" y="360" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="746" y="374" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="764" y="374" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="782" y="374" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="800" y="374" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="818" y="374" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="746" y="388" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="764" y="388" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="782" y="388" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="800" y="388" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="818" y="388" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="746" y="402" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="764" y="402" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="782" y="402" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="800" y="402" width="6" height="8" rx="0.8" fill="#0f172a"/>
+<rect x="818" y="402" width="6" height="8" rx="0.8" fill="#0f172a"/>
+
+
+    <!-- 7. LOWER MAIN SHAFT (Floors 45 to 6, Y: 425 to 535) -->
+    <!-- Transition Setback Shoulders -->
+    <rect x="724" y="425" width="142" height="18" fill="#e2e8f0"/>
+    <line x1="724" y1="428" x2="866" y2="428" stroke="#cbd5e1" stroke-width="1.5"/>
+    <!-- Lower Body -->
+    <rect x="722" y="443" width="146" height="92" fill="url(#esbFacade)"/>
+    <!-- Grand Vertical Art-Deco Piers -->
+    <line x1="738" y1="443" x2="738" y2="535" stroke="#ffffff" stroke-width="2.5"/>
+    <line x1="758" y1="443" x2="758" y2="535" stroke="#ffffff" stroke-width="2.5"/>
+    <line x1="778" y1="443" x2="778" y2="535" stroke="#ffffff" stroke-width="2.5"/>
+    <line x1="798" y1="443" x2="798" y2="535" stroke="#cbd5e1" stroke-width="2.5"/>
+    <line x1="818" y1="443" x2="818" y2="535" stroke="#94a3b8" stroke-width="2.5"/>
+    <line x1="838" y1="443" x2="838" y2="535" stroke="#64748b" stroke-width="2.5"/>
+    <!-- Window Matrix (Floors 45-6) -->
+    <rect x="730" y="450" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="750" y="450" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="770" y="450" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="790" y="450" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="810" y="450" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="830" y="450" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="730" y="463" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="750" y="463" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="770" y="463" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="790" y="463" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="810" y="463" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="830" y="463" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="730" y="476" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="750" y="476" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="770" y="476" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="790" y="476" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="810" y="476" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="830" y="476" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="730" y="489" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="750" y="489" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="770" y="489" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="790" y="489" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="810" y="489" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="830" y="489" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="730" y="502" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="750" y="502" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="770" y="502" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="790" y="502" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="810" y="502" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="830" y="502" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="730" y="515" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="750" y="515" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="770" y="515" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="790" y="515" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="810" y="515" width="6" height="8" rx="0.8" fill="#1e293b"/>
+<rect x="830" y="515" width="6" height="8" rx="0.8" fill="#1e293b"/>
+
+
+    <!-- 8. BASE ENTRANCE PAVILION (Floors 5 to Ground, Y: 535 to 620) -->
+    <rect x="710" y="535" width="170" height="85" fill="#f1f5f9"/>
+    <!-- Fifth Avenue Portal & Grand Art Deco Entrance -->
+    <rect x="770" y="565" width="50" height="55" fill="#0f172a" rx="2"/>
+    <rect x="775" y="575" width="40" height="45" fill="#d97706" opacity="0.8"/>
+    <polygon points="765,565 795,550 825,565" fill="#fbbf24"/>
+    <!-- Ground Window Bays -->
+    <rect x="720" y="545" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="742" y="545" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="720" y="561" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="742" y="561" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="720" y="577" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="742" y="577" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="720" y="593" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="742" y="593" width="6" height="8" rx="0.8" fill="#334155"/>
+
+    <rect x="830" y="545" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="852" y="545" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="830" y="561" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="852" y="561" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="830" y="577" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="852" y="577" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="830" y="593" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="852" y="593" width="6" height="8" rx="0.8" fill="#334155"/>
+
+  </g>
+
+  <!-- =======================================================================
+       LAYER 3: FOREGROUND CITY BLOCKS & DETAILED ARCHITECTURAL PARAPETS
+       ======================================================================= -->
+  <g>
+    <!-- Left Foreground Block (X: 120 - 320) -->
+    <rect x="120" y="480" width="200" height="140" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+    <rect x="135" y="495" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="165" y="495" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="195" y="495" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="225" y="495" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="255" y="495" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="285" y="495" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="135" y="521" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="165" y="521" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="195" y="521" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="225" y="521" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="255" y="521" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="285" y="521" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="135" y="547" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="165" y="547" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="195" y="547" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="225" y="547" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="255" y="547" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="285" y="547" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="135" y="573" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="165" y="573" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="195" y="573" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="225" y="573" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="255" y="573" width="6" height="8" rx="0.8" fill="#78350f"/>
+<rect x="285" y="573" width="6" height="8" rx="0.8" fill="#78350f"/>
+
+    <!-- Rooftop Structures -->
+    <rect x="150" y="465" width="35" height="15" fill="#92400e"/>
+    <rect x="230" y="455" width="20" height="25" rx="3" fill="#78350f"/>
+
+    <!-- Mid-Left Foreground Block (X: 430 - 640) -->
+    <rect x="430" y="465" width="210" height="155" fill="#fed7aa" stroke="#c2410c" stroke-width="1"/>
+    <rect x="445" y="480" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="471" y="480" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="497" y="480" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="523" y="480" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="549" y="480" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="575" y="480" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="601" y="480" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="445" y="508" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="471" y="508" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="497" y="508" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="523" y="508" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="549" y="508" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="575" y="508" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="601" y="508" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="445" y="536" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="471" y="536" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="497" y="536" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="523" y="536" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="549" y="536" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="575" y="536" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="601" y="536" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="445" y="564" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="471" y="564" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="497" y="564" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="523" y="564" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="549" y="564" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="575" y="564" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+<rect x="601" y="564" width="6" height="8" rx="0.8" fill="#7c2d12"/>
+
+    <rect x="460" y="445" width="50" height="20" fill="#9a3412"/>
+
+    <!-- Mid-Right Foreground Block (X: 950 - 1160) -->
+    <rect x="950" y="475" width="210" height="145" fill="#fef08a" stroke="#ca8a04" stroke-width="1"/>
+    <rect x="965" y="490" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="991" y="490" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1017" y="490" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1043" y="490" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1069" y="490" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1095" y="490" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1121" y="490" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="965" y="516" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="991" y="516" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1017" y="516" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1043" y="516" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1069" y="516" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1095" y="516" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1121" y="516" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="965" y="542" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="991" y="542" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1017" y="542" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1043" y="542" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1069" y="542" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1095" y="542" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1121" y="542" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="965" y="568" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="991" y="568" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1017" y="568" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1043" y="568" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1069" y="568" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1095" y="568" width="6" height="8" rx="0.8" fill="#713f12"/>
+<rect x="1121" y="568" width="6" height="8" rx="0.8" fill="#713f12"/>
+
+    <rect x="1080" y="455" width="40" height="20" fill="#a16207"/>
+
+    <!-- Far Right Foreground Block (X: 1230 - 1480) -->
+    <rect x="1230" y="470" width="250" height="150" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+    <rect x="1250" y="485" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1278" y="485" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1306" y="485" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1334" y="485" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1362" y="485" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1390" y="485" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1418" y="485" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1446" y="485" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1250" y="511" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1278" y="511" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1306" y="511" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1334" y="511" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1362" y="511" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1390" y="511" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1418" y="511" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1446" y="511" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1250" y="537" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1278" y="537" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1306" y="537" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1334" y="537" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1362" y="537" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1390" y="537" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1418" y="537" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1446" y="537" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1250" y="563" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1278" y="563" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1306" y="563" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1334" y="563" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1362" y="563" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1390" y="563" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1418" y="563" width="6" height="8" rx="0.8" fill="#334155"/>
+<rect x="1446" y="563" width="6" height="8" rx="0.8" fill="#334155"/>
+
+    <rect x="1310" y="450" width="30" height="20" fill="#64748b"/>
+  </g>
+
+  <!-- Ground Ambient Mist Fade into White Website Base -->
+  <rect x="0" y="560" width="1600" height="60" fill="url(#groundFade)"/>
+</svg>

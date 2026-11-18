@@ -18,7 +18,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=4.3" />
+  <link rel="stylesheet" href="styles.css?v=4.4" />
 </head>
 <body class="selection:bg-blue-500 selection:text-white">
 
@@ -469,13 +469,18 @@
     </section>
 
     <!-- =======================================================================
-         PAGE 4: EARTH SURFACE (Sky Fading into Pure White)
+         PAGE 4: EARTH SURFACE (Sky Fading into Pure White with Cityscape)
          Text Color: PURE BLACK TEXT ON CRISP WHITE | min-h-[135vh]
          ======================================================================= -->
-    <section id="earth" class="min-h-[135vh] w-full flex flex-col justify-between px-6 sm:px-12 py-32 text-black relative z-20">
+    <section id="earth" class="min-h-[135vh] w-full flex flex-col justify-between px-6 sm:px-12 py-32 text-black relative z-20 overflow-hidden">
       
+      <!-- Architectural City Skyline Layer (Empire State Building & New York Midtown Horizon) -->
+      <div class="city-skyline-layer">
+        <img src="city-skyline.svg?v=1.0" alt="Empire State Building and Cityscape Skyline" class="city-skyline-img" />
+      </div>
+
       <!-- Earth Container -->
-      <div class="max-w-4xl mx-auto w-full my-auto">
+      <div class="max-w-4xl mx-auto w-full my-auto relative z-20">
         <div class="liquid-glass-card-light p-8 sm:p-12 space-y-6">
           <div class="space-y-2">
             <div class="text-xs font-mono uppercase tracking-widest text-slate-500 font-bold">
@@ -517,7 +522,7 @@
       </div>
 
       <!-- Minimalist Clean Footer -->
-      <footer class="max-w-4xl mx-auto w-full pt-8 border-t border-slate-200/60 text-center sm:text-left text-xs text-slate-500 font-mono">
+      <footer class="max-w-4xl mx-auto w-full pt-8 border-t border-slate-200/60 text-center sm:text-left text-xs text-slate-500 font-mono relative z-20">
         <div>
           © 2026 Himanshu Jangid • SKIT CS AI
         </div>
@@ -527,7 +532,7 @@
 
   </div>
 
-  <script src="script.js?v=4.3"></script>
+  <script src="script.js?v=4.4"></script>
   <script>
     lucide.createIcons();
   </script>

@@ -181,26 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 3b. SILKY SMOOTH LIQUID REVEAL INTERSECTION OBSERVER
-  // Smoothly glides cards into view with liquid easing as the user descends
+  // 3b. CONTENT STABILITY (All elements immediately stable, zero scroll flash)
   // =========================================================================
-  const revealElements = document.querySelectorAll('.liquid-reveal');
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-        }
-      });
-    }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -30px 0px'
-    });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-  } else {
-    revealElements.forEach(el => el.classList.add('revealed'));
-  }
+  document.querySelectorAll('.liquid-reveal').forEach(el => el.classList.add('revealed'));
 
   // =========================================================================
   // 4. DYNAMIC RANDOM AIRPLANE SYSTEM (ORIGINAL FIRST TIME DESIGN)

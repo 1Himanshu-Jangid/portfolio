@@ -167,6 +167,87 @@ body {
 }
 
 /* ==========================================================================
+   PAGE 2 (ACADEMICS // 02) SATELLITE SYSTEM (135vh - 270vh)
+   Academic AI Research CubeSat & Deep Space Orbiters above SKIT College
+   ========================================================================== */
+/* Satellite Skit 1: AI Research CubeSat (Upper Lane - 11% altitude) */
+.sat-stream-skit-1 {
+  top: 11%;
+  animation: moveSatSkit_1 56s linear infinite;
+  animation-delay: 0s;
+}
+
+@keyframes moveSatSkit_1 {
+  0% {
+    transform: translate3d(-140px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(calc(25vw - 25px), 6px, 0) rotate(0.8deg);
+  }
+  50% {
+    transform: translate3d(calc(50vw), -6px, 0) rotate(-0.8deg);
+  }
+  75% {
+    transform: translate3d(calc(75vw + 25px), 5px, 0) rotate(0.6deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 140px), 0px, 0) rotate(0deg);
+  }
+}
+
+/* Satellite Skit 2: Earth Observation Radar Satellite (Mid-Upper Corridor - 24% altitude)
+   Equidistant 120° offset (-18.6s) */
+.sat-stream-skit-2 {
+  top: 24%;
+  animation: moveSatSkit_2 56s linear infinite;
+  animation-delay: -18.6s;
+}
+
+@keyframes moveSatSkit_2 {
+  0% {
+    transform: translate3d(-150px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(calc(25vw - 30px), -8px, 0) rotate(-1deg);
+  }
+  50% {
+    transform: translate3d(calc(50vw), 7px, 0) rotate(0.9deg);
+  }
+  75% {
+    transform: translate3d(calc(75vw + 30px), -6px, 0) rotate(-0.7deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 150px), 0px, 0) rotate(0deg);
+  }
+}
+
+/* Satellite Skit 3: Quantum Neural Data Relay (Lower Stratosphere Corridor - 82% altitude)
+   Equidistant 240° offset (-37.3s) */
+.sat-stream-skit-3 {
+  top: 82%;
+  animation: moveSatSkit_3 56s linear infinite;
+  animation-delay: -37.3s;
+}
+
+@keyframes moveSatSkit_3 {
+  0% {
+    transform: translate3d(-145px, 0px, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(calc(25vw - 20px), 6px, 0) rotate(0.7deg);
+  }
+  50% {
+    transform: translate3d(calc(50vw), -6px, 0) rotate(-0.7deg);
+  }
+  75% {
+    transform: translate3d(calc(75vw + 20px), 5px, 0) rotate(0.5deg);
+  }
+  100% {
+    transform: translate3d(calc(100vw + 145px), 0px, 0) rotate(0deg);
+  }
+}
+
+/* ==========================================================================
    2. 3D MOVING CLOUD SYSTEM & CLEAN SLOW AIRPLANE FLIGHT
    Clouds drift continuously across the sky at multiple depths
    Planes cruise SLOWLY (48s) in separated lanes (Zero collision, pure clean design)
@@ -331,31 +412,6 @@ body {
     0 0 25px rgba(56, 189, 248, 0.18);
 }
 
-/* Water Sheen Light Sweep */
-.liquid-glass-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -130%;
-  width: 90%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.05) 45%,
-    rgba(255, 255, 255, 0.22) 50%,
-    rgba(255, 255, 255, 0.05) 55%,
-    transparent 100%
-  );
-  transform: skewX(-25deg);
-  transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-}
-
-.liquid-glass-card:hover::after {
-  left: 140%;
-}
-
 /* Liquid Glass Card Light (for Flight Altitude & Earth Surface) */
 .liquid-glass-card-light {
   position: relative;
@@ -387,30 +443,6 @@ body {
     inset 0 1px 2px 0 #ffffff,
     0 24px 48px -10px rgba(15, 23, 42, 0.12),
     0 0 25px rgba(2, 132, 199, 0.12);
-}
-
-.liquid-glass-card-light::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -130%;
-  width: 90%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.2) 45%,
-    rgba(255, 255, 255, 0.55) 50%,
-    rgba(255, 255, 255, 0.2) 55%,
-    transparent 100%
-  );
-  transform: skewX(-25deg);
-  transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-}
-
-.liquid-glass-card-light:hover::after {
-  left: 140%;
 }
 
 /* Liquid Glass Interactive Pills */
@@ -491,40 +523,15 @@ body {
   transform: translateY(0px) scale(0.98);
 }
 
-.liquid-glass-btn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 70%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.35) 50%,
-    transparent 100%
-  );
-  transform: skewX(-25deg);
-  transition: left 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-}
-
-.liquid-glass-btn:hover::after {
-  left: 140%;
-}
-
-/* Silky Smooth Scroll Reveal Animation */
+/* Static Stable Content - Zero Scroll Flash/Line Glitch */
 .liquid-reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .liquid-reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* ==========================================================================

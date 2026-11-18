@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
 }
@@ -292,122 +293,381 @@ body {
 }
 
 /* ==========================================================================
+   LIQUID GLASS SYSTEM (ULTRA-REFRACTIVE GLASSMORPHISM)
+   Water-clear transparency, specular edge lighting, inner sheen & light sweeps
+   ========================================================================== */
+.liquid-glass-card {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.04) 40%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.15),
+    0 16px 40px -12px rgba(0, 0, 0, 0.4);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.32);
+  border-top-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.1),
+    0 24px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(56, 189, 248, 0.18);
+}
+
+/* Water Sheen Light Sweep */
+.liquid-glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 90%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.05) 55%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.liquid-glass-card:hover::after {
+  left: 140%;
+}
+
+/* Liquid Glass Card Light (for Flight Altitude & Earth Surface) */
+.liquid-glass-card-light {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0.72) 100%
+  );
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-top: 1.5px solid #ffffff;
+  box-shadow: 
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 1px 0 rgba(15, 23, 42, 0.04),
+    0 16px 36px -8px rgba(15, 23, 42, 0.08);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-card-light:hover {
+  transform: translateY(-3px);
+  border-color: #ffffff;
+  box-shadow: 
+    inset 0 1px 2px 0 #ffffff,
+    0 24px 48px -10px rgba(15, 23, 42, 0.12),
+    0 0 25px rgba(2, 132, 199, 0.12);
+}
+
+.liquid-glass-card-light::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 90%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 45%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0.2) 55%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.liquid-glass-card-light:hover::after {
+  left: 140%;
+}
+
+/* Liquid Glass Interactive Pills */
+.liquid-glass-pill {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.35),
+    0 4px 14px rgba(0, 0, 0, 0.12);
+  border-radius: 9999px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-pill:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.26) 0%,
+    rgba(255, 255, 255, 0.12) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.6),
+    0 8px 20px rgba(0, 0, 0, 0.25),
+    0 0 15px rgba(56, 189, 248, 0.25);
+}
+
+.liquid-glass-pill-light {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-top: 1.5px solid #ffffff;
+  box-shadow: 
+    inset 0 1px 1.5px 0 #ffffff,
+    0 4px 14px rgba(15, 23, 42, 0.06);
+  border-radius: 9999px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-pill-light:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 
+    inset 0 1px 1.5px 0 #ffffff,
+    0 8px 20px rgba(15, 23, 42, 0.1),
+    0 0 15px rgba(2, 132, 199, 0.18);
+}
+
+/* Liquid Glass Buttons */
+.liquid-glass-btn {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-btn:hover {
+  transform: translateY(-2px);
+}
+
+.liquid-glass-btn:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+.liquid-glass-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.liquid-glass-btn:hover::after {
+  left: 140%;
+}
+
+/* Silky Smooth Scroll Reveal Animation */
+.liquid-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.liquid-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
    DYNAMIC 4-TIER NAVBAR THEME MODES (Frosted Glass & Ambient Backdrops)
    Backdrop blur + theme background ensures zero text overlap during scrolling
    ========================================================================== */
 #main-nav {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  transition: background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #main-nav.theme-space {
-  background-color: rgba(0, 0, 0, 0.75);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(0, 0, 0, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 .theme-space #nav-brand-text {
   color: #ffffff;
 }
 .theme-space #nav-logo {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
 }
 .theme-space #nav-pill-box {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 .theme-space .alt-link {
   color: #cbd5e1;
 }
 .theme-space .alt-link.active-pill {
-  background: rgba(255, 255, 255, 0.22);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.14));
   color: #ffffff;
   font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 .theme-space #nav-branch-badge {
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
   color: #93c5fd;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 #main-nav.theme-skit {
-  background-color: rgba(15, 46, 107, 0.78);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: rgba(15, 46, 107, 0.68);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.4);
 }
 .theme-skit #nav-brand-text {
   color: #ffffff;
 }
 .theme-skit #nav-logo {
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.45);
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.45);
 }
 .theme-skit #nav-pill-box {
-  background: rgba(15, 23, 42, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.25));
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35), 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 .theme-skit .alt-link {
   color: #e2e8f0;
 }
 .theme-skit .alt-link.active-pill {
-  background: rgba(255, 255, 255, 0.25);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.16));
   color: #ffffff;
   font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.55), 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 .theme-skit #nav-branch-badge {
-  background: rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
   color: #e0f2fe;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
 }
 
 #main-nav.theme-sky {
-  background-color: rgba(56, 189, 248, 0.78);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  background-color: rgba(56, 189, 248, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.18);
 }
 .theme-sky #nav-brand-text {
   color: #0f172a;
 }
 .theme-sky #nav-logo {
-  border-color: rgba(15, 23, 42, 0.3);
+  border-color: rgba(15, 23, 42, 0.25);
   color: #0f172a;
-  background: rgba(255, 255, 255, 0.45);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.45));
+  box-shadow: inset 0 1px 1.5px #ffffff;
 }
 .theme-sky #nav-pill-box {
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(15, 23, 42, 0.18);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.45));
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-top: 1.5px solid #ffffff;
+  box-shadow: inset 0 1px 1.5px #ffffff, 0 4px 16px rgba(2, 132, 199, 0.12);
 }
 .theme-sky .alt-link {
-  color: #334155;
+  color: #1e293b;
 }
 .theme-sky .alt-link.active-pill {
   background: #0f172a;
   color: #ffffff;
   font-weight: 600;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.25);
 }
 .theme-sky #nav-branch-badge {
-  background: rgba(15, 23, 42, 0.08);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
   color: #082f49;
-  border: 1px solid rgba(15, 23, 42, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 1px 1px #ffffff;
 }
 
 #main-nav.theme-earth {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.82);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 .theme-earth #nav-brand-text {
   color: #000000;
 }
 .theme-earth #nav-logo {
-  border-color: rgba(0, 0, 0, 0.35);
+  border-color: rgba(0, 0, 0, 0.25);
   color: #000000;
-  background: #f1f5f9;
+  background: #ffffff;
+  box-shadow: inset 0 1px 1.5px #ffffff, 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 .theme-earth #nav-pill-box {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.18);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1.5px solid #ffffff;
+  box-shadow: inset 0 1px 2px #ffffff, 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 .theme-earth .alt-link {
   color: #64748b;
@@ -416,16 +676,21 @@ body {
   background: #000000;
   color: #ffffff;
   font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 .theme-earth #nav-branch-badge {
-  background: #f1f5f9;
+  background: #ffffff;
   color: #0f172a;
-  border: 1px solid #cbd5e1;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 1.5px #ffffff, 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 /* Accessibility: Gentle drift for reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .cloud-drift-slow, .fore-cloud-puff {
+  .cloud-drift-slow, .fore-cloud-puff, .liquid-reveal {
     animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }

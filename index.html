@@ -18,7 +18,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=12.0" />
+  <link rel="stylesheet" href="styles.css?v=13.0" />
 </head>
 <body class="selection:bg-blue-500 selection:text-white">
 
@@ -472,11 +472,14 @@
          PAGE 4: EARTH SURFACE (Sky Fading into Pure White with Minimalist 2D Cityscape)
          Text Color: PURE BLACK TEXT ON CRISP WHITE | min-h-[135vh]
          ======================================================================= -->
-    <section id="earth" class="min-h-[135vh] w-full flex flex-col justify-between px-4 sm:px-12 pt-24 sm:pt-32 pb-28 sm:pb-40 text-black relative z-20 overflow-hidden">
+    <section id="earth" class="min-h-[135vh] w-full flex flex-col justify-between px-4 sm:px-12 pt-24 sm:pt-32 pb-60 sm:pb-72 text-black relative z-20 overflow-hidden">
       
       <!-- Minimalist 2D Architectural City Skyline Layer (Clean Vector Landmarks, Zero Cars) -->
       <div class="city-skyline-layer">
-        <img src="city-skyline-2d.svg?v=12.0" alt="Detailed 2D Architectural NYC Landmarks Skyline" class="city-skyline-img" />
+        <!-- Desktop & Tablet Skyline (>= 640px) -->
+        <img src="city-skyline-2d.svg?v=13.0" alt="2D Architectural NYC Landmarks Skyline" class="city-skyline-img hidden sm:block" />
+        <!-- Mobile Skyline (< 640px) -->
+        <img src="city-skyline-mobile.svg?v=13.0" alt="2D Architectural NYC Landmarks Skyline" class="city-skyline-img block sm:hidden" />
       </div>
 
       <!-- Earth Container -->
@@ -532,7 +535,7 @@
 
   </div>
 
-  <script src="script.js?v=12.0"></script>
+  <script src="script.js?v=13.0"></script>
   <script>
     lucide.createIcons();
   </script>

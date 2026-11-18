@@ -18,7 +18,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=7.0" />
+  <link rel="stylesheet" href="styles.css?v=8.0" />
 </head>
 <body class="selection:bg-blue-500 selection:text-white">
 
@@ -26,36 +26,36 @@
        DYNAMIC 4-PAGE ALTITUDE NAVBAR
        Adapts color dynamically: Space (White) -> Sky (Dark) -> Earth (Black)
        ========================================================================= -->
-  <header id="main-nav" class="fixed top-0 inset-x-0 z-50 transition-colors duration-500 px-6 py-4 flex items-center justify-between pointer-events-none">
+  <header id="main-nav" class="fixed top-0 inset-x-0 z-50 transition-colors duration-500 px-3 sm:px-6 py-2.5 sm:py-4 flex items-center justify-between pointer-events-none">
     
     <!-- Brand Monogram -->
-    <a href="#space" class="pointer-events-auto flex items-center gap-2 group">
-      <div id="nav-logo" class="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center font-bold text-xs tracking-wider transition-all duration-500 group-hover:scale-110">
+    <a href="#space" class="pointer-events-auto flex items-center gap-2 group shrink-0">
+      <div id="nav-logo" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-white/30 flex items-center justify-center font-bold text-xs tracking-wider transition-all duration-500 group-hover:scale-110">
         HJ
       </div>
-      <span id="nav-brand-text" class="text-sm font-semibold tracking-tight transition-colors duration-500">
+      <span id="nav-brand-text" class="text-xs sm:text-sm font-semibold tracking-tight transition-colors duration-500">
         Himanshu Jangid
       </span>
     </a>
 
     <!-- 4-Page Altitude Indicator Pills -->
-    <nav class="pointer-events-auto flex items-center gap-1 p-1 rounded-full backdrop-blur-md transition-colors duration-500" id="nav-pill-box">
-      <a href="#space" class="alt-link px-3 py-1 rounded-full text-xs font-medium transition-all" data-target="space">
+    <nav class="pointer-events-auto flex items-center gap-0.5 sm:gap-1 p-0.5 sm:p-1 rounded-full backdrop-blur-md transition-colors duration-500 shrink-0" id="nav-pill-box">
+      <a href="#space" class="alt-link px-2 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition-all" data-target="space">
         01 Space
       </a>
-      <a href="#skit" class="alt-link px-3 py-1 rounded-full text-xs font-medium transition-all" data-target="skit">
+      <a href="#skit" class="alt-link px-2 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition-all" data-target="skit">
         02 SKIT
       </a>
-      <a href="#sky" class="alt-link px-3 py-1 rounded-full text-xs font-medium transition-all" data-target="sky">
+      <a href="#sky" class="alt-link px-2 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition-all" data-target="sky">
         03 Sky
       </a>
-      <a href="#earth" class="alt-link px-3 py-1 rounded-full text-xs font-medium transition-all" data-target="earth">
+      <a href="#earth" class="alt-link px-2 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition-all" data-target="earth">
         04 Earth
       </a>
     </nav>
 
     <!-- Top Right Quick Badge -->
-    <div class="pointer-events-auto hidden sm:flex items-center gap-2">
+    <div class="pointer-events-auto hidden md:flex items-center gap-2 shrink-0">
       <span id="nav-branch-badge" class="text-xs font-mono px-3 py-1 rounded-full transition-all duration-500">
         SKIT • CS AI
       </span>
@@ -472,68 +472,68 @@
          PAGE 4: EARTH SURFACE (Sky Fading into Pure White with Cityscape)
          Text Color: PURE BLACK TEXT ON CRISP WHITE | min-h-[135vh]
          ======================================================================= -->
-    <section id="earth" class="min-h-[135vh] w-full flex flex-col justify-between px-6 sm:px-12 pt-32 pb-72 sm:pb-80 text-black relative z-20 overflow-hidden">
+    <section id="earth" class="min-h-[135vh] w-full flex flex-col justify-between px-4 sm:px-12 pt-24 sm:pt-32 pb-44 sm:pb-72 text-black relative z-20 overflow-hidden">
       
-      <!-- Architectural City Skyline Layer (Empire State Building & New York Midtown Horizon) -->
+      <!-- Architectural City Skyline Layer (Empire State Building & New York Midtown Horizon Cutout) -->
       <div class="city-skyline-layer">
-        <img src="city-skyline-real.png?v=2.0" alt="Empire State Building and Cityscape Skyline" class="city-skyline-img" />
+        <img src="city-skyline-cutout.png?v=8.0" alt="Empire State Building and Manhattan Skyline Cutout" class="city-skyline-img" />
       </div>
 
       <!-- Street & Moving Cars Layer -->
-            <div class="city-street-layer">
+      <div class="city-street-layer">
         <div class="street-curb"></div>
         <div class="street-lane-divider"></div>
 
-        <!-- Lane 1 (Eastbound: Faces Right, Drives FORWARD to the Right): NYC Yellow Taxi -->
-        <div class="car-item car-lane-east car-east-taxi" title="NYC Yellow Taxi">
-          <img src="car_taxi_east.png?v=1.0" class="car-img" alt="NYC Yellow Taxi" />
+        <!-- Lane 1 (Eastbound: Faces Right, Drives FORWARD to the Right): NYC Modern Taxi -->
+        <div class="car-item car-lane-east car-east-taxi" title="NYC Modern Taxi">
+          <img src="car_taxi_east.png?v=8.0" class="car-img" alt="NYC Modern Taxi" />
         </div>
 
         <!-- Lane 1 (Eastbound: Faces Right, Drives FORWARD to the Right): Sapphire Blue Sedan -->
         <div class="car-item car-lane-east car-east-blue" title="Sapphire Blue Sedan">
-          <img src="car_blue_east.png?v=1.0" class="car-img" alt="Sapphire Blue Sedan" />
+          <img src="car_blue_east.png?v=8.0" class="car-img" alt="Sapphire Blue Sedan" />
         </div>
 
         <!-- Lane 2 (Westbound: Faces Left, Drives FORWARD to the Left): Crimson Red Sports Coupe -->
         <div class="car-item car-lane-west car-west-red" title="Crimson Red Sports Coupe">
-          <img src="car_red_west.png?v=1.0" class="car-img" alt="Crimson Red Sports Coupe" />
+          <img src="car_red_west.png?v=8.0" class="car-img" alt="Crimson Red Sports Coupe" />
         </div>
 
         <!-- Lane 2 (Westbound: Faces Left, Drives FORWARD to the Left): Classic NYC Yellow Taxi -->
-        <div class="car-item car-lane-west car-west-taxi" title="NYC Yellow Taxi">
-          <img src="car_taxi_west.png?v=1.0" class="car-img" alt="NYC Yellow Taxi" />
+        <div class="car-item car-lane-west car-west-taxi" title="Classic NYC Yellow Taxi">
+          <img src="car_taxi_west.png?v=8.0" class="car-img" alt="Classic NYC Yellow Taxi" />
         </div>
       </div>
 
       <!-- Earth Container -->
       <div class="max-w-4xl mx-auto w-full my-auto relative z-20">
-        <div class="liquid-glass-card-light p-8 sm:p-12 space-y-6">
+        <div class="liquid-glass-card-light p-6 sm:p-12 space-y-6">
           <div class="space-y-2">
             <div class="text-xs font-mono uppercase tracking-widest text-slate-500 font-bold">
               Career Objective
             </div>
-            <h2 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-black tracking-tight">
+            <h2 class="text-2xl sm:text-5xl md:text-6xl font-extrabold text-black tracking-tight">
               Building the Future of AI.
             </h2>
           </div>
 
-          <p class="text-base sm:text-xl text-slate-800 max-w-2xl leading-relaxed font-normal">
+          <p class="text-sm sm:text-xl text-slate-800 max-w-2xl leading-relaxed font-normal">
             Looking forward to engineering real-world AI applications as a <strong class="text-black font-bold">Software Engineer</strong>. Clean design, disciplined engineering, and continuous innovation.
           </p>
 
           <!-- Minimalist Connect Buttons with Liquid Glass Specular Effects -->
-          <div class="pt-4 flex flex-wrap items-center gap-3">
-            <a href="mailto:himanshujangid@example.com" class="px-6 py-3 rounded-full bg-black text-white text-xs font-semibold hover:bg-slate-800 transition-all flex items-center gap-2 shadow-md liquid-glass-btn border border-white/20">
+          <div class="pt-4 flex flex-wrap items-center gap-2.5 sm:gap-3">
+            <a href="mailto:himanshujangid@example.com" class="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-black text-white text-xs font-semibold hover:bg-slate-800 transition-all flex items-center gap-2 shadow-md liquid-glass-btn border border-white/20">
               <i data-lucide="mail" class="w-3.5 h-3.5"></i>
               <span>Get in Touch</span>
             </a>
 
-            <a href="https://github.com/1Himanshu-Jangid" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full liquid-glass-pill-light text-black text-xs font-semibold hover:bg-white transition-all flex items-center gap-2 shadow-sm liquid-glass-btn border border-slate-300">
+            <a href="https://github.com/1Himanshu-Jangid" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full liquid-glass-pill-light text-black text-xs font-semibold hover:bg-white transition-all flex items-center gap-2 shadow-sm liquid-glass-btn border border-slate-300">
               <i data-lucide="github" class="w-3.5 h-3.5"></i>
               <span>GitHub Profile</span>
             </a>
 
-            <span class="px-5 py-3 rounded-full liquid-glass-pill-light text-slate-700 text-xs font-mono flex items-center gap-2 shadow-sm border border-slate-200">
+            <span class="px-4 py-2.5 sm:px-5 sm:py-3 rounded-full liquid-glass-pill-light text-slate-700 text-xs font-mono flex items-center gap-2 shadow-sm border border-slate-200">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-black"></i>
               <span>SKIT College, Jaipur</span>
             </span>
@@ -558,7 +558,7 @@
 
   </div>
 
-  <script src="script.js?v=7.0"></script>
+  <script src="script.js?v=8.0"></script>
   <script>
     lucide.createIcons();
   </script>

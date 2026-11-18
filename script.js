@@ -6,21 +6,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // =========================================================================
-  // 1. STARFIELD CANVAS GENERATOR (Space & Stratosphere with Smooth Altitude Fade)
-  // Stars drift on their place and fade smoothly down to Flight Altitude (270vh)
+  // 1. STARFIELD CANVAS GENERATOR (Space & Stratosphere with Altitude Fade)
+  // Highly optimized for all devices (Mobile & Desktop) to prevent stutter/glitch
   // =========================================================================
   const canvas = document.getElementById('stars-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
     let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight * 2.7); // Covers Space & SKIT down to Flight Altitude
+    let height = (canvas.height = window.innerHeight * 2.7);
 
-    window.addEventListener('resize', () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight * 2.7;
-    });
-
-    const starCount = Math.floor((width * height) / 3600);
+    const isMobile = window.innerWidth < 768;
+    const starCount = isMobile ? 65 : Math.min(260, Math.floor((width * height) / 4500));
     const stars = [];
 
     class Star {
@@ -32,17 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       calcAltitudeFade() {
-        // Space (0 to 120vh): 100% full brightness
-        // Descending through SKIT to Flight Altitude (120vh to 260vh): smooth atmospheric fade out
-        const fadeStart = height * 0.44; // ~120vh
-        const fadeEnd = height * 0.96;   // ~260vh right above Flight Altitude
+        const fadeStart = height * 0.44;
+        const fadeEnd = height * 0.96;
         if (this.originY <= fadeStart) {
           this.altitudeFade = 1.0;
         } else if (this.originY >= fadeEnd) {
           this.altitudeFade = 0;
         } else {
           const ratio = (this.originY - fadeStart) / (fadeEnd - fadeStart);
-          this.altitudeFade = Math.pow(1.0 - ratio, 1.6); // Smooth non-linear atmospheric diffusion
+          this.altitudeFade = Math.pow(1.0 - ratio, 1.6);
         }
       }
 
@@ -51,16 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
         this.originY = Math.random() * height;
         this.x = this.originX;
         this.y = this.originY;
-        this.radius = Math.random() * 1.5 + 0.35;
+        this.radius = Math.random() * 1.4 + 0.4;
         this.baseAlpha = Math.random() * 0.75 + 0.25;
         this.alpha = this.baseAlpha;
-        this.twinkleSpeed = Math.random() * 0.025 + 0.008;
+        this.twinkleSpeed = Math.random() * 0.02 + 0.008;
         this.twinkleOffset = Math.random() * Math.PI * 2;
 
-        // Micro-motion: stars gently drift and breathe in their place a little bit
-        this.driftRadius = Math.random() * 3.5 + 1.2; // 1.2px to 4.7px drift
-        this.driftSpeedX = Math.random() * 0.015 + 0.006;
-        this.driftSpeedY = Math.random() * 0.015 + 0.006;
+        this.driftRadius = Math.random() * 3.0 + 1.0;
+        this.driftSpeedX = Math.random() * 0.012 + 0.005;
+        this.driftSpeedY = Math.random() * 0.012 + 0.005;
         this.driftPhaseX = Math.random() * Math.PI * 2;
         this.driftPhaseY = Math.random() * Math.PI * 2;
 
@@ -68,19 +61,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       update(time) {
-        // Twinkling brightness
-        this.alpha = this.baseAlpha + Math.sin(time * this.twinkleSpeed + this.twinkleOffset) * 0.3;
+        this.alpha = this.baseAlpha + Math.sin(time * this.twinkleSpeed + this.twinkleOffset) * 0.28;
         if (this.alpha < 0.1) this.alpha = 0.1;
         if (this.alpha > 1) this.alpha = 1;
 
-        // Gentle floating micro-motion on their place
         this.x = this.originX + Math.sin(time * this.driftSpeedX + this.driftPhaseX) * this.driftRadius;
         this.y = this.originY + Math.cos(time * this.driftSpeedY + this.driftPhaseY) * this.driftRadius;
       }
 
       draw() {
         const finalAlpha = this.alpha * this.altitudeFade;
-        if (finalAlpha > 0.015) {
+        if (finalAlpha > 0.02) {
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
           ctx.fillStyle = `rgba(255, 255, 255, ${finalAlpha})`;
@@ -93,19 +84,27 @@ document.addEventListener('DOMContentLoaded', () => {
       stars.push(new Star());
     }
 
+    let resizeDebounce;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeDebounce);
+      resizeDebounce = setTimeout(() => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight * 2.7;
+        stars.forEach(s => s.calcAltitudeFade());
+      }, 200);
+    }, { passive: true });
+
     let time = 0;
     function renderStars() {
-      ctx.clearRect(0, 0, width, height);
-
-      // Render stars through Space and SKIT while descending toward Flight Altitude
-      if (window.scrollY < window.innerHeight * 2.9) {
+      // Only execute canvas redraw when Space/SKIT are visible to conserve battery & GPU
+      if (window.scrollY < window.innerHeight * 2.5) {
+        ctx.clearRect(0, 0, width, height);
         time++;
-        stars.forEach(star => {
-          star.update(time);
-          star.draw();
-        });
+        for (let i = 0; i < stars.length; i++) {
+          stars[i].update(time);
+          stars[i].draw();
+        }
       }
-
       requestAnimationFrame(renderStars);
     }
 
@@ -129,21 +128,31 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const navPills = document.querySelectorAll('.alt-link');
 
+  let sectionOffsets = [];
+  function cacheSectionOffsets() {
+    sectionOffsets = sections.map(({ id, element, theme }) => ({
+      id,
+      theme,
+      top: element ? element.offsetTop : 0,
+      height: element ? element.offsetHeight : 0
+    }));
+  }
+  cacheSectionOffsets();
+  window.addEventListener('resize', cacheSectionOffsets, { passive: true });
+
   function updateAltitudeTheme() {
     const scrollPosition = window.scrollY + window.innerHeight * 0.35;
     let currentTheme = 'theme-space';
     let currentSectionId = 'space';
 
-    sections.forEach(({ id, element, theme }) => {
-      if (element) {
-        const top = element.offsetTop;
-        const height = element.offsetHeight;
-        if (scrollPosition >= top && scrollPosition < top + height) {
-          currentTheme = theme;
-          currentSectionId = id;
-        }
+    for (let i = 0; i < sectionOffsets.length; i++) {
+      const { id, theme, top, height } = sectionOffsets[i];
+      if (scrollPosition >= top && scrollPosition < top + height) {
+        currentTheme = theme;
+        currentSectionId = id;
+        break;
       }
-    });
+    }
 
     if (header) {
       header.classList.remove('theme-space', 'theme-skit', 'theme-sky', 'theme-earth');
@@ -159,7 +168,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  window.addEventListener('scroll', updateAltitudeTheme, { passive: true });
+  // High-performance passive scroll spy with requestAnimationFrame (Zero layout thrashing)
+  let scrollTicking = false;
+  window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(() => {
+        updateAltitudeTheme();
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
+  }, { passive: true });
+
   updateAltitudeTheme();
 
   // =========================================================================

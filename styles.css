@@ -21,6 +21,9 @@ html {
   scroll-padding-top: 5.5rem;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -28,6 +31,10 @@ body {
   padding: 0;
   background-color: #000000;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ==========================================================================
@@ -431,16 +438,16 @@ body {
 
 /* ==========================================================================
    PAGE 4: EARTH SURFACE SKYLINE (EMPIRE STATE BUILDING & CITY SKYLINE)
-   Iconic architectural cityscape anchored at ground level (0 M)
-   Real photographic Manhattan skyline with 3D atmospheric aerial perspective
+   Iconic architectural cityscape anchored cleanly at ground level (0 M)
+   Real photographic Manhattan skyline with pure transparent sky (Zero clouds/sky box)
    ========================================================================== */
 .city-skyline-layer {
   position: absolute;
-  bottom: 44px;
+  bottom: 50px;
   left: 0;
   right: 0;
-  height: 250px;
-  max-height: 28vh;
+  height: 270px;
+  max-height: 32vh;
   pointer-events: none;
   z-index: 10;
   overflow: hidden;
@@ -451,9 +458,9 @@ body {
 
 @media (max-width: 640px) {
   .city-skyline-layer {
-    bottom: 38px;
-    height: 180px;
-    max-height: 22vh;
+    bottom: 40px;
+    height: 170px;
+    max-height: 25vh;
   }
 }
 
@@ -461,26 +468,27 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center bottom;
   pointer-events: none;
+  filter: drop-shadow(0 -3px 8px rgba(0, 0, 0, 0.06));
 }
 
 /* ==========================================================================
    PAGE 4: STREET & MOVING CARS LAYER
-   Clean asphalt roadway with multi-lane realistic vehicles driving forward
+   High-definition asphalt roadway with multi-lane realistic vehicles driving forward
    ========================================================================== */
 .city-street-layer {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 46px;
+  height: 52px;
   background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
-  border-top: 2px solid #334155;
+  border-top: 2px solid #475569;
   z-index: 15;
   overflow: hidden;
   pointer-events: none;
-  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.3);
 }
 
 .street-curb {
@@ -488,8 +496,8 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.2);
+  height: 3px;
+  background: linear-gradient(90deg, #94a3b8 0%, #e2e8f0 50%, #94a3b8 100%);
   pointer-events: none;
 }
 
@@ -498,8 +506,8 @@ body {
   top: 50%;
   left: 0;
   right: 0;
-  height: 1px;
-  border-top: 1.5px dashed rgba(253, 224, 71, 0.45);
+  height: 2px;
+  border-top: 2px dashed rgba(250, 204, 21, 0.65);
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -512,21 +520,21 @@ body {
 }
 
 .car-img {
-  height: 21px;
+  height: 23px;
   width: auto;
   object-fit: contain;
   pointer-events: none;
-  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.55));
 }
 
 /* Lane 1: Upper Lane (Eastbound: Left to Right, Front facing Right) */
 .car-lane-east {
-  top: 2px;
+  top: 3px;
 }
 
 /* Lane 2: Lower Lane (Westbound: Right to Left, Front facing Left) */
 .car-lane-west {
-  bottom: 2px;
+  bottom: 3px;
 }
 
 /* Animated forward movements with staggered natural timing */
@@ -550,32 +558,38 @@ body {
   animation-delay: -15s;
 }
 
-/* Guaranteed forward drive: Eastbound starts left (-160px) and moves right */
+/* Guaranteed forward drive with 3D GPU acceleration: Eastbound starts left (-200px) and moves right */
 @keyframes driveEast {
   0% {
-    transform: translateX(-160px);
+    transform: translate3d(-200px, 0, 0);
   }
   100% {
-    transform: translateX(calc(100vw + 160px));
+    transform: translate3d(calc(100vw + 200px), 0, 0);
   }
 }
 
-/* Guaranteed forward drive: Westbound starts right (100vw + 160px) and moves left */
+/* Guaranteed forward drive with 3D GPU acceleration: Westbound starts right (100vw + 200px) and moves left */
 @keyframes driveWest {
   0% {
-    transform: translateX(calc(100vw + 160px));
+    transform: translate3d(calc(100vw + 200px), 0, 0);
   }
   100% {
-    transform: translateX(-160px);
+    transform: translate3d(-200px, 0, 0);
   }
 }
 
 @media (max-width: 640px) {
   .city-street-layer {
-    height: 38px;
+    height: 42px;
   }
   .car-img {
-    height: 16px;
+    height: 18px;
+  }
+  .car-lane-east {
+    top: 2px;
+  }
+  .car-lane-west {
+    bottom: 2px;
   }
 }
 

@@ -432,14 +432,15 @@ body {
 /* ==========================================================================
    PAGE 4: EARTH SURFACE SKYLINE (EMPIRE STATE BUILDING & CITY SKYLINE)
    Iconic architectural cityscape anchored at ground level (0 M)
+   Layered 3D aerial perspective with realistic materials & atmospheric fade
    ========================================================================== */
 .city-skyline-layer {
   position: absolute;
-  bottom: 34px;
+  bottom: 40px;
   left: 0;
   right: 0;
-  height: 220px;
-  max-height: 25vh;
+  height: 230px;
+  max-height: 26vh;
   pointer-events: none;
   z-index: 10;
   overflow: hidden;
@@ -450,7 +451,7 @@ body {
 
 @media (max-width: 640px) {
   .city-skyline-layer {
-    bottom: 30px;
+    bottom: 34px;
     height: 160px;
     max-height: 20vh;
   }
@@ -462,25 +463,25 @@ body {
   object-fit: cover;
   object-position: bottom center;
   pointer-events: none;
-  filter: drop-shadow(0 -4px 15px rgba(0, 0, 0, 0.05));
+  filter: drop-shadow(0 -4px 18px rgba(15, 23, 42, 0.08));
 }
 
 /* ==========================================================================
    PAGE 4: STREET & MOVING CARS LAYER
-   Clean asphalt roadway with multi-lane vector cars cruising at ground level
+   Clean asphalt roadway with multi-lane realistic vehicles driving forward
    ========================================================================== */
 .city-street-layer {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 38px;
+  height: 44px;
   background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
   border-top: 2px solid #334155;
   z-index: 15;
   overflow: hidden;
   pointer-events: none;
-  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .street-curb {
@@ -489,7 +490,7 @@ body {
   left: 0;
   right: 0;
   height: 2px;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.2);
   pointer-events: none;
 }
 
@@ -499,7 +500,7 @@ body {
   left: 0;
   right: 0;
   height: 1px;
-  border-top: 1.5px dashed rgba(253, 224, 71, 0.4);
+  border-top: 1.5px dashed rgba(253, 224, 71, 0.45);
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -511,61 +512,63 @@ body {
   will-change: transform;
 }
 
-/* Lane 1: Upper Lane (Eastbound: Left to Right) */
+/* Lane 1: Upper Lane (Eastbound: Left to Right, Front facing Right) */
 .car-lane-east {
   top: 1px;
 }
 
-/* Lane 2: Lower Lane (Westbound: Right to Left) */
+/* Lane 2: Lower Lane (Westbound: Right to Left, Front facing Left) */
 .car-lane-west {
   bottom: 2px;
 }
 
-/* Animated movements with staggered timing */
+/* Animated forward movements with staggered natural timing */
 .car-east-taxi {
-  animation: driveEast 22s linear infinite;
+  animation: driveEast 24s linear infinite;
   animation-delay: 0s;
 }
 
 .car-east-blue {
-  animation: driveEast 27s linear infinite;
-  animation-delay: -13s;
+  animation: driveEast 29s linear infinite;
+  animation-delay: -14s;
 }
 
 .car-west-white {
-  animation: driveWest 20s linear infinite;
-  animation-delay: -4s;
+  animation: driveWest 23s linear infinite;
+  animation-delay: -5s;
 }
 
 .car-west-red {
-  animation: driveWest 25s linear infinite;
-  animation-delay: -15s;
+  animation: driveWest 27s linear infinite;
+  animation-delay: -17s;
 }
 
+/* Guaranteed forward drive: Eastbound starts left (-160px) and moves right */
 @keyframes driveEast {
   0% {
-    transform: translateX(-120px);
+    transform: translateX(-160px);
   }
   100% {
-    transform: translateX(calc(100vw + 120px));
+    transform: translateX(calc(100vw + 160px));
   }
 }
 
+/* Guaranteed forward drive: Westbound starts right (100vw + 160px) and moves left */
 @keyframes driveWest {
   0% {
-    transform: translateX(calc(100vw + 120px)) scaleX(-1);
+    transform: translateX(calc(100vw + 160px));
   }
   100% {
-    transform: translateX(-120px) scaleX(-1);
+    transform: translateX(-160px);
   }
 }
 
 @media (max-width: 640px) {
   .city-street-layer {
-    height: 32px;
+    height: 36px;
   }
   .car-item svg {
-    transform: scale(0.85);
+    transform: scale(0.8);
     transform-origin: left center;
   }
 }

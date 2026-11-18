@@ -1,40 +1,67 @@
 <svg viewBox="0 0 2400 360" preserveAspectRatio="xMidYMax slice" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
   <defs>
-    <!-- Background Atmospheric Layer Gradients -->
+    <!-- Background Layer (Hazy Distant Skyline) -->
     <linearGradient id="skylineBgGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0.38"/>
+      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0.45"/>
     </linearGradient>
 
-    <!-- Midground Architectural Layer Gradients -->
-    <linearGradient id="skylineMidGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#475569" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#64748b" stop-opacity="0.75"/>
+    <!-- Midground Architectural Layer -->
+    <linearGradient id="skylineMidGrad1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#64748b" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="skylineMidGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b4f68" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#556b85" stop-opacity="0.85"/>
     </linearGradient>
 
-    <!-- Foreground Iconic Landmarks Gradients -->
-    <linearGradient id="skylineForeDark" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#090d16"/>
-      <stop offset="100%" stop-color="#1e293b"/>
+    <!-- Foreground Architectural Towers (NO PITCH BLACK - Rich Architectural Slate, Navy & Steel) -->
+    <!-- Tower Tone A: Deep Slate Navy -->
+    <linearGradient id="towerToneA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="60%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+
+    <!-- Tower Tone B: Architectural Steel Blue -->
+    <linearGradient id="towerToneB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#243447"/>
+      <stop offset="55%" stop-color="#384c63"/>
+      <stop offset="100%" stop-color="#4a5f77"/>
+    </linearGradient>
+
+    <!-- Tower Tone C: Medium Limestone Slate -->
+    <linearGradient id="towerToneC" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d3748"/>
+      <stop offset="50%" stop-color="#4a5568"/>
+      <stop offset="100%" stop-color="#5a687d"/>
+    </linearGradient>
+
+    <!-- Tower Tone D: Tinted Modern Glass Tower -->
+    <linearGradient id="towerToneGlass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="55%" stop-color="#2b4c73"/>
+      <stop offset="100%" stop-color="#3b5e87"/>
     </linearGradient>
 
     <!-- Art Deco Spire Metallic Steel Shimmer -->
     <linearGradient id="spireSteel" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="0%" stop-color="#cbd5e1"/>
       <stop offset="50%" stop-color="#ffffff"/>
       <stop offset="100%" stop-color="#94a3b8"/>
     </linearGradient>
 
     <!-- Warm Golden Architectural Window Light -->
     <linearGradient id="windowGlowWarm" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.5"/>
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.75"/>
     </linearGradient>
 
     <!-- Soft Cyan Architectural Window Light -->
     <linearGradient id="windowGlowCyan" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.45"/>
+      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.7"/>
     </linearGradient>
   </defs>
   <!-- LAYER 1: Distant Hazy Manhattan Horizon -->
@@ -74,7 +101,7 @@
   </g>
 
   <!-- LAYER 2: Midground Classic NYC Towers -->
-  <g fill="url(#skylineMidGrad)">
+  <g fill="url(#skylineMidGrad1)">
     <rect x="0" y="210" width="80" height="150"/>
     <rect x="90" y="223.5" width="90" height="136.5"/>
     <rect x="102.6" y="150" width="64.8" height="73.5"/>
@@ -116,111 +143,147 @@
     <rect x="2350" y="190" width="60" height="170"/>
   </g>
 
-  <!-- LAYER 3: Foreground Iconic NYC Landmarks & Architectural Masterpieces -->
-  <g fill="url(#skylineForeDark)">
+  <!-- LAYER 3: Foreground Iconic NYC Landmarks (Refined Architectural Slate & Steel) -->
+  <g stroke="rgba(255,255,255,0.18)" stroke-width="1.2" stroke-linejoin="round">
     <!-- West End Art-Deco High-Rise (x=40) -->
-    <rect x="40" y="190" width="80" height="170"/>
-    <rect x="52" y="145" width="56" height="45"/>
-    <rect x="64" y="115" width="32" height="30"/>
-    <polygon points="78,115 80,85 82,115" fill="url(#spireSteel)"/>
+    <g fill="url(#towerToneC)">
+      <rect x="40" y="190" width="80" height="170"/>
+      <rect x="52" y="145" width="56" height="45"/>
+      <rect x="64" y="115" width="32" height="30"/>
+      <polygon points="78,115 80,85 82,115" fill="url(#spireSteel)"/>
+    </g>
     <!-- One World Trade Center Inspired Tapered Obelisk (x=150) -->
-    <polygon points="150,360 165,80 225,80 240,360"/>
-    <!-- Parapet Ring & Communication Mast -->
-    <rect x="185" y="68" width="20" height="12"/>
-    <polygon points="193.5,68 195,10 196.5,68" fill="url(#spireSteel)"/>
-    <circle cx="195" cy="10" r="2" fill="#ef4444"/>
+    <g fill="url(#towerToneGlass)">
+      <polygon points="150,360 165,80 225,80 240,360"/>
+      <rect x="185" y="68" width="20" height="12"/>
+      <polygon points="193.5,68 195,10 196.5,68" fill="url(#spireSteel)"/>
+      <circle cx="195" cy="10" r="2.2" fill="#ef4444" stroke="none"/>
+    </g>
     <!-- Classic Woolworth-Style Stepped Tower (x=265) -->
-    <rect x="265" y="180" width="95" height="180"/>
-    <rect x="280" y="135" width="65" height="45"/>
-    <rect x="295" y="105" width="35" height="30"/>
-    <!-- Copper Steeple Roof -->
-    <polygon points="295,105 312.5,70 330,105"/>
-    <line x1="312.5" y1="70" x2="312.5" y2="50" stroke="#94a3b8" stroke-width="2"/>
+    <g fill="url(#towerToneB)">
+      <rect x="265" y="180" width="95" height="180"/>
+      <rect x="280" y="135" width="65" height="45"/>
+      <rect x="295" y="105" width="35" height="30"/>
+      <polygon points="295,105 312.5,70 330,105" fill="#475569"/>
+      <line x1="312.5" y1="70" x2="312.5" y2="50" stroke="#94a3b8" stroke-width="2"/>
+    </g>
     <!-- Classic Manhattan Brownstones & Wedge Block (x=385) -->
-    <rect x="385" y="220" width="105" height="140"/>
-    <!-- Rooftop Water Tank (Iconic NYC Silhouette Detail) -->
-    <rect x="440" y="198" width="18" height="18" rx="2" fill="#475569"/>
-    <polygon points="437,198 449,188 461,198" fill="#334155"/>
-    <line x1="444" y1="216" x2="444" y2="220" stroke="#1e293b" stroke-width="2"/>
-    <line x1="454" y1="216" x2="454" y2="220" stroke="#1e293b" stroke-width="2"/>
+    <g fill="url(#towerToneC)">
+      <rect x="385" y="220" width="105" height="140"/>
+      <rect x="440" y="198" width="18" height="18" rx="2" fill="#5a687d"/>
+      <polygon points="437,198 449,188 461,198" fill="#475569"/>
+      <line x1="444" y1="216" x2="444" y2="220" stroke="#334155" stroke-width="2"/>
+      <line x1="454" y1="216" x2="454" y2="220" stroke="#334155" stroke-width="2"/>
+    </g>
     <!-- ================= THE CHRYSLER BUILDING ================= -->
-    <rect x="510" y="175" width="100" height="185"/>
-    <rect x="522" y="125" width="76" height="50"/>
-    <rect x="532" y="90" width="56" height="35"/>
-    <path d="M 534 90 Q 560 70 586 90 Z" fill="#1e293b"/>
-    <path d="M 538 75 Q 560 55 582 75 Z" fill="#334155"/>
-    <path d="M 543 60 Q 560 42 577 60 Z" fill="#475569"/>
-    <path d="M 548 46 Q 560 32 572 46 Z" fill="#64748b"/>
-    <polygon points="558,32 560,2 562,32" fill="url(#spireSteel)"/>
-    <polygon points="522,125 516,121 522,128" fill="url(#spireSteel)"/>
-    <polygon points="598,125 604,121 598,128" fill="url(#spireSteel)"/>
-    <!-- 53W53 / Contemporary Slanted Apex Skyscraper (x=635) -->
-    <rect x="635" y="150" width="90" height="210"/>
-    <polygon points="635,150 695,95 725,150"/>
-    <line x1="695" y1="95" x2="695" y2="65" stroke="#94a3b8" stroke-width="2"/>
+    <g fill="url(#towerToneA)">
+      <rect x="510" y="175" width="100" height="185"/>
+      <rect x="522" y="125" width="76" height="50"/>
+      <rect x="532" y="90" width="56" height="35"/>
+      <path d="M 534 90 Q 560 70 586 90 Z" fill="#334155"/>
+      <path d="M 538 75 Q 560 55 582 75 Z" fill="#475569"/>
+      <path d="M 543 60 Q 560 42 577 60 Z" fill="#64748b"/>
+      <path d="M 548 46 Q 560 32 572 46 Z" fill="#94a3b8"/>
+      <polygon points="558,32 560,2 562,32" fill="url(#spireSteel)"/>
+      <polygon points="522,125 516,121 522,128" fill="url(#spireSteel)"/>
+      <polygon points="598,125 604,121 598,128" fill="url(#spireSteel)"/>
+    </g>
+    <!-- Contemporary Slanted Apex Skyscraper (x=635) -->
+    <g fill="url(#towerToneGlass)">
+      <rect x="635" y="150" width="90" height="210"/>
+      <polygon points="635,150 695,95 725,150"/>
+      <line x1="695" y1="95" x2="695" y2="65" stroke="#94a3b8" stroke-width="2"/>
+    </g>
     <!-- Rockefeller Center / 30 Rock Symmetrical Stepped Tower (x=745) -->
-    <rect x="745" y="170" width="105" height="190"/>
-    <rect x="760" y="130" width="75" height="40"/>
-    <rect x="775" y="95" width="45" height="35"/>
-    <rect x="788" y="75" width="19" height="20"/>
+    <g fill="url(#towerToneB)">
+      <rect x="745" y="170" width="105" height="190"/>
+      <rect x="760" y="130" width="75" height="40"/>
+      <rect x="775" y="95" width="45" height="35"/>
+      <rect x="788" y="75" width="19" height="20"/>
+    </g>
     <!-- ================= THE EMPIRE STATE BUILDING ================= -->
-    <rect x="875" y="185" width="130" height="175"/>
-    <rect x="887" y="140" width="106" height="45"/>
-    <rect x="901" y="85" width="78" height="55"/>
-    <rect x="913" y="55" width="54" height="30"/>
-    <rect x="923" y="35" width="34" height="20"/>
-    <path d="M 927 35 Q 940 22 953 35 Z" fill="#334155"/>
-    <polygon points="938.5,24 940,2 941.5,24" fill="url(#spireSteel)"/>
-    <circle cx="940" cy="2" r="2.2" fill="#ef4444"/>
-    <!-- Central Park Tower / Supertall Residential (x=1030) -->
-    <rect x="1030" y="140" width="85" height="220"/>
-    <polygon points="1030,140 1072.5,90 1115,140"/>
-    <polygon points="1071,90 1072.5,55 1074,90" fill="url(#spireSteel)"/>
+    <g fill="url(#towerToneA)">
+      <rect x="875" y="185" width="130" height="175"/>
+      <rect x="887" y="140" width="106" height="45"/>
+      <rect x="901" y="85" width="78" height="55"/>
+      <rect x="913" y="55" width="54" height="30"/>
+      <rect x="923" y="35" width="34" height="20" fill="#475569"/>
+      <path d="M 927 35 Q 940 22 953 35 Z" fill="#64748b"/>
+      <polygon points="938.5,24 940,2 941.5,24" fill="url(#spireSteel)"/>
+      <circle cx="940" cy="2" r="2.2" fill="#ef4444" stroke="none"/>
+    </g>
+    <!-- Central Park Tower / Supertall (x=1030) -->
+    <g fill="url(#towerToneC)">
+      <rect x="1030" y="140" width="85" height="220"/>
+      <polygon points="1030,140 1072.5,90 1115,140"/>
+      <polygon points="1071,90 1072.5,55 1074,90" fill="url(#spireSteel)"/>
+    </g>
     <!-- MetLife / Grand Central Monolith (x=1135) -->
-    <polygon points="1135,360 1145,160 1235,160 1245,360"/>
-    <rect x="1165" y="125" width="50" height="35"/>
-    <rect x="1180" y="105" width="20" height="20"/>
-    <!-- 432 Park Avenue Inspired Slender Grid Tower (x=1260) -->
-    <rect x="1260" y="70" width="65" height="290"/>
-    <rect x="1272" y="50" width="41" height="20" fill="#334155"/>
-    <line x1="1292.5" y1="50" x2="1292.5" y2="25" stroke="#94a3b8" stroke-width="2"/>
+    <g fill="url(#towerToneB)">
+      <polygon points="1135,360 1145,160 1235,160 1245,360"/>
+      <rect x="1165" y="125" width="50" height="35"/>
+      <rect x="1180" y="105" width="20" height="20"/>
+    </g>
+    <!-- 432 Park Avenue Slender Grid Tower (x=1260) -->
+    <g fill="url(#towerToneGlass)">
+      <rect x="1260" y="70" width="65" height="290"/>
+      <rect x="1272" y="50" width="41" height="20" fill="#475569"/>
+      <line x1="1292.5" y1="50" x2="1292.5" y2="25" stroke="#94a3b8" stroke-width="2"/>
+    </g>
     <!-- Classic Mansard & Copper Gable Skyscraper (x=1345) -->
-    <rect x="1345" y="180" width="95" height="180"/>
-    <rect x="1360" y="135" width="65" height="45"/>
-    <polygon points="1360,135 1392.5,95 1425,135"/>
-    <polygon points="1391,95 1392.5,65 1394,95" fill="url(#spireSteel)"/>
+    <g fill="url(#towerToneA)">
+      <rect x="1345" y="180" width="95" height="180"/>
+      <rect x="1360" y="135" width="65" height="45"/>
+      <polygon points="1360,135 1392.5,95 1425,135" fill="#475569"/>
+      <polygon points="1391,95 1392.5,65 1394,95" fill="url(#spireSteel)"/>
+    </g>
     <!-- Downtown Commercial Block with Water Tower (x=1460) -->
-    <rect x="1460" y="210" width="110" height="150"/>
-    <rect x="1520" y="188" width="18" height="18" rx="2" fill="#475569"/>
-    <polygon points="1517,188 1529,178 1541,188" fill="#334155"/>
+    <g fill="url(#towerToneC)">
+      <rect x="1460" y="210" width="110" height="150"/>
+      <rect x="1520" y="188" width="18" height="18" rx="2" fill="#5a687d"/>
+      <polygon points="1517,188 1529,178 1541,188" fill="#475569"/>
+    </g>
     <!-- 30 Hudson Yards Inspired Tapered Prow (x=1590) -->
-    <polygon points="1590,360 1605,100 1680,100 1695,360"/>
-    <!-- Triangular Observation Deck (The Edge Inspired Silhouette) -->
-    <polygon points="1680,140 1720,135 1680,125" fill="#334155"/>
-    <polygon points="1640,100 1642.5,50 1645,100" fill="url(#spireSteel)"/>
-    <!-- American Radiator Building Inspired Gothic/Deco (x=1720) -->
-    <rect x="1720" y="185" width="85" height="175"/>
-    <rect x="1735" y="140" width="55" height="45"/>
-    <rect x="1748" y="110" width="29" height="30"/>
-    <polygon points="1761,110 1762.5,75 1764,110" fill="url(#spireSteel)"/>
+    <g fill="url(#towerToneGlass)">
+      <polygon points="1590,360 1605,100 1680,100 1695,360"/>
+      <polygon points="1680,140 1720,135 1680,125" fill="#475569"/>
+      <polygon points="1640,100 1642.5,50 1645,100" fill="url(#spireSteel)"/>
+    </g>
+    <!-- American Radiator Building Inspired Deco (x=1720) -->
+    <g fill="url(#towerToneB)">
+      <rect x="1720" y="185" width="85" height="175"/>
+      <rect x="1735" y="140" width="55" height="45"/>
+      <rect x="1748" y="110" width="29" height="30"/>
+      <polygon points="1761,110 1762.5,75 1764,110" fill="url(#spireSteel)"/>
+    </g>
     <!-- Financial District Skyscraper (x=1825) -->
-    <rect x="1825" y="145" width="95" height="215"/>
-    <polygon points="1825,145 1872.5,95 1920,145"/>
+    <g fill="url(#towerToneA)">
+      <rect x="1825" y="145" width="95" height="215"/>
+      <polygon points="1825,145 1872.5,95 1920,145"/>
+    </g>
     <!-- Shoreline High-Rises & Towers (x=1940 - 2400) -->
-    <rect x="1940" y="190" width="90" height="170"/>
-    <rect x="1958" y="150" width="54" height="40"/>
-    <line x1="1985" y1="150" x2="1985" y2="115" stroke="#94a3b8" stroke-width="2"/>
-    <rect x="2050" y="160" width="85" height="200"/>
-    <polygon points="2050,160 2092.5,120 2135,160"/>
-    <rect x="2155" y="200" width="95" height="160"/>
-    <rect x="2172" y="165" width="61" height="35"/>
-    <rect x="2270" y="180" width="85" height="180"/>
-    <polygon points="2311,180 2312.5,145 2314,180" fill="url(#spireSteel)"/>
-    <rect x="2365" y="220" width="35" height="140"/>
+    <g fill="url(#towerToneC)">
+      <rect x="1940" y="190" width="90" height="170"/>
+      <rect x="1958" y="150" width="54" height="40"/>
+      <line x1="1985" y1="150" x2="1985" y2="245" stroke="#94a3b8" stroke-width="2"/>
+    </g>
+    <g fill="url(#towerToneB)">
+      <rect x="2050" y="160" width="85" height="200"/>
+      <polygon points="2050,160 2092.5,120 2135,160"/>
+    </g>
+    <g fill="url(#towerToneA)">
+      <rect x="2155" y="200" width="95" height="160"/>
+      <rect x="2172" y="165" width="61" height="35"/>
+    </g>
+    <g fill="url(#towerToneC)">
+      <rect x="2270" y="180" width="85" height="180"/>
+      <polygon points="2311,180 2312.5,145 2314,180" fill="url(#spireSteel)"/>
+      <rect x="2365" y="220" width="35" height="140"/>
+    </g>
   </g>
 
-  <!-- DETAILED ARCHITECTURAL ELEMENTS: Mullions, Deco Pier Ribs & Lit Windows -->
-  <g stroke="#334155" stroke-width="1.2" opacity="0.45">
+  <!-- Vertical Art Deco Limestone Mullions -->
+  <g stroke="rgba(255,255,255,0.25)" stroke-width="1.2">
     <line x1="907" y1="85" x2="907" y2="360"/>
     <line x1="915" y1="85" x2="915" y2="360"/>
     <line x1="923" y1="85" x2="923" y2="360"/>
@@ -236,9 +299,6 @@
     <line x1="941" y1="55" x2="941" y2="85"/>
     <line x1="949" y1="55" x2="949" y2="85"/>
     <line x1="957" y1="55" x2="957" y2="85"/>
-  </g>
-
-  <g stroke="#334155" stroke-width="1.2" opacity="0.45">
     <line x1="528" y1="125" x2="528" y2="360"/>
     <line x1="536" y1="125" x2="536" y2="360"/>
     <line x1="544" y1="125" x2="544" y2="360"/>
@@ -255,6 +315,7 @@
     <line x1="578" y1="90" x2="578" y2="125"/>
   </g>
 
+  <!-- Warm Golden Amber Illuminated Windows -->
   <g fill="url(#windowGlowWarm)">
     <rect x="913" y="195" width="3.5" height="6.5" rx="0.8"/>
     <rect x="929" y="195" width="3.5" height="6.5" rx="0.8"/>
@@ -363,6 +424,7 @@
     <rect x="827" y="313" width="3" height="6" rx="0.8"/>
   </g>
 
+  <!-- Soft Electric Cyan Illuminated Windows -->
   <g fill="url(#windowGlowCyan)">
     <rect x="180" y="110" width="3.5" height="5" rx="0.8"/>
     <rect x="206" y="110" width="3.5" height="5" rx="0.8"/>
@@ -485,5 +547,5 @@
   </g>
 
   <!-- Clean Ground Horizon Baseline -->
-  <line x1="0" y1="360" x2="2400" y2="360" stroke="#090d16" stroke-width="3"/>
+  <line x1="0" y1="360" x2="2400" y2="360" stroke="#334155" stroke-width="2.5"/>
 </svg>

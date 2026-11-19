@@ -18,7 +18,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=15.0" />
+  <link rel="stylesheet" href="styles.css?v=16.0" />
 </head>
 <body class="selection:bg-blue-500 selection:text-white">
 
@@ -40,17 +40,17 @@
 
     <!-- 4-Page Altitude Indicator Pills -->
     <nav class="pointer-events-auto flex items-center gap-0.5 sm:gap-1 p-0.5 sm:p-1 rounded-full backdrop-blur-md transition-colors duration-500 shrink-0" id="nav-pill-box">
-      <a href="#space" class="alt-link px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition-all" data-target="space">
-        01 Space
+      <a href="#space" class="alt-link px-2 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition-all" data-target="space">
+        <span class="hidden sm:inline">01 </span>Space
       </a>
-      <a href="#skit" class="alt-link px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition-all" data-target="skit">
-        02 SKIT
+      <a href="#skit" class="alt-link px-2 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition-all" data-target="skit">
+        <span class="hidden sm:inline">02 </span>SKIT
       </a>
-      <a href="#sky" class="alt-link px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition-all" data-target="sky">
-        03 Sky
+      <a href="#sky" class="alt-link px-2 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition-all" data-target="sky">
+        <span class="hidden sm:inline">03 </span>Sky
       </a>
-      <a href="#earth" class="alt-link px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition-all" data-target="earth">
-        04 Earth
+      <a href="#earth" class="alt-link px-2 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition-all" data-target="earth">
+        <span class="hidden sm:inline">04 </span>Earth
       </a>
     </nav>
 
@@ -312,7 +312,7 @@
         
         <!-- 3D Foreground Cumulus Cloud 1 (Image 4 Top-Left with 3D Bottom Bevel Rim, at 11%) -->
         <div class="fore-cloud-drift-1 absolute" style="top: 11%;">
-          <svg width="260" height="100" viewBox="0 0 260 100" fill="none" class="filter drop-shadow-md">
+          <svg width="260" height="100" viewBox="0 0 260 100" fill="none">
             <!-- 3D Bottom Shadow Bevel Rim -->
             <path d="M 38 88 C 20 88, 12 74, 20 58 C 25 48, 36 42, 46 44 C 52 26, 76 14, 102 22 C 118 8, 150 8, 168 20 C 182 14, 208 18, 216 34 C 234 38, 244 52, 240 68 C 242 80, 230 88, 215 88 Z" fill="#dbeafe"/>
             <!-- Pure White Cloud Body -->
@@ -322,7 +322,7 @@
 
         <!-- 3D Foreground Cumulus Cloud 2 (Image 4 Middle-Right with 3D Bottom Bevel Rim, at 16%) -->
         <div class="fore-cloud-drift-2 absolute" style="top: 16%;">
-          <svg width="240" height="96" viewBox="0 0 240 96" fill="none" class="filter drop-shadow-md">
+          <svg width="240" height="96" viewBox="0 0 240 96" fill="none">
             <!-- 3D Bottom Shadow Bevel Rim -->
             <path d="M 34 84 C 18 84, 10 72, 18 56 C 22 46, 32 40, 42 42 C 48 24, 70 12, 94 20 C 108 4, 138 4, 154 18 C 168 10, 192 16, 198 32 C 214 34, 224 48, 220 64 C 222 76, 210 84, 196 84 Z" fill="#dbeafe"/>
             <!-- Pure White Cloud Body -->
@@ -332,7 +332,7 @@
 
         <!-- 3D Foreground Cumulus Cloud 3 (Image 4 Middle-Left with 3D Bottom Bevel Rim, at 81%) -->
         <div class="fore-cloud-drift-3 absolute" style="top: 81%;">
-          <svg width="270" height="102" viewBox="0 0 270 102" fill="none" class="filter drop-shadow-md">
+          <svg width="270" height="102" viewBox="0 0 270 102" fill="none">
             <!-- 3D Bottom Shadow Bevel Rim -->
             <path d="M 40 90 C 20 90, 12 76, 20 60 C 26 48, 40 42, 52 44 C 60 26, 86 16, 114 24 C 130 8, 168 8, 188 22 C 204 16, 230 20, 238 38 C 254 42, 262 60, 256 76 C 258 86, 244 90, 230 90 Z" fill="#dbeafe"/>
             <!-- Pure White Cloud Body -->
@@ -348,9 +348,9 @@
 
     <!-- =======================================================================
          PAGE 1: DEEP SPACE (Dark Blue to Black with Stars & Moving Small Satellites)
-         Text Color: PURE WHITE | Increased Length: min-h-[135vh]
+         Text Color: PURE WHITE | Responsive Mobile Height
          ======================================================================= -->
-    <section id="space" class="min-h-[135vh] w-full flex flex-col justify-center px-4 sm:px-12 py-24 sm:py-32 text-white relative z-20 overflow-hidden">
+    <section id="space" class="min-h-screen sm:min-h-[135vh] w-full flex flex-col justify-center px-4 sm:px-12 py-16 sm:py-32 text-white relative z-20 overflow-hidden">
       
       <!-- Hero Liquid Glass Container (Apple visionOS Material) -->
       <div class="max-w-4xl mx-auto w-full relative z-20">
@@ -390,10 +390,10 @@
 
     <!-- =======================================================================
          PAGE 2: STRATOSPHERE (Deep Navy to Royal Blue Transition)
-         Highlighting SKIT College & CS AI Degree | min-h-[135vh]
+         Highlighting SKIT College & CS AI Degree | Responsive Mobile Height
          Text Color: CRISP WHITE / ICE BLUE
          ======================================================================= -->
-    <section id="skit" class="min-h-[135vh] w-full flex flex-col justify-center px-4 sm:px-12 py-24 sm:py-32 text-white relative z-20 overflow-hidden">
+    <section id="skit" class="min-h-screen sm:min-h-[135vh] w-full flex flex-col justify-center px-4 sm:px-12 py-16 sm:py-32 text-white relative z-20 overflow-hidden">
       
       <!-- Academic Container -->
       <div class="max-w-4xl mx-auto w-full relative z-20">
@@ -451,9 +451,9 @@
 
     <!-- =======================================================================
          PAGE 3: SKY BLUE ATMOSPHERE (Cruising Altitude with 3D Clouds & Airplanes)
-         Text Color: HIGH-CONTRAST DARK TEXT (Slate 900 / Navy) | min-h-[135vh]
+         Text Color: HIGH-CONTRAST DARK TEXT (Slate 900 / Navy) | Responsive Mobile Height
          ======================================================================= -->
-    <section id="sky" class="min-h-[135vh] w-full flex flex-col justify-center px-4 sm:px-12 py-24 sm:py-32 relative z-20 overflow-hidden">
+    <section id="sky" class="min-h-screen sm:min-h-[135vh] w-full flex flex-col justify-center px-4 sm:px-12 py-16 sm:py-32 relative z-20 overflow-hidden">
       
       <!-- Sky Focus Container -->
       <div class="max-w-4xl mx-auto w-full relative z-20">
@@ -511,9 +511,9 @@
 
     <!-- =======================================================================
          PAGE 4: EARTH SURFACE (Sky Fading into Pure White with Minimalist 2D Cityscape)
-         Text Color: PURE BLACK TEXT ON CRISP WHITE | min-h-[135vh]
+         Text Color: PURE BLACK TEXT ON CRISP WHITE | Responsive Mobile Height
          ======================================================================= -->
-    <section id="earth" class="min-h-[135vh] w-full flex flex-col justify-between px-4 sm:px-12 pt-24 sm:pt-32 pb-60 sm:pb-72 text-black relative z-20 overflow-hidden">
+    <section id="earth" class="min-h-screen sm:min-h-[135vh] w-full flex flex-col justify-between px-4 sm:px-12 pt-20 sm:pt-32 pb-44 sm:pb-72 text-black relative z-20 overflow-hidden">
       
       <!-- Minimalist 2D Architectural City Skyline Layer (Clean Vector Landmarks, Zero Cars) -->
       <div class="city-skyline-layer">
@@ -581,7 +581,7 @@
 
   </div>
 
-  <script src="script.js?v=15.0"></script>
+  <script src="script.js?v=16.0"></script>
   <script>
     lucide.createIcons();
   </script>

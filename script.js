@@ -84,31 +84,62 @@ document.addEventListener('DOMContentLoaded', () => {
       stars.push(new Star());
     }
 
-    let resizeDebounce;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeDebounce);
-      resizeDebounce = setTimeout(() => {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight * 2.7;
-        stars.forEach(s => s.calcAltitudeFade());
-      }, 200);
-    }, { passive: true });
-
     let time = 0;
-    function renderStars() {
-      // Only execute canvas redraw when Space/SKIT are visible to conserve battery & GPU
-      if (window.scrollY < window.innerHeight * 2.5) {
+    if (isMobile) {
+      // High-performance mobile mode: Draw static starfield once! Zero continuous clearRect loop!
+      function drawMobileStars() {
         ctx.clearRect(0, 0, width, height);
-        time++;
         for (let i = 0; i < stars.length; i++) {
-          stars[i].update(time);
           stars[i].draw();
         }
       }
+      drawMobileStars();
+
+      let resizeDebounce;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeDebounce);
+        resizeDebounce = setTimeout(() => {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight * 2.7;
+          stars.forEach(s => {
+            s.originX = Math.random() * width;
+            s.originY = Math.random() * height;
+            s.x = s.originX;
+            s.y = s.originY;
+            s.calcAltitudeFade();
+          });
+          drawMobileStars();
+        }, 200);
+      }, { passive: true });
+    } else {
+      // Desktop: Smooth 30fps-capped twinkle loop (Zero GPU overheating)
+      let resizeDebounce;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeDebounce);
+        resizeDebounce = setTimeout(() => {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight * 2.7;
+          stars.forEach(s => s.calcAltitudeFade());
+        }, 200);
+      }, { passive: true });
+
+      let lastFrame = 0;
+      function renderStars(timestamp) {
+        if (!lastFrame || timestamp - lastFrame >= 33) {
+          lastFrame = timestamp;
+          if (window.scrollY < window.innerHeight * 2.5) {
+            ctx.clearRect(0, 0, width, height);
+            time++;
+            for (let i = 0; i < stars.length; i++) {
+              stars[i].update(time);
+              stars[i].draw();
+            }
+          }
+        }
+        requestAnimationFrame(renderStars);
+      }
       requestAnimationFrame(renderStars);
     }
-
-    renderStars();
   }
 
   // =========================================================================
@@ -140,32 +171,41 @@ document.addEventListener('DOMContentLoaded', () => {
   cacheSectionOffsets();
   window.addEventListener('resize', cacheSectionOffsets, { passive: true });
 
+  let activeTheme = '';
+  let activeSectionId = '';
+
   function updateAltitudeTheme() {
     const scrollPosition = window.scrollY + window.innerHeight * 0.35;
-    let currentTheme = 'theme-space';
-    let currentSectionId = 'space';
+    let targetTheme = 'theme-space';
+    let targetSectionId = 'space';
 
     for (let i = 0; i < sectionOffsets.length; i++) {
       const { id, theme, top, height } = sectionOffsets[i];
       if (scrollPosition >= top && scrollPosition < top + height) {
-        currentTheme = theme;
-        currentSectionId = id;
+        targetTheme = theme;
+        targetSectionId = id;
         break;
       }
     }
 
-    if (header) {
-      header.classList.remove('theme-space', 'theme-skit', 'theme-sky', 'theme-earth');
-      header.classList.add(currentTheme);
+    if (targetTheme !== activeTheme) {
+      activeTheme = targetTheme;
+      if (header) {
+        header.classList.remove('theme-space', 'theme-skit', 'theme-sky', 'theme-earth');
+        header.classList.add(activeTheme);
+      }
     }
 
-    navPills.forEach(pill => {
-      if (pill.getAttribute('data-target') === currentSectionId) {
-        pill.classList.add('active-pill');
-      } else {
-        pill.classList.remove('active-pill');
-      }
-    });
+    if (targetSectionId !== activeSectionId) {
+      activeSectionId = targetSectionId;
+      navPills.forEach(pill => {
+        if (pill.getAttribute('data-target') === activeSectionId) {
+          pill.classList.add('active-pill');
+        } else {
+          pill.classList.remove('active-pill');
+        }
+      });
+    }
   }
 
   // High-performance passive scroll spy with requestAnimationFrame (Zero layout thrashing)

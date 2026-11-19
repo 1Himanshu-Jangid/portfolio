@@ -1,4 +1,11 @@
-# Himanshu Jangid — Potfolie
+# Himanshu Jangid — Portfolio
+
+[![Live Site](https://img.shields.io/badge/🌐_Live_Portfolio-Visit_Website-0284c7?style=for-the-badge&logo=googlechrome&logoColor=white)](https://1himanshu-jangid.github.io/potfolie/)
+
+> ### 🚀 **Live Demo**: [https://1himanshu-jangid.github.io/potfolie/](https://1himanshu-jangid.github.io/potfolie/)
+> Click the link above to view the live 4-page atmospheric portfolio.
+
+---
 
 A minimalist, 4-page continuous atmospheric portfolio journey for **Himanshu Jangid** — B.Tech Computer Science & Artificial Intelligence (CS AI) undergraduate at **SKIT College, Jaipur**, aspiring Software Engineer building AI.
 

@@ -1,13 +1,18 @@
 /**
  * Himanshu Jangid — Potfolie
  * 4-Page Atmospheric Engine: Starfield Canvas & Dynamic Altitude Scroll Spy
+ * PERFORMANCE-OPTIMIZED: Zero jank on mobile & laptop
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // =========================================================================
-  // 1. STARFIELD CANVAS GENERATOR (Space & Stratosphere with Altitude Fade)
-  // Highly optimized for all devices (Mobile & Desktop) to prevent stutter/glitch
+  // 0. DETECT MOBILE
+  // =========================================================================
+  const isMobile = window.innerWidth < 768;
+
+  // =========================================================================
+  // 1. STARFIELD CANVAS (Optimized for mobile & desktop)
   // =========================================================================
   const canvas = document.getElementById('stars-canvas');
   if (canvas) {
@@ -15,8 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight * 2.7);
 
-    const isMobile = window.innerWidth < 768;
-    const starCount = isMobile ? 65 : Math.min(260, Math.floor((width * height) / 4500));
+    const starCount = isMobile ? 50 : Math.min(180, Math.floor((width * height) / 6000));
     const stars = [];
 
     class Star {
@@ -51,9 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
         this.twinkleSpeed = Math.random() * 0.02 + 0.008;
         this.twinkleOffset = Math.random() * Math.PI * 2;
 
-        this.driftRadius = Math.random() * 3.0 + 1.0;
-        this.driftSpeedX = Math.random() * 0.012 + 0.005;
-        this.driftSpeedY = Math.random() * 0.012 + 0.005;
+        this.driftRadius = Math.random() * 2.5 + 0.8;
+        this.driftSpeedX = Math.random() * 0.01 + 0.004;
+        this.driftSpeedY = Math.random() * 0.01 + 0.004;
         this.driftPhaseX = Math.random() * Math.PI * 2;
         this.driftPhaseY = Math.random() * Math.PI * 2;
 
@@ -86,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let time = 0;
     if (isMobile) {
-      // High-performance mobile mode: Draw static starfield once! Zero continuous clearRect loop!
+      // MOBILE: Draw stars once statically — zero animation loop
       function drawMobileStars() {
         ctx.clearRect(0, 0, width, height);
         for (let i = 0; i < stars.length; i++) {
@@ -109,10 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
             s.calcAltitudeFade();
           });
           drawMobileStars();
-        }, 200);
+        }, 300);
       }, { passive: true });
     } else {
-      // Desktop: Smooth 30fps-capped twinkle loop (Zero GPU overheating)
+      // DESKTOP: 30fps-capped twinkle loop, pauses when space/skit not visible
       let resizeDebounce;
       window.addEventListener('resize', () => {
         clearTimeout(resizeDebounce);
@@ -120,12 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
           width = canvas.width = window.innerWidth;
           height = canvas.height = window.innerHeight * 2.7;
           stars.forEach(s => s.calcAltitudeFade());
-        }, 200);
+        }, 300);
       }, { passive: true });
 
       let lastFrame = 0;
+      let starsVisible = true;
+
       function renderStars(timestamp) {
-        if (!lastFrame || timestamp - lastFrame >= 33) {
+        if (starsVisible && (!lastFrame || timestamp - lastFrame >= 33)) {
           lastFrame = timestamp;
           if (window.scrollY < window.innerHeight * 2.5) {
             ctx.clearRect(0, 0, width, height);
@@ -134,7 +140,13 @@ document.addEventListener('DOMContentLoaded', () => {
               stars[i].update(time);
               stars[i].draw();
             }
+          } else {
+            starsVisible = false;
           }
+        }
+        // Re-check visibility periodically even when paused
+        if (!starsVisible && window.scrollY < window.innerHeight * 2.5) {
+          starsVisible = true;
         }
         requestAnimationFrame(renderStars);
       }
@@ -143,12 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 2. DYNAMIC 4-TIER ALTITUDE THEME DETECTOR
-  // Automatically switches header classes across the 4 pages:
-  // - Space (Top) => theme-space (white text)
-  // - SKIT (Middle-upper) => theme-skit (white text / ice blue)
-  // - Sky (Middle-lower) => theme-sky (dark navy text)
-  // - Earth (Bottom) => theme-earth (pure black text)
+  // 2. DYNAMIC ALTITUDE THEME DETECTOR (with state guards)
   // =========================================================================
   const header = document.getElementById('main-nav');
   const sections = [
@@ -169,7 +176,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
   cacheSectionOffsets();
-  window.addEventListener('resize', cacheSectionOffsets, { passive: true });
+  
+  let resizeOffsetDebounce;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeOffsetDebounce);
+    resizeOffsetDebounce = setTimeout(cacheSectionOffsets, 200);
+  }, { passive: true });
 
   let activeTheme = '';
   let activeSectionId = '';
@@ -208,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // High-performance passive scroll spy with requestAnimationFrame (Zero layout thrashing)
+  // Single rAF-throttled scroll handler
   let scrollTicking = false;
   window.addEventListener('scroll', () => {
     if (!scrollTicking) {
@@ -223,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateAltitudeTheme();
 
   // =========================================================================
-  // 3. SMOOTH NAVIGATION ANCHORS
+  // 3. SMOOTH NAVIGATION
   // =========================================================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -232,120 +244,72 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           e.preventDefault();
-          targetElement.scrollIntoView({
-            behavior: 'smooth'
-          });
+          targetElement.scrollIntoView({ behavior: 'smooth' });
         }
       }
     });
   });
 
   // =========================================================================
-  // 3b. CONTENT STABILITY (All elements immediately stable, zero scroll flash)
+  // 3b. CONTENT STABILITY
   // =========================================================================
   document.querySelectorAll('.liquid-reveal').forEach(el => el.classList.add('revealed'));
 
   // =========================================================================
-  // 4. DYNAMIC RANDOM AIRPLANE SYSTEM (ORIGINAL FIRST TIME DESIGN)
-  // Clean, sleek twin-wing aerodynamic airliners from the initial build.
-  // Smoothly alternates models on every continuous flight iteration.
+  // 4. PAUSE OFFSCREEN CSS ANIMATIONS (IntersectionObserver)
+  //    Saves massive GPU/CPU by stopping satellites, clouds, and planes
+  //    when they're scrolled out of view
   // =========================================================================
-  const AIRPLANE_MODELS = [
-    // Model 0: Commercial Twin-Jet Airliner (Original First Design from initial build)
-    `<svg width="95" height="40" viewBox="0 0 95 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-clean filter drop-shadow-md">
-      <!-- Fuselage -->
-      <path d="M12 20 C18 17, 70 17, 85 19 C92 20, 95 21, 95 21 C95 21, 92 22, 85 23 C70 25, 18 25, 12 22 Z" fill="#ffffff" stroke="#94a3b8" stroke-width="0.8"/>
-      <!-- Main Wings -->
-      <path d="M42 21 L30 5 L44 5 L60 21 Z" fill="#f1f5f9" stroke="#94a3b8" stroke-width="0.8"/>
-      <path d="M42 21 L30 37 L44 37 L60 21 Z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="0.8"/>
-      <!-- Tail Wing -->
-      <path d="M14 21 L6 8 L18 8 L24 21 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.8"/>
-      <!-- Cockpit Windows -->
-      <path d="M88 19.5 L91 20.2 L88 20.8 Z" fill="#0284c7"/>
-      <!-- Passenger Window Dots -->
-      <circle cx="45" cy="20.5" r="0.9" fill="#0284c7"/>
-      <circle cx="50" cy="20.5" r="0.9" fill="#0284c7"/>
-      <circle cx="55" cy="20.5" r="0.9" fill="#0284c7"/>
-      <circle cx="60" cy="20.5" r="0.9" fill="#0284c7"/>
-      <circle cx="65" cy="20.5" r="0.9" fill="#0284c7"/>
-      <circle cx="70" cy="20.5" r="0.9" fill="#0284c7"/>
-    </svg>`,
+  if ('IntersectionObserver' in window) {
+    const animContainers = document.querySelectorAll('.satellites-container, .sky-flight-system');
+    const animObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('anim-paused');
+        } else {
+          entry.target.classList.add('anim-paused');
+        }
+      });
+    }, {
+      rootMargin: '200px 0px', // start animations 200px before entering viewport
+      threshold: 0
+    });
 
-    // Model 1: Executive High-Altitude Jet (Original First Design from initial build)
-    `<svg width="76" height="32" viewBox="0 0 70 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-clean filter drop-shadow-md">
-      <!-- Fuselage -->
-      <path d="M8 15 C15 13, 50 13, 62 14.5 C68 15, 70 15.5, 70 15.5 C70 15.5, 68 16, 62 16.5 C50 18, 15 18, 8 16 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8"/>
-      <!-- Swept Wings -->
-      <path d="M30 15 L20 4 L30 4 L45 15 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.8"/>
-      <path d="M30 15 L20 26 L30 26 L45 15 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="0.8"/>
-      <!-- Tail -->
-      <path d="M10 15 L3 6 L12 6 L18 15 Z" fill="#38bdf8"/>
-      <!-- Cockpit -->
-      <path d="M63 14.8 L66 15.2 L63 15.6 Z" fill="#0284c7"/>
-    </svg>`,
+    animContainers.forEach(c => animObserver.observe(c));
+  }
 
-    // Model 2: Atmospheric Twin-Wing Jet (Original First Design 3)
-    `<svg width="68" height="28" viewBox="0 0 45 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="plane-clean filter drop-shadow-md">
-      <!-- Fuselage -->
-      <path d="M5 10 C10 8.5, 32 8.5, 40 9.5 C44 10, 45 10, 45 10 C45 10, 44 10.5, 40 11 C32 12, 10 12, 5 10.5 Z" fill="#ffffff" stroke="#94a3b8" stroke-width="0.6"/>
-      <!-- Wings -->
-      <path d="M18 10 L12 2 L18 2 L28 10 Z" fill="#ffffff" stroke="#94a3b8" stroke-width="0.6"/>
-      <path d="M18 10 L12 18 L18 18 L28 10 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="0.6"/>
-      <!-- Tail -->
-      <path d="M8 10 L4 4 L9 4 L12 10 Z" fill="#38bdf8"/>
-    </svg>`
-  ];
-
+  // =========================================================================
+  // 5. AIRPLANE MODEL RANDOMIZER
+  //    Uses visibility toggle instead of innerHTML replacement (zero DOM thrashing)
+  // =========================================================================
   const plane1 = document.querySelector('.plane-stream-1');
   const plane2 = document.querySelector('.plane-stream-2');
 
-  let lastModel1 = -1;
-  let lastModel2 = -1;
-
-  function randomizePlane(planeEl, laneType) {
+  function randomizePlanePosition(planeEl, laneType) {
     if (!planeEl) return;
-
-    // Smoothly alternate between pure white passenger airliner and pure white jet
-    let newIndex;
-    const lastIndex = laneType === 'upper' ? lastModel1 : lastModel2;
-    if (lastIndex === -1) {
-      newIndex = laneType === 'upper' ? 0 : 1;
-    } else {
-      newIndex = (lastIndex + 1) % AIRPLANE_MODELS.length;
-    }
-
     if (laneType === 'upper') {
-      lastModel1 = newIndex;
-      // Randomize altitude within safe upper empty corridor (12% to 15%)
       const randomTop = (12 + Math.random() * 3).toFixed(1);
       planeEl.style.top = `${randomTop}%`;
     } else {
-      lastModel2 = newIndex;
-      // Randomize altitude within safe lower empty corridor (82% to 85%)
       const randomTop = (82 + Math.random() * 3).toFixed(1);
       planeEl.style.top = `${randomTop}%`;
     }
-
-    // Apply the newly chosen model
-    planeEl.innerHTML = AIRPLANE_MODELS[newIndex];
-
-    // Calm, steady flight cruise pacing (46s to 52s)
+    // Calm, steady cruise pacing (46s to 52s)
     const randomDuration = (46 + Math.random() * 6).toFixed(1);
     planeEl.style.animationDuration = `${randomDuration}s`;
   }
 
-  // Initialize both airplanes with different models immediately on load
   if (plane1) {
-    randomizePlane(plane1, 'upper');
+    randomizePlanePosition(plane1, 'upper');
     plane1.addEventListener('animationiteration', () => {
-      randomizePlane(plane1, 'upper');
+      randomizePlanePosition(plane1, 'upper');
     });
   }
 
   if (plane2) {
-    randomizePlane(plane2, 'lower');
+    randomizePlanePosition(plane2, 'lower');
     plane2.addEventListener('animationiteration', () => {
-      randomizePlane(plane2, 'lower');
+      randomizePlanePosition(plane2, 'lower');
     });
   }
 

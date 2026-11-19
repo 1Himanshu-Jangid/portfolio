@@ -1,7 +1,7 @@
 /* ==========================================================================
    Himanshu Jangid — Potfolie
    Expansive 4-Page Atmospheric Journey (~540vh Total Length)
-   Random Orbital Satellites, Ascending/Descending Airplanes, 3D Clouds
+   PERFORMANCE-OPTIMIZED: Zero jank on mobile & laptop
    ========================================================================== */
 
 :root {
@@ -35,28 +35,28 @@ body {
   max-width: 100vw;
   position: relative;
   -webkit-font-smoothing: antialiased;
+  touch-action: pan-y;
 }
 
 /* ==========================================================================
    EXPANSIVE 4-PAGE CONTINUOUS ATMOSPHERIC GRADIENT (~540vh total height)
-   Sequence: Pure Pitch Black Space -> Deep Navy -> Sky Blue -> White
    ========================================================================== */
 #atmosphere-gradient-track {
   background: linear-gradient(
     180deg,
-    #000000 0%,          /* 1. Very top starts with 100% PURE PITCH BLACK */
-    #000000 24%,         /* Pure pitch black space with shimmering stars & ISS */
-    #020617 30%,         /* Deep cosmos transition out of space */
-    #081636 36%,         /* Transition into stratosphere navy */
-    #0f2e6b 43%,         /* Deep Navy Blue (SKIT section) */
-    #1d4ed8 50%,         /* Royal blue */
-    #0284c7 57%,         /* Upper sky transition */
-    #38bdf8 65%,         /* Rich Sky Blue (3D moving clouds & clean airplanes) */
-    #7dd3fc 73%,         /* Daytime Sky Blue */
-    #bae6fd 81%,         /* Soft Sky Blue */
-    #e0f2fe 89%,         /* Atmospheric sky mist fading into white */
-    #ffffff 95%,         /* Pure crisp clean white starts */
-    #ffffff 100%         /* 100% Pure White for Earth Section */
+    #000000 0%,
+    #000000 24%,
+    #020617 30%,
+    #081636 36%,
+    #0f2e6b 43%,
+    #1d4ed8 50%,
+    #0284c7 57%,
+    #38bdf8 65%,
+    #7dd3fc 73%,
+    #bae6fd 81%,
+    #e0f2fe 89%,
+    #ffffff 95%,
+    #ffffff 100%
   );
 }
 
@@ -66,44 +66,27 @@ body {
 }
 
 /* ==========================================================================
-   1. SATELLITES: SLOW, MAJESTIC ORBIT (GUARANTEED ZERO COLLISION)
-   Separated into Upper (14%) & Lower (80%) Corridors (800px vertical gap)
-   Identical 54s cycle with 180° phase offset so they NEVER get close or collide
+   1. SATELLITES: SLOW ORBIT (ZERO COLLISION)
    ========================================================================== */
 .sat-item {
   pointer-events: none;
   position: absolute;
   left: 0;
-  will-change: transform;
 }
 
-/* Satellite 1: Solar Station ISS (Upper Empty Corridor - 13% altitude) */
 .sat-stream-1 {
   top: 13%;
   animation: moveSatSlow_1 54s linear infinite;
-  animation-delay: 0s;
 }
 
 @keyframes moveSatSlow_1 {
-  0% {
-    transform: translate3d(-140px, 0px, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(calc(25vw - 30px), -8px, 0) rotate(-1deg);
-  }
-  50% {
-    transform: translate3d(calc(50vw), 8px, 0) rotate(1deg);
-  }
-  75% {
-    transform: translate3d(calc(75vw + 30px), -6px, 0) rotate(-0.8deg);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 140px), 0px, 0) rotate(0deg);
-  }
+  0%   { transform: translate3d(-140px, 0px, 0) rotate(0deg); }
+  25%  { transform: translate3d(calc(25vw - 30px), -8px, 0) rotate(-1deg); }
+  50%  { transform: translate3d(calc(50vw), 8px, 0) rotate(1deg); }
+  75%  { transform: translate3d(calc(75vw + 30px), -6px, 0) rotate(-0.8deg); }
+  100% { transform: translate3d(calc(100vw + 140px), 0px, 0) rotate(0deg); }
 }
 
-/* Satellite 2: Deep Space Telescope (Mid-Upper Empty Corridor - 23% altitude)
-   Equidistant 120° orbit phase (-18s); dedicated altitude lane; zero text collision */
 .sat-stream-2 {
   top: 23%;
   animation: moveSatSlow_2 54s linear infinite;
@@ -111,25 +94,13 @@ body {
 }
 
 @keyframes moveSatSlow_2 {
-  0% {
-    transform: translate3d(-130px, 0px, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(calc(25vw - 25px), 8px, 0) rotate(1deg);
-  }
-  50% {
-    transform: translate3d(calc(50vw), -8px, 0) rotate(-1deg);
-  }
-  75% {
-    transform: translate3d(calc(75vw + 25px), 6px, 0) rotate(0.8deg);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 130px), 0px, 0) rotate(0deg);
-  }
+  0%   { transform: translate3d(-130px, 0px, 0) rotate(0deg); }
+  25%  { transform: translate3d(calc(25vw - 25px), 8px, 0) rotate(1deg); }
+  50%  { transform: translate3d(calc(50vw), -8px, 0) rotate(-1deg); }
+  75%  { transform: translate3d(calc(75vw + 25px), 6px, 0) rotate(0.8deg); }
+  100% { transform: translate3d(calc(100vw + 130px), 0px, 0) rotate(0deg); }
 }
 
-/* Satellite 3: Autonomous AI Communications Satellite (Lower-Upper Empty Corridor - 33% altitude)
-   Equidistant 240° orbit phase (-36s); dedicated altitude lane; zero text collision */
 .sat-stream-3 {
   top: 33%;
   animation: moveSatSlow_3 54s linear infinite;
@@ -137,31 +108,21 @@ body {
 }
 
 @keyframes moveSatSlow_3 {
-  0% {
-    transform: translate3d(-135px, 0px, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(calc(25vw - 20px), -6px, 0) rotate(-0.8deg);
-  }
-  50% {
-    transform: translate3d(calc(50vw), 6px, 0) rotate(0.8deg);
-  }
-  75% {
-    transform: translate3d(calc(75vw + 20px), -5px, 0) rotate(-0.5deg);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 135px), 0px, 0) rotate(0deg);
-  }
+  0%   { transform: translate3d(-135px, 0px, 0) rotate(0deg); }
+  25%  { transform: translate3d(calc(25vw - 20px), -6px, 0) rotate(-0.8deg); }
+  50%  { transform: translate3d(calc(50vw), 6px, 0) rotate(0.8deg); }
+  75%  { transform: translate3d(calc(75vw + 20px), -5px, 0) rotate(-0.5deg); }
+  100% { transform: translate3d(calc(100vw + 135px), 0px, 0) rotate(0deg); }
 }
 
-/* Satellite Beacon & Ion Thruster Glow */
+/* Satellite Beacon — simple opacity only, NO filter */
 .sat-beacon {
   animation: beaconPulse 1.6s ease-in-out infinite alternate;
 }
 
 @keyframes beaconPulse {
   0%, 35% { opacity: 0.2; }
-  65%, 100% { opacity: 1; filter: drop-shadow(0 0 4px currentColor); }
+  65%, 100% { opacity: 1; }
 }
 
 .ion-glow {
@@ -169,41 +130,26 @@ body {
 }
 
 @keyframes ionThrust {
-  0% { opacity: 0.3; r: 2; }
-  100% { opacity: 0.9; r: 3.5; filter: drop-shadow(0 0 5px #38bdf8); }
+  0% { opacity: 0.3; }
+  100% { opacity: 0.9; }
 }
 
 /* ==========================================================================
-   PAGE 2 (ACADEMICS // 02) SATELLITE SYSTEM (135vh - 270vh)
-   Academic AI Research CubeSat & Deep Space Orbiters above SKIT College
+   PAGE 2 SATELLITES (135vh - 270vh)
    ========================================================================== */
-/* Satellite Skit 1: AI Research CubeSat (Upper Lane - 11% altitude) */
 .sat-stream-skit-1 {
   top: 11%;
   animation: moveSatSkit_1 56s linear infinite;
-  animation-delay: 0s;
 }
 
 @keyframes moveSatSkit_1 {
-  0% {
-    transform: translate3d(-140px, 0px, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(calc(25vw - 25px), 6px, 0) rotate(0.8deg);
-  }
-  50% {
-    transform: translate3d(calc(50vw), -6px, 0) rotate(-0.8deg);
-  }
-  75% {
-    transform: translate3d(calc(75vw + 25px), 5px, 0) rotate(0.6deg);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 140px), 0px, 0) rotate(0deg);
-  }
+  0%   { transform: translate3d(-140px, 0px, 0) rotate(0deg); }
+  25%  { transform: translate3d(calc(25vw - 25px), 6px, 0) rotate(0.8deg); }
+  50%  { transform: translate3d(calc(50vw), -6px, 0) rotate(-0.8deg); }
+  75%  { transform: translate3d(calc(75vw + 25px), 5px, 0) rotate(0.6deg); }
+  100% { transform: translate3d(calc(100vw + 140px), 0px, 0) rotate(0deg); }
 }
 
-/* Satellite Skit 2: Earth Observation Radar Satellite (Mid-Upper Corridor - 24% altitude)
-   Equidistant 120° offset (-18.6s) */
 .sat-stream-skit-2 {
   top: 24%;
   animation: moveSatSkit_2 56s linear infinite;
@@ -211,25 +157,13 @@ body {
 }
 
 @keyframes moveSatSkit_2 {
-  0% {
-    transform: translate3d(-150px, 0px, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(calc(25vw - 30px), -8px, 0) rotate(-1deg);
-  }
-  50% {
-    transform: translate3d(calc(50vw), 7px, 0) rotate(0.9deg);
-  }
-  75% {
-    transform: translate3d(calc(75vw + 30px), -6px, 0) rotate(-0.7deg);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 150px), 0px, 0) rotate(0deg);
-  }
+  0%   { transform: translate3d(-150px, 0px, 0) rotate(0deg); }
+  25%  { transform: translate3d(calc(25vw - 30px), -8px, 0) rotate(-1deg); }
+  50%  { transform: translate3d(calc(50vw), 7px, 0) rotate(0.9deg); }
+  75%  { transform: translate3d(calc(75vw + 30px), -6px, 0) rotate(-0.7deg); }
+  100% { transform: translate3d(calc(100vw + 150px), 0px, 0) rotate(0deg); }
 }
 
-/* Satellite Skit 3: Quantum Neural Data Relay (Lower Stratosphere Corridor - 82% altitude)
-   Equidistant 240° offset (-37.3s) */
 .sat-stream-skit-3 {
   top: 82%;
   animation: moveSatSkit_3 56s linear infinite;
@@ -237,120 +171,86 @@ body {
 }
 
 @keyframes moveSatSkit_3 {
-  0% {
-    transform: translate3d(-145px, 0px, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(calc(25vw - 20px), 6px, 0) rotate(0.7deg);
-  }
-  50% {
-    transform: translate3d(calc(50vw), -6px, 0) rotate(-0.7deg);
-  }
-  75% {
-    transform: translate3d(calc(75vw + 20px), 5px, 0) rotate(0.5deg);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 145px), 0px, 0) rotate(0deg);
-  }
+  0%   { transform: translate3d(-145px, 0px, 0) rotate(0deg); }
+  25%  { transform: translate3d(calc(25vw - 20px), 6px, 0) rotate(0.7deg); }
+  50%  { transform: translate3d(calc(50vw), -6px, 0) rotate(-0.7deg); }
+  75%  { transform: translate3d(calc(75vw + 20px), 5px, 0) rotate(0.5deg); }
+  100% { transform: translate3d(calc(100vw + 145px), 0px, 0) rotate(0deg); }
 }
 
 /* ==========================================================================
-   2. 3D MOVING CLOUD SYSTEM & CLEAN SLOW AIRPLANE FLIGHT
-   Clouds drift continuously across the sky at multiple depths
-   Planes cruise SLOWLY (48s) in separated lanes (Zero collision, pure clean design)
+   2. CLOUD & AIRPLANE FLIGHT SYSTEM
+   NO will-change (browser auto-promotes animated elements)
    ========================================================================== */
 
-/* Background Clouds: Majestic slow, leisurely straight-line horizontal drift */
 .cloud-drift-1 {
   animation: cloudDriftSlow_1 175s linear infinite;
-  will-change: transform;
 }
 
 @keyframes cloudDriftSlow_1 {
-  0% { transform: translate3d(-360px, 0, 0); }
+  0%   { transform: translate3d(-360px, 0, 0); }
   100% { transform: translate3d(calc(100vw + 360px), 0, 0); }
 }
 
 .cloud-drift-2 {
   animation: cloudDriftSlow_2 215s linear infinite;
   animation-delay: -95s;
-  will-change: transform;
 }
 
 @keyframes cloudDriftSlow_2 {
-  0% { transform: translate3d(-380px, 0, 0); }
+  0%   { transform: translate3d(-380px, 0, 0); }
   100% { transform: translate3d(calc(100vw + 380px), 0, 0); }
 }
 
-/* 3D Foreground Clouds: Calm, leisurely straight-line horizontal drift (Zero up/down motion, zero jitter) */
 .fore-cloud-drift-1 {
   animation: foreCloudDrift_1 145s linear infinite;
-  will-change: transform;
 }
 
 @keyframes foreCloudDrift_1 {
-  0% { transform: translate3d(-300px, 0, 0); }
+  0%   { transform: translate3d(-300px, 0, 0); }
   100% { transform: translate3d(calc(100vw + 300px), 0, 0); }
 }
 
 .fore-cloud-drift-2 {
   animation: foreCloudDrift_2 170s linear infinite;
   animation-delay: -75s;
-  will-change: transform;
 }
 
 @keyframes foreCloudDrift_2 {
-  0% { transform: translate3d(-280px, 0, 0); }
+  0%   { transform: translate3d(-280px, 0, 0); }
   100% { transform: translate3d(calc(100vw + 280px), 0, 0); }
 }
 
 .fore-cloud-drift-3 {
   animation: foreCloudDrift_3 155s linear infinite;
   animation-delay: -45s;
-  will-change: transform;
 }
 
 @keyframes foreCloudDrift_3 {
-  0% { transform: translate3d(-320px, 0, 0); }
+  0%   { transform: translate3d(-320px, 0, 0); }
   100% { transform: translate3d(calc(100vw + 320px), 0, 0); }
 }
 
-/* AIRPLANES: SLOW, MAJESTIC, CALM CRUISE (GUARANTEED NO COLLISION) */
+/* AIRPLANES */
 .plane-flight {
   pointer-events: none;
   position: absolute;
   left: 0;
-  will-change: transform;
 }
 
-/* Airplane 1: Clean Minimalist Airliner (Upper Sky Lane - 14% altitude)
-   Cruises slowly (48s), calmly undulating and passing behind 3D drifting clouds */
 .plane-stream-1 {
   top: 14%;
   animation: flyPlaneSlow_1 48s linear infinite;
-  animation-delay: 0s;
 }
 
 @keyframes flyPlaneSlow_1 {
-  0% {
-    transform: translate3d(-160px, 0px, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(calc(25vw - 35px), -6px, 0) rotate(-0.6deg);
-  }
-  50% {
-    transform: translate3d(calc(50vw), 4px, 0) rotate(0.5deg);
-  }
-  75% {
-    transform: translate3d(calc(75vw + 35px), -4px, 0) rotate(-0.5deg);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 160px), 0px, 0) rotate(0deg);
-  }
+  0%   { transform: translate3d(-160px, 0px, 0) rotate(0deg); }
+  25%  { transform: translate3d(calc(25vw - 35px), -6px, 0) rotate(-0.6deg); }
+  50%  { transform: translate3d(calc(50vw), 4px, 0) rotate(0.5deg); }
+  75%  { transform: translate3d(calc(75vw + 35px), -4px, 0) rotate(-0.5deg); }
+  100% { transform: translate3d(calc(100vw + 160px), 0px, 0) rotate(0deg); }
 }
 
-/* Airplane 2: Clean Minimalist Airliner (Lower Sky Lane - 84% altitude)
-   Separated by ~700px vertically and exactly 24s (180°) phase offset: CANNOT collide! */
 .plane-stream-2 {
   top: 84%;
   animation: flyPlaneSlow_2 48s linear infinite;
@@ -358,32 +258,21 @@ body {
 }
 
 @keyframes flyPlaneSlow_2 {
-  0% {
-    transform: translate3d(-160px, 0px, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(calc(25vw - 35px), 6px, 0) rotate(0.6deg);
-  }
-  50% {
-    transform: translate3d(calc(50vw), -4px, 0) rotate(-0.5deg);
-  }
-  75% {
-    transform: translate3d(calc(75vw + 35px), 4px, 0) rotate(0.5deg);
-  }
-  100% {
-    transform: translate3d(calc(100vw + 160px), 0px, 0) rotate(0deg);
-  }
+  0%   { transform: translate3d(-160px, 0px, 0) rotate(0deg); }
+  25%  { transform: translate3d(calc(25vw - 35px), 6px, 0) rotate(0.6deg); }
+  50%  { transform: translate3d(calc(50vw), -4px, 0) rotate(-0.5deg); }
+  75%  { transform: translate3d(calc(75vw + 35px), 4px, 0) rotate(0.5deg); }
+  100% { transform: translate3d(calc(100vw + 160px), 0px, 0) rotate(0deg); }
 }
 
-/* Clean Airplane Minimalist Shadow */
+/* Airplane — NO filter, NO drop-shadow (huge GPU saver) */
 .plane-clean {
-  filter: drop-shadow(0 4px 10px rgba(15, 23, 42, 0.12));
+  /* intentionally empty — no filter */
 }
 
 /* ==========================================================================
-   AUTHENTIC APPLE LIQUID GLASS MATERIAL SYSTEM (visionOS & macOS Sequoia)
-   Deep optical blur, color vibrance saturation, curved specular highlights,
-   internal refraction bevels, and fluid spring micro-interactions.
+   APPLE LIQUID GLASS MATERIAL SYSTEM
+   PERFORMANCE: Reduced blur radius, NO backdrop-filter on pills/buttons
    ========================================================================== */
 .hero-glass-card {
   position: relative;
@@ -393,8 +282,8 @@ body {
     rgba(255, 255, 255, 0.10) 45%,
     rgba(255, 255, 255, 0.04) 100%
   );
-  backdrop-filter: blur(18px) saturate(200%) brightness(108%);
-  -webkit-backdrop-filter: blur(18px) saturate(200%) brightness(108%);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-top: 1.5px solid rgba(255, 255, 255, 0.45);
   border-radius: 2rem;
@@ -404,11 +293,7 @@ body {
     inset 0 -1px 1px 0 rgba(0, 0, 0, 0.15);
   overflow: hidden;
   transform: translateZ(0);
-  contain: layout style;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  contain: layout style paint;
 }
 
 .hero-glass-card > *,
@@ -418,7 +303,7 @@ body {
   z-index: 2;
 }
 
-/* Apple Liquid Lens Specular Sheen (Curved glass light bounce) */
+/* Specular Sheen */
 .hero-glass-card::before,
 .liquid-glass-card::before {
   content: "";
@@ -463,8 +348,8 @@ body {
     rgba(255, 255, 255, 0.10) 45%,
     rgba(255, 255, 255, 0.04) 100%
   );
-  backdrop-filter: blur(18px) saturate(200%) brightness(108%);
-  -webkit-backdrop-filter: blur(18px) saturate(200%) brightness(108%);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-top: 1.5px solid rgba(255, 255, 255, 0.45);
   border-radius: 2rem;
@@ -474,11 +359,7 @@ body {
     inset 0 -1px 1px 0 rgba(0, 0, 0, 0.15);
   overflow: hidden;
   transform: translateZ(0);
-  contain: layout style;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  contain: layout style paint;
 }
 
 .liquid-glass-card:hover {
@@ -497,7 +378,7 @@ body {
     inset 0 -1px 1px 0 rgba(0, 0, 0, 0.15);
 }
 
-/* Apple Liquid Glass Card Light (for Flight Altitude & Earth Surface - 80% True Transparency) */
+/* Light Glass Card */
 .liquid-glass-card-light {
   position: relative;
   background: linear-gradient(
@@ -506,8 +387,8 @@ body {
     rgba(255, 255, 255, 0.18) 45%,
     rgba(255, 255, 255, 0.10) 100%
   );
-  backdrop-filter: blur(18px) saturate(190%) brightness(105%);
-  -webkit-backdrop-filter: blur(18px) saturate(190%) brightness(105%);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.65);
   border-top: 1.5px solid rgba(255, 255, 255, 0.95);
   border-radius: 2rem;
@@ -517,10 +398,7 @@ body {
     inset 0 -1px 1px 0 rgba(15, 23, 42, 0.03);
   overflow: hidden;
   transform: translateZ(0);
-  contain: layout style;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  contain: layout style paint;
 }
 
 .liquid-glass-card-light::before {
@@ -557,9 +435,7 @@ body {
 }
 
 /* ==========================================================================
-   PAGE 4: EARTH SURFACE SKYLINE (MINIMALIST 2D ARCHITECTURAL SKYLINE)
-   Iconic 2D vector architectural cityscape anchored cleanly at ground level (0 M)
-   Clean, simple, elegant silhouette (Zero cars, zero photo clutter)
+   EARTH SURFACE SKYLINE
    ========================================================================== */
 .city-skyline-layer {
   position: absolute;
@@ -589,104 +465,80 @@ body {
   height: 100%;
   pointer-events: none;
   opacity: 0.95;
-  filter: drop-shadow(0 -2px 10px rgba(15, 23, 42, 0.08));
+  /* NO filter — saves GPU */
 }
 
-/* Apple Liquid Glass Interactive Pills */
+/* ==========================================================================
+   PILLS — NO backdrop-filter (solid semi-transparent backgrounds instead)
+   This alone eliminates ~10 GPU blur layers per frame
+   ========================================================================== */
 .liquid-glass-pill {
   position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.16) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  backdrop-filter: blur(20px) saturate(200%);
-  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.22);
-  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
   box-shadow: 
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.4),
-    0 4px 16px rgba(0, 0, 0, 0.2);
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.15);
   border-radius: 9999px;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .liquid-glass-pill:hover {
   transform: translateY(-2px) scale(1.02);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.24) 0%,
-    rgba(255, 255, 255, 0.09) 100%
-  );
+  background: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.38);
-  border-top-color: rgba(255, 255, 255, 0.65);
   box-shadow: 
-    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.6),
-    0 8px 24px rgba(0, 0, 0, 0.28),
-    0 0 18px rgba(56, 189, 248, 0.2);
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.5),
+    0 6px 18px rgba(0, 0, 0, 0.22);
 }
 
 .liquid-glass-pill-light {
   position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.32) 0%,
-    rgba(255, 255, 255, 0.18) 100%
-  );
-  backdrop-filter: blur(18px) saturate(190%);
-  -webkit-backdrop-filter: blur(18px) saturate(190%);
+  background: rgba(255, 255, 255, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.65);
   border-top: 1.5px solid #ffffff;
   box-shadow: 
     inset 0 1px 1.5px 0 #ffffff,
-    0 4px 16px rgba(15, 23, 42, 0.05);
+    0 2px 8px rgba(15, 23, 42, 0.04);
   border-radius: 9999px;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .liquid-glass-pill-light:hover {
   transform: translateY(-2px) scale(1.02);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.45) 0%,
-    rgba(255, 255, 255, 0.25) 100%
-  );
+  background: rgba(255, 255, 255, 0.5);
   border-color: #ffffff;
   box-shadow: 
     inset 0 1px 2px 0 #ffffff,
-    0 8px 24px rgba(15, 23, 42, 0.08),
-    0 0 18px rgba(2, 132, 199, 0.16);
+    0 6px 18px rgba(15, 23, 42, 0.06);
 }
 
-/* Apple Liquid Glass Interactive Buttons */
+/* Buttons — NO backdrop-filter */
 .liquid-glass-btn {
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 
-    0 6px 18px rgba(0, 0, 0, 0.18),
-    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.42),
-    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.15);
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .liquid-glass-btn:hover {
   transform: translateY(-2.5px) scale(1.015);
   box-shadow: 
-    0 12px 30px rgba(0, 0, 0, 0.25),
-    inset 0 1px 2px 0 rgba(255, 255, 255, 0.65),
-    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.15);
+    0 8px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.5);
 }
 
 .liquid-glass-btn:active {
   transform: translateY(0px) scale(0.975);
   box-shadow: 
-    0 2px 8px rgba(0, 0, 0, 0.2),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+    0 2px 6px rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-/* Static Stable Content - Zero Scroll Flash/Line Glitch */
+/* Static Stable Content */
 .liquid-reveal {
   opacity: 1 !important;
   transform: none !important;
@@ -698,166 +550,144 @@ body {
 }
 
 /* ==========================================================================
-   DYNAMIC 4-TIER NAVBAR THEME MODES (Frosted Glass & Ambient Backdrops)
-   Backdrop blur + theme background ensures zero text overlap during scrolling
+   NAVBAR THEMES — Reduced blur (12px vs 28px = 5x less GPU work)
    ========================================================================== */
 #main-nav {
-  backdrop-filter: blur(28px) saturate(200%);
-  -webkit-backdrop-filter: blur(28px) saturate(200%);
-  transition: background-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  transition: background-color 0.4s ease,
+              border-color 0.4s ease,
+              box-shadow 0.4s ease;
 }
 
 #main-nav.theme-space {
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.7);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
-.theme-space #nav-brand-text {
-  color: #ffffff;
-}
+.theme-space #nav-brand-text { color: #ffffff; }
 .theme-space #nav-logo {
   border-color: rgba(255, 255, 255, 0.4);
   color: #ffffff;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 .theme-space #nav-pill-box {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
+  background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-top: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 4px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 2px 8px rgba(0, 0, 0, 0.2);
 }
-.theme-space .alt-link {
-  color: #cbd5e1;
-}
+.theme-space .alt-link { color: #cbd5e1; }
 .theme-space .alt-link.active-pill {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.14));
+  background: rgba(255, 255, 255, 0.2);
   color: #ffffff;
   font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 2px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 .theme-space #nav-branch-badge {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+  background: rgba(255, 255, 255, 0.08);
   color: #93c5fd;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 #main-nav.theme-skit {
-  background-color: rgba(15, 46, 107, 0.68);
+  background-color: rgba(15, 46, 107, 0.72);
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.4);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.35);
 }
-.theme-skit #nav-brand-text {
-  color: #ffffff;
-}
+.theme-skit #nav-brand-text { color: #ffffff; }
 .theme-skit #nav-logo {
   border-color: rgba(255, 255, 255, 0.45);
   color: #ffffff;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35);
 }
 .theme-skit #nav-pill-box {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.25));
+  background: rgba(15, 23, 42, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35), 0 4px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 0 2px 8px rgba(0, 0, 0, 0.2);
 }
-.theme-skit .alt-link {
-  color: #e2e8f0;
-}
+.theme-skit .alt-link { color: #e2e8f0; }
 .theme-skit .alt-link.active-pill {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.16));
+  background: rgba(255, 255, 255, 0.22);
   color: #ffffff;
   font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.55), 0 2px 8px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.45), 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 .theme-skit #nav-branch-badge {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
+  background: rgba(255, 255, 255, 0.12);
   color: #e0f2fe;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 #main-nav.theme-sky {
-  background-color: rgba(56, 189, 248, 0.65);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.18);
+  background-color: rgba(56, 189, 248, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.15);
 }
-.theme-sky #nav-brand-text {
-  color: #0f172a;
-}
+.theme-sky #nav-brand-text { color: #0f172a; }
 .theme-sky #nav-logo {
   border-color: rgba(15, 23, 42, 0.25);
   color: #0f172a;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.45));
-  box-shadow: inset 0 1px 1.5px #ffffff;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 1px 1px #ffffff;
 }
 .theme-sky #nav-pill-box {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.25));
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  border-top: 1.5px solid #ffffff;
-  box-shadow: inset 0 1px 1.5px #ffffff, 0 4px 16px rgba(2, 132, 199, 0.12);
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 1px #ffffff, 0 2px 8px rgba(2, 132, 199, 0.1);
 }
-.theme-sky .alt-link {
-  color: #1e293b;
-}
+.theme-sky .alt-link { color: #1e293b; }
 .theme-sky .alt-link.active-pill {
   background: #0f172a;
   color: #ffffff;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.25);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.2);
 }
 .theme-sky #nav-branch-badge {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3));
+  background: rgba(255, 255, 255, 0.4);
   color: #082f49;
-  border: 1px solid rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   box-shadow: inset 0 1px 1px #ffffff;
 }
 
 #main-nav.theme-earth {
-  background-color: rgba(255, 255, 255, 0.82);
+  background-color: rgba(255, 255, 255, 0.85);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
-.theme-earth #nav-brand-text {
-  color: #000000;
-}
+.theme-earth #nav-brand-text { color: #000000; }
 .theme-earth #nav-logo {
   border-color: rgba(0, 0, 0, 0.25);
   color: #000000;
   background: #ffffff;
-  box-shadow: inset 0 1px 1.5px #ffffff, 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 1px 1px #ffffff, 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 .theme-earth #nav-pill-box {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.25));
+  background: rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-top: 1.5px solid #ffffff;
-  box-shadow: inset 0 1px 2px #ffffff, 0 4px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: inset 0 1px 1.5px #ffffff, 0 2px 8px rgba(0, 0, 0, 0.05);
 }
-.theme-earth .alt-link {
-  color: #64748b;
-}
+.theme-earth .alt-link { color: #64748b; }
 .theme-earth .alt-link.active-pill {
   background: #000000;
   color: #ffffff;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 .theme-earth #nav-branch-badge {
   background: #ffffff;
   color: #0f172a;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 1px 1.5px #ffffff, 0 2px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 1px 1px #ffffff, 0 2px 4px rgba(0, 0, 0, 0.03);
 }
 
 /* ==========================================================================
-   MOBILE & CROSS-DEVICE GLITCH-FREE OPTIMIZATIONS
-   Strict width clamping, zero horizontal scrollbar overflow on all mobile screens
+   MOBILE & CROSS-DEVICE OPTIMIZATIONS
    ========================================================================== */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -885,6 +715,14 @@ section {
   overflow-x: hidden;
 }
 
+/* Offscreen animation containers paused by JS via this class */
+.anim-paused {
+  animation-play-state: paused !important;
+}
+.anim-paused * {
+  animation-play-state: paused !important;
+}
+
 @media (max-width: 640px) {
   #nav-brand-text {
     display: none !important;
@@ -899,6 +737,8 @@ section {
     max-width: 100vw !important;
     overflow-x: hidden !important;
     justify-content: space-between !important;
+    backdrop-filter: blur(8px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(8px) saturate(140%) !important;
   }
   #nav-pill-box {
     margin: 0 auto;
@@ -932,26 +772,25 @@ section {
     padding: 1.5rem 1.25rem !important;
     max-width: 100% !important;
     border-radius: 1.5rem !important;
-    backdrop-filter: blur(10px) saturate(160%) !important;
-    -webkit-backdrop-filter: blur(10px) saturate(160%) !important;
-    transform: translateZ(0);
-    contain: layout style;
+    backdrop-filter: blur(8px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(8px) saturate(140%) !important;
   }
   .clouds-back-layer {
     display: none !important;
   }
-  .plane-clean,
-  .filter {
-    filter: none !important;
+
+  /* On mobile: pause all offscreen animation layers completely */
+  .satellites-container,
+  .sky-flight-system {
+    contain: layout style paint;
   }
 }
 
-/* Accessibility: Gentle drift for reduced motion */
+/* Accessibility: Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .cloud-drift-slow, .fore-cloud-puff, .liquid-reveal {
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

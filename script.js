@@ -114,11 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
         this.active = true;
       }
 
-      update() {
+      update(dtNorm = 1) {
         if (!this.active) return;
-        this.x += this.dx;
-        this.y += this.dy;
-        this.alpha -= this.fade;
+        this.x += this.dx * dtNorm;
+        this.y += this.dy * dtNorm;
+        this.alpha -= this.fade * dtNorm;
         if (this.alpha <= 0 || this.y > height * 0.45 || this.x > width) {
           this.active = false;
         }
@@ -151,32 +151,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const shootingStar = new ShootingStar();
     let meteorTimer = 0;
 
-    // Fluid requestAnimationFrame loop for BOTH mobile and desktop
-    let time = 0;
+    // High Refresh Rate (60Hz & 120Hz ProMotion) decoupled animation loop
+    let lastTimestamp = performance.now();
+    let simTime = 0;
     let isVisible = true;
 
-    function renderStarfield() {
+    function renderStarfield(now) {
+      if (!now) now = performance.now();
       if (isVisible) {
-        ctx.clearRect(0, 0, width, height);
-        time++;
+        // Delta time normalized to standard 60fps base (16.667ms per frame)
+        // On 120Hz displays, dtNorm is ~0.5; on 60Hz displays, dtNorm is ~1.0
+        const dtMs = Math.min(now - lastTimestamp, 100);
+        lastTimestamp = now;
+        const dtNorm = dtMs / 16.6667;
+        simTime += dtNorm;
 
-        // Update and draw drifting stars
+        ctx.clearRect(0, 0, width, height);
+
+        // Update and draw drifting stars with sub-frame interpolation
         for (let i = 0; i < stars.length; i++) {
-          stars[i].update(time);
+          stars[i].update(simTime);
           stars[i].draw();
         }
 
-        // Periodically trigger a shooting star (every ~6-9 seconds)
-        meteorTimer++;
-        if (!shootingStar.active && meteorTimer > 380 && Math.random() < 0.03) {
-          shootingStar.spawn();
-          meteorTimer = 0;
-        }
-
+        // Shooting star delta-time scaling
         if (shootingStar.active) {
-          shootingStar.update();
+          shootingStar.update(dtNorm);
           shootingStar.draw();
+        } else {
+          meteorTimer += dtNorm;
+          if (meteorTimer > 380 && Math.random() < 0.03 * dtNorm) {
+            shootingStar.spawn();
+            meteorTimer = 0;
+          }
         }
+      } else {
+        lastTimestamp = now;
       }
       requestAnimationFrame(renderStarfield);
     }

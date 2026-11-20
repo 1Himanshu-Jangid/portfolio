@@ -337,4 +337,54 @@ document.addEventListener('DOMContentLoaded', () => {
   // Ensure all liquid-reveal elements are visible
   document.querySelectorAll('.liquid-reveal').forEach(el => el.classList.add('revealed'));
 
+
+  // =========================================================================
+  // AEROSPACE TELEMETRY PRELOADER CONTROLLER (OPTION A)
+  // Super-fast (≤ 650ms), smooth micro-counter, automatic non-blocking exit
+  // =========================================================================
+  const loaderEl = document.getElementById('orbital-loader');
+  const progressBar = document.getElementById('loader-progress-bar');
+  const percentText = document.getElementById('loader-percent');
+  const statusText = document.getElementById('loader-status');
+
+  if (loaderEl && progressBar && percentText && statusText) {
+    let progress = 18;
+    let isDismissed = false;
+
+    function setProgress(val, status) {
+      progress = Math.min(val, 100);
+      progressBar.style.width = progress + '%';
+      percentText.textContent = Math.round(progress) + '%';
+      if (status) statusText.textContent = status;
+    }
+
+    const t1 = setTimeout(() => setProgress(45, 'SYNCHRONIZING STARFIELD...'), 120);
+    const t2 = setTimeout(() => setProgress(78, 'CALIBRATING ALTITUDE...'), 260);
+    const t3 = setTimeout(() => setProgress(96, 'TRAJECTORY NOMINAL'), 420);
+
+    function dismissLoader() {
+      if (isDismissed) return;
+      isDismissed = true;
+      setProgress(100, 'SYSTEM READY // DESCENT INITIATED');
+      setTimeout(() => {
+        loaderEl.classList.add('loader-hidden');
+        setTimeout(() => {
+          if (loaderEl && loaderEl.parentNode) {
+            loaderEl.remove();
+          }
+        }, 450);
+      }, 150);
+    }
+
+    // Dismiss gracefully: allow 500ms micro-calibration to showcase, then exit
+    if (document.readyState === 'complete') {
+      setTimeout(dismissLoader, 550);
+    } else {
+      window.addEventListener('load', () => {
+        setTimeout(dismissLoader, 450);
+      });
+      setTimeout(dismissLoader, 750); // Hard fallback safety cap
+    }
+  }
+
 });

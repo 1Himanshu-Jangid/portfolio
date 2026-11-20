@@ -1,34 +1,34 @@
 <svg viewBox="0 0 440 180" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
   <defs>
-    <!-- Background Layer (Hazy Distant NYC Skyline) -->
+    <!-- Background Layer (Hazy Distant Architectural Silhouette) -->
     <linearGradient id="mSkyBg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0.45"/>
+      <stop offset="0%" stop-color="#94a3b8" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#cbd5e1" stop-opacity="0.42"/>
     </linearGradient>
 
     <!-- Midground Architectural Layer -->
     <linearGradient id="mSkyMid" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#475569" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#64748b" stop-opacity="0.8"/>
+      <stop offset="0%" stop-color="#475569" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#64748b" stop-opacity="0.85"/>
     </linearGradient>
 
-    <!-- Foreground Skyscraper Tones -->
+    <!-- Foreground Premium Architectural Glass Tones -->
     <linearGradient id="mToneNavy" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#1e293b"/>
-      <stop offset="60%" stop-color="#334155"/>
-      <stop offset="100%" stop-color="#475569"/>
+      <stop offset="60%" stop-color="#2c3b52"/>
+      <stop offset="100%" stop-color="#3b4d66"/>
     </linearGradient>
 
     <linearGradient id="mToneSteel" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#243447"/>
-      <stop offset="55%" stop-color="#384c63"/>
-      <stop offset="100%" stop-color="#4a5f77"/>
+      <stop offset="55%" stop-color="#33475e"/>
+      <stop offset="100%" stop-color="#445b77"/>
     </linearGradient>
 
     <linearGradient id="mToneSlate" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#2d3748"/>
-      <stop offset="50%" stop-color="#4a5568"/>
-      <stop offset="100%" stop-color="#5a687d"/>
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#2d3f56"/>
+      <stop offset="100%" stop-color="#3e536e"/>
     </linearGradient>
 
     <linearGradient id="mToneGlass" x1="0" y1="0" x2="0" y2="1">
@@ -37,379 +37,210 @@
       <stop offset="100%" stop-color="#3b5e87"/>
     </linearGradient>
 
-    <linearGradient id="mToneWoolworth" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1e3d36"/>
-      <stop offset="50%" stop-color="#2d5a50"/>
-      <stop offset="100%" stop-color="#3d786a"/>
-    </linearGradient>
-
-    <!-- NYC Brownstone & Brick Tenement Tones -->
-    <linearGradient id="mNycBrick" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#3b4d66"/>
-      <stop offset="100%" stop-color="#223247"/>
-    </linearGradient>
-
-    <linearGradient id="mNycBrownstone" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#334155"/>
-      <stop offset="100%" stop-color="#1e293b"/>
-    </linearGradient>
-
-    <linearGradient id="mWaterTankWood" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#4a5568"/>
-      <stop offset="100%" stop-color="#2d3748"/>
-    </linearGradient>
-
+    <!-- Metallic Spire Finish -->
     <linearGradient id="mSpireSteel" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#cbd5e1"/>
       <stop offset="50%" stop-color="#ffffff"/>
       <stop offset="100%" stop-color="#94a3b8"/>
     </linearGradient>
 
+    <!-- Warm Glowing Micro-Windows -->
     <linearGradient id="mWinWarm" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#fef08a" stop-opacity="0.95"/>
       <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.75"/>
     </linearGradient>
 
+    <!-- Soft Cyan Glass Reflection -->
     <linearGradient id="mWinCyan" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.95"/>
       <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.7"/>
     </linearGradient>
   </defs>
 
-  <!-- LAYER 1: Distant Background Manhattan Silhouette -->
+  <!-- LAYER 1: Distant Background Skyline Silhouette (Continuous & Atmospheric) -->
   <g fill="url(#mSkyBg)">
-    <rect x="0" y="115" width="440" height="65"/>
-    <polygon points="5,180 5,95 30,85 30,180"/>
-    <rect x="70" y="65" width="32" height="115"/>
-    <polygon points="85,65 86,40 87,65"/>
-    <polygon points="125,180 125,65 155,50 155,180"/>
-    <rect x="190" y="55" width="36" height="125"/>
-    <polygon points="207,55 208,30 209,55"/>
-    <path d="M 240 180 L 240 70 Q 255 55 270 70 L 270 180 Z"/>
-    <polygon points="315,180 315,55 348,75 348,180"/>
-    <rect x="365" y="60" width="34" height="120"/>
-    <polygon points="381,60 382,35 383,60"/>
-    <rect x="410" y="75" width="30" height="105"/>
+    <rect x="0" y="110" width="440" height="70"/>
+    <polygon points="0,180 0,90 28,75 28,180"/>
+    <rect x="32" y="65" width="34" height="115"/>
+    <polygon points="48,65 49,38 50,65"/>
+    <polygon points="75,180 75,60 112,42 112,180"/>
+    <rect x="135" y="52" width="38" height="128"/>
+    <polygon points="153,52 154,28 155,52"/>
+    <path d="M 185 180 L 185 65 Q 205 48 225 65 L 225 180 Z"/>
+    <polygon points="255,180 255,48 295,72 295,180"/>
+    <rect x="315" y="56" width="36" height="124"/>
+    <polygon points="332,56 333,32 334,56"/>
+    <rect x="368" y="70" width="38" height="110"/>
+    <polygon points="386,70 387,45 388,70"/>
+    <rect x="415" y="78" width="25" height="102"/>
   </g>
 
-  <!-- LAYER 2: Authentic Iconic NYC Skyscraper Titans (Generous Breathing Room) -->
-  <g stroke="rgba(255,255,255,0.25)" stroke-width="1.1" stroke-linejoin="round">
+  <!-- LAYER 2: Midground Modern Architectural Towers (Continuous Depth) -->
+  <g fill="url(#mSkyMid)">
+    <rect x="0" y="125" width="440" height="55"/>
+    <polygon points="0,180 0,98 38,72 38,180"/>
+    <rect x="45" y="85" width="42" height="95"/>
+    <rect x="53" y="62" width="26" height="23"/>
+    <polygon points="65.5,62 66,42 66.5,62"/>
+    <path d="M 98 180 L 98 70 Q 120 52 142 70 L 142 180 Z"/>
+    <polygon points="152,180 152,78 200,52 200,180"/>
+    <rect x="210" y="72" width="44" height="108"/>
+    <rect x="220" y="48" width="24" height="24"/>
+    <line x1="232" y1="48" x2="232" y2="28" stroke="#64748b" stroke-width="1.5"/>
+    <polygon points="268,180 268,58 318,85 318,180"/>
+    <rect x="325" y="80" width="45" height="100"/>
+    <rect x="335" y="58" width="25" height="22"/>
+    <polygon points="347,58 347.5,38 348,58"/>
+    <rect x="382" y="92" width="58" height="88"/>
+  </g>
 
-    <!-- 1. ONE WORLD TRADE CENTER / FREEDOM TOWER (x=15 to x=62) -->
+  <!-- LAYER 3: Foreground 7 Premium Architectural Glass Skyscraper Titans -->
+  <g stroke="rgba(255,255,255,0.22)" stroke-width="1.1" stroke-linejoin="round">
+
+    <!-- 1. Tapered Chamfered Modern Glass Tower (x=0 to x=68) -->
     <g fill="url(#mToneGlass)">
-      <polygon points="15,180 25,45 52,45 62,180"/>
-      <!-- Octagonal Chamfer Facet Lines -->
-      <line x1="38.5" y1="45" x2="15" y2="180" stroke="rgba(255,255,255,0.3)"/>
-      <line x1="38.5" y1="45" x2="62" y2="180" stroke="rgba(255,255,255,0.18)"/>
-      <!-- Communication Ring & 1,776-ft Spire -->
-      <rect x="33.5" y="38" width="10" height="7" fill="#334155"/>
-      <polygon points="37.9,38 38.5,10 39.1,38" fill="url(#mSpireSteel)"/>
-      <circle cx="38.5" cy="10" r="1.5" fill="#ef4444" stroke="none"/>
+      <polygon points="0,180 12,42 48,42 64,180"/>
+      <!-- Inner chamfer line -->
+      <line x1="30" y1="42" x2="0" y2="180" stroke="rgba(255,255,255,0.3)"/>
+      <line x1="30" y1="42" x2="64" y2="180" stroke="rgba(255,255,255,0.18)"/>
+      <!-- Crown Spire -->
+      <rect x="25" y="34" width="10" height="8" fill="#334155"/>
+      <polygon points="29.4,34 30,8 30.6,34" fill="url(#mSpireSteel)"/>
+      <circle cx="30" cy="8" r="1.5" fill="#ef4444" stroke="none"/>
     </g>
 
-    <!-- 2. THE FLATIRON BUILDING (x=80 to x=130) -->
+    <!-- 2. Curved Modern Architectural Skyscraper (x=55 to x=126, Overlaps #1 and #3) -->
     <g fill="url(#mToneSteel)">
-      <polygon points="80,180 87,68 123,68 130,180"/>
-      <!-- Beaux-Arts Ornate Cornice -->
-      <rect x="85" y="64" width="40" height="4" fill="#384c63"/>
-      <!-- Triangular Prow Setback Crest -->
-      <polygon points="95,64 105,48 115,64" fill="#243447"/>
-      <!-- Classical Rounded Clock Crest -->
-      <circle cx="105" cy="56" r="4.5" fill="#f8fafc" stroke="#1e293b" stroke-width="1"/>
+      <path d="M 55 180 C 55 110, 70 54, 88 38 C 106 54, 126 110, 126 180 Z"/>
+      <path d="M 82 50 Q 88 38 94 50 Z" fill="#1e293b"/>
+      <!-- Modern Diagrid Glass Bands -->
+      <path d="M 60 145 Q 88 125 118 105" stroke="rgba(255,255,255,0.3)" fill="none"/>
+      <path d="M 118 145 Q 88 125 60 105" stroke="rgba(255,255,255,0.3)" fill="none"/>
+      <path d="M 66 105 Q 88 85 110 65" stroke="rgba(255,255,255,0.3)" fill="none"/>
+      <path d="M 110 105 Q 88 85 66 65" stroke="rgba(255,255,255,0.3)" fill="none"/>
     </g>
 
-    <!-- 3. THE CHRYSLER BUILDING (x=145 to x=202) -->
+    <!-- 3. Stepped Art Deco Glass Skyscraper with Sunburst Spire (x=115 to x=186, Overlaps #2 and #4) -->
     <g fill="url(#mToneNavy)">
-      <rect x="145" y="92" width="57" height="88"/>
-      <rect x="153" y="65" width="41" height="27"/>
-      <!-- 7-Tiered Stainless Sunburst Arches -->
-      <path d="M 157 65 Q 173.5 50 190 65 Z" fill="#334155"/>
-      <path d="M 160 54 Q 173.5 40 187 54 Z" fill="#475569"/>
-      <path d="M 163 44 Q 173.5 30 184 44 Z" fill="#64748b"/>
-      <path d="M 167 34 Q 173.5 20 180 34 Z" fill="#94a3b8"/>
-      <!-- Needle Spire -->
-      <polygon points="172.8,20 173.5,6 174.2,20" fill="url(#mSpireSteel)"/>
-      <!-- Radiator Cap Eagles -->
-      <polygon points="153,65 148,62 153,68" fill="url(#mSpireSteel)"/>
-      <polygon points="194,65 199,62 194,68" fill="url(#mSpireSteel)"/>
+      <rect x="115" y="90" width="71" height="90"/>
+      <rect x="124" y="62" width="53" height="28"/>
+      <!-- Sunburst Terraced Crown -->
+      <path d="M 128 62 Q 150.5 48 173 62 Z" fill="#334155"/>
+      <path d="M 132 52 Q 150.5 38 169 52 Z" fill="#475569"/>
+      <path d="M 137 42 Q 150.5 28 164 42 Z" fill="#64748b"/>
+      <path d="M 143 32 Q 150.5 18 158 32 Z" fill="#94a3b8"/>
+      <!-- Stainless Steel Needle Spire -->
+      <polygon points="149.8,18 150.5,4 151.2,18" fill="url(#mSpireSteel)"/>
+      <polygon points="124,62 119,59 124,65" fill="url(#mSpireSteel)"/>
+      <polygon points="177,62 182,59 177,65" fill="url(#mSpireSteel)"/>
     </g>
 
-    <!-- 4. 432 PARK AVENUE / SLENDER PENCIL TOWER (x=222 to x=258) -->
+    <!-- 4. THE EMPIRE STATE BUILDING / HERO CENTERPIECE (x=175 to x=262, Overlaps #3 and #5) -->
+    <g fill="url(#mToneNavy)">
+      <rect x="175" y="92" width="87" height="88"/>
+      <rect x="185" y="66" width="67" height="26"/>
+      <rect x="195" y="38" width="47" height="28"/>
+      <rect x="203" y="18" width="31" height="20"/>
+      <rect x="211" y="8" width="15" height="10" fill="#475569"/>
+      <!-- Mooring Mast & Aircraft Beacon -->
+      <polygon points="217.8,8 218.5,1 219.2,8" fill="url(#mSpireSteel)"/>
+      <circle cx="218.5" cy="1.5" r="1.5" fill="#ef4444" stroke="none"/>
+    </g>
+
+    <!-- 5. Modern 45-Degree Angled Wedge Glass Tower (x=250 to x=325, Overlaps #4 and #6) -->
     <g fill="url(#mToneGlass)">
-      <!-- Pure Minimalist Square Concrete Grid Skyscraper -->
-      <rect x="222" y="24" width="36" height="156"/>
-      <!-- Open Mechanical Drum Floors (Distinctive NYC feature) -->
-      <rect x="222" y="56" width="36" height="6" fill="#03091e" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
-      <rect x="222" y="96" width="36" height="6" fill="#03091e" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
-      <rect x="222" y="136" width="36" height="6" fill="#03091e" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
-      <!-- Square Grid Window Matrix -->
-      <rect x="226" y="32" width="5" height="5" fill="url(#mWinWarm)"/>
-      <rect x="237" y="32" width="5" height="5" fill="url(#mWinWarm)"/>
-      <rect x="248" y="32" width="5" height="5" fill="url(#mWinWarm)"/>
-      <rect x="226" y="44" width="5" height="5" fill="url(#mWinWarm)"/>
-      <rect x="237" y="44" width="5" height="5" fill="url(#mWinWarm)"/>
-      <rect x="248" y="44" width="5" height="5" fill="url(#mWinWarm)"/>
-      <rect x="226" y="70" width="5" height="5" fill="url(#mWinWarm)"/>
-      <rect x="237" y="70" width="5" height="5" fill="url(#mWinWarm)"/>
-      <rect x="248" y="70" width="5" height="5" fill="url(#mWinWarm)"/>
-      <rect x="226" y="82" width="5" height="5" fill="url(#mWinWarm)"/>
-      <rect x="237" y="82" width="5" height="5" fill="url(#mWinWarm)"/>
-      <rect x="248" y="82" width="5" height="5" fill="url(#mWinWarm)"/>
+      <polygon points="250,180 250,38 325,98 325,180"/>
+      <line x1="250" y1="38" x2="325" y98" stroke="url(#mSpireSteel)" stroke-width="1.8"/>
+      <!-- Vertical Sunshade Fins -->
+      <line x1="268" y1="52" x2="268" y2="180" stroke="rgba(255,255,255,0.2)"/>
+      <line x1="286" y1="67" x2="286" y2="180" stroke="rgba(255,255,255,0.2)"/>
+      <line x1="304" y1="81" x2="304" y2="180" stroke="rgba(255,255,255,0.2)"/>
     </g>
 
-    <!-- 5. THE EMPIRE STATE BUILDING / MIDTOWN CENTERPIECE (x=272 to x=348) -->
-    <g fill="url(#mToneNavy)">
-      <rect x="272" y="92" width="76" height="88"/>
-      <rect x="281" y="66" width="58" height="26"/>
-      <rect x="290" y="38" width="40" height="28"/>
-      <rect x="297" y="18" width="26" height="20"/>
-      <rect x="304" y="8" width="12" height="10" fill="#475569"/>
-      <!-- Mooring Mast & Red Aircraft Beacon -->
-      <polygon points="309.3,8 310,1 310.7,8" fill="url(#mSpireSteel)"/>
-      <circle cx="310" cy="1.5" r="1.5" fill="#ef4444" stroke="none"/>
+    <!-- 6. Slender Grid Glass Skyscraper with Open Mechanical Cuts (x=312 to x=378, Overlaps #5 and #7) -->
+    <g fill="url(#mToneSteel)">
+      <rect x="316" y="26" width="56" height="154"/>
+      <!-- Open Mechanical Cutout Bands -->
+      <rect x="316" y="62" width="56" height="8" fill="#03091e" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
+      <rect x="316" y="110" width="56" height="8" fill="#03091e" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/>
+      <!-- Spire Mast -->
+      <rect x="338" y="18" width="12" height="8" fill="#384c63"/>
+      <line x1="344" y1="18" x2="344" y2="6" stroke="#cbd5e1" stroke-width="1.5"/>
+      <circle cx="344" cy="6" r="1.2" fill="#ef4444" stroke="none"/>
     </g>
 
-    <!-- 6. WOOLWORTH BUILDING / CATHEDRAL OF COMMERCE (x=366 to x=426) -->
-    <g fill="url(#mToneWoolworth)">
-      <!-- Main Neo-Gothic Shaft -->
-      <rect x="366" y="95" width="60" height="85" fill="url(#mToneNavy)"/>
-      <rect x="374" y="68" width="44" height="27" fill="url(#mToneNavy)"/>
-      <!-- Teal Copper Mansard Crown -->
-      <polygon points="370,68 382,34 410,34 422,68" fill="url(#mToneWoolworth)"/>
-      <!-- Gothic Dormer & Tourelles -->
-      <polygon points="392,50 396,42 400,50" fill="#3d786a"/>
-      <rect x="393.5" y="50" width="5" height="8" fill="url(#mWinWarm)"/>
-      <polygon points="369,68 371,58 373,68" fill="#94a3b8"/>
-      <polygon points="419,68 421,58 423,68" fill="#94a3b8"/>
-      <!-- Spire Finial -->
-      <polygon points="395.4,34 396,16 396.6,34" fill="url(#mSpireSteel)"/>
+    <!-- 7. Stepped Modern Architectural High-Rise (x=365 to x=440, Overlaps #6 to Right Edge) -->
+    <g fill="url(#mToneSlate)">
+      <rect x="365" y="85" width="75" height="95"/>
+      <rect x="375" y="58" width="55" height="27"/>
+      <rect x="388" y="38" width="30" height="20"/>
+      <polygon points="402.4,38 403,20 403.6,38" fill="url(#mSpireSteel)"/>
+      <circle cx="403" cy="20" r="1.5" fill="#fef08a" stroke="#d97706" stroke-width="0.8"/>
     </g>
 
   </g>
 
-  <!-- Skyscraper Windows & Vertical Fluting -->
+  <!-- Architectural Details: Vertical Mullions & Warm Illuminated Windows -->
   <g stroke="rgba(255,255,255,0.2)" stroke-width="1">
-    <line x1="297" y1="38" x2="297" y2="180"/>
-    <line x1="303" y1="38" x2="303" y2="180"/>
-    <line x1="310" y1="38" x2="310" y2="180"/>
-    <line x1="317" y1="38" x2="317" y2="180"/>
-    <line x1="323" y1="38" x2="323" y2="180"/>
+    <line x1="203" y1="38" x2="203" y2="180"/>
+    <line x1="210" y1="38" x2="210" y2="180"/>
+    <line x1="218.5" y1="38" x2="218.5" y2="180"/>
+    <line x1="227" y1="38" x2="227" y2="180"/>
+    <line x1="234" y1="38" x2="234" y2="180"/>
+    <!-- Art Deco Tower Mullions -->
+    <line x1="138" y1="62" x2="138" y2="180"/>
+    <line x1="150.5" y1="62" x2="150.5" y2="180"/>
+    <line x1="163" y1="62" x2="163" y2="180"/>
   </g>
+
+  <!-- Warm Illuminated Micro-Windows (Rhythmic Modern Skyline Illumination) -->
   <g fill="url(#mWinWarm)">
-    <!-- Empire State Windows -->
-    <rect x="299" y="98" width="2.5" height="4.5" rx="0.5"/>
-    <rect x="309" y="98" width="2.5" height="4.5" rx="0.5"/>
-    <rect x="319" y="98" width="2.5" height="4.5" rx="0.5"/>
-    <rect x="299" y="115" width="2.5" height="4.5" rx="0.5"/>
-    <rect x="309" y="115" width="2.5" height="4.5" rx="0.5"/>
-    <rect x="319" y="115" width="2.5" height="4.5" rx="0.5"/>
-    <!-- Chrysler Windows -->
-    <rect x="163" y="104" width="2.5" height="4" rx="0.5"/>
-    <rect x="172" y="104" width="2.5" height="4" rx="0.5"/>
-    <rect x="181" y="104" width="2.5" height="4" rx="0.5"/>
+    <!-- Empire State Building -->
+    <rect x="206" y="98" width="2.5" height="5" rx="0.5"/>
+    <rect x="217" y="98" width="2.5" height="5" rx="0.5"/>
+    <rect x="228" y="98" width="2.5" height="5" rx="0.5"/>
+    <rect x="206" y="116" width="2.5" height="5" rx="0.5"/>
+    <rect x="217" y="116" width="2.5" height="5" rx="0.5"/>
+    <rect x="228" y="116" width="2.5" height="5" rx="0.5"/>
+    <rect x="206" y="134" width="2.5" height="5" rx="0.5"/>
+    <rect x="217" y="134" width="2.5" height="5" rx="0.5"/>
+    <rect x="228" y="134" width="2.5" height="5" rx="0.5"/>
+    <!-- Art Deco Tower -->
+    <rect x="135" y="104" width="2.5" height="4.5" rx="0.5"/>
+    <rect x="149" y="104" width="2.5" height="4.5" rx="0.5"/>
+    <rect x="163" y="104" width="2.5" height="4.5" rx="0.5"/>
+    <rect x="135" y="122" width="2.5" height="4.5" rx="0.5"/>
+    <rect x="149" y="122" width="2.5" height="4.5" rx="0.5"/>
+    <rect x="163" y="122" width="2.5" height="4.5" rx="0.5"/>
+    <!-- Grid Glass Tower Window Matrix -->
+    <rect x="325" y="38" width="4" height="4" fill="url(#mWinWarm)"/>
+    <rect x="338" y="38" width="4" height="4" fill="url(#mWinWarm)"/>
+    <rect x="351" y="38" width="4" height="4" fill="url(#mWinWarm)"/>
+    <rect x="325" y="48" width="4" height="4" fill="url(#mWinWarm)"/>
+    <rect x="338" y="48" width="4" height="4" fill="url(#mWinWarm)"/>
+    <rect x="351" y="48" width="4" height="4" fill="url(#mWinWarm)"/>
+    <rect x="325" y="80" width="4" height="4" fill="url(#mWinWarm)"/>
+    <rect x="338" y="80" width="4" height="4" fill="url(#mWinWarm)"/>
+    <rect x="351" y="80" width="4" height="4" fill="url(#mWinWarm)"/>
+    <rect x="325" y="92" width="4" height="4" fill="url(#mWinWarm)"/>
+    <rect x="338" y="92" width="4" height="4" fill="url(#mWinWarm)"/>
+    <rect x="351" y="92" width="4" height="4" fill="url(#mWinWarm)"/>
+    <!-- Stepped High-Rise Windows -->
+    <rect x="382" y="96" width="3" height="4.5" rx="0.5"/>
+    <rect x="394" y="96" width="3" height="4.5" rx="0.5"/>
+    <rect x="406" y="96" width="3" height="4.5" rx="0.5"/>
+    <rect x="418" y="96" width="3" height="4.5" rx="0.5"/>
+    <rect x="382" y="112" width="3" height="4.5" rx="0.5"/>
+    <rect x="394" y="112" width="3" height="4.5" rx="0.5"/>
+    <rect x="406" y="112" width="3" height="4.5" rx="0.5"/>
+    <rect x="418" y="112" width="3" height="4.5" rx="0.5"/>
   </g>
 
-  <!-- LAYER 3: 100% Authentic NYC Streetscape IN FRONT (Brownstones, Tenements with Fire Escapes & Water Tanks) -->
-  <g stroke="rgba(255,255,255,0.22)" stroke-width="1" stroke-linejoin="round">
-
-    <!-- Block 1: Classic NYC Brownstone with High Stoop (x=0 to x=35) -->
-    <g fill="url(#mNycBrownstone)">
-      <rect x="0" y="138" width="34" height="42"/>
-      <rect x="0" y="133" width="36" height="5" fill="#1e293b"/>
-      <!-- Arched Windows -->
-      <path d="M 4 142 Q 7 138 10 142 L 10 149 L 4 149 Z" fill="url(#mWinWarm)"/>
-      <path d="M 14 142 Q 17 138 20 142 L 20 149 L 14 149 Z" fill="url(#mWinWarm)"/>
-      <path d="M 24 142 Q 27 138 30 142 L 30 149 L 24 149 Z" fill="url(#mWinWarm)"/>
-      <path d="M 4 154 Q 7 150 10 154 L 10 161 L 4 161 Z" fill="url(#mWinWarm)"/>
-      <path d="M 14 154 Q 17 150 20 154 L 20 161 L 14 161 Z" fill="url(#mWinWarm)"/>
-      <path d="M 24 154 Q 27 150 30 154 L 30 161 L 24 161 Z" fill="url(#mWinWarm)"/>
-      <!-- High Stone Stoop (NYC feature) -->
-      <polygon points="12,180 12,166 22,166 22,180" fill="#1e293b"/>
-      <line x1="12" y1="180" x2="17" y2="166" stroke="#475569" stroke-width="1.2"/>
-    </g>
-
-    <!-- Block 2: NYC Pre-War Tenement with Wrought-Iron Fire Escape (x=30 to x=68) -->
-    <g fill="url(#mNycBrick)">
-      <rect x="30" y="134" width="36" height="46"/>
-      <rect x="28" y="130" width="40" height="4" fill="#1e293b"/>
-      <!-- Windows -->
-      <rect x="36" y="139" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="46" y="139" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="56" y="139" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="36" y="152" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="46" y="152" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="56" y="152" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <!-- AUTHENTIC NYC FIRE ESCAPE (Black Wrought-Iron Zig-Zag Balconies & Ladders) -->
-      <!-- Balcony Floor 1 -->
-      <rect x="44" y="146" width="18" height="2" fill="#0f172a" stroke="#0f172a" stroke-width="0.8"/>
-      <!-- Balcony Floor 2 -->
-      <rect x="44" y="159" width="18" height="2" fill="#0f172a" stroke="#0f172a" stroke-width="0.8"/>
-      <!-- Diagonal Ladder between balconies -->
-      <line x1="58" y1="148" x2="48" y2="159" stroke="#0f172a" stroke-width="1.2"/>
-      <line x1="48" y1="161" x2="44" y2="172" stroke="#0f172a" stroke-width="1.2"/>
-      <rect x="36" y="165" width="7" height="15" fill="#0f172a"/>
-    </g>
-
-    <!-- Block 3: NYC Rooftop Wooden Water Tank on Pre-War Building (x=64 to x=102) -->
-    <g fill="url(#mNycBrownstone)">
-      <rect x="64" y="142" width="36" height="38"/>
-      <rect x="62" y="138" width="40" height="4" fill="#1e293b"/>
-      <!-- ICONIC NYC WOODEN WATER TANK ON A-FRAME STILTS -->
-      <line x1="74" y1="138" x2="76" y2="124" stroke="#475569" stroke-width="1.3"/>
-      <line x1="86" y1="138" x2="84" y2="124" stroke="#475569" stroke-width="1.3"/>
-      <!-- Wood Barrel -->
-      <rect x="73" y="112" width="14" height="12" rx="1" fill="url(#mWaterTankWood)"/>
-      <!-- Conical Roof Cap -->
-      <polygon points="71,112 80,104 89,112" fill="#334155"/>
-      <!-- Windows -->
-      <rect x="70" y="146" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="82" y="146" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="70" y="159" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="82" y="159" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="76" y="167" width="8" height="13" fill="#0f172a"/>
-    </g>
-
-    <!-- Block 4: NYC Corner Bodega / Deli with Striped Awning (x=98 to x=138) -->
-    <g fill="url(#mNycBrick)">
-      <rect x="98" y="144" width="38" height="36"/>
-      <rect x="96" y="140" width="42" height="4" fill="#1e293b"/>
-      <!-- Upper Windows -->
-      <rect x="104" y="148" width="6" height="7" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="114" y="148" width="6" height="7" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="124" y="148" width="6" height="7" rx="0.5" fill="url(#mWinWarm)"/>
-      <!-- Bodega Roll-out Awning -->
-      <polygon points="100,160 103,165 131,165 134,160" fill="#f59e0b"/>
-      <rect x="103" y="165" width="16" height="15" fill="url(#mWinWarm)"/>
-      <rect x="121" y="165" width="9" height="15" fill="#0f172a"/>
-    </g>
-
-    <!-- Block 5: Historic West Village Brownstone with Stoop (x=134 to x=174) -->
-    <g fill="url(#mNycBrownstone)">
-      <rect x="134" y="136" width="38" height="44"/>
-      <rect x="132" y="131" width="42" height="5" fill="#1e293b"/>
-      <path d="M 139 139 Q 142 135 145 139 L 145 147 L 139 147 Z" fill="url(#mWinWarm)"/>
-      <path d="M 149 139 Q 152 135 155 139 L 155 147 L 149 147 Z" fill="url(#mWinWarm)"/>
-      <path d="M 159 139 Q 162 135 165 139 L 165 147 L 159 147 Z" fill="url(#mWinWarm)"/>
-      <path d="M 139 152 Q 142 148 145 152 L 145 160 L 139 160 Z" fill="url(#mWinWarm)"/>
-      <path d="M 149 152 Q 152 148 155 152 L 155 160 L 149 160 Z" fill="url(#mWinWarm)"/>
-      <path d="M 159 152 Q 162 148 165 152 L 165 160 L 159 160 Z" fill="url(#mWinWarm)"/>
-      <!-- High Stoop -->
-      <polygon points="148,180 148,166 156,166 156,180" fill="#1e293b"/>
-    </g>
-
-    <!-- Block 6: Pre-War SoHo Tenement with Fire Escape (x=170 to x=210) -->
-    <g fill="url(#mNycBrick)">
-      <rect x="170" y="134" width="38" height="46"/>
-      <rect x="168" y="130" width="42" height="4" fill="#1e293b"/>
-      <rect x="176" y="139" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="186" y="139" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="196" y="139" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="176" y="152" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="186" y="152" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="196" y="152" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <!-- Fire Escape -->
-      <rect x="184" y="146" width="18" height="2" fill="#0f172a" stroke="#0f172a" stroke-width="0.8"/>
-      <rect x="184" y="159" width="18" height="2" fill="#0f172a" stroke="#0f172a" stroke-width="0.8"/>
-      <line x1="198" y1="148" x2="188" y2="159" stroke="#0f172a" stroke-width="1.2"/>
-      <line x1="188" y1="161" x2="184" y2="172" stroke="#0f172a" stroke-width="1.2"/>
-      <rect x="176" y="165" width="7" height="15" fill="#0f172a"/>
-    </g>
-
-    <!-- Block 7: NYC Rooftop Water Tank Loft (x=206 to x=246) -->
-    <g fill="url(#mNycBrownstone)">
-      <rect x="206" y="140" width="38" height="40"/>
-      <rect x="204" y="136" width="42" height="4" fill="#1e293b"/>
-      <!-- Rooftop Water Tank -->
-      <line x1="218" y1="136" x2="220" y2="122" stroke="#475569" stroke-width="1.3"/>
-      <line x1="230" y1="136" x2="228" y2="122" stroke="#475569" stroke-width="1.3"/>
-      <rect x="217" y="110" width="14" height="12" rx="1" fill="url(#mWaterTankWood)"/>
-      <polygon points="215,110 224,102 233,110" fill="#334155"/>
-      <rect x="213" y="146" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="225" y="146" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="213" y="159" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="225" y="159" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="219" y="167" width="8" height="13" fill="#0f172a"/>
-    </g>
-
-    <!-- Block 8: Tribeca Cast-Iron Lofts with Corner Deli (x=242 to x=284) -->
-    <g fill="url(#mNycBrick)">
-      <rect x="242" y="134" width="40" height="46"/>
-      <rect x="240" y="130" width="44" height="4" fill="#1e293b"/>
-      <!-- Windows -->
-      <rect x="250" y="138" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="261" y="138" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="272" y="138" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="250" y="150" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="261" y="150" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="272" y="150" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <!-- Deli Awning -->
-      <polygon points="244,162 247,166 277,166 280,162" fill="#38bdf8"/>
-      <rect x="248" y="166" width="18" height="14" fill="url(#mWinWarm)"/>
-      <rect x="268" y="166" width="10" height="14" fill="#0f172a"/>
-    </g>
-
-    <!-- Block 9: Classic Chelsea Brownstone with Stoop (x=280 to x=322) -->
-    <g fill="url(#mNycBrownstone)">
-      <rect x="280" y="136" width="40" height="44"/>
-      <rect x="278" y="131" width="44" height="5" fill="#1e293b"/>
-      <path d="M 286 139 Q 289 135 292 139 L 292 147 L 286 147 Z" fill="url(#mWinWarm)"/>
-      <path d="M 296 139 Q 299 135 302 139 L 302 147 L 296 147 Z" fill="url(#mWinWarm)"/>
-      <path d="M 306 139 Q 309 135 312 139 L 312 147 L 306 147 Z" fill="url(#mWinWarm)"/>
-      <path d="M 286 152 Q 289 148 292 152 L 292 160 L 286 160 Z" fill="url(#mWinWarm)"/>
-      <path d="M 296 152 Q 299 148 302 152 L 302 160 L 296 160 Z" fill="url(#mWinWarm)"/>
-      <path d="M 306 152 Q 309 148 312 152 L 312 160 L 306 160 Z" fill="url(#mWinWarm)"/>
-      <!-- High Stoop -->
-      <polygon points="296,180 296,166 304,166 304,180" fill="#1e293b"/>
-    </g>
-
-    <!-- Block 10: Lower East Side Tenement with Fire Escape (x=318 to x=360) -->
-    <g fill="url(#mNycBrick)">
-      <rect x="318" y="134" width="40" height="46"/>
-      <rect x="316" y="130" width="44" height="4" fill="#1e293b"/>
-      <rect x="326" y="139" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="336" y="139" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="346" y="139" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="326" y="152" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="336" y="152" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="346" y="152" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <!-- Fire Escape -->
-      <rect x="334" y="146" width="18" height="2" fill="#0f172a" stroke="#0f172a" stroke-width="0.8"/>
-      <rect x="334" y="159" width="18" height="2" fill="#0f172a" stroke="#0f172a" stroke-width="0.8"/>
-      <line x1="348" y1="148" x2="338" y2="159" stroke="#0f172a" stroke-width="1.2"/>
-      <line x1="338" y1="161" x2="334" y2="172" stroke="#0f172a" stroke-width="1.2"/>
-      <rect x="326" y="165" width="7" height="15" fill="#0f172a"/>
-    </g>
-
-    <!-- Block 11: Brooklyn Heights Brownstone & Water Tank (x=356 to x=400) -->
-    <g fill="url(#mNycBrownstone)">
-      <rect x="356" y="140" width="42" height="40"/>
-      <rect x="354" y="136" width="46" height="4" fill="#1e293b"/>
-      <!-- Water Tank -->
-      <line x1="370" y1="136" x2="372" y2="122" stroke="#475569" stroke-width="1.3"/>
-      <line x1="382" y1="136" x2="380" y2="122" stroke="#475569" stroke-width="1.3"/>
-      <rect x="369" y="110" width="14" height="12" rx="1" fill="url(#mWaterTankWood)"/>
-      <polygon points="367,110 376,102 385,110" fill="#334155"/>
-      <rect x="365" y="146" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="378" y="146" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="365" y="159" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="378" y="159" width="6" height="8" rx="0.5" fill="url(#mWinWarm)"/>
-      <rect x="371" y="167" width="8" height="13" fill="#0f172a"/>
-    </g>
-
-    <!-- Block 12: East Village Brownstone Row to Edge (x=396 to x=440) -->
-    <g fill="url(#mNycBrick)">
-      <rect x="396" y="138" width="44" height="42"/>
-      <rect x="394" y="133" width="46" height="5" fill="#1e293b"/>
-      <path d="M 404 142 Q 407 138 410 142 L 410 149 L 404 149 Z" fill="url(#mWinWarm)"/>
-      <path d="M 414 142 Q 417 138 420 142 L 420 149 L 414 149 Z" fill="url(#mWinWarm)"/>
-      <path d="M 424 142 Q 427 138 430 142 L 430 149 L 424 149 Z" fill="url(#mWinWarm)"/>
-      <path d="M 404 154 Q 407 150 410 154 L 410 161 L 404 161 Z" fill="url(#mWinWarm)"/>
-      <path d="M 414 154 Q 417 150 420 154 L 420 161 L 414 161 Z" fill="url(#mWinWarm)"/>
-      <path d="M 424 154 Q 427 150 430 154 L 430 161 L 424 161 Z" fill="url(#mWinWarm)"/>
-      <!-- Stoop -->
-      <polygon points="412,180 412,166 422,166 422,180" fill="#1e293b"/>
-    </g>
-
+  <!-- Cool Cyan Glass Reflections -->
+  <g fill="url(#mWinCyan)">
+    <rect x="27" y="65" width="6" height="3" rx="0.5"/>
+    <rect x="27" y="85" width="6" height="3" rx="0.5"/>
+    <rect x="27" y="105" width="6" height="3" rx="0.5"/>
   </g>
 
   <!-- Ground Baseline -->

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.style.height = height + 'px';
 
     // Balanced star density for optimal 60/120fps
-    const starCount = isMobile ? 45 : Math.min(130, Math.floor((width * height) / 7500));
+    const starCount = isMobile ? 40 : Math.min(130, Math.floor((width * height) / 7500));
     const stars = [];
 
     class Star {
@@ -163,6 +163,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const shootingStar = new ShootingStar();
     let meteorTimer = 0;
 
+    // Fast scroll detection: pause canvas rendering during active touch scroll
+    let isFastScrolling = false;
+    let scrollStopTimer = null;
+
+    window.addEventListener('scroll', () => {
+      isFastScrolling = true;
+      clearTimeout(scrollStopTimer);
+      scrollStopTimer = setTimeout(() => {
+        isFastScrolling = false;
+      }, 100);
+    }, { passive: true });
+
     // High Refresh Rate (60Hz & 120Hz ProMotion) decoupled animation loop
     let lastTimestamp = performance.now();
     let simTime = 0;
@@ -170,6 +182,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderStarfield(now) {
       if (!now) now = performance.now();
+
+      // When fast-scrolling on mobile, yield 100% GPU to native scroll compositor
+      if (isMobile && isFastScrolling) {
+        lastTimestamp = now;
+        requestAnimationFrame(renderStarfield);
+        return;
+      }
+
       if (isVisible) {
         // Delta time normalized to standard 60fps base (16.667ms per frame)
         // On 120Hz displays, dtNorm is ~0.5; on 60Hz displays, dtNorm is ~1.0
@@ -231,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 2. DYNAMIC ALTITUDE THEME DETECTOR (Bulletproof BoundingRect Scroll Spy)
+  // 2. DYNAMIC ALTITUDE THEME DETECTOR (Throttled BoundingRect Scroll Spy)
   // =========================================================================
   const header = document.getElementById('main-nav');
   const sections = [
@@ -283,13 +303,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   let scrollTicking = false;
+  let lastSpyCheck = 0;
   window.addEventListener('scroll', () => {
-    if (!scrollTicking) {
+    const now = performance.now();
+    if (!scrollTicking && (now - lastSpyCheck > 75)) {
+      scrollTicking = true;
       window.requestAnimationFrame(() => {
         updateAltitudeTheme();
+        lastSpyCheck = performance.now();
         scrollTicking = false;
       });
-      scrollTicking = true;
     }
   }, { passive: true });
 

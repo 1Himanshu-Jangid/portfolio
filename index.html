@@ -24,7 +24,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=26.0" />
+  <link rel="stylesheet" href="styles.css?v=27.0" />
 </head>
 <body class="selection:bg-blue-500 selection:text-white">
 
@@ -75,13 +75,27 @@
   <div id="atmosphere-gradient-track" class="relative z-10 w-full overflow-hidden">
 
     <!-- Starfield Canvas (Space & Stratosphere Region, smoothly fading till Flight Altitude) -->
-    <canvas id="stars-canvas" class="absolute top-0 left-0 w-full pointer-events-none z-0" style="height: 270vh;"></canvas>
+    <canvas id="stars-canvas" class="absolute top-0 left-0 w-full pointer-events-none z-0"></canvas>
+
+    
+
+    
+
+    
+
+
 
     <!-- =======================================================================
+         PAGE 1: DEEP SPACE (Dark Blue to Black with Stars & Moving Small Satellites)
+         Text Color: PURE WHITE | Responsive Mobile Height
+         ======================================================================= -->
+    <section id="space" class="min-h-screen sm:min-h-[135vh] w-full flex flex-col justify-center px-4 sm:px-12 py-16 sm:py-32 text-white relative z-20 overflow-x-clip">
+
+      <!-- =======================================================================
          PAGE 1: SATELLITES LAYER (BLACK SPACE: 0 - 135vh)
          Slow, distinct orbital satellites in separated lanes (Zero Collision)
          ======================================================================= -->
-    <div class="satellites-container absolute inset-x-0 top-0 pointer-events-none z-10 overflow-hidden" style="height: 135vh;">
+    <div class="satellites-container absolute inset-0 pointer-events-none z-10 overflow-hidden" >
       
       <!-- SATELLITE 1: International Solar Station (Upper Orbit Corridor - 13% altitude) -->
       <div class="sat-item sat-stream-1 absolute">
@@ -158,12 +172,58 @@
       </div>
 
     </div>
+      
+      <!-- Apple Liquid Glass Ambient Refraction Orb (Lower Right only — Left corner is deep black) -->
+      <div class="glass-ambient-orb glass-orb-2"></div>
+
+      <!-- Hero Liquid Glass Container (Apple visionOS Material) -->
+      <div class="max-w-4xl mx-auto w-full relative z-20">
+        <div class="hero-glass-card p-6 sm:p-12 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full liquid-glass-pill text-[11px] font-mono text-slate-300">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+            <span>ORBIT // 01</span>
+          </div>
+
+          <div class="space-y-2">
+            <h1 class="text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-tight font-display">
+              Himanshu Jangid
+            </h1>
+            
+            <p class="text-lg sm:text-2xl md:text-3xl font-light text-slate-300 tracking-wide max-w-2xl leading-relaxed">
+              Aspiring <span class="font-semibold text-white">Software Engineer</span> looking forward to building <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-indigo-300 font-bold">Artificial Intelligence</span>.
+            </p>
+          </div>
+
+          <!-- Apple Liquid Glass Descend Action Button -->
+          <div class="pt-2 flex flex-wrap items-center gap-3">
+            <a href="#skit" class="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-white text-xs font-semibold flex items-center gap-2 liquid-glass-btn liquid-glass-pill border border-white/25 bg-white/10 hover:bg-white/20">
+              <span>Descend to SKIT College</span>
+              <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-cyan-300"></i>
+            </a>
+          </div>
+
+          <div class="pt-2 flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono text-slate-400">
+            <span>ALTITUDE: 400 KM</span>
+            <span>•</span>
+            <span>SATELLITES ON DYNAMIC ORBITAL PATHS</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
     <!-- =======================================================================
+         PAGE 2: STRATOSPHERE (Deep Navy to Royal Blue Transition)
+         Highlighting SKIT College & CS AI Degree | Responsive Mobile Height
+         Text Color: CRISP WHITE / ICE BLUE
+         ======================================================================= -->
+    <section id="skit" class="min-h-screen sm:min-h-[135vh] w-full flex flex-col justify-center px-4 sm:px-12 py-16 sm:py-32 text-white relative z-20 overflow-x-clip">
+
+      <!-- =======================================================================
          PAGE 2: SATELLITES LAYER (ACADEMICS // 02: 135vh - 270vh)
          Stratosphere Orbit Satellites: Academic Research CubeSat & Deep Space Orbiters
          ======================================================================= -->
-    <div class="satellites-container absolute inset-x-0 pointer-events-none z-10 overflow-hidden" style="top: 135vh; height: 135vh;">
+    <div class="satellites-container absolute inset-0 pointer-events-none z-10 overflow-hidden" >
       
       <!-- SATELLITE 1 (SKIT): Academic AI Research CubeSat (Upper Corridor - 11% altitude, above ACADEMICS badge) -->
       <div class="sat-item sat-stream-skit-1 absolute">
@@ -240,14 +300,78 @@
       </div>
 
     </div>
+      
+      <!-- Apple Liquid Glass Ambient Refraction Orbs -->
+      <div class="glass-ambient-orb glass-orb-1"></div>
+      <div class="glass-ambient-orb glass-orb-2"></div>
+
+      <!-- Academic Container -->
+      <div class="max-w-4xl mx-auto w-full relative z-20">
+        <div class="liquid-glass-card p-6 sm:p-12 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full liquid-glass-pill text-[11px] font-mono text-sky-200">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+            <span>ACADEMICS // 02</span>
+          </div>
+
+          <div class="space-y-1">
+            <div class="text-xs font-mono uppercase tracking-widest text-sky-300 font-bold">
+              Degree Pursuit
+            </div>
+            <h2 class="text-2xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
+              SKIT College, Jaipur
+            </h2>
+            <div class="text-base sm:text-2xl font-bold text-sky-200 pt-1">
+              B.Tech — Computer Science & Artificial Intelligence (CS AI)
+            </div>
+          </div>
+
+          <p class="text-sm sm:text-lg text-slate-200 max-w-2xl leading-relaxed font-light">
+            Pursuing my undergraduate engineering degree at Swami Keshvanand Institute of Technology (SKIT). Immersing in machine learning fundamentals, intelligent algorithms, and software engineering.
+          </p>
+
+          <div class="flex flex-wrap gap-2 sm:gap-2.5 pt-1">
+            <span class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full liquid-glass-pill text-white text-xs font-semibold">
+              🏛️ SKIT Jaipur
+            </span>
+            <span class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full liquid-glass-pill text-white text-xs font-semibold">
+              🤖 CS AI Branch
+            </span>
+            <span class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full liquid-glass-pill text-white text-xs font-semibold">
+              🎓 B.Tech Candidate
+            </span>
+          </div>
+
+          <!-- Apple Liquid Glass Descend Action Button -->
+          <div class="pt-2 flex flex-wrap items-center gap-3">
+            <a href="#sky" class="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-white text-xs font-semibold flex items-center gap-2 liquid-glass-btn liquid-glass-pill border border-sky-300/35 bg-sky-500/20 hover:bg-sky-500/30">
+              <span>Descend into Flight Altitude</span>
+              <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-sky-300"></i>
+            </a>
+          </div>
+
+          <div class="pt-2 flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono text-sky-200">
+            <span>ALTITUDE: 50,000 M</span>
+            <span>•</span>
+            <span>UPPER STRATOSPHERE</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
     <!-- =======================================================================
+         PAGE 3: SKY BLUE ATMOSPHERE (Cruising Altitude with 3D Clouds & Airplanes)
+         Text Color: HIGH-CONTRAST DARK TEXT (Slate 900 / Navy) | Responsive Mobile Height
+         ======================================================================= -->
+    <section id="sky" class="min-h-screen sm:min-h-[135vh] w-full flex flex-col justify-center px-4 sm:px-12 py-16 sm:py-32 relative z-20 overflow-x-clip">
+
+      <!-- =======================================================================
          PAGE 3: 3D MOVING CLOUD & CLEAN MINIMALIST AIRPLANE SYSTEM (SKY BLUE: 270vh - 405vh)
          Layer 1: Back Clouds drifting slowly across the sky (z-5)
          Layer 2: Clean, Simple White Airplanes cruising slowly (z-10)
          Layer 3: 3D Fore Clouds drifting in front of airplanes (z-15)
          ======================================================================= -->
-    <div class="sky-flight-system absolute inset-x-0 pointer-events-none overflow-hidden" style="top: 270vh; height: 135vh;">
+    <div class="sky-flight-system absolute inset-0 pointer-events-none overflow-hidden z-10" >
       
       <!-- LAYER 1: BACK CLOUDS (Slow horizontal drift across sky in a straight line) (z-5) -->
       <div class="clouds-back-layer absolute inset-0 z-[5]">
@@ -349,124 +473,6 @@
       </div>
 
     </div>
-
-
-
-    <!-- =======================================================================
-         PAGE 1: DEEP SPACE (Dark Blue to Black with Stars & Moving Small Satellites)
-         Text Color: PURE WHITE | Responsive Mobile Height
-         ======================================================================= -->
-    <section id="space" class="min-h-screen sm:min-h-[135vh] w-full flex flex-col justify-center px-4 sm:px-12 py-16 sm:py-32 text-white relative z-20 overflow-x-clip">
-      
-      <!-- Apple Liquid Glass Ambient Refraction Orb (Lower Right only — Left corner is deep black) -->
-      <div class="glass-ambient-orb glass-orb-2"></div>
-
-      <!-- Hero Liquid Glass Container (Apple visionOS Material) -->
-      <div class="max-w-4xl mx-auto w-full relative z-20">
-        <div class="hero-glass-card p-6 sm:p-12 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full liquid-glass-pill text-[11px] font-mono text-slate-300">
-            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-            <span>ORBIT // 01</span>
-          </div>
-
-          <div class="space-y-2">
-            <h1 class="text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-tight font-display">
-              Himanshu Jangid
-            </h1>
-            
-            <p class="text-lg sm:text-2xl md:text-3xl font-light text-slate-300 tracking-wide max-w-2xl leading-relaxed">
-              Aspiring <span class="font-semibold text-white">Software Engineer</span> looking forward to building <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-indigo-300 font-bold">Artificial Intelligence</span>.
-            </p>
-          </div>
-
-          <!-- Apple Liquid Glass Descend Action Button -->
-          <div class="pt-2 flex flex-wrap items-center gap-3">
-            <a href="#skit" class="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-white text-xs font-semibold flex items-center gap-2 liquid-glass-btn liquid-glass-pill border border-white/25 bg-white/10 hover:bg-white/20">
-              <span>Descend to SKIT College</span>
-              <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-cyan-300"></i>
-            </a>
-          </div>
-
-          <div class="pt-2 flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono text-slate-400">
-            <span>ALTITUDE: 400 KM</span>
-            <span>•</span>
-            <span>SATELLITES ON DYNAMIC ORBITAL PATHS</span>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- =======================================================================
-         PAGE 2: STRATOSPHERE (Deep Navy to Royal Blue Transition)
-         Highlighting SKIT College & CS AI Degree | Responsive Mobile Height
-         Text Color: CRISP WHITE / ICE BLUE
-         ======================================================================= -->
-    <section id="skit" class="min-h-screen sm:min-h-[135vh] w-full flex flex-col justify-center px-4 sm:px-12 py-16 sm:py-32 text-white relative z-20 overflow-x-clip">
-      
-      <!-- Apple Liquid Glass Ambient Refraction Orbs -->
-      <div class="glass-ambient-orb glass-orb-1"></div>
-      <div class="glass-ambient-orb glass-orb-2"></div>
-
-      <!-- Academic Container -->
-      <div class="max-w-4xl mx-auto w-full relative z-20">
-        <div class="liquid-glass-card p-6 sm:p-12 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full liquid-glass-pill text-[11px] font-mono text-sky-200">
-            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
-            <span>ACADEMICS // 02</span>
-          </div>
-
-          <div class="space-y-1">
-            <div class="text-xs font-mono uppercase tracking-widest text-sky-300 font-bold">
-              Degree Pursuit
-            </div>
-            <h2 class="text-2xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
-              SKIT College, Jaipur
-            </h2>
-            <div class="text-base sm:text-2xl font-bold text-sky-200 pt-1">
-              B.Tech — Computer Science & Artificial Intelligence (CS AI)
-            </div>
-          </div>
-
-          <p class="text-sm sm:text-lg text-slate-200 max-w-2xl leading-relaxed font-light">
-            Pursuing my undergraduate engineering degree at Swami Keshvanand Institute of Technology (SKIT). Immersing in machine learning fundamentals, intelligent algorithms, and software engineering.
-          </p>
-
-          <div class="flex flex-wrap gap-2 sm:gap-2.5 pt-1">
-            <span class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full liquid-glass-pill text-white text-xs font-semibold">
-              🏛️ SKIT Jaipur
-            </span>
-            <span class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full liquid-glass-pill text-white text-xs font-semibold">
-              🤖 CS AI Branch
-            </span>
-            <span class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full liquid-glass-pill text-white text-xs font-semibold">
-              🎓 B.Tech Candidate
-            </span>
-          </div>
-
-          <!-- Apple Liquid Glass Descend Action Button -->
-          <div class="pt-2 flex flex-wrap items-center gap-3">
-            <a href="#sky" class="px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-white text-xs font-semibold flex items-center gap-2 liquid-glass-btn liquid-glass-pill border border-sky-300/35 bg-sky-500/20 hover:bg-sky-500/30">
-              <span>Descend into Flight Altitude</span>
-              <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-sky-300"></i>
-            </a>
-          </div>
-
-          <div class="pt-2 flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono text-sky-200">
-            <span>ALTITUDE: 50,000 M</span>
-            <span>•</span>
-            <span>UPPER STRATOSPHERE</span>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- =======================================================================
-         PAGE 3: SKY BLUE ATMOSPHERE (Cruising Altitude with 3D Clouds & Airplanes)
-         Text Color: HIGH-CONTRAST DARK TEXT (Slate 900 / Navy) | Responsive Mobile Height
-         ======================================================================= -->
-    <section id="sky" class="min-h-screen sm:min-h-[135vh] w-full flex flex-col justify-center px-4 sm:px-12 py-16 sm:py-32 relative z-20 overflow-x-clip">
       
       <!-- Apple Liquid Glass Ambient Refraction Orbs -->
       <div class="glass-ambient-orb glass-orb-1"></div>
@@ -602,7 +608,7 @@
 
   </div>
 
-  <script src="script.js?v=26.0"></script>
+  <script src="script.js?v=27.0"></script>
   <script>
     lucide.createIcons();
   </script>

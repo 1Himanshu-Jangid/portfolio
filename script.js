@@ -20,8 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('stars-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
+    
+    const spaceEl = document.getElementById('space');
+    const skitEl = document.getElementById('skit');
+    
+    function getCombinedUpperAtmosphereHeight() {
+      if (spaceEl && skitEl) {
+        return Math.max(spaceEl.offsetHeight + skitEl.offsetHeight, Math.round(window.innerHeight * 2));
+      }
+      return Math.round(window.innerHeight * 2.5);
+    }
+
     let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = Math.round(window.innerHeight * 2.5));
+    let height = (canvas.height = getCombinedUpperAtmosphereHeight());
+    canvas.style.height = height + 'px';
 
     // Balanced star density for optimal 60/120fps
     const starCount = isMobile ? 45 : Math.min(130, Math.floor((width * height) / 7500));
@@ -194,26 +206,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Smart pause only when scrolled deep into Earth section (saves battery)
     window.addEventListener('scroll', () => {
-      const shouldBeVisible = window.scrollY < window.innerHeight * 2.8;
+      const shouldBeVisible = window.scrollY < window.innerHeight * 2.5;
       if (shouldBeVisible !== isVisible) {
         isVisible = shouldBeVisible;
       }
     }, { passive: true });
 
-    // Debounced resize handler
+    // Dynamic resize handler
+    function handleResize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = getCombinedUpperAtmosphereHeight();
+      canvas.style.height = height + 'px';
+      stars.forEach(s => s.calcAltitudeFade());
+    }
+
     let resizeTimer;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = Math.round(window.innerHeight * 2.5);
-        stars.forEach(s => s.calcAltitudeFade());
-      }, 250);
+      resizeTimer = setTimeout(handleResize, 200);
     }, { passive: true });
+    
+    // Also re-measure after assets finish loading
+    window.addEventListener('load', handleResize, { passive: true });
   }
 
   // =========================================================================
-  // 2. DYNAMIC ALTITUDE THEME DETECTOR (Lightweight Scroll Spy)
+  // 2. DYNAMIC ALTITUDE THEME DETECTOR (Bulletproof BoundingRect Scroll Spy)
   // =========================================================================
   const header = document.getElementById('main-nav');
   const sections = [
@@ -224,37 +242,23 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   const navPills = document.querySelectorAll('.alt-link');
 
-  let sectionOffsets = [];
-  function cacheSectionOffsets() {
-    sectionOffsets = sections.map(({ id, element, theme }) => ({
-      id,
-      theme,
-      top: element ? element.offsetTop : 0,
-      height: element ? element.offsetHeight : 0
-    }));
-  }
-  cacheSectionOffsets();
-
-  let resizeOffsetDebounce;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeOffsetDebounce);
-    resizeOffsetDebounce = setTimeout(cacheSectionOffsets, 200);
-  }, { passive: true });
-
   let activeTheme = '';
   let activeSectionId = '';
 
   function updateAltitudeTheme() {
-    const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+    const triggerY = window.innerHeight * 0.45;
     let targetTheme = 'theme-space';
     let targetSectionId = 'space';
 
-    for (let i = 0; i < sectionOffsets.length; i++) {
-      const { id, theme, top, height } = sectionOffsets[i];
-      if (scrollPosition >= top && scrollPosition < top + height) {
-        targetTheme = theme;
-        targetSectionId = id;
-        break;
+    for (let i = 0; i < sections.length; i++) {
+      const el = sections[i].element;
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= triggerY && rect.bottom > triggerY) {
+          targetTheme = sections[i].theme;
+          targetSectionId = sections[i].id;
+          break;
+        }
       }
     }
 
@@ -292,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateAltitudeTheme();
 
   // =========================================================================
-  // 3. SMOOTH NAVIGATION (Programmatic only — zero interference with touch)
+  // 3. SMOOTH PROGRAMMATIC NAVIGATION
   // =========================================================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -301,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           e.preventDefault();
-          targetElement.scrollIntoView({ behavior: 'smooth' });
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }
     });

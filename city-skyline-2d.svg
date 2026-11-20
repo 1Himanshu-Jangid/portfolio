@@ -12,7 +12,7 @@
       <stop offset="100%" stop-color="#64748b" stop-opacity="0.8"/>
     </linearGradient>
 
-    <!-- Foreground Architectural Tones -->
+    <!-- Foreground Skyscraper Tones -->
     <linearGradient id="dToneNavy" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#1e293b"/>
       <stop offset="60%" stop-color="#334155"/>
@@ -43,6 +43,22 @@
       <stop offset="100%" stop-color="#3d786a"/>
     </linearGradient>
 
+    <!-- Foreground Houses & Small Buildings Tones -->
+    <linearGradient id="dHouseBrick" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+
+    <linearGradient id="dHouseStone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+
+    <linearGradient id="dHouseWarm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d4f66"/>
+      <stop offset="100%" stop-color="#253549"/>
+    </linearGradient>
+
     <linearGradient id="dSpireSteel" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#cbd5e1"/>
       <stop offset="50%" stop-color="#ffffff"/>
@@ -60,356 +76,548 @@
     </linearGradient>
   </defs>
 
-  <!-- LAYER 1: Distant Background Silhouette (Continuous Horizon, Zero Gaps) -->
+  <!-- LAYER 1: Distant Background Silhouette -->
   <g fill="url(#dSkyBg)">
-    <!-- Continuous solid connecting baseline -->
-    <rect x="0" y="140" width="1800" height="100"/>
-    <polygon points="0,240 0,130 65,100 65,240"/>
-    <path d="M 68 240 L 68 115 Q 105 85 142 115 L 142 240 Z"/>
-    <rect x="145" y="80" width="65" height="160"/>
-    <polygon points="176,80 177.5,45 179,80"/>
-    <polygon points="215,240 215,95 285,60 285,240"/>
-    <rect x="290" y="110" width="70" height="130"/>
-    <rect x="305" y="90" width="40" height="20"/>
-    <path d="M 365 240 L 365 100 Q 405 70 445 100 L 445 240 Z"/>
-    <polygon points="440,240 440,75 520,115 520,240"/>
-    <rect x="525" y="85" width="75" height="155"/>
-    <polygon points="561,85 562.5,35 564,85"/>
-    <rect x="605" y="65" width="70" height="175"/>
-    <polygon points="638.5,65 640,30 641.5,65"/>
-    <rect x="680" y="50" width="90" height="190"/>
-    <rect x="710" y="30" width="30" height="20"/>
-    <path d="M 770 240 L 770 105 Q 820 80 870 105 L 870 240 Z"/>
-    <polygon points="865,240 865,65 945,100 945,240"/>
-    <rect x="950" y="75" width="75" height="165"/>
-    <polygon points="986,75 987.5,40 989,75"/>
-    <rect x="1025" y="90" width="85" height="150"/>
-    <rect x="1050" y="70" width="35" height="20"/>
-    <polygon points="1115,240 1145,45 1175,240"/>
-    <path d="M 1180 240 L 1180 95 Q 1225 75 1270 95 L 1270 240 Z"/>
-    <polygon points="1265,240 1265,65 1345,110 1345,240"/>
-    <rect x="1350" y="80" width="80" height="160"/>
-    <polygon points="1388.5,80 1390,45 1391.5,80"/>
-    <rect x="1430" y="70" width="55" height="170"/>
-    <rect x="1490" y="70" width="55" height="170"/>
-    <polygon points="1545,240 1545,85 1620,60 1620,240"/>
-    <rect x="1625" y="110" width="85" height="130"/>
-    <rect x="1670" y="80" width="15" height="30"/>
-    <rect x="1710" y="90" width="90" height="150"/>
+    <rect x="0" y="145" width="1800" height="95"/>
+    <polygon points="0,240 0,135 60,105 60,240"/>
+    <path d="M 65 240 L 65 120 Q 95 90 125 120 L 125 240 Z"/>
+    <rect x="140" y="85" width="60" height="155"/>
+    <polygon points="168.5,85 170,50 171.5,85"/>
+    <polygon points="210,240 210,100 270,70 270,240"/>
+    <rect x="330" y="90" width="60" height="150"/>
+    <path d="M 420 240 L 420 105 Q 450 75 480 105 L 480 240 Z"/>
+    <polygon points="530,240 530,80 595,115 595,240"/>
+    <rect x="640" y="70" width="65" height="170"/>
+    <polygon points="671,70 672.5,35 674,70"/>
+    <rect x="780" y="55" width="75" height="185"/>
+    <polygon points="816,55 817.5,25 819,55"/>
+    <path d="M 910 240 L 910 110 Q 950 85 990 110 L 990 240 Z"/>
+    <polygon points="1030,240 1030,70 1095,105 1095,240"/>
+    <rect x="1140" y="80" width="70" height="160"/>
+    <polygon points="1173.5,80 1175,45 1176.5,80"/>
+    <path d="M 1260 240 L 1260 100 Q 1295 80 1330 100 L 1330 240 Z"/>
+    <polygon points="1370,240 1370,70 1435,110 1435,240"/>
+    <rect x="1480" y="75" width="75" height="165"/>
+    <polygon points="1516,75 1517.5,40 1519,75"/>
+    <rect x="1620" y="70" width="80" height="170"/>
+    <rect x="1730" y="90" width="70" height="150"/>
   </g>
 
-  <!-- LAYER 2: Midground Architectural Layer (Continuous Dense Blocks, Zero Gaps) -->
-  <g fill="url(#dSkyMid)">
-    <!-- Continuous solid connecting baseline across entire panorama -->
-    <rect x="0" y="150" width="1800" height="90"/>
-    <polygon points="0,240 0,140 55,115 55,240"/>
-    <rect x="55" y="130" width="65" height="110"/>
-    <rect x="68" y="105" width="38" height="25"/>
-    <polygon points="86,105 87,85 88,105"/>
-    <path d="M 120 240 L 120 120 Q 152 100 185 120 L 185 240 Z"/>
-    <rect x="185" y="145" width="70" height="95"/>
-    <rect x="175" y="115" width="80" height="30"/>
-    <rect x="190" y="88" width="55" height="27"/>
-    <polygon points="255,240 255,95 325,135 325,240"/>
-    <rect x="330" y="125" width="75" height="115"/>
-    <rect x="345" y="95" width="48" height="30"/>
-    <polygon points="368,95 369,70 370,95"/>
-    <rect x="405" y="135" width="70" height="105"/>
-    <path d="M 405 135 Q 440 110 475 135 Z"/>
-    <polygon points="475,240 475,85 545,60 545,240"/>
-    <rect x="550" y="115" width="70" height="125"/>
-    <rect x="565" y="85" width="42" height="30"/>
-    <line x1="586" y1="85" x2="586" y2="55" stroke="#64748b" stroke-width="2"/>
-    <rect x="620" y="120" width="75" height="120"/>
-    <polygon points="620,120 657.5,90 695,120"/>
-    <polygon points="695,240 705,75 765,75 775,240"/>
-    <rect x="780" y="135" width="80" height="105"/>
-    <path d="M 780 135 Q 820 110 860 135 Z"/>
-    <rect x="860" y="130" width="75" height="110"/>
-    <rect x="872" y="100" width="50" height="30"/>
-    <rect x="885" y="75" width="24" height="25"/>
-    <polygon points="935,240 935,80 1005,115 1005,240"/>
-    <rect x="1010" y="145" width="85" height="95"/>
-    <rect x="1030" y="125" width="48" height="20"/>
-    <path d="M 1035 125 Q 1054 105 1073 125 Z"/>
-    <rect x="1095" y="90" width="65" height="150"/>
-    <polygon points="1095,90 1127.5,65 1160,90"/>
-    <polygon points="1160,240 1160,95 1235,135 1235,240"/>
-    <rect x="1235" y="125" width="75" height="115"/>
-    <rect x="1250" y="95" width="48" height="30"/>
-    <line x1="1274" y1="95" x2="1274" y2="65" stroke="#64748b" stroke-width="2"/>
-    <rect x="1310" y="140" width="80" height="100"/>
-    <path d="M 1310 140 Q 1350 120 1390 140 Z"/>
-    <polygon points="1390,240 1390,75 1465,105 1465,240"/>
-    <rect x="1470" y="130" width="70" height="110"/>
-    <rect x="1485" y="100" width="42" height="30"/>
-    <polygon points="1505,100 1506,75 1507,100"/>
-    <rect x="1540" y="145" width="75" height="95"/>
-    <rect x="1555" y="135" width="48" height="10"/>
-    <rect x="1615" y="120" width="80" height="120"/>
-    <polygon points="1615,120 1655,95 1695,120"/>
-    <rect x="1695" y="135" width="70" height="105"/>
-    <rect x="1760" y="145" width="40" height="95"/>
-  </g>
-
-  <!-- LAYER 3: Foreground 17 Completely Unique Architectural Landmarks (Overlapping & Gapless) -->
+  <!-- LAYER 2: Big Skyscraper Towers (Spaced Out with Breathing Room) -->
   <g stroke="rgba(255,255,255,0.22)" stroke-width="1.2" stroke-linejoin="round">
 
-    <!-- 1. TRANSAMERICA PYRAMID (x=0 to x=115, Overlaps #2) -->
+    <!-- Big 1. Transamerica Pyramid (x=45 to x=125) -->
     <g fill="url(#dToneSlate)">
-      <polygon points="0,240 55,35 115,240"/>
-      <rect x="36" y="105" width="6" height="60" fill="#3b4859"/>
-      <rect x="68" y="105" width="6" height="60" fill="#3b4859"/>
-      <polygon points="54.2,35 55,10 55.8,35" fill="url(#dSpireSteel)"/>
-      <circle cx="55" cy="10" r="1.8" fill="#ef4444" stroke="none"/>
+      <polygon points="45,240 85,35 125,240"/>
+      <rect x="68" y="105" width="5" height="60" fill="#3b4859"/>
+      <rect x="97" y="105" width="5" height="60" fill="#3b4859"/>
+      <polygon points="84.2,35 85,10 85.8,35" fill="url(#dSpireSteel)"/>
+      <circle cx="85" cy="10" r="1.8" fill="#ef4444" stroke="none"/>
     </g>
 
-    <!-- 2. FLATIRON BUILDING & CLOCKTOWER (x=105 to x=205, Overlaps #1 and #3) -->
+    <!-- Big 2. Flatiron Building & Clocktower (x=155 to x=240) -->
     <g fill="url(#dToneSteel)">
-      <polygon points="105,240 115,75 195,75 205,240"/>
-      <rect x="112" y="70" width="86" height="6" fill="#384c63"/>
-      <rect x="138" y="44" width="38" height="26" fill="#243447"/>
-      <polygon points="138,44 157,26 176,44" fill="#475569"/>
-      <circle cx="157" cy="57" r="9" fill="#f8fafc" stroke="#1e293b" stroke-width="1.2"/>
-      <line x1="157" y1="57" x2="157" y2="51" stroke="#0f172a" stroke-width="1.2"/>
-      <line x1="157" y1="57" x2="162" y2="57" stroke="#0f172a" stroke-width="1.2"/>
+      <polygon points="155,240 165,75 230,75 240,240"/>
+      <rect x="162" y="70" width="71" height="6" fill="#384c63"/>
+      <rect x="182" y="44" width="36" height="26" fill="#243447"/>
+      <polygon points="182,44 200,26 218,44" fill="#475569"/>
+      <circle cx="200" cy="57" r="8.5" fill="#f8fafc" stroke="#1e293b" stroke-width="1.2"/>
+      <line x1="200" y1="57" x2="200" y2="51" stroke="#0f172a" stroke-width="1.2"/>
+      <line x1="200" y1="57" x2="205" y2="57" stroke="#0f172a" stroke-width="1.2"/>
     </g>
 
-    <!-- 3. ONE WORLD TRADE CENTER / CHAMFERED OBELISK (x=195 to x=300, Overlaps #2 and #4) -->
+    <!-- Big 3. One World Trade Center / Chamfered Obelisk (x=270 to x=355) -->
     <g fill="url(#dToneGlass)">
-      <polygon points="195,240 210,50 285,50 300,240"/>
-      <line x1="247.5" y1="50" x2="195" y2="240" stroke="rgba(255,255,255,0.3)"/>
-      <line x1="247.5" y1="50" x2="300" y2="240" stroke="rgba(255,255,255,0.18)"/>
-      <rect x="238" y="40" width="19" height="10" fill="#334155"/>
-      <polygon points="246.7,40 247.5,6 248.3,40" fill="url(#dSpireSteel)"/>
-      <circle cx="247.5" cy="6" r="1.8" fill="#ef4444" stroke="none"/>
+      <polygon points="270,240 283,50 342,50 355,240"/>
+      <line x1="312.5" y1="50" x2="270" y2="240" stroke="rgba(255,255,255,0.3)"/>
+      <line x1="312.5" y1="50" x2="355" y2="240" stroke="rgba(255,255,255,0.18)"/>
+      <rect x="304" y="40" width="17" height="10" fill="#334155"/>
+      <polygon points="311.7,40 312.5,6 313.3,40" fill="url(#dSpireSteel)"/>
+      <circle cx="312.5" cy="6" r="1.8" fill="#ef4444" stroke="none"/>
     </g>
 
-    <!-- 4. SHANGHAI SWFC / BOTTLE OPENER (x=290 to x=395, Overlaps #3 and #5) -->
+    <!-- Big 4. Shanghai SWFC / Bottle Opener (x=385 to x=465) -->
     <g fill="url(#dToneGlass)">
-      <polygon points="290,240 305,30 380,30 395,240"/>
-      <polygon points="320,44 365,44 358,74 327,74" fill="#03091e" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
-      <line x1="320" y1="44" x2="365" y2="44" stroke="url(#dSpireSteel)" stroke-width="2"/>
+      <polygon points="385,240 395,30 455,30 465,240"/>
+      <polygon points="407,44 443,44 437,74 413,74" fill="#03091e" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
+      <line x1="407" y1="44" x2="443" y2="44" stroke="url(#dSpireSteel)" stroke-width="2"/>
     </g>
 
-    <!-- 5. THE CHRYSLER BUILDING / ART DECO SUNBURST (x=385 to x=495, Overlaps #4 and #6) -->
+    <!-- Big 5. The Chrysler Building / Art Deco Sunburst (x=495 to x=585) -->
     <g fill="url(#dToneNavy)">
-      <rect x="385" y="115" width="110" height="125"/>
-      <rect x="398" y="78" width="84" height="37"/>
-      <path d="M 405 78 Q 440 58 475 78 Z" fill="#334155"/>
-      <path d="M 412 65 Q 440 45 468 65 Z" fill="#475569"/>
-      <path d="M 419 52 Q 440 32 461 52 Z" fill="#64748b"/>
-      <path d="M 427 40 Q 440 22 453 40 Z" fill="#94a3b8"/>
-      <polygon points="439.2,22 440,2 440.8,22" fill="url(#dSpireSteel)"/>
-      <polygon points="398,78 390,74 398,82" fill="url(#dSpireSteel)"/>
-      <polygon points="482,78 490,74 482,82" fill="url(#dSpireSteel)"/>
+      <rect x="495" y="115" width="90" height="125"/>
+      <rect x="505" y="78" width="70" height="37"/>
+      <path d="M 510 78 Q 540 58 570 78 Z" fill="#334155"/>
+      <path d="M 515 65 Q 540 45 565 65 Z" fill="#475569"/>
+      <path d="M 521 52 Q 540 32 559 52 Z" fill="#64748b"/>
+      <path d="M 528 40 Q 540 22 552 40 Z" fill="#94a3b8"/>
+      <polygon points="539.2,22 540,2 540.8,22" fill="url(#dSpireSteel)"/>
+      <polygon points="505,78 498,74 505,82" fill="url(#dSpireSteel)"/>
+      <polygon points="575,78 582,74 575,82" fill="url(#dSpireSteel)"/>
     </g>
 
-    <!-- 6. THE GHERKIN / FOSTER CURVED GLASS DOME (x=485 to x=585, Overlaps #5 and #7) -->
+    <!-- Big 6. The Gherkin / Foster Curved Glass Dome (x=610 to x=690) -->
     <g fill="url(#dToneSteel)">
-      <path d="M 485 240 C 485 140, 505 60, 535 35 C 565 60, 585 140, 585 240 Z"/>
-      <path d="M 523 55 Q 535 35 547 55 Z" fill="#1e293b"/>
-      <path d="M 490 200 Q 535 170 580 140" stroke="rgba(255,255,255,0.3)" fill="none"/>
-      <path d="M 580 200 Q 535 170 490 140" stroke="rgba(255,255,255,0.3)" fill="none"/>
-      <path d="M 496 140 Q 535 110 574 80" stroke="rgba(255,255,255,0.3)" fill="none"/>
-      <path d="M 574 140 Q 535 110 496 80" stroke="rgba(255,255,255,0.3)" fill="none"/>
+      <path d="M 610 240 C 610 140, 623 60, 650 35 C 677 60, 690 140, 690 240 Z"/>
+      <path d="M 640 55 Q 650 35 660 55 Z" fill="#1e293b"/>
+      <path d="M 613 200 Q 650 170 687 140" stroke="rgba(255,255,255,0.3)" fill="none"/>
+      <path d="M 687 200 Q 650 170 613 140" stroke="rgba(255,255,255,0.3)" fill="none"/>
+      <path d="M 618 140 Q 650 110 682 80" stroke="rgba(255,255,255,0.3)" fill="none"/>
+      <path d="M 682 140 Q 650 110 618 80" stroke="rgba(255,255,255,0.3)" fill="none"/>
     </g>
 
-    <!-- 7. TAIPEI 101 / FLARING PAGODA MODULES (x=575 to x=680, Overlaps #6 and #8) -->
+    <!-- Big 7. Taipei 101 / Flared Pagoda Tiers (x=715 to x=805) -->
     <g fill="url(#dToneNavy)">
-      <rect x="595" y="195" width="65" height="45"/>
-      <polygon points="585,195 582,165 673,165 670,195"/>
-      <polygon points="587,165 584,135 671,135 668,165"/>
-      <polygon points="589,135 586,105 669,105 666,135"/>
-      <polygon points="591,105 588,75 667,75 664,105"/>
-      <polygon points="593,75 590,45 665,45 662,75"/>
-      <rect x="614" y="28" width="27" height="17" fill="#475569"/>
-      <polygon points="626.8,28 627.5,8 628.2,28" fill="url(#dSpireSteel)"/>
-      <circle cx="627.5" cy="120" r="6" fill="#fef08a" stroke="#d97706" stroke-width="1"/>
-      <rect x="625" y="117.5" width="5" height="5" fill="#1e293b"/>
+      <rect x="732" y="195" width="56" height="45"/>
+      <polygon points="725,195 722,165 798,165 795,195"/>
+      <polygon points="727,165 724,135 796,135 793,165"/>
+      <polygon points="729,135 726,105 794,105 791,135"/>
+      <polygon points="731,105 728,75 792,75 789,105"/>
+      <polygon points="733,75 730,45 790,45 787,75"/>
+      <rect x="748" y="28" width="24" height="17" fill="#475569"/>
+      <polygon points="759.2,28 760,8 760.8,28" fill="url(#dSpireSteel)"/>
+      <circle cx="760" cy="120" r="5" fill="#fef08a" stroke="#d97706" stroke-width="1"/>
     </g>
 
-    <!-- 8. THE EMPIRE STATE BUILDING / HERO CENTERPIECE (x=670 to x=810, Overlaps #7 and #9) -->
+    <!-- Big 8. The Empire State Building / Hero Centerpiece (x=835 to x=955) -->
     <g fill="url(#dToneNavy)">
-      <rect x="670" y="125" width="140" height="115"/>
-      <rect x="686" y="90" width="108" height="35"/>
-      <rect x="702" y="52" width="76" height="38"/>
-      <rect x="716" y="28" width="48" height="24"/>
-      <rect x="727" y="14" width="26" height="14" fill="#475569"/>
-      <polygon points="739.1,14 740,1 740.9,14" fill="url(#dSpireSteel)"/>
-      <circle cx="740" cy="1.5" r="2" fill="#ef4444" stroke="none"/>
+      <rect x="835" y="125" width="120" height="115"/>
+      <rect x="847" y="90" width="96" height="35"/>
+      <rect x="861" y="52" width="68" height="38"/>
+      <rect x="873" y="28" width="44" height="24"/>
+      <rect x="883" y="14" width="24" height="14" fill="#475569"/>
+      <polygon points="894.1,14 895,1 895.9,14" fill="url(#dSpireSteel)"/>
+      <circle cx="895" cy="1.5" r="2" fill="#ef4444" stroke="none"/>
     </g>
 
-    <!-- 9. MODERN JENGA TOWER / CANTILEVER CUBES (x=800 to x=895, Overlaps #8 and #10) -->
+    <!-- Big 9. Modern Jenga Tower (x=985 to x=1060) -->
     <g fill="url(#dToneSteel)">
-      <rect x="800" y="185" width="95" height="55"/>
-      <rect x="805" y="150" width="80" height="35"/>
-      <rect x="818" y="120" width="72" height="30"/>
-      <rect x="810" y="90" width="78" height="30"/>
-      <rect x="822" y="60" width="66" height="30"/>
-      <rect x="832" y="38" width="44" height="22" fill="#384c63"/>
-      <line x1="854" y1="38" x2="854" y2="18" stroke="#94a3b8" stroke-width="1.8"/>
+      <rect x="995" y="185" width="55" height="55"/>
+      <rect x="987" y="150" width="62" height="35"/>
+      <rect x="1001" y="120" width="58" height="30"/>
+      <rect x="985" y="90" width="62" height="30"/>
+      <rect x="999" y="60" width="54" height="30"/>
+      <rect x="1007" y="38" width="38" height="22" fill="#384c63"/>
+      <line x1="1026" y1="38" x2="1026" y2="18" stroke="#94a3b8" stroke-width="1.8"/>
     </g>
 
-    <!-- 10. BANK OF CHINA TOWER / GEOMETRIC X-BRACES (x=885 to x=985, Overlaps #9 and #11) -->
+    <!-- Big 10. Bank of China Tower (x=1090 to x=1170) -->
     <g fill="url(#dToneGlass)">
-      <polygon points="885,240 885,100 935,60 985,100 985,240"/>
-      <polygon points="908,60 935,24 962,60" fill="#2b4c73"/>
-      <polygon points="934.2,24 935,5 935.8,24" fill="url(#dSpireSteel)"/>
-      <line x1="885" y1="240" x2="985" y2="170" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
-      <line x1="985" y1="240" x2="885" y2="170" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
-      <line x1="885" y1="170" x2="985" y2="100" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
-      <line x1="985" y1="170" x2="885" y2="100" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
+      <polygon points="1090,240 1090,100 1130,60 1170,100 1170,240"/>
+      <polygon points="1110,60 1130,24 1150,60" fill="#2b4c73"/>
+      <polygon points="1129.2,24 1130,5 1130.8,24" fill="url(#dSpireSteel)"/>
+      <line x1="1090" y1="240" x2="1170" y2="170" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
+      <line x1="1170" y1="240" x2="1090" y2="170" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
+      <line x1="1090" y1="170" x2="1170" y2="100" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
+      <line x1="1170" y1="170" x2="1090" y2="100" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
     </g>
 
-    <!-- 11. THE WALKIE TALKIE / CONCAVE FLARE (x=975 to x=1080, Overlaps #10 and #12) -->
+    <!-- Big 11. The Walkie Talkie / Concave Flare (x=1200 to x=1285) -->
     <g fill="url(#dToneSteel)">
-      <path d="M 985 240 C 985 160, 975 90, 975 48 L 1080 48 C 1080 90, 1070 160, 1070 240 Z"/>
-      <path d="M 975 48 Q 1027.5 28 1080 48 Z" fill="#1e3a5f" stroke="#38bdf8" stroke-width="1.2"/>
-      <line x1="1027.5" y1="28" x2="1027.5" y2="48" stroke="rgba(255,255,255,0.3)"/>
+      <path d="M 1210 240 C 1210 160, 1200 90, 1200 48 L 1285 48 C 1285 90, 1275 160, 1275 240 Z"/>
+      <path d="M 1200 48 Q 1242.5 28 1285 48 Z" fill="#1e3a5f" stroke="#38bdf8" stroke-width="1.2"/>
+      <line x1="1242.5" y1="28" x2="1242.5" y2="48" stroke="rgba(255,255,255,0.3)"/>
     </g>
 
-    <!-- 12. NEO-GOTHIC TOWER WITH COPPER MANSARD ROOF (x=1070 to x=1175, Overlaps #11 and #13) -->
+    <!-- Big 12. Neo-Gothic Mansard Tower (x=1315 to x=1395) -->
     <g fill="url(#dToneCopper)">
-      <rect x="1070" y="115" width="105" height="125" fill="url(#dToneNavy)"/>
-      <rect x="1084" y="80" width="77" height="35" fill="url(#dToneNavy)"/>
-      <polygon points="1078,80 1095,38 1150,38 1167,80" fill="url(#dToneCopper)"/>
-      <polygon points="1115,58 1122.5,48 1130,58" fill="#3d786a"/>
-      <rect x="1117" y="58" width="11" height="10" fill="#fef08a" opacity="0.8"/>
-      <polygon points="1077,80 1079,68 1081,80" fill="#94a3b8"/>
-      <polygon points="1164,80 1166,68 1168,80" fill="#94a3b8"/>
-      <polygon points="1121.8,38 1122.5,18 1123.2,38" fill="url(#dSpireSteel)"/>
+      <rect x="1320" y="115" width="70" height="125" fill="url(#dToneNavy)"/>
+      <rect x="1330" y="80" width="50" height="35" fill="url(#dToneNavy)"/>
+      <polygon points="1325,80 1338,38 1372,38 1385,80" fill="url(#dToneCopper)"/>
+      <polygon points="1350,58 1355,48 1360,58" fill="#3d786a"/>
+      <rect x="1352" y="58" width="6" height="10" fill="#fef08a" opacity="0.8"/>
+      <polygon points="1324,80 1326,68 1328,80" fill="#94a3b8"/>
+      <polygon points="1382,80 1384,68 1386,80" fill="#94a3b8"/>
+      <polygon points="1354.8,38 1355,18 1355.2,38" fill="url(#dSpireSteel)"/>
     </g>
 
-    <!-- 13. MARINA CITY / CYLINDRICAL CORNCOB TOWER (x=1165 to x=1265, Overlaps #12 and #14) -->
+    <!-- Big 13. Marina City Corncob Tower (x=1425 to x=1500) -->
     <g fill="url(#dToneSteel)">
-      <rect x="1175" y="45" width="80" height="195" rx="4"/>
-      <path d="M 1175 75 Q 1215 90 1255 75" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
-      <path d="M 1175 105 Q 1215 120 1255 105" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
-      <path d="M 1175 135 Q 1215 150 1255 135" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
-      <path d="M 1175 165 Q 1215 180 1255 165" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
-      <path d="M 1175 195 Q 1215 210 1255 195" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
-      <rect x="1195" y="28" width="40" height="17" rx="3" fill="#384c63"/>
-      <line x1="1215" y1="28" x2="1215" y2="12" stroke="#94a3b8" stroke-width="1.8"/>
+      <rect x="1435" y="45" width="55" height="195" rx="4"/>
+      <path d="M 1435 75 Q 1462.5 90 1490 75" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
+      <path d="M 1435 105 Q 1462.5 120 1490 105" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
+      <path d="M 1435 135 Q 1462.5 150 1490 135" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
+      <rect x="1447" y="28" width="31" height="17" rx="3" fill="#384c63"/>
+      <line x1="1462.5" y1="28" x2="1462.5" y2="12" stroke="#94a3b8" stroke-width="1.8"/>
     </g>
 
-    <!-- 14. CITICORP 45° SLANTED WEDGE TOWER (x=1255 to x=1360, Overlaps #13 and #15) -->
+    <!-- Big 14. Citicorp 45° Slanted Wedge (x=1530 to x=1615) -->
     <g fill="url(#dToneGlass)">
-      <polygon points="1255,240 1255,35 1360,115 1360,240"/>
-      <line x1="1255" y1="35" x2="1360" y2="115" stroke="url(#dSpireSteel)" stroke-width="2"/>
-      <line x1="1280" y1="54" x2="1280" y2="240" stroke="rgba(255,255,255,0.2)"/>
-      <line x1="1305" y1="73" x2="1305" y2="240" stroke="rgba(255,255,255,0.2)"/>
-      <line x1="1330" y1="92" x2="1330" y2="240" stroke="rgba(255,255,255,0.2)"/>
+      <polygon points="1530,240 1530,35 1615,115 1615,240"/>
+      <line x1="1530" y1="35" x2="1615" y2="115" stroke="url(#dSpireSteel)" stroke-width="2"/>
+      <line x1="1550" y1="54" x2="1550" y2="240" stroke="rgba(255,255,255,0.2)"/>
+      <line x1="1570" y1="73" x2="1570" y2="240" stroke="rgba(255,255,255,0.2)"/>
+      <line x1="1590" y1="92" x2="1590" y2="240" stroke="rgba(255,255,255,0.2)"/>
     </g>
 
-    <!-- 15. TWIN TOWERS & HIGH-ALTITUDE SKYBRIDGE (x=1350 to x=1485, Overlaps #14 and #16) -->
+    <!-- Big 15. Twin Spire Towers & Skybridge (x=1645 to x=1765) -->
     <g fill="url(#dToneSteel)">
-      <rect x="1355" y="70" width="55" height="170"/>
-      <polygon points="1365,70 1382.5,40 1400,70" fill="#384c63"/>
-      <polygon points="1381.8,40 1382.5,15 1383.2,40" fill="url(#dSpireSteel)"/>
-      <circle cx="1382.5" cy="15" r="1.5" fill="#ef4444" stroke="none"/>
-      <rect x="1430" y="70" width="55" height="170"/>
-      <polygon points="1440,70 1457.5,40 1475,70" fill="#384c63"/>
-      <polygon points="1456.8,40 1457.5,15 1458.2,40" fill="url(#dSpireSteel)"/>
-      <circle cx="1457.5" cy="15" r="1.5" fill="#ef4444" stroke="none"/>
-      <rect x="1410" y="125" width="20" height="18" fill="url(#dToneGlass)" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
-      <line x1="1410" y1="134" x2="1430" y2="134" stroke="#38bdf8" stroke-width="1.5"/>
-    </g>
-
-    <!-- 16. HISTORIC BROWNSTONE ROW & WATER TANK (x=1475 to x=1620, Overlaps #15 and #17) -->
-    <g fill="url(#dToneSlate)">
-      <rect x="1475" y="140" width="145" height="100"/>
-      <rect x="1470" y="134" width="155" height="6" fill="#3b4859"/>
-      <path d="M 1485 150 Q 1490 144 1495 150 L 1495 162 L 1485 162 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1510 150 Q 1515 144 1520 150 L 1520 162 L 1510 162 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1535 150 Q 1540 144 1545 150 L 1545 162 L 1535 162 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1560 150 Q 1565 144 1570 150 L 1570 162 L 1560 162 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1585 150 Q 1590 144 1595 150 L 1595 162 L 1585 162 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1485 175 Q 1490 169 1495 175 L 1495 187 L 1485 187 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1510 175 Q 1515 169 1520 175 L 1520 187 L 1510 187 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1535 175 Q 1540 169 1545 175 L 1545 187 L 1535 187 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1560 175 Q 1565 169 1570 175 L 1570 187 L 1560 187 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1585 175 Q 1590 169 1595 175 L 1595 187 L 1585 187 Z" fill="#fef08a" opacity="0.85"/>
-      <line x1="1545" y1="134" x2="1550" y2="108" stroke="#475569" stroke-width="1.8"/>
-      <line x1="1565" y1="134" x2="1560" y2="108" stroke="#475569" stroke-width="1.8"/>
-      <rect x="1545" y="88" width="20" height="20" rx="1.5" fill="#4a5568"/>
-      <polygon points="1542,88 1555,74 1568,88" fill="#334155"/>
-    </g>
-
-    <!-- 17. WATERFRONT OBSERVATORY & BEACON ROTUNDA (x=1610 to x=1800, Overlaps #16 to right edge) -->
-    <g fill="url(#dToneNavy)">
-      <rect x="1610" y="130" width="190" height="110"/>
-      <rect x="1635" y="95" width="145" height="35"/>
-      <path d="M 1665 95 Q 1707.5 55 1750 95 Z" fill="#1e3a5f" stroke="#38bdf8" stroke-width="1.2"/>
-      <polygon points="1706.8,55 1707.5,28 1708.2,55" fill="url(#dSpireSteel)"/>
-      <circle cx="1707.5" cy="28" r="2.5" fill="#fef08a" stroke="#f59e0b" stroke-width="1"/>
+      <rect x="1650" y="70" width="45" height="170"/>
+      <polygon points="1658,70 1672.5,40 1687,70" fill="#384c63"/>
+      <polygon points="1671.8,40 1672.5,15 1673.2,40" fill="url(#dSpireSteel)"/>
+      <circle cx="1672.5" cy="15" r="1.5" fill="#ef4444" stroke="none"/>
+      <rect x="1710" y="70" width="45" height="170"/>
+      <polygon points="1718,70 1732.5,40 1747,70" fill="#384c63"/>
+      <polygon points="1731.8,40 1732.5,15 1733.2,40" fill="url(#dSpireSteel)"/>
+      <circle cx="1732.5" cy="15" r="1.5" fill="#ef4444" stroke="none"/>
+      <rect x="1695" y="125" width="15" height="18" fill="url(#dToneGlass)" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
     </g>
 
   </g>
 
-  <!-- Vertical Mullions -->
-  <g stroke="rgba(255,255,255,0.22)" stroke-width="1.1">
-    <line x1="702" y1="52" x2="702" y2="240"/>
-    <line x1="712" y1="52" x2="712" y2="240"/>
-    <line x1="722" y1="52" x2="722" y2="240"/>
-    <line x1="732" y1="52" x2="732" y2="240"/>
-    <line x1="742" y1="52" x2="742" y2="240"/>
-    <line x1="752" y1="52" x2="752" y2="240"/>
-    <line x1="762" y1="52" x2="762" y2="240"/>
-    <line x1="772" y1="52" x2="772" y2="240"/>
-    <line x1="415" y1="78" x2="415" y2="240"/>
-    <line x1="428" y1="78" x2="428" y2="240"/>
-    <line x1="440" y1="78" x2="440" y2="240"/>
-    <line x1="452" y1="78" x2="452" y2="240"/>
-    <line x1="465" y1="78" x2="465" y2="240"/>
-  </g>
-
-  <!-- Warm Golden Amber Windows -->
+  <!-- Big Towers Windows & Illumination -->
   <g fill="url(#dWinWarm)">
-    <!-- Empire State -->
-    <rect x="710" y="135" width="3" height="6" rx="0.8"/>
-    <rect x="724" y="135" width="3" height="6" rx="0.8"/>
-    <rect x="738" y="135" width="3" height="6" rx="0.8"/>
-    <rect x="752" y="135" width="3" height="6" rx="0.8"/>
-    <rect x="766" y="135" width="3" height="6" rx="0.8"/>
-    <rect x="710" y="152" width="3" height="6" rx="0.8"/>
-    <rect x="724" y="152" width="3" height="6" rx="0.8"/>
-    <rect x="738" y="152" width="3" height="6" rx="0.8"/>
-    <rect x="752" y="152" width="3" height="6" rx="0.8"/>
-    <rect x="766" y="152" width="3" height="6" rx="0.8"/>
-    <rect x="710" y="169" width="3" height="6" rx="0.8"/>
-    <rect x="724" y="169" width="3" height="6" rx="0.8"/>
-    <rect x="738" y="169" width="3" height="6" rx="0.8"/>
-    <rect x="752" y="169" width="3" height="6" rx="0.8"/>
-    <rect x="766" y="169" width="3" height="6" rx="0.8"/>
-    <!-- Chrysler -->
-    <rect x="420" y="125" width="3.5" height="5.5" rx="0.8"/>
-    <rect x="438" y="125" width="3.5" height="5.5" rx="0.8"/>
-    <rect x="456" y="125" width="3.5" height="5.5" rx="0.8"/>
-    <rect x="420" y="145" width="3.5" height="5.5" rx="0.8"/>
-    <rect x="438" y="145" width="3.5" height="5.5" rx="0.8"/>
-    <rect x="456" y="145" width="3.5" height="5.5" rx="0.8"/>
-    <!-- Jenga Penthouse -->
-    <rect x="815" y="96" width="6" height="4" rx="0.8"/>
-    <rect x="835" y="126" width="6" height="4" rx="0.8"/>
-    <rect x="820" y="156" width="6" height="4" rx="0.8"/>
-    <!-- Twin Towers -->
-    <rect x="1370" y="95" width="3" height="5" rx="0.5"/>
-    <rect x="1385" y="95" width="3" height="5" rx="0.5"/>
-    <rect x="1445" y="95" width="3" height="5" rx="0.5"/>
-    <rect x="1460" y="95" width="3" height="5" rx="0.5"/>
-    <!-- Observatory Ribbon -->
-    <rect x="1650" y="105" width="115" height="4" rx="1"/>
-    <rect x="1635" y="145" width="145" height="4" rx="1"/>
+    <rect x="865" y="135" width="3" height="6" rx="0.8"/>
+    <rect x="877" y="135" width="3" height="6" rx="0.8"/>
+    <rect x="890" y="135" width="3" height="6" rx="0.8"/>
+    <rect x="903" y="135" width="3" height="6" rx="0.8"/>
+    <rect x="916" y="135" width="3" height="6" rx="0.8"/>
+    <rect x="865" y="152" width="3" height="6" rx="0.8"/>
+    <rect x="877" y="152" width="3" height="6" rx="0.8"/>
+    <rect x="890" y="152" width="3" height="6" rx="0.8"/>
+    <rect x="903" y="152" width="3" height="6" rx="0.8"/>
+    <rect x="916" y="152" width="3" height="6" rx="0.8"/>
+    <rect x="522" y="125" width="3.5" height="5.5" rx="0.8"/>
+    <rect x="538" y="125" width="3.5" height="5.5" rx="0.8"/>
+    <rect x="554" y="125" width="3.5" height="5.5" rx="0.8"/>
   </g>
 
-  <!-- Cool Cyan Glass Reflections -->
-  <g fill="url(#dWinCyan)">
-    <rect x="242" y="70" width="8" height="4" rx="0.5"/>
-    <rect x="242" y="95" width="8" height="4" rx="0.5"/>
-    <rect x="242" y="120" width="8" height="4" rx="0.5"/>
-    <rect x="1005" y="65" width="45" height="4" rx="1"/>
-    <rect x="1000" y="85" width="55" height="4" rx="1"/>
+  <!-- LAYER 3: Small Buildings, Houses & Brownstones IN FRONT OF Big Buildings (Continuous Streetscape) -->
+  <g stroke="rgba(255,255,255,0.22)" stroke-width="1" stroke-linejoin="round">
+
+    <!-- Block 1: Victorian House with Chimney (x=0 to x=65) -->
+    <g fill="url(#dHouseBrick)">
+      <rect x="0" y="175" width="60" height="65"/>
+      <polygon points="0,175 30,150 60,175" fill="#384c63"/>
+      <rect x="42" y="138" width="8" height="25" fill="#1e293b"/>
+      <circle cx="30" cy="165" r="4.5" fill="url(#dWinWarm)"/>
+      <rect x="10" y="186" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="40" y="186" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="25" y="206" width="10" height="34" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 2: 3-Story Brownstone with Stoop (x=55 to x=125) -->
+    <g fill="url(#dHouseStone)">
+      <rect x="55" y="165" width="65" height="75"/>
+      <rect x="52" y="159" width="71" height="6" fill="#1e293b"/>
+      <rect x="65" y="172" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="83" y="172" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="101" y="172" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="65" y="190" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="83" y="190" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="101" y="190" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <polygon points="80,240 80,212 94,212 94,240" fill="#1e293b"/>
+    </g>
+
+    <!-- Block 3: Corner Cafe & Storefront with Striped Awning (x=118 to x=185) -->
+    <g fill="url(#dHouseWarm)">
+      <rect x="118" y="172" width="62" height="68"/>
+      <polygon points="118,172 149,152 180,172" fill="#2d3748"/>
+      <circle cx="149" cy="163" r="4.5" fill="url(#dWinWarm)"/>
+      <polygon points="122,198 126,206 174,206 178,198" fill="#38bdf8"/>
+      <rect x="126" y="206" width="22" height="34" fill="url(#dWinWarm)"/>
+      <rect x="156" y="206" width="16" height="34" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 4: Dutch Colonial Gable House with Chimney (x=175 to x=245) -->
+    <g fill="url(#dHouseBrick)">
+      <rect x="175" y="178" width="65" height="62"/>
+      <polygon points="175,178 190,166 190,154 225,154 225,166 240,178" fill="#384c63"/>
+      <rect x="184" y="142" width="8" height="25" fill="#1e293b"/>
+      <rect x="190" y="188" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="215" y="188" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="202" y="210" width="11" height="30" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 5: 4-Story Classic Brownstone (x=235 to x=310) -->
+    <g fill="url(#dHouseStone)">
+      <rect x="235" y="158" width="70" height="82"/>
+      <rect x="232" y="152" width="76" height="6" fill="#1e293b"/>
+      <rect x="246" y="165" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="266" y="165" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="286" y="165" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="246" y="182" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="266" y="182" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="286" y="182" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="246" y="199" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="266" y="199" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="286" y="199" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="264" y="218" width="12" height="22" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 6: Boutique Studio & Rooftop Railing (x=300 to x=370) -->
+    <g fill="url(#dHouseWarm)">
+      <rect x="300" y="174" width="65" height="66"/>
+      <line x1="300" y1="168" x2="365" y2="168" stroke="#94a3b8" stroke-width="1.5"/>
+      <rect x="312" y="182" width="12" height="14" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="338" y="182" width="12" height="14" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="312" y="206" width="18" height="18" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="338" y="206" width="12" height="34" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 7: Pitched Roof Townhouse (x=360 to x=430) -->
+    <g fill="url(#dHouseBrick)">
+      <rect x="360" y="175" width="65" height="65"/>
+      <polygon points="360,175 392.5,152 425,175" fill="#384c63"/>
+      <rect x="405" y="140" width="8" height="24" fill="#1e293b"/>
+      <rect x="375" y="186" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="400" y="186" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="387" y="208" width="11" height="32" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 8: 3-Story Brownstone with Stoop (x=420 to x=495) -->
+    <g fill="url(#dHouseStone)">
+      <rect x="420" y="164" width="70" height="76"/>
+      <rect x="417" y="158" width="76" height="6" fill="#1e293b"/>
+      <rect x="432" y="170" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="451" y="170" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="470" y="170" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="432" y="188" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="451" y="188" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="470" y="188" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <polygon points="446,240 446,212 460,212 460,240" fill="#1e293b"/>
+    </g>
+
+    <!-- Block 9: Neighborhood Bakery / Cafe with Awning (x=485 to x=555) -->
+    <g fill="url(#dHouseWarm)">
+      <rect x="485" y="172" width="65" height="68"/>
+      <polygon points="485,172 517.5,153 550,172" fill="#2d3748"/>
+      <polygon points="490,198 494,206 542,206 546,198" fill="#f59e0b"/>
+      <rect x="494" y="206" width="24" height="34" fill="url(#dWinWarm)"/>
+      <rect x="526" y="206" width="14" height="34" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 10: Colonial Gable House with Chimney (x=545 to x=615) -->
+    <g fill="url(#dHouseBrick)">
+      <rect x="545" y="178" width="65" height="62"/>
+      <polygon points="545,178 577.5,154 610,178" fill="#384c63"/>
+      <rect x="590" y="142" width="8" height="24" fill="#1e293b"/>
+      <rect x="560" y="188" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="585" y="188" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="572" y="210" width="11" height="30" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 11: 4-Story Historic Brownstone Row (x=605 to x=685) -->
+    <g fill="url(#dHouseStone)">
+      <rect x="605" y="156" width="75" height="84"/>
+      <rect x="602" y="150" width="81" height="6" fill="#1e293b"/>
+      <rect x="618" y="163" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="638" y="163" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="658" y="163" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="618" y="180" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="638" y="180" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="658" y="180" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="618" y="197" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="638" y="197" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="658" y="197" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="636" y="216" width="12" height="24" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 12: Pitched Roof House with Chimney (x=675 to x=745) -->
+    <g fill="url(#dHouseBrick)">
+      <rect x="675" y="175" width="65" height="65"/>
+      <polygon points="675,175 707.5,152 740,175" fill="#384c63"/>
+      <rect x="720" y="140" width="8" height="24" fill="#1e293b"/>
+      <rect x="690" y="186" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="715" y="186" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="702" y="208" width="11" height="32" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 13: 3-Story Brownstone with Stoop (x=735 to x=810) -->
+    <g fill="url(#dHouseStone)">
+      <rect x="735" y="164" width="70" height="76"/>
+      <rect x="732" y="158" width="76" height="6" fill="#1e293b"/>
+      <rect x="747" y="170" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="766" y="170" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="785" y="170" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="747" y="188" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="766" y="188" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="785" y="188" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <polygon points="761,240 761,212 775,212 775,240" fill="#1e293b"/>
+    </g>
+
+    <!-- Block 14: Corner Shopfront with Blue Awning (x=800 to x=870) -->
+    <g fill="url(#dHouseWarm)">
+      <rect x="800" y="172" width="65" height="68"/>
+      <polygon points="800,172 832.5,153 865,172" fill="#2d3748"/>
+      <polygon points="805,198 809,206 857,206 861,198" fill="#38bdf8"/>
+      <rect x="809" y="206" width="24" height="34" fill="url(#dWinWarm)"/>
+      <rect x="841" y="206" width="14" height="34" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 15: Dutch Gable House with Chimney (x=860 to x=930) -->
+    <g fill="url(#dHouseBrick)">
+      <rect x="860" y="178" width="65" height="62"/>
+      <polygon points="860,178 892.5,154 925,178" fill="#384c63"/>
+      <rect x="905" y="142" width="8" height="24" fill="#1e293b"/>
+      <rect x="875" y="188" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="900" y="188" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="887" y="210" width="11" height="30" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 16: 4-Story Classic Brownstone (x=920 to x=1000) -->
+    <g fill="url(#dHouseStone)">
+      <rect x="920" y="156" width="75" height="84"/>
+      <rect x="917" y="150" width="81" height="6" fill="#1e293b"/>
+      <rect x="933" y="163" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="953" y="163" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="973" y="163" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="933" y="180" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="953" y="180" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="973" y="180" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="933" y="197" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="953" y="197" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="973" y="197" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="951" y="216" width="12" height="24" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 17: Victorian Gabled House with Chimney (x=990 to x=1060) -->
+    <g fill="url(#dHouseBrick)">
+      <rect x="990" y="175" width="65" height="65"/>
+      <polygon points="990,175 1022.5,152 1055,175" fill="#384c63"/>
+      <rect x="1035" y="140" width="8" height="24" fill="#1e293b"/>
+      <rect x="1005" y="186" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1030" y="186" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1017" y="208" width="11" height="32" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 18: 3-Story Brownstone with Stoop (x=1050 to x=1125) -->
+    <g fill="url(#dHouseStone)">
+      <rect x="1050" y="164" width="70" height="76"/>
+      <rect x="1047" y="158" width="76" height="6" fill="#1e293b"/>
+      <rect x="1062" y="170" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1081" y="170" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1100" y="170" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1062" y="188" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1081" y="188" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1100" y="188" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <polygon points="1076,240 1076,212 1090,212 1090,240" fill="#1e293b"/>
+    </g>
+
+    <!-- Block 19: Cafe with Yellow Awning (x=1115 to x=1185) -->
+    <g fill="url(#dHouseWarm)">
+      <rect x="1115" y="172" width="65" height="68"/>
+      <polygon points="1115,172 1147.5,153 1180,172" fill="#2d3748"/>
+      <polygon points="1120,198 1124,206 1172,206 1176,198" fill="#f59e0b"/>
+      <rect x="1124" y="206" width="24" height="34" fill="url(#dWinWarm)"/>
+      <rect x="1156" y="206" width="14" height="34" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 20: Dutch Gable House with Chimney (x=1175 to x=1245) -->
+    <g fill="url(#dHouseBrick)">
+      <rect x="1175" y="178" width="65" height="62"/>
+      <polygon points="1175,178 1207.5,154 1240,178" fill="#384c63"/>
+      <rect x="1220" y="142" width="8" height="24" fill="#1e293b"/>
+      <rect x="1190" y="188" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1215" y="188" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1202" y="210" width="11" height="30" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 21: 4-Story Historic Brownstone (x=1235 to x=1315) -->
+    <g fill="url(#dHouseStone)">
+      <rect x="1235" y="156" width="75" height="84"/>
+      <rect x="1232" y="150" width="81" height="6" fill="#1e293b"/>
+      <rect x="1248" y="163" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1268" y="163" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1288" y="163" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1248" y="180" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1268" y="180" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1288" y="180" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1248" y="197" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1268" y="197" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1288" y="197" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1266" y="216" width="12" height="24" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 22: Pitched Roof House with Chimney (x=1305 to x=1375) -->
+    <g fill="url(#dHouseBrick)">
+      <rect x="1305" y="175" width="65" height="65"/>
+      <polygon points="1305,175 1337.5,152 1370,175" fill="#384c63"/>
+      <rect x="1350" y="140" width="8" height="24" fill="#1e293b"/>
+      <rect x="1320" y="186" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1345" y="186" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1332" y="208" width="11" height="32" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 23: 3-Story Brownstone with Stoop (x=1365 to x=1440) -->
+    <g fill="url(#dHouseStone)">
+      <rect x="1365" y="164" width="70" height="76"/>
+      <rect x="1362" y="158" width="76" height="6" fill="#1e293b"/>
+      <rect x="1377" y="170" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1396" y="170" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1415" y="170" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1377" y="188" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1396" y="188" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1415" y="188" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <polygon points="1391,240 1391,212 1405,212 1405,240" fill="#1e293b"/>
+    </g>
+
+    <!-- Block 24: Corner Storefront with Cyan Awning (x=1430 to x=1500) -->
+    <g fill="url(#dHouseWarm)">
+      <rect x="1430" y="172" width="65" height="68"/>
+      <polygon points="1430,172 1462.5,153 1495,172" fill="#2d3748"/>
+      <polygon points="1435,198 1439,206 1487,206 1491,198" fill="#38bdf8"/>
+      <rect x="1439" y="206" width="24" height="34" fill="url(#dWinWarm)"/>
+      <rect x="1471" y="206" width="14" height="34" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 25: Dutch Gable House with Chimney (x=1490 to x=1560) -->
+    <g fill="url(#dHouseBrick)">
+      <rect x="1490" y="178" width="65" height="62"/>
+      <polygon points="1490,178 1522.5,154 1555,178" fill="#384c63"/>
+      <rect x="1535" y="142" width="8" height="24" fill="#1e293b"/>
+      <rect x="1505" y="188" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1530" y="188" width="10" height="12" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1517" y="210" width="11" height="30" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 26: 4-Story Historic Brownstone (x=1550 to x=1630) -->
+    <g fill="url(#dHouseStone)">
+      <rect x="1550" y="156" width="75" height="84"/>
+      <rect x="1547" y="150" width="81" height="6" fill="#1e293b"/>
+      <rect x="1563" y="163" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1583" y="163" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1603" y="163" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1563" y="180" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1583" y="180" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1603" y="180" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1563" y="197" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1583" y="197" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1603" y="197" width="8" height="10" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1581" y="216" width="12" height="24" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 27: Historic Rowhouse & Rooftop Water Tank (x=1620 to x=1710) -->
+    <g fill="url(#dHouseBrick)">
+      <rect x="1620" y="168" width="85" height="72"/>
+      <rect x="1617" y="162" width="91" height="6" fill="#2d5a50"/>
+      <!-- Water Tank on Roof -->
+      <line x1="1650" y1="162" x2="1653" y2="136" stroke="#475569" stroke-width="1.8"/>
+      <line x1="1670" y1="162" x2="1667" y2="136" stroke="#475569" stroke-width="1.8"/>
+      <rect x="1648" y="116" width="22" height="20" rx="1.5" fill="#4a5568"/>
+      <polygon points="1645,116 1659,102 1673,116" fill="#334155"/>
+      <!-- Windows -->
+      <rect x="1635" y="174" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1655" y="174" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1675" y="174" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1635" y="192" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1655" y="192" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1675" y="192" width="8" height="11" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1653" y="214" width="12" height="26" fill="#0f172a"/>
+    </g>
+
+    <!-- Block 28: Waterfront Pier Pavilion & Harbor Townhouse (x=1700 to x=1800) -->
+    <g fill="url(#dHouseWarm)">
+      <rect x="1700" y="170" width="100" height="70"/>
+      <polygon points="1700,170 1745,148 1790,170" fill="#2d3748"/>
+      <rect x="1715" y="182" width="12" height="14" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1740" y="182" width="12" height="14" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1765" y="182" width="12" height="14" rx="1" fill="url(#dWinWarm)"/>
+      <rect x="1715" y="206" width="22" height="34" fill="url(#dWinWarm)"/>
+      <rect x="1748" y="206" width="14" height="34" fill="#0f172a"/>
+      <rect x="1770" y="206" width="18" height="34" fill="url(#dWinWarm)"/>
+    </g>
+
   </g>
 
   <!-- Ground Baseline -->

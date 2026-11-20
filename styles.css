@@ -169,25 +169,7 @@ body {
   100% { opacity: 0.95; }
 }
 
-/* ==========================================================================
-   PAGE 2 SATELLITES (135vh - 270vh)
-   ========================================================================== */
-.sat-stream-skit-1 {
-  top: 11%;
-  animation: moveSatSmooth_1 52s linear infinite;
-}
 
-.sat-stream-skit-2 {
-  top: 24%;
-  animation: moveSatSmooth_2 56s linear infinite;
-  animation-delay: -18.6s;
-}
-
-.sat-stream-skit-3 {
-  top: 82%;
-  animation: moveSatSmooth_3 60s linear infinite;
-  animation-delay: -37.3s;
-}
 
 /* ==========================================================================
    2. CLOUDS & AIRPLANES (SILKY SMOOTH GPU CRUISE)

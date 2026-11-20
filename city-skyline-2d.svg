@@ -60,514 +60,356 @@
     </linearGradient>
   </defs>
 
-  <!-- =========================================================================
-       LAYER 1: Distant Background Silhouette (Diverse Heights & Silhouettes)
-       ========================================================================= -->
+  <!-- LAYER 1: Distant Background Silhouette (Continuous Horizon, Zero Gaps) -->
   <g fill="url(#dSkyBg)">
-    <!-- Sloped roof -->
-    <polygon points="10,240 10,130 55,100 55,240"/>
-    <!-- Dome crown -->
-    <path d="M 68 240 L 68 115 Q 98 85 128 115 L 128 240 Z"/>
-    <!-- Stepped spire -->
-    <rect x="145" y="80" width="55" height="160"/>
-    <polygon points="171,80 172.5,45 174,80"/>
-    <!-- Angular cut -->
-    <polygon points="215,240 215,95 275,60 275,240"/>
-    <!-- Block tower -->
-    <rect x="290" y="110" width="60" height="130"/>
-    <rect x="305" y="90" width="30" height="20"/>
-    <!-- Arched top -->
-    <path d="M 365 240 L 365 100 Q 395 70 425 100 L 425 240 Z"/>
-    <!-- Slanted wedge -->
-    <polygon points="440,240 440,75 510,115 510,240"/>
-    <!-- Needle mast -->
-    <rect x="525" y="85" width="65" height="155"/>
-    <polygon points="556,85 557.5,35 559,85"/>
-    <!-- Pagoda stack -->
-    <rect x="605" y="65" width="55" height="175"/>
-    <polygon points="631,65 632.5,30 634,65"/>
-    <!-- Tall backdrop block -->
-    <rect x="680" y="50" width="75" height="190"/>
-    <rect x="705" y="30" width="25" height="20"/>
-    <!-- Curving silhouette -->
-    <path d="M 770 240 L 770 105 Q 810 80 850 105 L 850 240 Z"/>
-    <!-- Diagonal slant -->
-    <polygon points="865,240 865,65 935,100 935,240"/>
-    <!-- Central mast -->
-    <rect x="950" y="75" width="60" height="165"/>
-    <polygon points="978.5,75 980,40 981.5,75"/>
-    <!-- Stepped setbacks -->
-    <rect x="1025" y="90" width="70" height="150"/>
-    <rect x="1045" y="70" width="30" height="20"/>
-    <!-- Sharp spire -->
-    <polygon points="1115,240 1140,45 1165,240"/>
-    <!-- Curved crown -->
-    <path d="M 1180 240 L 1180 95 Q 1215 75 1250 95 L 1250 240 Z"/>
-    <!-- Sloped wedge -->
-    <polygon points="1265,240 1265,65 1335,110 1335,240"/>
-    <!-- High rise block -->
-    <rect x="1350" y="80" width="65" height="160"/>
-    <polygon points="1381,80 1382.5,45 1384,80"/>
-    <!-- Twin towers back -->
-    <rect x="1430" y="70" width="45" height="170"/>
-    <rect x="1485" y="70" width="45" height="170"/>
-    <line x1="1452.5" y1="70" x2="1452.5" y2="40" stroke="#cbd5e1" stroke-width="2"/>
-    <line x1="1507.5" y1="70" x2="1507.5" y2="40" stroke="#cbd5e1" stroke-width="2"/>
-    <!-- East sloped tower -->
-    <polygon points="1545,240 1545,85 1610,60 1610,240"/>
-    <!-- Industrial chimney & block -->
-    <rect x="1625" y="110" width="70" height="130"/>
-    <rect x="1670" y="80" width="10" height="30"/>
-    <!-- Far east corner -->
-    <rect x="1710" y="90" width="85" height="150"/>
+    <!-- Continuous solid connecting baseline -->
+    <rect x="0" y="140" width="1800" height="100"/>
+    <polygon points="0,240 0,130 65,100 65,240"/>
+    <path d="M 68 240 L 68 115 Q 105 85 142 115 L 142 240 Z"/>
+    <rect x="145" y="80" width="65" height="160"/>
+    <polygon points="176,80 177.5,45 179,80"/>
+    <polygon points="215,240 215,95 285,60 285,240"/>
+    <rect x="290" y="110" width="70" height="130"/>
+    <rect x="305" y="90" width="40" height="20"/>
+    <path d="M 365 240 L 365 100 Q 405 70 445 100 L 445 240 Z"/>
+    <polygon points="440,240 440,75 520,115 520,240"/>
+    <rect x="525" y="85" width="75" height="155"/>
+    <polygon points="561,85 562.5,35 564,85"/>
+    <rect x="605" y="65" width="70" height="175"/>
+    <polygon points="638.5,65 640,30 641.5,65"/>
+    <rect x="680" y="50" width="90" height="190"/>
+    <rect x="710" y="30" width="30" height="20"/>
+    <path d="M 770 240 L 770 105 Q 820 80 870 105 L 870 240 Z"/>
+    <polygon points="865,240 865,65 945,100 945,240"/>
+    <rect x="950" y="75" width="75" height="165"/>
+    <polygon points="986,75 987.5,40 989,75"/>
+    <rect x="1025" y="90" width="85" height="150"/>
+    <rect x="1050" y="70" width="35" height="20"/>
+    <polygon points="1115,240 1145,45 1175,240"/>
+    <path d="M 1180 240 L 1180 95 Q 1225 75 1270 95 L 1270 240 Z"/>
+    <polygon points="1265,240 1265,65 1345,110 1345,240"/>
+    <rect x="1350" y="80" width="80" height="160"/>
+    <polygon points="1388.5,80 1390,45 1391.5,80"/>
+    <rect x="1430" y="70" width="55" height="170"/>
+    <rect x="1490" y="70" width="55" height="170"/>
+    <polygon points="1545,240 1545,85 1620,60 1620,240"/>
+    <rect x="1625" y="110" width="85" height="130"/>
+    <rect x="1670" y="80" width="15" height="30"/>
+    <rect x="1710" y="90" width="90" height="150"/>
   </g>
 
-  <!-- =========================================================================
-       LAYER 2: Midground Architectural Layer (Rich Organic Variety)
-       ========================================================================= -->
+  <!-- LAYER 2: Midground Architectural Layer (Continuous Dense Blocks, Zero Gaps) -->
   <g fill="url(#dSkyMid)">
-    <!-- Low angled block -->
-    <polygon points="0,240 0,140 45,115 45,240"/>
-    <!-- Classical stepped block -->
-    <rect x="55" y="130" width="50" height="110"/>
-    <rect x="65" y="105" width="30" height="25"/>
-    <polygon points="79,105 80,85 81,105"/>
-    <!-- Curved shoulder tower -->
-    <path d="M 120 240 L 120 120 Q 145 100 170 120 L 170 240 Z"/>
-    <!-- Cantilever glass block -->
-    <rect x="185" y="145" width="55" height="95"/>
-    <rect x="175" y="115" width="65" height="30"/>
-    <rect x="190" y="88" width="45" height="27"/>
-    <!-- Diagonal modern slope -->
-    <polygon points="255,240 255,95 315,135 315,240"/>
-    <!-- Stepped Deco setback -->
-    <rect x="330" y="125" width="60" height="115"/>
-    <rect x="340" y="95" width="40" height="30"/>
-    <polygon points="359,95 360,70 361,95"/>
-    <!-- Round rotunda tower -->
-    <rect x="405" y="135" width="55" height="105"/>
-    <path d="M 405 135 Q 432.5 110 460 135 Z"/>
-    <!-- High modern wedge -->
-    <polygon points="475,240 475,85 535,60 535,240"/>
-    <!-- Stepped mast tower -->
-    <rect x="550" y="115" width="55" height="125"/>
-    <rect x="560" y="85" width="35" height="30"/>
-    <line x1="577.5" y1="85" x2="577.5" y2="55" stroke="#64748b" stroke-width="2"/>
-    <!-- Symmetrical peaked tower -->
-    <rect x="620" y="120" width="60" height="120"/>
-    <polygon points="620,120 650,90 680,120"/>
-    <!-- Slanted glass facade -->
-    <polygon points="695,240 705,75 755,75 765,240"/>
-    <!-- Curved barrel roof -->
-    <rect x="780" y="135" width="65" height="105"/>
-    <path d="M 780 135 Q 812.5 110 845 135 Z"/>
-    <!-- Multi-setback Deco -->
-    <rect x="860" y="130" width="60" height="110"/>
-    <rect x="870" y="100" width="40" height="30"/>
-    <rect x="880" y="75" width="20" height="25"/>
-    <!-- Angular cantilever -->
-    <polygon points="935,240 935,80 995,115 995,240"/>
-    <!-- Classical courthouse & dome -->
-    <rect x="1010" y="145" width="70" height="95"/>
-    <rect x="1025" y="125" width="40" height="20"/>
-    <path d="M 1030 125 Q 1045 105 1060 125 Z"/>
-    <!-- Modern vertical slab -->
-    <rect x="1095" y="90" width="50" height="150"/>
-    <polygon points="1095,90 1120,65 1145,90"/>
-    <!-- Slanted wedge midground -->
-    <polygon points="1160,240 1160,95 1220,135 1220,240"/>
-    <!-- Stepped tower with mast -->
-    <rect x="1235" y="125" width="60" height="115"/>
-    <rect x="1245" y="95" width="40" height="30"/>
-    <line x1="1265" y1="95" x2="1265" y2="65" stroke="#64748b" stroke-width="2"/>
-    <!-- Curved roof warehouse -->
-    <rect x="1310" y="140" width="65" height="100"/>
-    <path d="M 1310 140 Q 1342.5 120 1375 140 Z"/>
-    <!-- High modern tower -->
-    <polygon points="1390,240 1390,75 1455,105 1455,240"/>
-    <!-- Stepped pinnacles -->
-    <rect x="1470" y="130" width="55" height="110"/>
-    <rect x="1480" y="100" width="35" height="30"/>
-    <polygon points="1496.5,100 1497.5,75 1498.5,100"/>
-    <!-- Historic brick tenements -->
-    <rect x="1540" y="145" width="60" height="95"/>
-    <rect x="1550" y="135" width="40" height="10"/>
-    <!-- East corner midground -->
-    <rect x="1615" y="120" width="65" height="120"/>
-    <polygon points="1615,120 1647.5,95 1680,120"/>
-    <rect x="1695" y="135" width="55" height="105"/>
+    <!-- Continuous solid connecting baseline across entire panorama -->
+    <rect x="0" y="150" width="1800" height="90"/>
+    <polygon points="0,240 0,140 55,115 55,240"/>
+    <rect x="55" y="130" width="65" height="110"/>
+    <rect x="68" y="105" width="38" height="25"/>
+    <polygon points="86,105 87,85 88,105"/>
+    <path d="M 120 240 L 120 120 Q 152 100 185 120 L 185 240 Z"/>
+    <rect x="185" y="145" width="70" height="95"/>
+    <rect x="175" y="115" width="80" height="30"/>
+    <rect x="190" y="88" width="55" height="27"/>
+    <polygon points="255,240 255,95 325,135 325,240"/>
+    <rect x="330" y="125" width="75" height="115"/>
+    <rect x="345" y="95" width="48" height="30"/>
+    <polygon points="368,95 369,70 370,95"/>
+    <rect x="405" y="135" width="70" height="105"/>
+    <path d="M 405 135 Q 440 110 475 135 Z"/>
+    <polygon points="475,240 475,85 545,60 545,240"/>
+    <rect x="550" y="115" width="70" height="125"/>
+    <rect x="565" y="85" width="42" height="30"/>
+    <line x1="586" y1="85" x2="586" y2="55" stroke="#64748b" stroke-width="2"/>
+    <rect x="620" y="120" width="75" height="120"/>
+    <polygon points="620,120 657.5,90 695,120"/>
+    <polygon points="695,240 705,75 765,75 775,240"/>
+    <rect x="780" y="135" width="80" height="105"/>
+    <path d="M 780 135 Q 820 110 860 135 Z"/>
+    <rect x="860" y="130" width="75" height="110"/>
+    <rect x="872" y="100" width="50" height="30"/>
+    <rect x="885" y="75" width="24" height="25"/>
+    <polygon points="935,240 935,80 1005,115 1005,240"/>
+    <rect x="1010" y="145" width="85" height="95"/>
+    <rect x="1030" y="125" width="48" height="20"/>
+    <path d="M 1035 125 Q 1054 105 1073 125 Z"/>
+    <rect x="1095" y="90" width="65" height="150"/>
+    <polygon points="1095,90 1127.5,65 1160,90"/>
+    <polygon points="1160,240 1160,95 1235,135 1235,240"/>
+    <rect x="1235" y="125" width="75" height="115"/>
+    <rect x="1250" y="95" width="48" height="30"/>
+    <line x1="1274" y1="95" x2="1274" y2="65" stroke="#64748b" stroke-width="2"/>
+    <rect x="1310" y="140" width="80" height="100"/>
+    <path d="M 1310 140 Q 1350 120 1390 140 Z"/>
+    <polygon points="1390,240 1390,75 1465,105 1465,240"/>
+    <rect x="1470" y="130" width="70" height="110"/>
+    <rect x="1485" y="100" width="42" height="30"/>
+    <polygon points="1505,100 1506,75 1507,100"/>
+    <rect x="1540" y="145" width="75" height="95"/>
+    <rect x="1555" y="135" width="48" height="10"/>
+    <rect x="1615" y="120" width="80" height="120"/>
+    <polygon points="1615,120 1655,95 1695,120"/>
+    <rect x="1695" y="135" width="70" height="105"/>
     <rect x="1760" y="145" width="40" height="95"/>
   </g>
 
-  <!-- =========================================================================
-       LAYER 3: Foreground 17 Completely Unique Architectural Masterpieces
-       EVERY BUILDING HAS A UNIQUE ROOFLINE, PROFILE & STRUCTURE!
-       ========================================================================= -->
+  <!-- LAYER 3: Foreground 17 Completely Unique Architectural Landmarks (Overlapping & Gapless) -->
   <g stroke="rgba(255,255,255,0.22)" stroke-width="1.2" stroke-linejoin="round">
 
-    <!-- -
-         1. TRANSAMERICA PYRAMID (x=20 to x=85)
-         Distinct: Pure geometric triangular pyramid with lateral elevator wings
-         - -->
+    <!-- 1. TRANSAMERICA PYRAMID (x=0 to x=115, Overlaps #2) -->
     <g fill="url(#dToneSlate)">
-      <polygon points="20,240 52,35 84,240"/>
-      <!-- Lateral Wings (Shafts) -->
-      <rect x="36" y="105" width="5" height="60" fill="#3b4859"/>
-      <rect x="63" y="105" width="5" height="60" fill="#3b4859"/>
-      <!-- Spire Mast & Red Beacon -->
-      <polygon points="51.2,35 52,10 52.8,35" fill="url(#dSpireSteel)"/>
-      <circle cx="52" cy="10" r="1.8" fill="#ef4444" stroke="none"/>
+      <polygon points="0,240 55,35 115,240"/>
+      <rect x="36" y="105" width="6" height="60" fill="#3b4859"/>
+      <rect x="68" y="105" width="6" height="60" fill="#3b4859"/>
+      <polygon points="54.2,35 55,10 55.8,35" fill="url(#dSpireSteel)"/>
+      <circle cx="55" cy="10" r="1.8" fill="#ef4444" stroke="none"/>
     </g>
 
-    <!-- -
-         2. FLATIRON BUILDING & CLOCKTOWER (x=95 to x=180)
-         Distinct: Beaux-Arts triangular prow, ornate frieze, and vintage clock
-         - -->
+    <!-- 2. FLATIRON BUILDING & CLOCKTOWER (x=105 to x=205, Overlaps #1 and #3) -->
     <g fill="url(#dToneSteel)">
-      <!-- Main Triangular Prow Body -->
-      <polygon points="95,240 105,75 170,75 180,240"/>
-      <!-- Classical Decorative Cornice Frieze -->
-      <rect x="102" y="70" width="71" height="6" fill="#384c63"/>
-      <!-- Clocktower Crest -->
-      <rect x="122" y="44" width="31" height="26" fill="#243447"/>
-      <polygon points="122,44 137.5,26 153,44" fill="#475569"/>
-      <!-- Vintage Clock Face -->
-      <circle cx="137.5" cy="57" r="8" fill="#f8fafc" stroke="#1e293b" stroke-width="1.2"/>
-      <line x1="137.5" y1="57" x2="137.5" y2="52" stroke="#0f172a" stroke-width="1.2"/>
-      <line x1="137.5" y1="57" x2="141" y2="57" stroke="#0f172a" stroke-width="1.2"/>
+      <polygon points="105,240 115,75 195,75 205,240"/>
+      <rect x="112" y="70" width="86" height="6" fill="#384c63"/>
+      <rect x="138" y="44" width="38" height="26" fill="#243447"/>
+      <polygon points="138,44 157,26 176,44" fill="#475569"/>
+      <circle cx="157" cy="57" r="9" fill="#f8fafc" stroke="#1e293b" stroke-width="1.2"/>
+      <line x1="157" y1="57" x2="157" y2="51" stroke="#0f172a" stroke-width="1.2"/>
+      <line x1="157" y1="57" x2="162" y2="57" stroke="#0f172a" stroke-width="1.2"/>
     </g>
 
-    <!-- -
-         3. ONE WORLD TRADE CENTER / CHAMFERED OBELISK (x=190 to x=275)
-         Distinct: Tapered octagonal chamfered glass prism & communication needle
-         - -->
+    <!-- 3. ONE WORLD TRADE CENTER / CHAMFERED OBELISK (x=195 to x=300, Overlaps #2 and #4) -->
     <g fill="url(#dToneGlass)">
-      <polygon points="190,240 203,50 262,50 275,240"/>
-      <!-- Chamfer Facet Lines -->
-      <line x1="232.5" y1="50" x2="190" y2="240" stroke="rgba(255,255,255,0.3)"/>
-      <line x1="232.5" y1="50" x2="275" y2="240" stroke="rgba(255,255,255,0.18)"/>
-      <!-- Crown Collar & Spire Needle -->
-      <rect x="224" y="40" width="17" height="10" fill="#334155"/>
-      <polygon points="231.7,40 232.5,6 233.3,40" fill="url(#dSpireSteel)"/>
-      <circle cx="232.5" cy="6" r="1.8" fill="#ef4444" stroke="none"/>
+      <polygon points="195,240 210,50 285,50 300,240"/>
+      <line x1="247.5" y1="50" x2="195" y2="240" stroke="rgba(255,255,255,0.3)"/>
+      <line x1="247.5" y1="50" x2="300" y2="240" stroke="rgba(255,255,255,0.18)"/>
+      <rect x="238" y="40" width="19" height="10" fill="#334155"/>
+      <polygon points="246.7,40 247.5,6 248.3,40" fill="url(#dSpireSteel)"/>
+      <circle cx="247.5" cy="6" r="1.8" fill="#ef4444" stroke="none"/>
     </g>
 
-    <!-- -
-         4. SHANGHAI SWFC / "BOTTLE OPENER" TOWER (x=285 to x=365)
-         Distinct: Sleek tapered glass body with bold trapezoidal aperture cutout
-         - -->
+    <!-- 4. SHANGHAI SWFC / BOTTLE OPENER (x=290 to x=395, Overlaps #3 and #5) -->
     <g fill="url(#dToneGlass)">
-      <polygon points="285,240 295,30 355,30 365,240"/>
-      <!-- Trapezoidal Aperture Window Cutout -->
-      <polygon points="307,44 343,44 337,74 313,74" fill="#03091e" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
-      <line x1="307" y1="44" x2="343" y2="44" stroke="url(#dSpireSteel)" stroke-width="2"/>
+      <polygon points="290,240 305,30 380,30 395,240"/>
+      <polygon points="320,44 365,44 358,74 327,74" fill="#03091e" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
+      <line x1="320" y1="44" x2="365" y2="44" stroke="url(#dSpireSteel)" stroke-width="2"/>
     </g>
 
-    <!-- -
-         5. THE CHRYSLER BUILDING / ART DECO SUNBURST (x=375 to x=465)
-         Distinct: Terraced sunburst arches with corner gargoyle eagles & needle
-         - -->
+    <!-- 5. THE CHRYSLER BUILDING / ART DECO SUNBURST (x=385 to x=495, Overlaps #4 and #6) -->
     <g fill="url(#dToneNavy)">
-      <rect x="375" y="115" width="90" height="125"/>
-      <rect x="385" y="78" width="70" height="37"/>
-      <!-- Sunburst Terraces -->
-      <path d="M 390 78 Q 420 58 450 78 Z" fill="#334155"/>
-      <path d="M 395 65 Q 420 45 445 65 Z" fill="#475569"/>
-      <path d="M 401 52 Q 420 32 439 52 Z" fill="#64748b"/>
-      <path d="M 408 40 Q 420 22 432 40 Z" fill="#94a3b8"/>
-      <!-- Stainless Spire Needle -->
-      <polygon points="419.2,22 420,2 420.8,22" fill="url(#dSpireSteel)"/>
-      <!-- Eagle Radiator Caps -->
-      <polygon points="385,78 378,74 385,82" fill="url(#dSpireSteel)"/>
-      <polygon points="455,78 462,74 455,82" fill="url(#dSpireSteel)"/>
+      <rect x="385" y="115" width="110" height="125"/>
+      <rect x="398" y="78" width="84" height="37"/>
+      <path d="M 405 78 Q 440 58 475 78 Z" fill="#334155"/>
+      <path d="M 412 65 Q 440 45 468 65 Z" fill="#475569"/>
+      <path d="M 419 52 Q 440 32 461 52 Z" fill="#64748b"/>
+      <path d="M 427 40 Q 440 22 453 40 Z" fill="#94a3b8"/>
+      <polygon points="439.2,22 440,2 440.8,22" fill="url(#dSpireSteel)"/>
+      <polygon points="398,78 390,74 398,82" fill="url(#dSpireSteel)"/>
+      <polygon points="482,78 490,74 482,82" fill="url(#dSpireSteel)"/>
     </g>
 
-    <!-- -
-         6. THE GHERKIN / CURVED FOSTER GLASS DOME (x=475 to x=555)
-         Distinct: Aerodynamic parabolic egg shape with diamond diagrid lattice
-         - -->
+    <!-- 6. THE GHERKIN / FOSTER CURVED GLASS DOME (x=485 to x=585, Overlaps #5 and #7) -->
     <g fill="url(#dToneSteel)">
-      <path d="M 475 240 C 475 140, 488 60, 515 35 C 542 60, 555 140, 555 240 Z"/>
-      <!-- Dark glass crown tip -->
-      <path d="M 505 55 Q 515 35 525 55 Z" fill="#1e293b"/>
-      <!-- Diagrid Lattice Lines -->
-      <path d="M 478 200 Q 515 170 552 140" stroke="rgba(255,255,255,0.3)" fill="none"/>
-      <path d="M 552 200 Q 515 170 478 140" stroke="rgba(255,255,255,0.3)" fill="none"/>
-      <path d="M 482 140 Q 515 110 548 80" stroke="rgba(255,255,255,0.3)" fill="none"/>
-      <path d="M 548 140 Q 515 110 482 80" stroke="rgba(255,255,255,0.3)" fill="none"/>
+      <path d="M 485 240 C 485 140, 505 60, 535 35 C 565 60, 585 140, 585 240 Z"/>
+      <path d="M 523 55 Q 535 35 547 55 Z" fill="#1e293b"/>
+      <path d="M 490 200 Q 535 170 580 140" stroke="rgba(255,255,255,0.3)" fill="none"/>
+      <path d="M 580 200 Q 535 170 490 140" stroke="rgba(255,255,255,0.3)" fill="none"/>
+      <path d="M 496 140 Q 535 110 574 80" stroke="rgba(255,255,255,0.3)" fill="none"/>
+      <path d="M 574 140 Q 535 110 496 80" stroke="rgba(255,255,255,0.3)" fill="none"/>
     </g>
 
-    <!-- -
-         7. TAIPEI 101 / FLARING PAGODA MODULES (x=565 to x=650)
-         Distinct: Asian architectural pagoda tiers with circular coin reliefs
-         - -->
+    <!-- 7. TAIPEI 101 / FLARING PAGODA MODULES (x=575 to x=680, Overlaps #6 and #8) -->
     <g fill="url(#dToneNavy)">
-      <!-- Base Podium -->
-      <rect x="580" y="195" width="55" height="45"/>
-      <!-- Pagoda Tier 1 -->
-      <polygon points="575,195 572,165 643,165 640,195"/>
-      <!-- Pagoda Tier 2 -->
-      <polygon points="576,165 573,135 642,135 639,165"/>
-      <!-- Pagoda Tier 3 -->
-      <polygon points="577,135 574,105 641,105 638,135"/>
-      <!-- Pagoda Tier 4 -->
-      <polygon points="578,105 575,75 640,75 637,105"/>
-      <!-- Pagoda Tier 5 -->
-      <polygon points="579,75 576,45 639,45 636,75"/>
-      <!-- Crown Box & Spire -->
-      <rect x="596" y="28" width="23" height="17" fill="#475569"/>
-      <polygon points="606.8,28 607.5,8 608.2,28" fill="url(#dSpireSteel)"/>
-      <!-- Ornamental Coin Relief -->
-      <circle cx="607.5" cy="120" r="5" fill="#fef08a" stroke="#d97706" stroke-width="1"/>
-      <rect x="605.5" y="118" width="4" height="4" fill="#1e293b"/>
+      <rect x="595" y="195" width="65" height="45"/>
+      <polygon points="585,195 582,165 673,165 670,195"/>
+      <polygon points="587,165 584,135 671,135 668,165"/>
+      <polygon points="589,135 586,105 669,105 666,135"/>
+      <polygon points="591,105 588,75 667,75 664,105"/>
+      <polygon points="593,75 590,45 665,45 662,75"/>
+      <rect x="614" y="28" width="27" height="17" fill="#475569"/>
+      <polygon points="626.8,28 627.5,8 628.2,28" fill="url(#dSpireSteel)"/>
+      <circle cx="627.5" cy="120" r="6" fill="#fef08a" stroke="#d97706" stroke-width="1"/>
+      <rect x="625" y="117.5" width="5" height="5" fill="#1e293b"/>
     </g>
 
-    <!-- -
-         8. THE EMPIRE STATE BUILDING / HERO CENTERPIECE (x=660 to x=780)
-         Distinct: Monumental stepped limestone setbacks, fluting & mooring mast
-         - -->
+    <!-- 8. THE EMPIRE STATE BUILDING / HERO CENTERPIECE (x=670 to x=810, Overlaps #7 and #9) -->
     <g fill="url(#dToneNavy)">
-      <rect x="660" y="125" width="120" height="115"/>
-      <rect x="672" y="90" width="96" height="35"/>
-      <rect x="686" y="52" width="68" height="38"/>
-      <rect x="698" y="28" width="44" height="24"/>
-      <rect x="708" y="14" width="24" height="14" fill="#475569"/>
-      <!-- Mooring Mast & Aircraft Beacon -->
-      <polygon points="719.1,14 720,1 720.9,14" fill="url(#dSpireSteel)"/>
-      <circle cx="720" cy="1.5" r="2" fill="#ef4444" stroke="none"/>
+      <rect x="670" y="125" width="140" height="115"/>
+      <rect x="686" y="90" width="108" height="35"/>
+      <rect x="702" y="52" width="76" height="38"/>
+      <rect x="716" y="28" width="48" height="24"/>
+      <rect x="727" y="14" width="26" height="14" fill="#475569"/>
+      <polygon points="739.1,14 740,1 740.9,14" fill="url(#dSpireSteel)"/>
+      <circle cx="740" cy="1.5" r="2" fill="#ef4444" stroke="none"/>
     </g>
 
-    <!-- -
-         9. MODERN "JENGA" TOWER / CANTILEVER CUBES (x=790 to x=865)
-         Distinct: Staggered sculptural offset glass blocks protruding outwards
-         - -->
+    <!-- 9. MODERN JENGA TOWER / CANTILEVER CUBES (x=800 to x=895, Overlaps #8 and #10) -->
     <g fill="url(#dToneSteel)">
-      <rect x="800" y="185" width="55" height="55"/>
-      <rect x="792" y="150" width="62" height="35"/>
-      <rect x="806" y="120" width="58" height="30"/>
-      <rect x="790" y="90" width="62" height="30"/>
-      <rect x="804" y="60" width="54" height="30"/>
-      <rect x="812" y="38" width="38" height="22" fill="#384c63"/>
-      <line x1="831" y1="38" x2="831" y2="18" stroke="#94a3b8" stroke-width="1.8"/>
+      <rect x="800" y="185" width="95" height="55"/>
+      <rect x="805" y="150" width="80" height="35"/>
+      <rect x="818" y="120" width="72" height="30"/>
+      <rect x="810" y="90" width="78" height="30"/>
+      <rect x="822" y="60" width="66" height="30"/>
+      <rect x="832" y="38" width="44" height="22" fill="#384c63"/>
+      <line x1="854" y1="38" x2="854" y2="18" stroke="#94a3b8" stroke-width="1.8"/>
     </g>
 
-    <!-- -
-         10. BANK OF CHINA TOWER / GEOMETRIC X-BRACED FACETS (x=875 to x=955)
-         Distinct: Triangular prism shafts with bold white diagonal mega-trusses
-         - -->
+    <!-- 10. BANK OF CHINA TOWER / GEOMETRIC X-BRACES (x=885 to x=985, Overlaps #9 and #11) -->
     <g fill="url(#dToneGlass)">
-      <polygon points="875,240 875,100 915,60 955,100 955,240"/>
-      <polygon points="895,60 915,24 935,60" fill="#2b4c73"/>
-      <polygon points="914.2,24 915,5 915.8,24" fill="url(#dSpireSteel)"/>
-      <!-- Mega X-Bracing Trusses -->
-      <line x1="875" y1="240" x2="955" y2="170" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
-      <line x1="955" y1="240" x2="875" y2="170" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
-      <line x1="875" y1="170" x2="955" y2="100" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
-      <line x1="955" y1="170" x2="875" y2="100" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
+      <polygon points="885,240 885,100 935,60 985,100 985,240"/>
+      <polygon points="908,60 935,24 962,60" fill="#2b4c73"/>
+      <polygon points="934.2,24 935,5 935.8,24" fill="url(#dSpireSteel)"/>
+      <line x1="885" y1="240" x2="985" y2="170" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
+      <line x1="985" y1="240" x2="885" y2="170" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
+      <line x1="885" y1="170" x2="985" y2="100" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
+      <line x1="985" y1="170" x2="885" y2="100" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
     </g>
 
-    <!-- -
-         11. THE "WALKIE TALKIE" / CURVED CONCAVE FLARE (x=965 to x=1050)
-         Distinct: Dramatic outward-curving facade crowned by curved sky-garden dome
-         - -->
+    <!-- 11. THE WALKIE TALKIE / CONCAVE FLARE (x=975 to x=1080, Overlaps #10 and #12) -->
     <g fill="url(#dToneSteel)">
-      <!-- Upward-Flaring Body -->
-      <path d="M 975 240 C 975 160, 965 90, 965 48 L 1050 48 C 1050 90, 1040 160, 1040 240 Z"/>
-      <!-- Curved Sky-Garden Crown -->
-      <path d="M 965 48 Q 1007.5 28 1050 48 Z" fill="#1e3a5f" stroke="#38bdf8" stroke-width="1.2"/>
-      <line x1="1007.5" y1="28" x2="1007.5" y2="48" stroke="rgba(255,255,255,0.3)"/>
+      <path d="M 985 240 C 985 160, 975 90, 975 48 L 1080 48 C 1080 90, 1070 160, 1070 240 Z"/>
+      <path d="M 975 48 Q 1027.5 28 1080 48 Z" fill="#1e3a5f" stroke="#38bdf8" stroke-width="1.2"/>
+      <line x1="1027.5" y1="28" x2="1027.5" y2="48" stroke="rgba(255,255,255,0.3)"/>
     </g>
 
-    <!-- -
-         12. NEO-GOTHIC TOWER WITH COPPER MANSARD ROOF (x=1060 to x=1145)
-         Distinct: Slender ornate tower with teal copper roof, dormers & pinnacles
-         - -->
+    <!-- 12. NEO-GOTHIC TOWER WITH COPPER MANSARD ROOF (x=1070 to x=1175, Overlaps #11 and #13) -->
     <g fill="url(#dToneCopper)">
-      <!-- Main Masonry Shaft -->
-      <rect x="1065" y="115" width="75" height="125" fill="url(#dToneNavy)"/>
-      <rect x="1075" y="80" width="55" height="35" fill="url(#dToneNavy)"/>
-      <!-- Teal Copper Mansard Hip Roof -->
-      <polygon points="1070,80 1083,38 1122,38 1135,80" fill="url(#dToneCopper)"/>
-      <!-- Roof Dormer Window -->
-      <polygon points="1095,58 1102.5,48 1110,58" fill="#3d786a"/>
-      <rect x="1097" y="58" width="11" height="10" fill="#fef08a" opacity="0.8"/>
-      <!-- Gothic Pinnacles & Finial -->
-      <polygon points="1069,80 1071,68 1073,80" fill="#94a3b8"/>
-      <polygon points="1132,80 1134,68 1136,80" fill="#94a3b8"/>
-      <polygon points="1101.8,38 1102.5,18 1103.2,38" fill="url(#dSpireSteel)"/>
+      <rect x="1070" y="115" width="105" height="125" fill="url(#dToneNavy)"/>
+      <rect x="1084" y="80" width="77" height="35" fill="url(#dToneNavy)"/>
+      <polygon points="1078,80 1095,38 1150,38 1167,80" fill="url(#dToneCopper)"/>
+      <polygon points="1115,58 1122.5,48 1130,58" fill="#3d786a"/>
+      <rect x="1117" y="58" width="11" height="10" fill="#fef08a" opacity="0.8"/>
+      <polygon points="1077,80 1079,68 1081,80" fill="#94a3b8"/>
+      <polygon points="1164,80 1166,68 1168,80" fill="#94a3b8"/>
+      <polygon points="1121.8,38 1122.5,18 1123.2,38" fill="url(#dSpireSteel)"/>
     </g>
 
-    <!-- -
-         13. MARINA CITY / CYLINDRICAL CORNCOB TOWER (x=1155 to x=1235)
-         Distinct: Cylindrical tower with scalloped semicircular balconies & rotunda
-         - -->
+    <!-- 13. MARINA CITY / CYLINDRICAL CORNCOB TOWER (x=1165 to x=1265, Overlaps #12 and #14) -->
     <g fill="url(#dToneSteel)">
-      <rect x="1165" y="45" width="60" height="195" rx="4"/>
-      <!-- Scalloped Balcony Tier Bands -->
-      <path d="M 1165 75 Q 1195 90 1225 75" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
-      <path d="M 1165 105 Q 1195 120 1225 105" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
-      <path d="M 1165 135 Q 1195 150 1225 135" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
-      <path d="M 1165 165 Q 1195 180 1225 165" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
-      <path d="M 1165 195 Q 1195 210 1225 195" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
-      <!-- Penthouse Rotunda -->
-      <rect x="1178" y="28" width="34" height="17" rx="3" fill="#384c63"/>
-      <line x1="1195" y1="28" x2="1195" y2="12" stroke="#94a3b8" stroke-width="1.8"/>
+      <rect x="1175" y="45" width="80" height="195" rx="4"/>
+      <path d="M 1175 75 Q 1215 90 1255 75" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
+      <path d="M 1175 105 Q 1215 120 1255 105" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
+      <path d="M 1175 135 Q 1215 150 1255 135" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
+      <path d="M 1175 165 Q 1215 180 1255 165" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
+      <path d="M 1175 195 Q 1215 210 1255 195" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" fill="none"/>
+      <rect x="1195" y="28" width="40" height="17" rx="3" fill="#384c63"/>
+      <line x1="1215" y1="28" x2="1215" y2="12" stroke="#94a3b8" stroke-width="1.8"/>
     </g>
 
-    <!-- -
-         14. CITICORP 45° SLANTED SOLAR WEDGE TOWER (x=1245 to x=1330)
-         Distinct: Dramatic 45-degree angled wedge roofline with vertical louvers
-         - -->
+    <!-- 14. CITICORP 45° SLANTED WEDGE TOWER (x=1255 to x=1360, Overlaps #13 and #15) -->
     <g fill="url(#dToneGlass)">
-      <!-- Main Wedge Body -->
-      <polygon points="1245,240 1245,35 1330,115 1330,240"/>
-      <!-- Angled Solar Skylight Line -->
-      <line x1="1245" y1="35" x2="1330" y2="115" stroke="url(#dSpireSteel)" stroke-width="2"/>
-      <!-- Vertical Sunshade Fins -->
-      <line x1="1265" y1="54" x2="1265" y2="240" stroke="rgba(255,255,255,0.2)"/>
-      <line x1="1285" y1="73" x2="1285" y2="240" stroke="rgba(255,255,255,0.2)"/>
-      <line x1="1305" y1="92" x2="1305" y2="240" stroke="rgba(255,255,255,0.2)"/>
+      <polygon points="1255,240 1255,35 1360,115 1360,240"/>
+      <line x1="1255" y1="35" x2="1360" y2="115" stroke="url(#dSpireSteel)" stroke-width="2"/>
+      <line x1="1280" y1="54" x2="1280" y2="240" stroke="rgba(255,255,255,0.2)"/>
+      <line x1="1305" y1="73" x2="1305" y2="240" stroke="rgba(255,255,255,0.2)"/>
+      <line x1="1330" y1="92" x2="1330" y2="240" stroke="rgba(255,255,255,0.2)"/>
     </g>
 
-    <!-- -
-         15. TWIN TOWERS & HIGH-ALTITUDE SKYBRIDGE (x=1340 to x=1455)
-         Distinct: Two slender needle spires joined at mid-height by a glass bridge
-         - -->
+    <!-- 15. TWIN TOWERS & HIGH-ALTITUDE SKYBRIDGE (x=1350 to x=1485, Overlaps #14 and #16) -->
     <g fill="url(#dToneSteel)">
-      <!-- Left Spire Tower -->
-      <rect x="1345" y="70" width="44" height="170"/>
-      <polygon points="1353,70 1367,40 1381,70" fill="#384c63"/>
-      <polygon points="1366.3,40 1367,15 1367.7,40" fill="url(#dSpireSteel)"/>
-      <circle cx="1367" cy="15" r="1.5" fill="#ef4444" stroke="none"/>
-      <!-- Right Spire Tower -->
-      <rect x="1405" y="70" width="44" height="170"/>
-      <polygon points="1413,70 1427,40 1441,70" fill="#384c63"/>
-      <polygon points="1426.3,40 1427,15 1427.7,40" fill="url(#dSpireSteel)"/>
-      <circle cx="1427" cy="15" r="1.5" fill="#ef4444" stroke="none"/>
-      <!-- Suspended Glass Skybridge -->
-      <rect x="1389" y="125" width="16" height="18" fill="url(#dToneGlass)" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
-      <line x1="1389" y1="134" x2="1405" y2="134" stroke="#38bdf8" stroke-width="1.5"/>
+      <rect x="1355" y="70" width="55" height="170"/>
+      <polygon points="1365,70 1382.5,40 1400,70" fill="#384c63"/>
+      <polygon points="1381.8,40 1382.5,15 1383.2,40" fill="url(#dSpireSteel)"/>
+      <circle cx="1382.5" cy="15" r="1.5" fill="#ef4444" stroke="none"/>
+      <rect x="1430" y="70" width="55" height="170"/>
+      <polygon points="1440,70 1457.5,40 1475,70" fill="#384c63"/>
+      <polygon points="1456.8,40 1457.5,15 1458.2,40" fill="url(#dSpireSteel)"/>
+      <circle cx="1457.5" cy="15" r="1.5" fill="#ef4444" stroke="none"/>
+      <rect x="1410" y="125" width="20" height="18" fill="url(#dToneGlass)" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+      <line x1="1410" y1="134" x2="1430" y2="134" stroke="#38bdf8" stroke-width="1.5"/>
     </g>
 
-    <!-- -
-         16. HISTORIC BROWNSTONE ROW & ROOFTOP WATER TANK (x=1465 to x=1590)
-         Distinct: Authentic 4-story brick rowhouses with rooftop wooden water tank
-         - -->
+    <!-- 16. HISTORIC BROWNSTONE ROW & WATER TANK (x=1475 to x=1620, Overlaps #15 and #17) -->
     <g fill="url(#dToneSlate)">
-      <!-- Rowhouses Block -->
-      <rect x="1465" y="140" width="120" height="100"/>
-      <!-- Decorative Cornice with Dentils -->
-      <rect x="1460" y="134" width="130" height="6" fill="#3b4859"/>
-      <!-- Arched Windows Rows -->
-      <!-- Row 1 -->
-      <path d="M 1475 150 Q 1480 144 1485 150 L 1485 162 L 1475 162 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1495 150 Q 1500 144 1505 150 L 1505 162 L 1495 162 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1515 150 Q 1520 144 1525 150 L 1525 162 L 1515 162 Z" fill="#fef08a" opacity="0.85"/>
+      <rect x="1475" y="140" width="145" height="100"/>
+      <rect x="1470" y="134" width="155" height="6" fill="#3b4859"/>
+      <path d="M 1485 150 Q 1490 144 1495 150 L 1495 162 L 1485 162 Z" fill="#fef08a" opacity="0.85"/>
+      <path d="M 1510 150 Q 1515 144 1520 150 L 1520 162 L 1510 162 Z" fill="#fef08a" opacity="0.85"/>
       <path d="M 1535 150 Q 1540 144 1545 150 L 1545 162 L 1535 162 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1555 150 Q 1560 144 1565 150 L 1565 162 L 1555 162 Z" fill="#fef08a" opacity="0.85"/>
-      <!-- Row 2 -->
-      <path d="M 1475 175 Q 1480 169 1485 175 L 1485 187 L 1475 187 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1495 175 Q 1500 169 1505 175 L 1505 187 L 1495 187 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1515 175 Q 1520 169 1525 175 L 1525 187 L 1515 187 Z" fill="#fef08a" opacity="0.85"/>
+      <path d="M 1560 150 Q 1565 144 1570 150 L 1570 162 L 1560 162 Z" fill="#fef08a" opacity="0.85"/>
+      <path d="M 1585 150 Q 1590 144 1595 150 L 1595 162 L 1585 162 Z" fill="#fef08a" opacity="0.85"/>
+      <path d="M 1485 175 Q 1490 169 1495 175 L 1495 187 L 1485 187 Z" fill="#fef08a" opacity="0.85"/>
+      <path d="M 1510 175 Q 1515 169 1520 175 L 1520 187 L 1510 187 Z" fill="#fef08a" opacity="0.85"/>
       <path d="M 1535 175 Q 1540 169 1545 175 L 1545 187 L 1535 187 Z" fill="#fef08a" opacity="0.85"/>
-      <path d="M 1555 175 Q 1560 169 1565 175 L 1565 187 L 1555 187 Z" fill="#fef08a" opacity="0.85"/>
-      <!-- Rooftop Wooden Water Tank on Tripod Stilts -->
-      <line x1="1525" y1="134" x2="1530" y2="108" stroke="#475569" stroke-width="1.8"/>
-      <line x1="1545" y1="134" x2="1540" y2="108" stroke="#475569" stroke-width="1.8"/>
-      <rect x="1525" y="88" width="20" height="20" rx="1.5" fill="#4a5568"/>
-      <polygon points="1522,88 1535,74 1548,88" fill="#334155"/>
+      <path d="M 1560 175 Q 1565 169 1570 175 L 1570 187 L 1560 187 Z" fill="#fef08a" opacity="0.85"/>
+      <path d="M 1585 175 Q 1590 169 1595 175 L 1595 187 L 1585 187 Z" fill="#fef08a" opacity="0.85"/>
+      <line x1="1545" y1="134" x2="1550" y2="108" stroke="#475569" stroke-width="1.8"/>
+      <line x1="1565" y1="134" x2="1560" y2="108" stroke="#475569" stroke-width="1.8"/>
+      <rect x="1545" y="88" width="20" height="20" rx="1.5" fill="#4a5568"/>
+      <polygon points="1542,88 1555,74 1568,88" fill="#334155"/>
     </g>
 
-    <!-- -
-         17. WATERFRONT OBSERVATORY & BEACON ROTUNDA (x=1600 to x=1780)
-         Distinct: Stepped maritime headquarters with glass observation dome
-         - -->
+    <!-- 17. WATERFRONT OBSERVATORY & BEACON ROTUNDA (x=1610 to x=1800, Overlaps #16 to right edge) -->
     <g fill="url(#dToneNavy)">
-      <rect x="1605" y="130" width="165" height="110"/>
-      <rect x="1625" y="95" width="125" height="35"/>
-      <!-- Curved Glass Observation Rotunda Dome -->
-      <path d="M 1650 95 Q 1687.5 55 1725 95 Z" fill="#1e3a5f" stroke="#38bdf8" stroke-width="1.2"/>
-      <!-- Maritime Signal Mast & Lighthouse Beacon -->
-      <polygon points="1686.8,55 1687.5,28 1688.2,55" fill="url(#dSpireSteel)"/>
-      <circle cx="1687.5" cy="28" r="2.5" fill="#fef08a" stroke="#f59e0b" stroke-width="1"/>
+      <rect x="1610" y="130" width="190" height="110"/>
+      <rect x="1635" y="95" width="145" height="35"/>
+      <path d="M 1665 95 Q 1707.5 55 1750 95 Z" fill="#1e3a5f" stroke="#38bdf8" stroke-width="1.2"/>
+      <polygon points="1706.8,55 1707.5,28 1708.2,55" fill="url(#dSpireSteel)"/>
+      <circle cx="1707.5" cy="28" r="2.5" fill="#fef08a" stroke="#f59e0b" stroke-width="1"/>
     </g>
 
   </g>
 
-  <!-- =========================================================================
-       ARCHITECTURAL DETAILS: Mullions, Warm Amber & Cyan Windows
-       ========================================================================= -->
-  <!-- Vertical Mullions on Empire State & Chrysler -->
+  <!-- Vertical Mullions -->
   <g stroke="rgba(255,255,255,0.22)" stroke-width="1.1">
-    <line x1="686" y1="52" x2="686" y2="240"/>
-    <line x1="695" y1="52" x2="695" y2="240"/>
-    <line x1="704" y1="52" x2="704" y2="240"/>
-    <line x1="713" y1="52" x2="713" y2="240"/>
+    <line x1="702" y1="52" x2="702" y2="240"/>
+    <line x1="712" y1="52" x2="712" y2="240"/>
     <line x1="722" y1="52" x2="722" y2="240"/>
-    <line x1="731" y1="52" x2="731" y2="240"/>
-    <line x1="740" y1="52" x2="740" y2="240"/>
-    <line x1="749" y1="52" x2="749" y2="240"/>
-    <!-- Chrysler mullions -->
-    <line x1="400" y1="78" x2="400" y2="240"/>
-    <line x1="410" y1="78" x2="410" y2="240"/>
-    <line x1="420" y1="78" x2="420" y2="240"/>
-    <line x1="430" y1="78" x2="430" y2="240"/>
+    <line x1="732" y1="52" x2="732" y2="240"/>
+    <line x1="742" y1="52" x2="742" y2="240"/>
+    <line x1="752" y1="52" x2="752" y2="240"/>
+    <line x1="762" y1="52" x2="762" y2="240"/>
+    <line x1="772" y1="52" x2="772" y2="240"/>
+    <line x1="415" y1="78" x2="415" y2="240"/>
+    <line x1="428" y1="78" x2="428" y2="240"/>
     <line x1="440" y1="78" x2="440" y2="240"/>
+    <line x1="452" y1="78" x2="452" y2="240"/>
+    <line x1="465" y1="78" x2="465" y2="240"/>
   </g>
 
   <!-- Warm Golden Amber Windows -->
   <g fill="url(#dWinWarm)">
-    <!-- Empire State Building -->
-    <rect x="690" y="135" width="3" height="6" rx="0.8"/>
-    <rect x="702" y="135" width="3" height="6" rx="0.8"/>
-    <rect x="715" y="135" width="3" height="6" rx="0.8"/>
-    <rect x="728" y="135" width="3" height="6" rx="0.8"/>
-    <rect x="740" y="135" width="3" height="6" rx="0.8"/>
-    <rect x="690" y="152" width="3" height="6" rx="0.8"/>
-    <rect x="702" y="152" width="3" height="6" rx="0.8"/>
-    <rect x="715" y="152" width="3" height="6" rx="0.8"/>
-    <rect x="728" y="152" width="3" height="6" rx="0.8"/>
-    <rect x="740" y="152" width="3" height="6" rx="0.8"/>
-    <rect x="690" y="169" width="3" height="6" rx="0.8"/>
-    <rect x="702" y="169" width="3" height="6" rx="0.8"/>
-    <rect x="715" y="169" width="3" height="6" rx="0.8"/>
-    <rect x="728" y="169" width="3" height="6" rx="0.8"/>
-    <rect x="740" y="169" width="3" height="6" rx="0.8"/>
-    <rect x="690" y="186" width="3" height="6" rx="0.8"/>
-    <rect x="702" y="186" width="3" height="6" rx="0.8"/>
-    <rect x="715" y="186" width="3" height="6" rx="0.8"/>
-    <rect x="728" y="186" width="3" height="6" rx="0.8"/>
-    <rect x="740" y="186" width="3" height="6" rx="0.8"/>
-    <!-- Chrysler Building -->
-    <rect x="402" y="125" width="3.5" height="5.5" rx="0.8"/>
-    <rect x="418" y="125" width="3.5" height="5.5" rx="0.8"/>
-    <rect x="434" y="125" width="3.5" height="5.5" rx="0.8"/>
-    <rect x="402" y="145" width="3.5" height="5.5" rx="0.8"/>
-    <rect x="418" y="145" width="3.5" height="5.5" rx="0.8"/>
-    <rect x="434" y="145" width="3.5" height="5.5" rx="0.8"/>
-    <!-- Jenga Tower Penthouse Units -->
-    <rect x="795" y="96" width="6" height="4" rx="0.8"/>
-    <rect x="815" y="126" width="6" height="4" rx="0.8"/>
-    <rect x="800" y="156" width="6" height="4" rx="0.8"/>
-    <!-- Twin Towers Windows -->
-    <rect x="1355" y="95" width="3" height="5" rx="0.5"/>
-    <rect x="1368" y="95" width="3" height="5" rx="0.5"/>
-    <rect x="1415" y="95" width="3" height="5" rx="0.5"/>
-    <rect x="1428" y="95" width="3" height="5" rx="0.5"/>
-    <!-- Waterfront Observatory Ribbon Windows -->
-    <rect x="1635" y="105" width="105" height="4" rx="1"/>
-    <rect x="1620" y="145" width="135" height="4" rx="1"/>
+    <!-- Empire State -->
+    <rect x="710" y="135" width="3" height="6" rx="0.8"/>
+    <rect x="724" y="135" width="3" height="6" rx="0.8"/>
+    <rect x="738" y="135" width="3" height="6" rx="0.8"/>
+    <rect x="752" y="135" width="3" height="6" rx="0.8"/>
+    <rect x="766" y="135" width="3" height="6" rx="0.8"/>
+    <rect x="710" y="152" width="3" height="6" rx="0.8"/>
+    <rect x="724" y="152" width="3" height="6" rx="0.8"/>
+    <rect x="738" y="152" width="3" height="6" rx="0.8"/>
+    <rect x="752" y="152" width="3" height="6" rx="0.8"/>
+    <rect x="766" y="152" width="3" height="6" rx="0.8"/>
+    <rect x="710" y="169" width="3" height="6" rx="0.8"/>
+    <rect x="724" y="169" width="3" height="6" rx="0.8"/>
+    <rect x="738" y="169" width="3" height="6" rx="0.8"/>
+    <rect x="752" y="169" width="3" height="6" rx="0.8"/>
+    <rect x="766" y="169" width="3" height="6" rx="0.8"/>
+    <!-- Chrysler -->
+    <rect x="420" y="125" width="3.5" height="5.5" rx="0.8"/>
+    <rect x="438" y="125" width="3.5" height="5.5" rx="0.8"/>
+    <rect x="456" y="125" width="3.5" height="5.5" rx="0.8"/>
+    <rect x="420" y="145" width="3.5" height="5.5" rx="0.8"/>
+    <rect x="438" y="145" width="3.5" height="5.5" rx="0.8"/>
+    <rect x="456" y="145" width="3.5" height="5.5" rx="0.8"/>
+    <!-- Jenga Penthouse -->
+    <rect x="815" y="96" width="6" height="4" rx="0.8"/>
+    <rect x="835" y="126" width="6" height="4" rx="0.8"/>
+    <rect x="820" y="156" width="6" height="4" rx="0.8"/>
+    <!-- Twin Towers -->
+    <rect x="1370" y="95" width="3" height="5" rx="0.5"/>
+    <rect x="1385" y="95" width="3" height="5" rx="0.5"/>
+    <rect x="1445" y="95" width="3" height="5" rx="0.5"/>
+    <rect x="1460" y="95" width="3" height="5" rx="0.5"/>
+    <!-- Observatory Ribbon -->
+    <rect x="1650" y="105" width="115" height="4" rx="1"/>
+    <rect x="1635" y="145" width="145" height="4" rx="1"/>
   </g>
 
-  <!-- Cool Cyan Daylight Glass Reflections -->
+  <!-- Cool Cyan Glass Reflections -->
   <g fill="url(#dWinCyan)">
-    <!-- One World Trade Chamfer Windows -->
-    <rect x="228" y="70" width="8" height="4" rx="0.5"/>
-    <rect x="228" y="95" width="8" height="4" rx="0.5"/>
-    <rect x="228" y="120" width="8" height="4" rx="0.5"/>
-    <!-- Walkie Talkie High Windows -->
-    <rect x="990" y="65" width="35" height="4" rx="1"/>
-    <rect x="985" y="85" width="45" height="4" rx="1"/>
+    <rect x="242" y="70" width="8" height="4" rx="0.5"/>
+    <rect x="242" y="95" width="8" height="4" rx="0.5"/>
+    <rect x="242" y="120" width="8" height="4" rx="0.5"/>
+    <rect x="1005" y="65" width="45" height="4" rx="1"/>
+    <rect x="1000" y="85" width="55" height="4" rx="1"/>
   </g>
 
   <!-- Ground Baseline -->

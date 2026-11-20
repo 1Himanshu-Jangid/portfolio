@@ -12,15 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const isMobile = window.innerWidth < 768;
 
   // =========================================================================
-  // 1. STARFIELD CANVAS (Optimized for mobile & desktop)
+  // 1. STARFIELD CANVAS
+  //    MOBILE: Canvas completely disabled — zero GPU bitmap, zero memory
+  //    DESKTOP: 30fps-capped twinkle loop, pauses when scrolled past stars
   // =========================================================================
   const canvas = document.getElementById('stars-canvas');
-  if (canvas) {
+  if (canvas && !isMobile) {
+    // Desktop only — mobile skips canvas entirely for maximum performance
     const ctx = canvas.getContext('2d');
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight * 2.7);
 
-    const starCount = isMobile ? 50 : Math.min(180, Math.floor((width * height) / 6000));
+    const starCount = Math.min(180, Math.floor((width * height) / 6000));
     const stars = [];
 
     class Star {
@@ -89,69 +92,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let time = 0;
-    if (isMobile) {
-      // MOBILE: Draw stars once statically — zero animation loop
-      function drawMobileStars() {
-        ctx.clearRect(0, 0, width, height);
-        for (let i = 0; i < stars.length; i++) {
-          stars[i].draw();
+    let resizeDebounce;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeDebounce);
+      resizeDebounce = setTimeout(() => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight * 2.7;
+        stars.forEach(s => s.calcAltitudeFade());
+      }, 300);
+    }, { passive: true });
+
+    let lastFrame = 0;
+    let starsVisible = true;
+
+    function renderStars(timestamp) {
+      if (starsVisible && (!lastFrame || timestamp - lastFrame >= 33)) {
+        lastFrame = timestamp;
+        if (window.scrollY < window.innerHeight * 2.5) {
+          ctx.clearRect(0, 0, width, height);
+          time++;
+          for (let i = 0; i < stars.length; i++) {
+            stars[i].update(time);
+            stars[i].draw();
+          }
+        } else {
+          starsVisible = false;
         }
       }
-      drawMobileStars();
-
-      let resizeDebounce;
-      window.addEventListener('resize', () => {
-        clearTimeout(resizeDebounce);
-        resizeDebounce = setTimeout(() => {
-          width = canvas.width = window.innerWidth;
-          height = canvas.height = window.innerHeight * 2.7;
-          stars.forEach(s => {
-            s.originX = Math.random() * width;
-            s.originY = Math.random() * height;
-            s.x = s.originX;
-            s.y = s.originY;
-            s.calcAltitudeFade();
-          });
-          drawMobileStars();
-        }, 300);
-      }, { passive: true });
-    } else {
-      // DESKTOP: 30fps-capped twinkle loop, pauses when space/skit not visible
-      let resizeDebounce;
-      window.addEventListener('resize', () => {
-        clearTimeout(resizeDebounce);
-        resizeDebounce = setTimeout(() => {
-          width = canvas.width = window.innerWidth;
-          height = canvas.height = window.innerHeight * 2.7;
-          stars.forEach(s => s.calcAltitudeFade());
-        }, 300);
-      }, { passive: true });
-
-      let lastFrame = 0;
-      let starsVisible = true;
-
-      function renderStars(timestamp) {
-        if (starsVisible && (!lastFrame || timestamp - lastFrame >= 33)) {
-          lastFrame = timestamp;
-          if (window.scrollY < window.innerHeight * 2.5) {
-            ctx.clearRect(0, 0, width, height);
-            time++;
-            for (let i = 0; i < stars.length; i++) {
-              stars[i].update(time);
-              stars[i].draw();
-            }
-          } else {
-            starsVisible = false;
-          }
-        }
-        // Re-check visibility periodically even when paused
-        if (!starsVisible && window.scrollY < window.innerHeight * 2.5) {
-          starsVisible = true;
-        }
-        requestAnimationFrame(renderStars);
+      if (!starsVisible && window.scrollY < window.innerHeight * 2.5) {
+        starsVisible = true;
       }
       requestAnimationFrame(renderStars);
     }
+    requestAnimationFrame(renderStars);
+  } else if (canvas && isMobile) {
+    // MOBILE: Hide canvas entirely — zero memory, zero GPU bitmap
+    canvas.style.display = 'none';
   }
 
   // =========================================================================

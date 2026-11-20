@@ -29,32 +29,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     class Star {
       constructor() {
-        this.reset(true);
-      }
-
-      reset(init = false) {
-        this.x = Math.random() * width;
-        this.y = init ? Math.random() * (height * 0.95) : 0;
+        this.originX = Math.random() * width;
+        this.originY = Math.random() * (height * 0.95);
+        this.x = this.originX;
+        this.y = this.originY;
         this.radius = Math.random() * 1.3 + 0.45;
         this.baseAlpha = Math.random() * 0.65 + 0.35;
         this.alpha = this.baseAlpha;
         this.twinkleSpeed = Math.random() * 0.02 + 0.008;
         this.twinkleOffset = Math.random() * Math.PI * 2;
-        // Continuous cosmic drift: slow downward and gentle lateral drift
-        this.speedY = Math.random() * 0.22 + 0.06;
-        this.speedX = (Math.random() - 0.5) * 0.08;
+
+        // Subtle micro-motion around its own place (NO falling like snow)
+        this.swayRadiusX = Math.random() * 4.0 + 1.5;
+        this.swayRadiusY = Math.random() * 3.5 + 1.2;
+        this.swaySpeedX = Math.random() * 0.014 + 0.005;
+        this.swaySpeedY = Math.random() * 0.014 + 0.005;
+        this.phaseX = Math.random() * Math.PI * 2;
+        this.phaseY = Math.random() * Math.PI * 2;
+
         this.calcAltitudeFade();
       }
 
       calcAltitudeFade() {
         const fadeStart = height * 0.45;
         const fadeEnd = height * 0.95;
-        if (this.y <= fadeStart) {
+        if (this.originY <= fadeStart) {
           this.altitudeFade = 1.0;
-        } else if (this.y >= fadeEnd) {
+        } else if (this.originY >= fadeEnd) {
           this.altitudeFade = 0;
         } else {
-          const ratio = (this.y - fadeStart) / (fadeEnd - fadeStart);
+          const ratio = (this.originY - fadeStart) / (fadeEnd - fadeStart);
           this.altitudeFade = Math.pow(1.0 - ratio, 1.5);
         }
       }
@@ -65,19 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (this.alpha < 0.1) this.alpha = 0.1;
         if (this.alpha > 1) this.alpha = 1;
 
-        // Continuous smooth drift
-        this.y += this.speedY;
-        this.x += this.speedX;
-
-        // Wrap around seamlessly
-        if (this.y > height * 0.95) {
-          this.y = 0;
-          this.x = Math.random() * width;
-        }
-        if (this.x < 0) this.x = width;
-        if (this.x > width) this.x = 0;
-
-        this.calcAltitudeFade();
+        // Gentle swaying on its own coordinate (hovering like real stars)
+        this.x = this.originX + Math.sin(time * this.swaySpeedX + this.phaseX) * this.swayRadiusX;
+        this.y = this.originY + Math.cos(time * this.swaySpeedY + this.phaseY) * this.swayRadiusY;
       }
 
       draw() {

@@ -180,7 +180,7 @@
     <!-- 4. Modern 45-Degree Angled Solar Wedge Tower (x=345 to x=475, Overlaps #3 and #5) -->
     <g fill="url(#dToneGlass)">
       <polygon points="345,240 345,35 475,115 475,240"/>
-      <line x1="345" y1="35" x2="475" y1="115" stroke="url(#dSpireSteel)" stroke-width="2"/>
+      <line x1="345" y1="35" x2="475" y2="115" stroke="url(#dSpireSteel)" stroke-width="2"/>
       <line x1="375" y1="53" x2="375" y2="240" stroke="rgba(255,255,255,0.2)"/>
       <line x1="405" y1="71" x2="405" y2="240" stroke="rgba(255,255,255,0.2)"/>
       <line x1="435" y1="89" x2="435" y2="240" stroke="rgba(255,255,255,0.2)"/>

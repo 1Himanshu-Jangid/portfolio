@@ -205,10 +205,10 @@
        ========================================================================= -->
   <g stroke="rgba(255,255,255,0.22)" stroke-width="1.2" stroke-linejoin="round">
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          1. TRANSAMERICA PYRAMID (x=20 to x=85)
          Distinct: Pure geometric triangular pyramid with lateral elevator wings
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneSlate)">
       <polygon points="20,240 52,35 84,240"/>
       <!-- Lateral Wings (Shafts) -->
@@ -219,10 +219,10 @@
       <circle cx="52" cy="10" r="1.8" fill="#ef4444" stroke="none"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          2. FLATIRON BUILDING & CLOCKTOWER (x=95 to x=180)
          Distinct: Beaux-Arts triangular prow, ornate frieze, and vintage clock
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneSteel)">
       <!-- Main Triangular Prow Body -->
       <polygon points="95,240 105,75 170,75 180,240"/>
@@ -237,10 +237,10 @@
       <line x1="137.5" y1="57" x2="141" y2="57" stroke="#0f172a" stroke-width="1.2"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          3. ONE WORLD TRADE CENTER / CHAMFERED OBELISK (x=190 to x=275)
          Distinct: Tapered octagonal chamfered glass prism & communication needle
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneGlass)">
       <polygon points="190,240 203,50 262,50 275,240"/>
       <!-- Chamfer Facet Lines -->
@@ -252,10 +252,10 @@
       <circle cx="232.5" cy="6" r="1.8" fill="#ef4444" stroke="none"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          4. SHANGHAI SWFC / "BOTTLE OPENER" TOWER (x=285 to x=365)
          Distinct: Sleek tapered glass body with bold trapezoidal aperture cutout
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneGlass)">
       <polygon points="285,240 295,30 355,30 365,240"/>
       <!-- Trapezoidal Aperture Window Cutout -->
@@ -263,10 +263,10 @@
       <line x1="307" y1="44" x2="343" y2="44" stroke="url(#dSpireSteel)" stroke-width="2"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          5. THE CHRYSLER BUILDING / ART DECO SUNBURST (x=375 to x=465)
          Distinct: Terraced sunburst arches with corner gargoyle eagles & needle
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneNavy)">
       <rect x="375" y="115" width="90" height="125"/>
       <rect x="385" y="78" width="70" height="37"/>
@@ -282,10 +282,10 @@
       <polygon points="455,78 462,74 455,82" fill="url(#dSpireSteel)"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          6. THE GHERKIN / CURVED FOSTER GLASS DOME (x=475 to x=555)
          Distinct: Aerodynamic parabolic egg shape with diamond diagrid lattice
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneSteel)">
       <path d="M 475 240 C 475 140, 488 60, 515 35 C 542 60, 555 140, 555 240 Z"/>
       <!-- Dark glass crown tip -->
@@ -297,10 +297,10 @@
       <path d="M 548 140 Q 515 110 482 80" stroke="rgba(255,255,255,0.3)" fill="none"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          7. TAIPEI 101 / FLARING PAGODA MODULES (x=565 to x=650)
          Distinct: Asian architectural pagoda tiers with circular coin reliefs
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneNavy)">
       <!-- Base Podium -->
       <rect x="580" y="195" width="55" height="45"/>
@@ -322,10 +322,10 @@
       <rect x="605.5" y="118" width="4" height="4" fill="#1e293b"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          8. THE EMPIRE STATE BUILDING / HERO CENTERPIECE (x=660 to x=780)
          Distinct: Monumental stepped limestone setbacks, fluting & mooring mast
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneNavy)">
       <rect x="660" y="125" width="120" height="115"/>
       <rect x="672" y="90" width="96" height="35"/>
@@ -337,10 +337,10 @@
       <circle cx="720" cy="1.5" r="2" fill="#ef4444" stroke="none"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          9. MODERN "JENGA" TOWER / CANTILEVER CUBES (x=790 to x=865)
          Distinct: Staggered sculptural offset glass blocks protruding outwards
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneSteel)">
       <rect x="800" y="185" width="55" height="55"/>
       <rect x="792" y="150" width="62" height="35"/>
@@ -351,10 +351,10 @@
       <line x1="831" y1="38" x2="831" y2="18" stroke="#94a3b8" stroke-width="1.8"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          10. BANK OF CHINA TOWER / GEOMETRIC X-BRACED FACETS (x=875 to x=955)
          Distinct: Triangular prism shafts with bold white diagonal mega-trusses
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneGlass)">
       <polygon points="875,240 875,100 915,60 955,100 955,240"/>
       <polygon points="895,60 915,24 935,60" fill="#2b4c73"/>
@@ -366,10 +366,10 @@
       <line x1="955" y1="170" x2="875" y2="100" stroke="rgba(255,255,255,0.4)" stroke-width="1.6"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          11. THE "WALKIE TALKIE" / CURVED CONCAVE FLARE (x=965 to x=1050)
          Distinct: Dramatic outward-curving facade crowned by curved sky-garden dome
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneSteel)">
       <!-- Upward-Flaring Body -->
       <path d="M 975 240 C 975 160, 965 90, 965 48 L 1050 48 C 1050 90, 1040 160, 1040 240 Z"/>
@@ -378,10 +378,10 @@
       <line x1="1007.5" y1="28" x2="1007.5" y2="48" stroke="rgba(255,255,255,0.3)"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          12. NEO-GOTHIC TOWER WITH COPPER MANSARD ROOF (x=1060 to x=1145)
          Distinct: Slender ornate tower with teal copper roof, dormers & pinnacles
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneCopper)">
       <!-- Main Masonry Shaft -->
       <rect x="1065" y="115" width="75" height="125" fill="url(#dToneNavy)"/>
@@ -397,10 +397,10 @@
       <polygon points="1101.8,38 1102.5,18 1103.2,38" fill="url(#dSpireSteel)"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          13. MARINA CITY / CYLINDRICAL CORNCOB TOWER (x=1155 to x=1235)
          Distinct: Cylindrical tower with scalloped semicircular balconies & rotunda
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneSteel)">
       <rect x="1165" y="45" width="60" height="195" rx="4"/>
       <!-- Scalloped Balcony Tier Bands -->
@@ -414,10 +414,10 @@
       <line x1="1195" y1="28" x2="1195" y2="12" stroke="#94a3b8" stroke-width="1.8"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          14. CITICORP 45° SLANTED SOLAR WEDGE TOWER (x=1245 to x=1330)
          Distinct: Dramatic 45-degree angled wedge roofline with vertical louvers
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneGlass)">
       <!-- Main Wedge Body -->
       <polygon points="1245,240 1245,35 1330,115 1330,240"/>
@@ -429,10 +429,10 @@
       <line x1="1305" y1="92" x2="1305" y2="240" stroke="rgba(255,255,255,0.2)"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          15. TWIN TOWERS & HIGH-ALTITUDE SKYBRIDGE (x=1340 to x=1455)
          Distinct: Two slender needle spires joined at mid-height by a glass bridge
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneSteel)">
       <!-- Left Spire Tower -->
       <rect x="1345" y="70" width="44" height="170"/>
@@ -449,10 +449,10 @@
       <line x1="1389" y1="134" x2="1405" y2="134" stroke="#38bdf8" stroke-width="1.5"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          16. HISTORIC BROWNSTONE ROW & ROOFTOP WATER TANK (x=1465 to x=1590)
          Distinct: Authentic 4-story brick rowhouses with rooftop wooden water tank
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneSlate)">
       <!-- Rowhouses Block -->
       <rect x="1465" y="140" width="120" height="100"/>
@@ -478,10 +478,10 @@
       <polygon points="1522,88 1535,74 1548,88" fill="#334155"/>
     </g>
 
-    <!-- ---------------------------------------------------------------------
+    <!-- -
          17. WATERFRONT OBSERVATORY & BEACON ROTUNDA (x=1600 to x=1780)
          Distinct: Stepped maritime headquarters with glass observation dome
-         --------------------------------------------------------------------- -->
+         - -->
     <g fill="url(#dToneNavy)">
       <rect x="1605" y="130" width="165" height="110"/>
       <rect x="1625" y="95" width="125" height="35"/>

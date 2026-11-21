@@ -339,51 +339,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // =========================================================================
-  // AEROSPACE TELEMETRY PRELOADER CONTROLLER (OPTION A)
-  // Super-fast (≤ 650ms), smooth micro-counter, automatic non-blocking exit
+  // PROFESSIONAL TOP-BAR NANO LASER CONTROLLER (IDEA 1)
+  // Smooth acceleration (0% -> 100% in ~450ms) -> instant graceful curtain dissolve
   // =========================================================================
-  const loaderEl = document.getElementById('orbital-loader');
-  const progressBar = document.getElementById('loader-progress-bar');
-  const percentText = document.getElementById('loader-percent');
-  const statusText = document.getElementById('loader-status');
+  const curtainEl = document.getElementById('top-loader-curtain');
+  const barEl = document.getElementById('top-loader-bar');
 
-  if (loaderEl && progressBar && percentText && statusText) {
-    let progress = 18;
+  if (curtainEl && barEl) {
     let isDismissed = false;
 
-    function setProgress(val, status) {
-      progress = Math.min(val, 100);
-      progressBar.style.width = progress + '%';
-      percentText.textContent = Math.round(progress) + '%';
-      if (status) statusText.textContent = status;
+    function setProgress(percent) {
+      barEl.style.width = Math.min(percent, 100) + '%';
     }
 
-    const t1 = setTimeout(() => setProgress(45, 'SYNCHRONIZING STARFIELD...'), 120);
-    const t2 = setTimeout(() => setProgress(78, 'CALIBRATING ALTITUDE...'), 260);
-    const t3 = setTimeout(() => setProgress(96, 'TRAJECTORY NOMINAL'), 420);
+    // Micro-acceleration timeline (0% -> 100% in ~420ms)
+    setTimeout(() => setProgress(35), 40);
+    setTimeout(() => setProgress(72), 160);
+    setTimeout(() => setProgress(92), 300);
 
     function dismissLoader() {
       if (isDismissed) return;
       isDismissed = true;
-      setProgress(100, 'SYSTEM READY // DESCENT INITIATED');
+      setProgress(100);
       setTimeout(() => {
-        loaderEl.classList.add('loader-hidden');
+        curtainEl.classList.add('loader-hidden');
         setTimeout(() => {
-          if (loaderEl && loaderEl.parentNode) {
-            loaderEl.remove();
+          if (curtainEl && curtainEl.parentNode) {
+            curtainEl.remove();
           }
-        }, 450);
-      }, 150);
+        }, 400);
+      }, 120);
     }
 
-    // Dismiss gracefully: allow 500ms micro-calibration to showcase, then exit
     if (document.readyState === 'complete') {
-      setTimeout(dismissLoader, 550);
+      setTimeout(dismissLoader, 420);
     } else {
       window.addEventListener('load', () => {
-        setTimeout(dismissLoader, 450);
+        setTimeout(dismissLoader, 350);
       });
-      setTimeout(dismissLoader, 750); // Hard fallback safety cap
+      setTimeout(dismissLoader, 650); // Hard fallback safety cap
     }
   }
 

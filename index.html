@@ -24,50 +24,23 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=37.0" />
+  <link rel="stylesheet" href="styles.css?v=38.0" />
 </head>
 <body class="selection:bg-blue-500 selection:text-white">
   <!-- =========================================================================
-       AEROSPACE TELEMETRY PRELOADER (OPTION A)
-       Ultra-lightweight micro-loader (≤ 650ms), Apple Liquid Glass, non-blocking
+       PROFESSIONAL TOP-BAR NANO LASER PRELOADER (IDEA 1)
+       Vercel / Silicon Valley style: Blank black void + glowing top progress laser
        ========================================================================= -->
-  <div id="orbital-loader" class="flex flex-col items-center justify-center text-white select-none px-6">
-    <!-- Ambient Glass Halo -->
-    <div class="absolute w-72 h-72 rounded-full bg-cyan-500/15 blur-3xl pointer-events-none animate-pulse"></div>
-
-    <!-- Liquid Glass Telemetry Capsule -->
-    <div class="relative z-10 w-full max-w-sm rounded-2xl border border-white/15 bg-slate-900/85 backdrop-blur-2xl p-6 sm:p-7 shadow-2xl shadow-cyan-950/60 flex flex-col items-center text-center">
-      
-      <!-- Monogram Badge with Glow -->
-      <div class="w-12 h-12 rounded-full border border-cyan-400/40 bg-slate-800/90 flex items-center justify-center font-bold text-sm text-cyan-300 tracking-wider shadow-inner shadow-cyan-500/30 mb-3.5">
-        HJ
-      </div>
-
-      <!-- Telemetry Subtitle & Status -->
-      <div class="text-[10px] tracking-[0.25em] font-mono text-cyan-400/90 uppercase mb-1">
-        Orbital Telemetry // CS AI
-      </div>
-      <div id="loader-status" class="text-xs sm:text-sm font-semibold tracking-tight text-white mb-4 font-mono">
-        INITIALIZING DESCENT...
-      </div>
-
-      <!-- Micro Progress Track -->
-      <div class="w-full bg-slate-800/90 rounded-full h-1.5 p-0.5 border border-white/10 mb-3 overflow-hidden">
-        <div id="loader-progress-bar" class="h-full rounded-full bg-gradient-to-r from-blue-500 via-cyan-400 to-sky-300 shadow-[0_0_10px_rgba(56,189,248,0.8)] transition-all duration-150 ease-out" style="width: 15%;"></div>
-      </div>
-
-      <!-- Telemetry Readout Grid -->
-      <div class="w-full flex items-center justify-between text-[10px] font-mono text-slate-400 border-t border-white/10 pt-2.5">
-        <span class="flex items-center gap-1.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-          <span>ALT: <strong class="text-slate-200">300,000 M</strong></span>
-        </span>
-        <span id="loader-percent" class="text-cyan-300 font-semibold">15%</span>
-        <span>STATUS: <strong class="text-emerald-400">READY</strong></span>
+  <div id="top-loader-curtain" class="fixed inset-0 z-[99999] bg-[#000000] pointer-events-auto select-none">
+    <!-- Top Progress Track & Laser Line -->
+    <div class="relative w-full h-[2.5px] sm:h-[3px] bg-transparent overflow-visible">
+      <!-- Active Progress Laser Fill -->
+      <div id="top-loader-bar" class="absolute top-0 left-0 h-full w-0 bg-gradient-to-r from-blue-600 via-cyan-400 to-sky-300 shadow-[0_0_12px_rgba(56,189,248,0.95),0_0_24px_rgba(56,189,248,0.6)] transition-all duration-150 ease-out">
+        <!-- Glowing Photon Head (Laser Beam Tip) -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-cyan-200 blur-[1.5px] opacity-95 shadow-[0_0_10px_#38bdf8,0_0_20px_#38bdf8]"></div>
       </div>
     </div>
   </div>
-
 
   <!-- =========================================================================
        DYNAMIC 4-PAGE ALTITUDE NAVBAR
@@ -504,9 +477,9 @@
       <!-- Minimalist 2D Architectural City Skyline Layer (Clean Vector Landmarks, Zero Cars) -->
       <div class="city-skyline-layer">
         <!-- Desktop & Tablet Skyline (>= 640px) -->
-        <img src="city-skyline-2d.svg?v=37.0" alt="2D Modern Architectural Glass Skyline" class="city-skyline-img hidden sm:block" />
+        <img src="city-skyline-2d.svg?v=38.0" alt="2D Modern Architectural Glass Skyline" class="city-skyline-img hidden sm:block" />
         <!-- Mobile Skyline (< 640px) -->
-        <img src="city-skyline-mobile.svg?v=37.0" alt="2D Modern Architectural Glass Skyline" class="city-skyline-img block sm:hidden" />
+        <img src="city-skyline-mobile.svg?v=38.0" alt="2D Modern Architectural Glass Skyline" class="city-skyline-img block sm:hidden" />
       </div>
 
       <!-- Earth Container -->
@@ -567,7 +540,7 @@
 
   </div>
 
-  <script src="script.js?v=37.0"></script>
+  <script src="script.js?v=38.0"></script>
   <script>
     lucide.createIcons();
   </script>
